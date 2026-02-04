@@ -1,19 +1,43 @@
 [gd_scene format=3 uid="uid://msugkxtpvtas"]
 
+[ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="1_46lwt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srpys"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_46lwt"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x25rp"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_srpys"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_46lwt"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gmgay"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="TestLevel" type="Node3D" unique_id=136392307]
 
 [node name="Geometry" type="Node3D" parent="." unique_id=941615642]
-transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 1.5, 0)
 
-[node name="Platform" type="MeshInstance3D" parent="Geometry" unique_id=642877714]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry" unique_id=1554495827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_srpys")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/StaticBody3D" unique_id=1166484372]
+transform = Transform3D(31.4, 0, 0, 0, 31.4, 0, 0, 0, 31.4, 0, 1.5, 0)
+mesh = SubResource("PlaneMesh_46lwt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/StaticBody3D" unique_id=1483205352]
+transform = Transform3D(31.4, 0, 0, 0, 31.4, 0, 0, 0, 31.4, 0, 1.5, 0)
+shape = SubResource("ConcavePolygonShape3D_x25rp")
+
+[node name="WorldEnvironment" parent="Geometry/StaticBody3D" unique_id=1091596004 instance=ExtResource("1_46lwt")]
+
+[node name="CrouchCheck" type="StaticBody3D" parent="Geometry" unique_id=2039125078]
+
+[node name="Platform" type="MeshInstance3D" parent="Geometry/CrouchCheck" unique_id=642877714]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 1.5, 0)
 mesh = SubResource("BoxMesh_srpys")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Platform" unique_id=2039125078]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Platform/StaticBody3D" unique_id=2001224061]
-shape = SubResource("ConcavePolygonShape3D_46lwt")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/CrouchCheck" unique_id=463268654]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 1.5, 0)
+shape = SubResource("ConcavePolygonShape3D_gmgay")
