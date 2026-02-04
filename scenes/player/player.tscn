@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bak4wntf43ykh"]
+
+[ext_resource type="Script" uid="uid://cveutugu5cv01" path="res://mouse_capture.gd" id="1_8afob"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dovo2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
+
+[node name="Player" type="CharacterBody3D" unique_id=96954163]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1317214506]
+mesh = SubResource("CapsuleMesh_dovo2")
+
+[node name="Standing Collision" type="CollisionShape3D" parent="." unique_id=741992447]
+shape = SubResource("CapsuleShape3D_gmlin")
+
+[node name="CameraController" type="Node3D" parent="." unique_id=378673298]
+
+[node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=1474431776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Components" type="Node" parent="." unique_id=1471095701]
+
+[node name="MouseCapture" type="Node" parent="Components" unique_id=875706600]
+script = ExtResource("1_8afob")
