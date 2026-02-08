@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://msugkxtpvtas"]
 
 [ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="2_x25rp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srpys"]
 
@@ -41,3 +42,6 @@ transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 1.5, 0)
 shape = SubResource("ConcavePolygonShape3D_gmgay")
 
 [node name="WorldEnvironment" parent="." unique_id=1091596004 instance=ExtResource("1_46lwt")]
+
+[node name="Player" parent="." unique_id=96954163 instance=ExtResource("2_x25rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000961, 1, -6.8331184)
