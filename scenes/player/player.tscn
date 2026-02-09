@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cveutugu5cv01" path="res://scripts/Components/mouse_capture.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://pfk71af05n7o" path="res://scripts/player/camera_controller.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://dui4frk70o666" path="res://scripts/player/player_controller.gd" id="1_gmlin"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
 
 [node name="Player" type="CharacterBody3D" unique_id=96954163]
+script = ExtResource("1_gmlin")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1317214506]
 mesh = SubResource("CapsuleMesh_dovo2")
@@ -15,8 +17,9 @@ mesh = SubResource("CapsuleMesh_dovo2")
 [node name="Standing Collision" type="CollisionShape3D" parent="." unique_id=741992447]
 shape = SubResource("CapsuleShape3D_gmlin")
 
-[node name="CameraController" type="Node3D" parent="." unique_id=378673298 node_paths=PackedStringArray("component_mouse_capture")]
+[node name="CameraController" type="Node3D" parent="." unique_id=378673298 node_paths=PackedStringArray("player_controller", "component_mouse_capture")]
 script = ExtResource("1_dovo2")
+player_controller = NodePath("..")
 component_mouse_capture = NodePath("../Components/MouseCapture")
 
 [node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=1474431776]

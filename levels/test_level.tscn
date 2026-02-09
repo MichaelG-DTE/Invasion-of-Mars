@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://msugkxtpvtas"]
 
 [ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="1_46lwt"]
+[ext_resource type="Script" uid="uid://c076hdkvkmp2v" path="res://scripts/system/test_level.gd" id="1_gmgay"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="2_x25rp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srpys"]
@@ -16,6 +17,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="TestLevel" type="Node3D" unique_id=136392307]
+script = ExtResource("1_gmgay")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=941615642]
 
