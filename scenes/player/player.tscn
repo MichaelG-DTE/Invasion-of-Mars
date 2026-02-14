@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://dyqynhf8sd3w5" path="res://scripts/StateMachineScripts/state_machine.gd" id="9_h17s1"]
 [ext_resource type="Script" uid="uid://bvu0o4m562snh" path="res://scripts/StateMachineScripts/base_state.gd" id="10_h17s1"]
 [ext_resource type="Script" uid="uid://cw53ywr6j422d" path="res://scripts/StateMachineScripts/idle_state.gd" id="11_je7p5"]
+[ext_resource type="Script" uid="uid://c16mwv5nutw23" path="res://scripts/StateMachineScripts/moving_state.gd" id="13_gx1jg"]
+[ext_resource type="Script" uid="uid://cnt32ctm6tv44" path="res://scripts/StateMachineScripts/walking_state.gd" id="14_ugbui"]
+[ext_resource type="Script" uid="uid://cjl5unxgyqcc2" path="res://scripts/StateMachineScripts/sprinting_state.gd" id="15_fcs02"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dovo2"]
 
@@ -122,11 +125,19 @@ script = ExtResource("10_h17s1")
 script = ExtResource("11_je7p5")
 
 [node name="MovingState" type="Node" parent="StateMachine/MovementState/GroundedState" unique_id=844741085]
+script = ExtResource("13_gx1jg")
 
 [node name="WalkingState" type="Node" parent="StateMachine/MovementState/GroundedState/MovingState" unique_id=115900931]
+script = ExtResource("14_ugbui")
 
 [node name="SprintingState" type="Node" parent="StateMachine/MovementState/GroundedState/MovingState" unique_id=2117469201]
+script = ExtResource("15_fcs02")
 
 [node name="AirborneState" type="Node" parent="StateMachine/MovementState" unique_id=2057045170]
 
 [connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/GroundedState/IdleState" method="_on_idle_state_processing"]
+[connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Moving" to="StateMachine/MovementState/GroundedState/MovingState" method="_on_moving_state_processing"]
+[connection signal="state_entered" from="StateChart/Root/Movement/Grounded/Moving/Walking" to="StateMachine/MovementState/GroundedState/MovingState/WalkingState" method="_on_walking_state_entered"]
+[connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Moving/Walking" to="StateMachine/MovementState/GroundedState/MovingState/WalkingState" method="_on_walking_state_processing"]
+[connection signal="state_entered" from="StateChart/Root/Movement/Grounded/Moving/Sprinting" to="StateMachine/MovementState/GroundedState/MovingState/SprintingState" method="_on_sprinting_state_entered"]
+[connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Moving/Sprinting" to="StateMachine/MovementState/GroundedState/MovingState/SprintingState" method="_on_sprinting_state_processing"]

@@ -30,7 +30,6 @@ script = ExtResource("1_gmgay")
 [node name="Geometry" type="Node3D" parent="." unique_id=941615642]
 
 [node name="Floor" type="StaticBody3D" parent="Geometry" unique_id=1554495827]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 physics_material_override = SubResource("PhysicsMaterial_srpys")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Floor" unique_id=1166484372]
@@ -43,6 +42,7 @@ transform = Transform3D(31.4, 0, 0, 0, 31.4, 0, 0, 0, 31.4, 0, 1.5, 0)
 shape = SubResource("ConcavePolygonShape3D_x25rp")
 
 [node name="CrouchCheck" type="StaticBody3D" parent="Geometry" unique_id=2039125078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Platform" type="MeshInstance3D" parent="Geometry/CrouchCheck" unique_id=642877714]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 1.5, 0)
@@ -56,4 +56,4 @@ shape = SubResource("ConcavePolygonShape3D_gmgay")
 [node name="WorldEnvironment" parent="." unique_id=1091596004 instance=ExtResource("1_46lwt")]
 
 [node name="Player" parent="." unique_id=96954163 instance=ExtResource("2_x25rp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000961, 1, -6.8331184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.831498, -9.337228)
