@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ccqyuednxqcbu"]
+
+[ext_resource type="PackedScene" uid="uid://qb8wblcieqyh" path="res://scenes/ui/reticle_draw.tscn" id="1_284y0"]
+
+[node name="UserInterface" type="CanvasLayer" unique_id=738552373]
+
+[node name="Reticle" type="CenterContainer" parent="." unique_id=1845952518]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReticleDraw" parent="Reticle" unique_id=1764722979 instance=ExtResource("1_284y0")]
+layout_mode = 2

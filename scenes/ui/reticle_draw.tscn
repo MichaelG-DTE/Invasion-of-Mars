@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://qb8wblcieqyh"]
+
+[ext_resource type="Script" uid="uid://cppxyqvupu70j" path="res://scripts/ui/reticle_draw.gd" id="1_1tpnu"]
+
+[node name="ReticleDraw" type="Control" unique_id=1764722979]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_1tpnu")
