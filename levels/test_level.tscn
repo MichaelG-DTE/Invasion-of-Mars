@@ -76,7 +76,7 @@ transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, -0.4219427, 1.031
 shape = SubResource("ConcavePolygonShape3D_w7r7j")
 
 [node name="Platform2" type="StaticBody3D" parent="Geometry" unique_id=1161676914]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.10114288, 5.350687, 9.3879795)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.10114288, 4.829686, 9.3879795)
 
 [node name="Platform" type="MeshInstance3D" parent="Geometry/Platform2" unique_id=1683061403]
 transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, 0, 1.032, 0)
@@ -86,6 +86,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wndkh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Platform2" unique_id=1125828672]
 transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, 0, 1.032, 0)
 shape = SubResource("ConcavePolygonShape3D_ur00s")
+
+[node name="Platform3" type="StaticBody3D" parent="Geometry" unique_id=1788311006]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 1, -8)
+
+[node name="Platform" type="MeshInstance3D" parent="Geometry/Platform3" unique_id=1192211371]
+transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, 0, 1.032, 0)
+mesh = SubResource("BoxMesh_srpys")
+surface_material_override/0 = SubResource("StandardMaterial3D_wndkh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Platform3" unique_id=88447895]
+transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, 0, 1.032, 0)
+shape = SubResource("ConcavePolygonShape3D_w7r7j")
 
 [node name="Wall" type="StaticBody3D" parent="Geometry" unique_id=1703074968]
 transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 16.49671, 4.714304, 14.061876)
