@@ -10,7 +10,7 @@ class_name PlayerController extends CharacterBody3D
 @export var interaction_raycast : RayCast3D
 @export_category("Movement Settings")
 @export_group("Easing")
-var acceleration : float = 1.5
+var acceleration : float = 2
 var deceleration : float = 14
 @export_group("Speed")
 @export var default_speed : float = 7.0
@@ -80,7 +80,7 @@ func crouch() -> void:
 	
 func jump() -> void:
 	if not crouch_check.is_colliding():
-		velocity.y += jump_velocity
+		velocity.y += jump_velocity 
 
 func check_fall_speed() -> bool:
 	if current_fall_velocity < fall_velocity_threshold:
