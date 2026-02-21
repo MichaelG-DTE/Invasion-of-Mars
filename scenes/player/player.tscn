@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cveutugu5cv01" path="res://scripts/Components/mouse_capture.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://pfk71af05n7o" path="res://scripts/player/camera_controller.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://dui4frk70o666" path="res://scripts/player/player_controller.gd" id="1_gmlin"]
+[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="2_yj68g"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="4_0owmy"]
 [ext_resource type="Script" uid="uid://cs0us0hm36x6f" path="res://scripts/player/camera_effects.gd" id="4_3j4b4"]
 [ext_resource type="Script" uid="uid://dhgdykb58gwet" path="res://scripts/player/interaction_raycast.gd" id="4_8ydkj"]
@@ -28,8 +29,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uf5tr"]
 
-[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("camera", "camera_effects", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast")]
+[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast")]
 script = ExtResource("1_gmlin")
+step_handler = NodePath("Components/StepHandler")
 camera = NodePath("CameraController")
 camera_effects = NodePath("CameraController/Camera3D")
 state_chart = NodePath("StateChart")
@@ -37,6 +39,9 @@ standing_collision = NodePath("Standing Collision")
 crouching_collision = NodePath("Crouching Collision")
 crouch_check = NodePath("CrouchCheck")
 interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
+
+[node name="StateChartDebugger" parent="." unique_id=155822838 instance=ExtResource("2_yj68g")]
+initial_node_to_watch = NodePath("..")
 
 [node name="Standing Collision" type="CollisionShape3D" parent="." unique_id=741992447]
 shape = SubResource("CapsuleShape3D_gmlin")
@@ -172,6 +177,11 @@ delay_in_seconds = "0.0"
 unique_name_in_owner = true
 script = ExtResource("9_h17s1")
 player_controller = NodePath("..")
+debug_velocity = false
+debug_head_hitting = false
+debug_crouching = false
+debug_sprinting = false
+debug_looking = false
 
 [node name="MovementState" type="Node" parent="StateMachine" unique_id=1042708828]
 script = ExtResource("10_h17s1")

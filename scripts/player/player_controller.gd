@@ -1,6 +1,7 @@
 class_name PlayerController extends CharacterBody3D
 
 @export_category("References")
+@export var step_handler : StepHandlerComponent
 @export var camera : CameraController
 @export var camera_effects : Camera3D
 @export var state_chart : StateChart
@@ -20,20 +21,21 @@ var deceleration : float = 14
 @export var jump_velocity : float = 7
 @export var fall_velocity_threshold : float = -5.0
 
-
-
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 var sprint_modifier : float = 0.0
 var crouch_modifier : float = 0.0
 var speed : float = 0.0
 var current_fall_velocity : float 
+var previous_velocity : Vector3
 
 # booleans
 var is_sprinting = false
 var is_crouching = false
 
 func _physics_process(delta: float) -> void:
+	previous_velocity = velocity
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta #gets gravity value and multiplies by delta
 
@@ -54,6 +56,9 @@ func _physics_process(delta: float) -> void:
 	velocity = _movement_velocity
 	
 	move_and_slide()  
+	 
+	if is_on_floor(): # prevents step checks from running while in air
+		step_handler.handle_step_climbing()
 
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input) # updates rotation of player
@@ -90,3 +95,6 @@ func check_fall_speed() -> bool:
 	else:
 		current_fall_velocity = 0.0
 		return false
+		
+func get_input_direction() -> Vector2:
+	return _input_dir

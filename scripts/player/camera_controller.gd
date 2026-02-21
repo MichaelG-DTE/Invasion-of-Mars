@@ -10,17 +10,37 @@ class_name CameraController extends Node3D
 @export_group("Crouch Camera Change Variables")
 @export var crouch_offset : float = 0.0
 @export var crouch_speed : float = 3.0
+@export_group("Step Smoothing")
+@export var step_speed : float = 8.0
+
+var _target_height : float
+var _step_smoothing : bool = false
+
+var offset_height : float
+
 
 var _rotation : Vector3 #underscored to prevent Godot from throwing an error
 
 const DEFAULT_HEIGHT : float = 0.5
 
-func _process(_delta: float) -> void:
-	update_camera_rotation(component_mouse_capture.mouse_input)
+func _ready() -> void:
+	_rotation = player_controller.rotation
+	offset_height = DEFAULT_HEIGHT
 
-func update_camera_rotation(input : Vector2) -> void:
-	_rotation.x += input.y
-	_rotation.y += input.x
+func _process(delta: float) -> void:
+	update_camera_rotation(component_mouse_capture.mouse_input, delta)
+	
+	if _step_smoothing:
+		_target_height = lerp(_target_height, 0.0, step_speed * delta)
+		if abs(_target_height) < 0.01:
+			_target_height = 0.0
+			_step_smoothing = false
+			
+		position.y = offset_height + _target_height
+	
+func update_camera_rotation(input : Vector2, delta) -> void:
+	_rotation.x += input.y * delta
+	_rotation.y += input.x * delta
 	
 	#clamps the rotation to the predefined lower and upper limits
 	_rotation.x = clamp(_rotation.x, deg_to_rad(lower_tilt_limit), deg_to_rad(upper_tilt_limit))
@@ -36,3 +56,8 @@ func update_camera_rotation(input : Vector2) -> void:
 func update_camera_height(delta: float, direction: int):
 	if position.y >= crouch_offset and position.y <= DEFAULT_HEIGHT: # checks if the y position has been changed to be greater than the crouch offset but less than the default height
 		position.y = clampf(position.y + (crouch_speed * direction) * delta, crouch_offset, DEFAULT_HEIGHT) # changes the camera position to be lower 
+
+# activates step smoothing to prevent camera jitter
+func smooth_step(height_change : float):
+	_target_height -= height_change
+	_step_smoothing = true
