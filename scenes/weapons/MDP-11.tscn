@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cq1tehbkp3kag"]
+
+[ext_resource type="PackedScene" uid="uid://2f03gq2ahtua" path="res://assets/blendermodels/point.glb" id="1_r0c1m"]
+
+[node name="MD P-11" unique_id=1260080759 instance=ExtResource("1_r0c1m")]
+transform = Transform3D(-0.015, 0, -1.3113416e-09, 0, 0.015, 0, 1.3113416e-09, 0, -0.015, 0, 0, 0)
