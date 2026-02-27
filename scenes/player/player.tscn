@@ -65,6 +65,7 @@ target_position = Vector3(0, 0.5, 0)
 [node name="PlayerContainer" type="Node3D" parent="WorldModel" unique_id=1128691981]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel/PlayerContainer" unique_id=64220368]
+visible = false
 mesh = SubResource("CapsuleMesh_uniwh")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=378673298 node_paths=PackedStringArray("player_controller", "component_mouse_capture")]

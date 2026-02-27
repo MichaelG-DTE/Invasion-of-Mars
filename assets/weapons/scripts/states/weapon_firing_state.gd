@@ -17,5 +17,16 @@ func _on_firing_state_state_physics_processing(_delta: float) -> void:
 		weapon_controller.weapon_state_chart.send_event("OnEmpty")
 		return
 		
-	# return to idle after firing
-	weapon_controller.weapon_state_chart.send_event("OnIdle") 
+	if weapon_controller.current_weapon.is_automatic:
+		# automatic fire
+		if Input.is_action_pressed("fire"):
+			if weapon_controller.can_fire():
+				weapon_controller.fire_weapon()
+				
+		else:
+			# when trigger released 
+			weapon_controller.weapon_state_chart.send_event("OnIdle")
+	else:
+		# single fire 
+		weapon_controller.weapon_state_chart.send_event("OnIdle")
+	
