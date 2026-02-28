@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://gbv436xmkqlv"]
+
+[ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weapon_pickup.tscn" id="1_s0ayq"]
+[ext_resource type="Resource" uid="uid://cwb7ejvgbfthi" path="res://assets/weapons/resources/MD BMR-99.tres" id="2_w2j0t"]
+[ext_resource type="PackedScene" uid="uid://c8jljye43w6vr" path="res://scenes/weapons/codreanu.tscn" id="3_svl2c"]
+
+[node name="ShotgunWeaponPickup" unique_id=1825521633 instance=ExtResource("1_s0ayq")]
+weapon_slot = 3
+weapon_resource = ExtResource("2_w2j0t")
+
+[node name="challenger" parent="." index="1" unique_id=824978881]
+visible = false
+
+[node name="codreanu" parent="." index="2" unique_id=1786985514 instance=ExtResource("3_svl2c")]
+transform = Transform3D(1.0045459e-09, -0.022981329, 0.019283628, -0.029999996, -1.3113415e-09, 0, 8.4291407e-10, -0.019283626, -0.02298133, 0.20382276, 0.042012155, -0.24639016)

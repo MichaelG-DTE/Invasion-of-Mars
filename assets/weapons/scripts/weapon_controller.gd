@@ -143,3 +143,13 @@ func switch_weapon(weapon_data: WeaponData) -> void:
 func has_ammo() -> bool: # helper function for finding ammo
 	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
 	return weapon_data.ammo > 0
+
+func reload_weapon():
+	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
+	weapon_data.ammo = current_weapon.max_ammo
+	current_weapon.total_ammo -= current_weapon.max_ammo
+	print("reloaded")
+	print(current_weapon.total_ammo)
+	await get_tree().create_timer(2).timeout
+	
+	weapon_state_chart.send_event("OnIdle")

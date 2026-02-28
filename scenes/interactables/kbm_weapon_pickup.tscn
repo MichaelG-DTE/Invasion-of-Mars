@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ctbf4v2it14bo"]
+
+[ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weapon_pickup.tscn" id="1_mo8gn"]
+[ext_resource type="Resource" uid="uid://bwnd6lufp0ey2" path="res://assets/weapons/resources/MD RICO-KBM.tres" id="2_g0pmd"]
+[ext_resource type="PackedScene" uid="uid://dxj2et5neev31" path="res://scenes/weapons/rocket_launcher_temp.tscn" id="2_kl1ae"]
+
+[node name="KBMWeaponPickup" unique_id=1825521633 instance=ExtResource("1_mo8gn")]
+weapon_slot = 4
+weapon_resource = ExtResource("2_g0pmd")
+
+[node name="challenger" parent="." index="1" unique_id=824978881]
+visible = false
+
+[node name="RocketLauncherTemp" parent="." index="2" unique_id=1634502107 instance=ExtResource("2_kl1ae")]
+transform = Transform3D(-1.1317381, 0, -0.9844639, 0, 1.5, 0, 0.9844639, 0, -1.1317381, -0.07866362, 0, 0.074813604)

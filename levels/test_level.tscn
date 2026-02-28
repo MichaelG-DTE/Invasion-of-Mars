@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="1_46lwt"]
 [ext_resource type="Texture2D" uid="uid://58pxddda8waj" path="res://2K/Poliigon_MetalPaintedMatte_7037_Roughness.jpg" id="2_o6mel"]
 [ext_resource type="Texture2D" uid="uid://dbqlifn5revim" path="res://2K/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg" id="3_e7anx"]
+[ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weapon_pickup.tscn" id="4_o6mel"]
+[ext_resource type="Resource" uid="uid://d0mhjhy1536qp" path="res://assets/weapons/resources/MD ARE-18.tres" id="5_e7anx"]
+[ext_resource type="PackedScene" uid="uid://gbv436xmkqlv" path="res://scenes/interactables/shotgun_weapon_pickup.tscn" id="6_e7anx"]
+[ext_resource type="PackedScene" uid="uid://ctbf4v2it14bo" path="res://scenes/interactables/kbm_weapon_pickup.tscn" id="7_ur00s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srpys"]
 
@@ -140,3 +144,16 @@ transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, -0.4219427, 1.031
 shape = SubResource("ConcavePolygonShape3D_e7anx")
 
 [node name="WorldEnvironment" parent="." unique_id=1091596004 instance=ExtResource("1_46lwt")]
+
+[node name="WeaponPickups" type="Node3D" parent="." unique_id=295692873]
+
+[node name="ARWeaponPickup" parent="WeaponPickups" unique_id=1825521633 instance=ExtResource("4_o6mel")]
+transform = Transform3D(-6.556708e-08, 1.5000001, 0, -1.409539, -6.161291e-08, -0.51303023, -0.5130302, -2.2425263e-08, 1.409539, 7.1529536, 2.232931, -7.4026003)
+weapon_slot = 2
+weapon_resource = ExtResource("5_e7anx")
+
+[node name="ShotgunWeaponPickup" parent="WeaponPickups" unique_id=265430830 instance=ExtResource("6_e7anx")]
+transform = Transform3D(-3.4969112e-08, 0.8, 0, -0.8, -3.4969112e-08, 0, 0, 0, 0.8, 7.6903, 2.2174249, -7.405243)
+
+[node name="KBMWeaponPickup" parent="WeaponPickups" unique_id=2127087597 instance=ExtResource("7_ur00s")]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 8.547334, 2.253092, -7.3776264)

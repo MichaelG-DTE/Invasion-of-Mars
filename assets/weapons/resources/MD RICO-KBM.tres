@@ -2,16 +2,21 @@
 
 [ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_c0kgo"]
 [ext_resource type="PackedScene" uid="uid://dc6jjcajosmty" path="res://scenes/weapons/projectile.tscn" id="1_ou4nb"]
+[ext_resource type="PackedScene" uid="uid://dxj2et5neev31" path="res://scenes/weapons/rocket_launcher_temp.tscn" id="3_2ftrf"]
 
 [resource]
 script = ExtResource("1_c0kgo")
 weapon_name = "MD RICO-KBM"
 damage = 50.0
 max_ammo = 4
+total_ammo = 8
+starting_ammo = 8
 fire_rate = 1.5
 range = 50.0
 projectile_speed = 50.0
 is_hitscan = false
+weapon_model = ExtResource("3_2ftrf")
 projectile_scene = ExtResource("1_ou4nb")
 spread_angle = 0.0
+weapon_position = Vector3(0.2, 0, -0.2)
 metadata/_custom_type_script = "uid://1o5b5fhg1r5b"

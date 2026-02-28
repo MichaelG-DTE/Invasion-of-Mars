@@ -6,6 +6,5 @@
 [resource]
 script = ExtResource("1_4hloq")
 weapon = ExtResource("2_ajb3d")
-unlocked = true
 ammo = 4
 metadata/_custom_type_script = "uid://nm7o1ht1lsba"

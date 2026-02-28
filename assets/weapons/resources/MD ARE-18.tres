@@ -1,15 +1,20 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://d0mhjhy1536qp"]
 
 [ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_ms0ev"]
+[ext_resource type="PackedScene" uid="uid://c36cgwdvixlwo" path="res://scenes/weapons/challenger.tscn" id="2_d4xsr"]
 
 [resource]
 script = ExtResource("1_ms0ev")
 weapon_name = "MD ARE-18"
 damage = 10.0
 max_ammo = 60
+total_ammo = 360
+starting_ammo = 360
 fire_rate = 20.0
 is_automatic = true
 range = 30.0
 accuracy = 60
+weapon_model = ExtResource("2_d4xsr")
 spread_angle = 25.0
+weapon_position = Vector3(0.15, -0.3, -0.2)
 metadata/_custom_type_script = "uid://1o5b5fhg1r5b"

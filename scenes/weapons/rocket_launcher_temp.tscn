@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dxj2et5neev31"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cymoj"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.91
+
+[sub_resource type="BoxMesh" id="BoxMesh_8dh08"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="RocketLauncherTemp" type="Node3D" unique_id=1634502107]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=19293748]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.08049005, 0, -3.5183318e-09)
+mesh = SubResource("CylinderMesh_cymoj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1038988767]
+transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, 0.053854078, -0.1)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=766679754]
+transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, 0.053854078, 0.10411171)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2001459318]
+transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, -0.080166996, -0.1)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=2048377343]
+transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, -0.080166996, 0.10411171)
+mesh = SubResource("BoxMesh_8dh08")

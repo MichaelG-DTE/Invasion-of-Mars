@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c36cgwdvixlwo"]
+
+[ext_resource type="PackedScene" uid="uid://dceymoullwxgp" path="res://assets/blendermodels/challenger.glb" id="1_nhka5"]
+
+[node name="challenger" unique_id=824978881 instance=ExtResource("1_nhka5")]
+transform = Transform3D(2.384976e-10, 0, -0.023191065, 0, 0.02, 0, 0.02, 0, 2.765507e-10, 0, 0, 0)
+
+[node name="Plane" parent="." index="1" unique_id=582575275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.116145, 0, 11.782975, 0)
+
+[node name="Cube_003" parent="." index="6" unique_id=1024252842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8054924, 11.147016, 0.9351031)
