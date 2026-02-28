@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b8gp1n3q75esu"]
+
+[ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://assets/weapons/scripts/weapon_data.gd" id="1_dlrik"]
+[ext_resource type="Resource" uid="uid://d0mhjhy1536qp" path="res://assets/weapons/resources/MD ARE-18.tres" id="2_t7qkd"]
+
+[resource]
+script = ExtResource("1_dlrik")
+weapon = ExtResource("2_t7qkd")
+unlocked = true
+ammo = 60
+metadata/_custom_type_script = "uid://nm7o1ht1lsba"

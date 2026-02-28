@@ -6,14 +6,12 @@ class_name WeaponController extends Node
 @export var weapon_state_chart : StateChart
 
 var current_weapon_model: Node3D
-var current_ammo : int
 var can_fire_next : bool = true
 var fire_rate_timer : float = 0.0
 
 func _ready() -> void:
 	if current_weapon:
 		spawn_weapon_model() # spwans weapon on first loading in
-		current_ammo = current_weapon.max_ammo
 		
 
 func _process(delta: float) -> void:
@@ -33,12 +31,12 @@ func spawn_weapon_model():
 		current_weapon_model.position = current_weapon.weapon_position
 
 func can_fire() -> bool:
-	return current_ammo > 0 and can_fire_next
+	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
+	return weapon_data.ammo > 0 and can_fire_next
 		
 func fire_weapon() -> void:
 	if can_fire(): # checks for the ammo amount
-		current_ammo -= 1 # removes one bullet
-		print("you fired now you have this many bullets: ", current_ammo)
+		managers.weapon_manager.use_ammo(managers.weapon_manager.current_slot) # removes one bullet
 		
 		# firing cooldown
 		can_fire_next = false
@@ -131,3 +129,17 @@ func _spawn_projectile() -> void:
 	
 	# prepare the projectile
 	projectile.setup(velocity, current_weapon.damage)
+
+func switch_weapon(weapon_data: WeaponData) -> void:
+	current_weapon = weapon_data.weapon
+	
+	if current_weapon_model:
+		current_weapon_model.queue_free()
+		
+	spawn_weapon_model()
+	
+	weapon_state_chart.send_event("OnIdle")
+
+func has_ammo() -> bool: # helper function for finding ammo
+	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
+	return weapon_data.ammo > 0

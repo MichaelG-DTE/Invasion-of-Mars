@@ -4,6 +4,7 @@ class_name PlayerController extends CharacterBody3D
 @export var step_handler : StepHandlerComponent
 @export var camera : CameraController
 @export var camera_effects : Camera3D
+@export var weapon_controller : WeaponController
 @export var state_chart : StateChart
 @export var standing_collision : CollisionShape3D
 @export var crouching_collision : CollisionShape3D

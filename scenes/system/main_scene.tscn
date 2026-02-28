@@ -3,6 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://msugkxtpvtas" path="res://levels/test_level.tscn" id="1_mgb3u"]
 [ext_resource type="Script" uid="uid://c076hdkvkmp2v" path="res://scripts/system/gamemanager.gd" id="1_qoi2i"]
 [ext_resource type="PackedScene" uid="uid://ccqyuednxqcbu" path="res://scenes/ui/user_interface.tscn" id="1_rtgv3"]
+[ext_resource type="Script" uid="uid://dli6v4cw3ijmm" path="res://scripts/system/weapon_manager.gd" id="2_bvk2m"]
+[ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://assets/weapons/scripts/weapon_data.gd" id="3_rc0n7"]
+[ext_resource type="Resource" uid="uid://ddm18y0rrtd12" path="res://assets/weapons/resources/data/MD P-11 Data.tres" id="4_tpgha"]
+[ext_resource type="Resource" uid="uid://b8gp1n3q75esu" path="res://assets/weapons/resources/data/MD ARE-18 Data.tres" id="5_u4ui1"]
+[ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
+[ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
+[ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
 
@@ -11,8 +18,21 @@
 [node name="GameManager" type="Node" parent="Managers" unique_id=967645447]
 script = ExtResource("1_qoi2i")
 
+[node name="WeaponManager" type="Node" parent="Managers" unique_id=767511406 node_paths=PackedStringArray("player")]
+script = ExtResource("2_bvk2m")
+weapons = Dictionary[int, ExtResource("3_rc0n7")]({
+1: ExtResource("4_tpgha"),
+2: ExtResource("5_u4ui1"),
+3: ExtResource("6_7r8fc"),
+4: ExtResource("7_tpgha")
+})
+player = NodePath("../../CurrentLevel/Player")
+
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=353157369]
 
 [node name="TestLevel" parent="CurrentLevel" unique_id=136392307 instance=ExtResource("1_mgb3u")]
+
+[node name="Player" parent="CurrentLevel" unique_id=96954163 groups=["player"] instance=ExtResource("8_ufluw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.4852347, -8.129205)
 
 [node name="UserInterface" parent="." unique_id=738552373 instance=ExtResource("1_rtgv3")]

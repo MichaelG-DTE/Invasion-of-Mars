@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bslcibcjbvyqp"]
+
+[ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://assets/weapons/scripts/weapon_data.gd" id="1_4t346"]
+[ext_resource type="Resource" uid="uid://cwb7ejvgbfthi" path="res://assets/weapons/resources/MD BMR-99.tres" id="2_nlcv3"]
+
+[resource]
+script = ExtResource("1_4t346")
+weapon = ExtResource("2_nlcv3")
+unlocked = true
+ammo = 8
+metadata/_custom_type_script = "uid://nm7o1ht1lsba"

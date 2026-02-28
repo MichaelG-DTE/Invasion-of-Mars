@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8jljye43w6vr"]
+
+[ext_resource type="PackedScene" uid="uid://b5fh7u6jtxe2a" path="res://assets/blendermodels/codreanu.glb" id="1_aj5ln"]
+
+[node name="codreanu" unique_id=1786985514 instance=ExtResource("1_aj5ln")]
+transform = Transform3D(-0.03, 0, -2.6226832e-09, 0, 0.03, 0, 2.6226832e-09, 0, -0.03, 0, 0, 0)

@@ -37,12 +37,13 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uniwh"]
 
-[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast")]
+[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast")]
 collision_layer = 2
 script = ExtResource("1_gmlin")
 step_handler = NodePath("Components/StepHandler")
 camera = NodePath("CameraController")
 camera_effects = NodePath("CameraController/Camera3D")
+weapon_controller = NodePath("Components/WeaponController")
 state_chart = NodePath("StateChart")
 standing_collision = NodePath("Standing Collision")
 crouching_collision = NodePath("Crouching Collision")

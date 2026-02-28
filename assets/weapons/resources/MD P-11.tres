@@ -6,6 +6,9 @@
 
 [resource]
 script = ExtResource("1_jdnyo")
+max_ammo = 20
+range = 40.0
+accuracy = 90
 weapon_model = ExtResource("2_744yx")
 projectile_scene = ExtResource("1_j44sx")
 weapon_position = Vector3(0.3, -0.2, -0.3)

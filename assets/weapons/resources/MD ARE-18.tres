@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://d0mhjhy1536qp"]
+
+[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_ms0ev"]
+
+[resource]
+script = ExtResource("1_ms0ev")
+weapon_name = "MD ARE-18"
+damage = 10.0
+max_ammo = 60
+fire_rate = 20.0
+is_automatic = true
+range = 30.0
+accuracy = 60
+spread_angle = 25.0
+metadata/_custom_type_script = "uid://1o5b5fhg1r5b"
