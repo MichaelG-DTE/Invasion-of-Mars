@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c23kpglq4pmfo"]
+
+[ext_resource type="PackedScene" uid="uid://vt4agafj11yu" path="res://scenes/interactables/base_pickup.tscn" id="1_aox64"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t826o"]
+size = Vector3(0.6, 0.3, 0.6)
+
+[node name="MD P-11 Ammo" unique_id=1825521633 instance=ExtResource("1_aox64")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=42939125]
+mesh = SubResource("BoxMesh_t826o")

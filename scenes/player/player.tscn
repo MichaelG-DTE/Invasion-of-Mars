@@ -37,7 +37,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uniwh"]
 
-[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast")]
+[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "torch")]
 collision_layer = 2
 script = ExtResource("1_gmlin")
 step_handler = NodePath("Components/StepHandler")
@@ -49,6 +49,7 @@ standing_collision = NodePath("Standing Collision")
 crouching_collision = NodePath("Crouching Collision")
 crouch_check = NodePath("CrouchCheck")
 interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
+torch = NodePath("CameraController/Camera3D/Torch")
 
 [node name="Standing Collision" type="CollisionShape3D" parent="." unique_id=741992447]
 shape = SubResource("CapsuleShape3D_gmlin")
@@ -81,6 +82,10 @@ script = ExtResource("4_3j4b4")
 player = NodePath("../..")
 run_pitch = 0.15
 run_roll = 0.3
+
+[node name="Torch" type="SpotLight3D" parent="CameraController/Camera3D" unique_id=1702032370]
+visible = false
+light_energy = 8.0
 
 [node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D" unique_id=1291529059]
 target_position = Vector3(0, 0, -3)

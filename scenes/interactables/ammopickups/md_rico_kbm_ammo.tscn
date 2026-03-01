@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhs86bv0auhwy"]
+
+[ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="1_tio07"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xj21"]
+albedo_color = Color(0.21806103, 0.21806103, 0.21806103, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cfbjm"]
+material = SubResource("StandardMaterial3D_2xj21")
+size = Vector3(0.6, 0.3, 0.6)
+
+[node name="MD RICO KBM Ammo" unique_id=1825521633 instance=ExtResource("1_tio07")]
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=42939125]
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=1944512116]
+mesh = SubResource("BoxMesh_cfbjm")

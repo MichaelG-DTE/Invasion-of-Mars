@@ -10,6 +10,7 @@ class_name PlayerController extends CharacterBody3D
 @export var crouching_collision : CollisionShape3D
 @export var crouch_check : ShapeCast3D
 @export var interaction_raycast : RayCast3D
+@export var torch : SpotLight3D
 @export_category("Movement Settings")
 @export_group("Easing")
 var acceleration : float = 2
@@ -60,6 +61,12 @@ func _physics_process(delta: float) -> void:
 	 
 	if is_on_floor(): # prevents step checks from running while in air
 		step_handler.handle_step_climbing()
+		
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("torch"):
+		torch.visible = true
+	elif torch.visible == true and Input.is_action_just_pressed("torch"):
+		torch.visible = false
 
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input) # updates rotation of player

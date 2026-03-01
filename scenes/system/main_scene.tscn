@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
 [ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
+[ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="11_u4ui1"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
 
@@ -36,3 +37,5 @@ player = NodePath("../../CurrentLevel/Player")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.4852347, -8.129205)
 
 [node name="UserInterface" parent="." unique_id=738552373 instance=ExtResource("1_rtgv3")]
+
+[node name="WorldEnvironment" parent="." unique_id=1091596004 instance=ExtResource("11_u4ui1")]

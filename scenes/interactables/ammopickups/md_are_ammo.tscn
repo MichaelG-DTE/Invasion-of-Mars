@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d2l4jcwlu7r70"]
+
+[ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="1_6wjh8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wjh8"]
+albedo_color = Color(1, 0.57254905, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yyt1q"]
+material = SubResource("StandardMaterial3D_6wjh8")
+size = Vector3(0.6, 0.3, 0.6)
+
+[node name="MD ARE ammo" unique_id=1825521633 instance=ExtResource("1_6wjh8")]
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=42939125]
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=593489857]
+mesh = SubResource("BoxMesh_yyt1q")

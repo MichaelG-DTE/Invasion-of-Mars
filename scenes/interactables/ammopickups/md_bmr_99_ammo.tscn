@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cewvskl68d21d"]
+
+[ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="1_wqnxc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqnxc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aavp0"]
+material = SubResource("StandardMaterial3D_wqnxc")
+size = Vector3(0.6, 0.3, 0.6)
+
+[node name="MD BMR-99 Ammo" unique_id=1825521633 instance=ExtResource("1_wqnxc")]
+
+[node name="MeshInstance3D2" parent="." index="2" unique_id=593489857]
+visible = false
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="3" unique_id=1119312716]
+mesh = SubResource("BoxMesh_aavp0")
