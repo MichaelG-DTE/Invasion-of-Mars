@@ -23,6 +23,8 @@ var deceleration : float = 14
 @export var jump_velocity : float = 7
 @export var fall_velocity_threshold : float = -5.0
 
+@onready var animation_player: AnimationPlayer = $Torch/AnimationPlayer
+
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 var sprint_modifier : float = 0.0
@@ -30,6 +32,8 @@ var crouch_modifier : float = 0.0
 var speed : float = 0.0
 var current_fall_velocity : float 
 var previous_velocity : Vector3
+var flashlight_rotation := 15.0 # smooth rotation
+var flashlight_position := 15.0 # smooth position
 
 # booleans
 var is_sprinting = false
@@ -62,11 +66,19 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor(): # prevents step checks from running while in air
 		step_handler.handle_step_climbing()
 		
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	update_flashlight(delta)
+	
 	if Input.is_action_just_pressed("torch"):
-		torch.visible = true
-	elif torch.visible == true and Input.is_action_just_pressed("torch"):
-		torch.visible = false
+		torch.visible = not torch.visible 
+		if torch.visible:
+			animation_player.play("torchpoweron")
+
+func update_flashlight(delta):
+	torch.global_transform = Transform3D(
+		torch.global_transform.basis.slerp(camera.global_transform.basis, delta * flashlight_rotation),
+		torch.global_transform.origin.slerp(camera.global_transform.origin, delta * flashlight_position)
+	) # slerp smooths the transform of the torch
 
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input) # updates rotation of player

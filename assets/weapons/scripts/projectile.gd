@@ -2,6 +2,7 @@ class_name Projectile extends Area3D
 
 var velocity: Vector3
 var damage: float
+@export var explosion : PackedScene 
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -33,6 +34,16 @@ func setup(vel: Vector3, dmg: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	print("Projectile hit: ", body.name, " at ", global_position)
 	_spawn_impact_marker(global_position)
+	
+	var health_component = body.get_node_or_null("HealthComponent")
+	
+	if health_component and health_component.has_method("take_damage"):
+		health_component.take_damage(damage, self)
+	
+	#var explosioneffect = explosion.instantiate()
+	#self.add_child(explosioneffect)
+	#await get_tree().create_timer(0.5).timeout 
+	
 	queue_free()
 	
 func _spawn_impact_marker(position: Vector3) -> void:

@@ -81,7 +81,8 @@ func _perform_hitscan() -> void:
 		if result:
 			print("Hit: ", result.collider.name, "At", result.position)
 			_spawn_impact_marker(result.position)
-		
+			
+			_apply_damage_to_target(result.collider)
 
 func _spawn_impact_marker(position: Vector3) -> void:
 	var marker = MeshInstance3D.new()
@@ -154,3 +155,10 @@ func reload_weapon():
 		await get_tree().create_timer(2).timeout
 		
 		weapon_state_chart.send_event("OnIdle")
+		
+func _apply_damage_to_target(target: Node3D) -> void:
+	# check if target has health component
+	var health_component = target.get_node_or_null("HealthComponent")
+	
+	if health_component and health_component.has_method("take_damage"):
+		health_component.take_damage(current_weapon.damage, owner)

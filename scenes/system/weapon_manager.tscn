@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d0jwtswpvkmta"]
+
+[ext_resource type="Script" uid="uid://dli6v4cw3ijmm" path="res://scripts/system/weapon_manager.gd" id="1_pxqo8"]
+[ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://assets/weapons/scripts/weapon_data.gd" id="2_oryoi"]
+[ext_resource type="Resource" uid="uid://ddm18y0rrtd12" path="res://assets/weapons/resources/data/MD P-11 Data.tres" id="3_w2dk7"]
+[ext_resource type="Resource" uid="uid://b8gp1n3q75esu" path="res://assets/weapons/resources/data/MD ARE-18 Data.tres" id="4_ol6q1"]
+[ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="5_ieqn0"]
+[ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="6_6nn70"]
+
+[node name="WeaponManager" type="Node" unique_id=1896680058 node_paths=PackedStringArray("player")]
+script = ExtResource("1_pxqo8")
+weapons = Dictionary[int, ExtResource("2_oryoi")]({
+1: ExtResource("3_w2dk7"),
+2: ExtResource("4_ol6q1"),
+3: ExtResource("5_ieqn0"),
+4: ExtResource("6_6nn70")
+})
+player = NodePath("")

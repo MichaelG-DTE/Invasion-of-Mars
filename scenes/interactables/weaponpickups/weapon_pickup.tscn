@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c36cgwdvixlwo" path="res://scenes/weapons/challenger.tscn" id="2_kf1c6"]
 
 [node name="ARWeaponPickup" unique_id=1825521633 instance=ExtResource("1_tyijf")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("2_jlpr6")
 weapon_slot = 1
 weapon_resource = null

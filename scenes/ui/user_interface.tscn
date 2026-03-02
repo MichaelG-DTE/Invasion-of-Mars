@@ -13,3 +13,4 @@ grow_vertical = 2
 
 [node name="ReticleDraw" parent="Reticle" unique_id=1764722979 instance=ExtResource("1_284y0")]
 layout_mode = 2
+radius = 15.0

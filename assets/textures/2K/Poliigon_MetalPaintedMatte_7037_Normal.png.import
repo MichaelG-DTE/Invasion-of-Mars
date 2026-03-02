@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://58pxddda8waj"
-path.s3tc="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Roughness.jpg-fe4970ccfbfbd43e139b76fe1ba55fab.s3tc.ctex"
+uid="uid://b4vlbilyno8pl"
+path.s3tc="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Normal.png-10154f063fa50a14c034d1fcf472feff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://2K/Poliigon_MetalPaintedMatte_7037_Roughness.jpg"
-dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Roughness.jpg-fe4970ccfbfbd43e139b76fe1ba55fab.s3tc.ctex"]
+source_file="res://assets/textures/2K/Poliigon_MetalPaintedMatte_7037_Normal.png"
+dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Normal.png-10154f063fa50a14c034d1fcf472feff.s3tc.ctex"]
 
 [params]
 

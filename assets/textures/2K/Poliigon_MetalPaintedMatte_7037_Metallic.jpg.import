@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbqlifn5revim"
-path.s3tc="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg-f76288e9c3f18e53b708d479774b0f22.s3tc.ctex"
+uid="uid://pw06xmy4wahj"
+path="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Metallic.jpg-ad86ac97002bffbdee948301b04aa5db.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://2K/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg"
-dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg-f76288e9c3f18e53b708d479774b0f22.s3tc.ctex"]
+source_file="res://assets/textures/2K/Poliigon_MetalPaintedMatte_7037_Metallic.jpg"
+dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Metallic.jpg-ad86ac97002bffbdee948301b04aa5db.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4vlbilyno8pl"
-path="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Normal.png-a50077ea7d258274085ca8d57e5643ae.ctex"
+uid="uid://efvb0j3s022l"
+path="res://.godot/imported/Circle03.png-f8b4e15276c7cd53400aa5a512578b65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2K/Poliigon_MetalPaintedMatte_7037_Normal.png"
-dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Normal.png-a50077ea7d258274085ca8d57e5643ae.ctex"]
+source_file="res://assets/textures/Circle03.png"
+dest_files=["res://.godot/imported/Circle03.png-f8b4e15276c7cd53400aa5a512578b65.ctex"]
 
 [params]
 

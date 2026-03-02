@@ -1,16 +1,7 @@
 [gd_scene format=3 uid="uid://msugkxtpvtas"]
 
-[ext_resource type="Texture2D" uid="uid://58pxddda8waj" path="res://2K/Poliigon_MetalPaintedMatte_7037_Roughness.jpg" id="2_o6mel"]
-[ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="2_wkb0e"]
-[ext_resource type="Texture2D" uid="uid://dbqlifn5revim" path="res://2K/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg" id="3_e7anx"]
-[ext_resource type="PackedScene" uid="uid://bhs86bv0auhwy" path="res://scenes/interactables/ammopickups/md_rico_kbm_ammo.tscn" id="3_paa45"]
-[ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weaponpickups/weapon_pickup.tscn" id="4_o6mel"]
-[ext_resource type="Resource" uid="uid://d0mhjhy1536qp" path="res://assets/weapons/resources/MD ARE-18.tres" id="5_e7anx"]
-[ext_resource type="PackedScene" uid="uid://gbv436xmkqlv" path="res://scenes/interactables/weaponpickups/shotgun_weapon_pickup.tscn" id="6_e7anx"]
-[ext_resource type="PackedScene" uid="uid://ctbf4v2it14bo" path="res://scenes/interactables/weaponpickups/kbm_weapon_pickup.tscn" id="7_ur00s"]
-[ext_resource type="Script" uid="uid://b02a3b2nwrej6" path="res://scripts/Interactables/pickups/ammo_pickup.gd" id="9_paa45"]
-[ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="10_axl34"]
-[ext_resource type="PackedScene" uid="uid://cewvskl68d21d" path="res://scenes/interactables/ammopickups/md_bmr_99_ammo.tscn" id="11_8hjdj"]
+[ext_resource type="Texture2D" uid="uid://58pxddda8waj" path="res://assets/textures/2K/Poliigon_MetalPaintedMatte_7037_Roughness.jpg" id="2_o6mel"]
+[ext_resource type="Texture2D" uid="uid://dbqlifn5revim" path="res://assets/textures/2K/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg" id="3_e7anx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srpys"]
 
@@ -146,42 +137,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wndkh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Wall2" unique_id=420392840]
 transform = Transform3D(6, 0, 0, 2.3841858e-07, 1, 0, 0, 0, 6, -0.4219427, 1.031846, 0)
 shape = SubResource("ConcavePolygonShape3D_e7anx")
-
-[node name="WeaponPickups" type="Node3D" parent="." unique_id=295692873]
-
-[node name="ARWeaponPickup" parent="WeaponPickups" unique_id=42314136 instance=ExtResource("4_o6mel")]
-transform = Transform3D(-6.556708e-08, 1.5000001, 0, -1.409539, -6.161291e-08, -0.51303023, -0.5130302, -2.2425263e-08, 1.409539, 7.1529536, 2.232931, -7.4026003)
-weapon_slot = 2
-weapon_resource = ExtResource("5_e7anx")
-
-[node name="ShotgunWeaponPickup" parent="WeaponPickups" unique_id=265430830 instance=ExtResource("6_e7anx")]
-transform = Transform3D(-3.4969112e-08, 0.8, 0, -0.8, -3.4969112e-08, 0, 0, 0, 0.8, 7.6903, 2.2174249, -7.405243)
-
-[node name="KBMWeaponPickup" parent="WeaponPickups" unique_id=2127087597 instance=ExtResource("7_ur00s")]
-transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 8.547334, 2.253092, -7.3776264)
-
-[node name="AmmoPickups" type="Node3D" parent="." unique_id=783085452]
-
-[node name="MD P-11 Ammo" parent="AmmoPickups" unique_id=243416434 instance=ExtResource("10_axl34")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.916997, 1.6499995, -13.748079)
-script = ExtResource("9_paa45")
-weapon_slot = 1
-ammo_amount = 20
-
-[node name="MD ARE ammo" parent="AmmoPickups" unique_id=1825521633 instance=ExtResource("2_wkb0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.635543, 1.65, -15.336583)
-script = ExtResource("9_paa45")
-weapon_slot = 2
-ammo_amount = 60
-
-[node name="MD RICO KBM Ammo" parent="AmmoPickups" unique_id=1272311857 instance=ExtResource("3_paa45")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.61496, 1.6500005, -15.347476)
-script = ExtResource("9_paa45")
-weapon_slot = 4
-ammo_amount = 4
-
-[node name="MD BMR-99 Ammo" parent="AmmoPickups" unique_id=868587834 instance=ExtResource("11_8hjdj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.095949, 1.6499995, -13.724209)
-script = ExtResource("9_paa45")
-weapon_slot = 3
-ammo_amount = 8

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pw06xmy4wahj"
-path="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Metallic.jpg-a46722fecaadfad1ac3645728e6bc78d.ctex"
+uid="uid://b3h3u2kr0phgm"
+path="res://.godot/imported/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg-57fdf25cc715465092ffb062abf18b7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2K/Poliigon_MetalPaintedMatte_7037_Metallic.jpg"
-dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_Metallic.jpg-a46722fecaadfad1ac3645728e6bc78d.ctex"]
+source_file="res://assets/textures/2K/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg"
+dest_files=["res://.godot/imported/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg-57fdf25cc715465092ffb062abf18b7e.ctex"]
 
 [params]
 

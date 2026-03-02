@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bp4sjqg8j3e40"]
+
+[ext_resource type="Script" uid="uid://dhed3bgiuoryi" path="res://scripts/Components/health_component.gd" id="1_5e5n7"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_s0ndi"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_mhjqu"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_c8826"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="5_ree1y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkdt3"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jv8dc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yesca"]
+
+[node name="Warrior" type="CharacterBody3D" unique_id=1958788082]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1968164721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_vkdt3")
+mesh = SubResource("CapsuleMesh_jv8dc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1468951564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_yesca")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=56872689]
+script = ExtResource("1_5e5n7")
+max_health = 150.0
+metadata/_custom_type_script = "uid://dhed3bgiuoryi"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=608130383]
+path_desired_distance = 0.5
+avoidance_enabled = true
+
+[node name="StateChart" type="Node" parent="." unique_id=731318508]
+script = ExtResource("2_s0ndi")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart" unique_id=635525005]
+script = ExtResource("3_mhjqu")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateChart/Root" unique_id=1269398168]
+script = ExtResource("4_c8826")
+
+[node name="FollowState" type="Node" parent="StateChart/Root" unique_id=1387268247]
+script = ExtResource("4_c8826")
+
+[node name="OnIdle" type="Node" parent="StateChart/Root" unique_id=96670624]
+script = ExtResource("5_ree1y")
+to = NodePath("../IdleState")
+event = &"OnIdle"
+delay_in_seconds = "0.0"
+
+[node name="OnFollow" type="Node" parent="StateChart/Root" unique_id=311136611]
+script = ExtResource("5_ree1y")
+to = NodePath("../FollowState")
+event = &"OnFollow"
+delay_in_seconds = "0.0"

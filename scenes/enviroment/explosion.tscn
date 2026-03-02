@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bi1ts5gvycnpy"]
+
+[ext_resource type="Script" uid="uid://vkhhnc3jv1ts" path="res://scripts/destructibles/explosion.gd" id="1_64g3k"]
+[ext_resource type="PackedScene" uid="uid://c2lmoxdup8q1q" path="res://scenes/enviroment/explosion_vfx.tscn" id="2_441lk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7nnpn"]
+radius = 1.5
+
+[node name="Explosion" type="Area3D" unique_id=1568134343 node_paths=PackedStringArray("explosionvfx")]
+collision_layer = 32
+collision_mask = 26
+script = ExtResource("1_64g3k")
+explosionvfx = NodePath("ExplosionVFX")
+
+[node name="ExplosionVFX" parent="." unique_id=1145968805 instance=ExtResource("2_441lk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=639180608]
+shape = SubResource("SphereShape3D_7nnpn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
