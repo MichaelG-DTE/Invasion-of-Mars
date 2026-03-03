@@ -19,13 +19,13 @@ config/icon="res://icon.svg"
 
 managers="*uid://cmaae7pyhqp5j"
 
-[display]
-
-window/size/mode=3
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+
+[global_group]
+
+geometry=""
 
 [input]
 
@@ -100,6 +100,8 @@ collapse={
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="PlayerProjectile"
+3d_physics/layer_4="Enemy"
+3d_physics/layer_5="Explosion"
 
 [physics]
 
