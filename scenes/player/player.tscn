@@ -36,8 +36,6 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uf5tr"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_uniwh"]
-
 [sub_resource type="Animation" id="Animation_uniwh"]
 length = 0.001
 tracks/0/type = "value"
@@ -107,10 +105,6 @@ target_position = Vector3(0, 0.5, 0)
 [node name="WorldModel" type="Node3D" parent="." unique_id=1894365616]
 
 [node name="PlayerContainer" type="Node3D" parent="WorldModel" unique_id=1128691981]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel/PlayerContainer" unique_id=64220368]
-visible = false
-mesh = SubResource("CapsuleMesh_uniwh")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=378673298 node_paths=PackedStringArray("player_controller", "component_mouse_capture")]
 script = ExtResource("1_dovo2")

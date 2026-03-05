@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_3nkhv")
 weapon_name = "MD BMR-99"
-damage = 35.0
+damage = 15.0
 max_ammo = 8
 total_ammo = 40
 starting_ammo = 40
