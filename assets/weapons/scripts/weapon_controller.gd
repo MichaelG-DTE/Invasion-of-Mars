@@ -152,7 +152,7 @@ func reload_weapon():
 		current_weapon.total_ammo -= current_weapon.max_ammo
 		print("reloaded")
 		print(current_weapon.total_ammo)
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1.5).timeout
 		
 		weapon_state_chart.send_event("OnIdle")
 		
