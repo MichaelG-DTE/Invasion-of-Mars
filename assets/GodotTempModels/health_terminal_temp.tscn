@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ofyb6jaxvtnq"]
+
+[ext_resource type="Script" uid="uid://cwyeiqlfu4s21" path="res://scripts/Interactables/terminals/health_terminal_temp.gd" id="1_q7stl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
+albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7stl"]
+material = SubResource("StandardMaterial3D_kwox3")
+size = Vector3(0.1, 0.5, 0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w58ck"]
+data = PackedVector3Array(-0.049999997, 0.25, 0.25, 0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, -0.049999997, 0.25, -0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, -0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, -0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, 0.25, -0.25, 0.049999997, 0.25, -0.25, -0.049999997, -0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, -0.25, -0.25, -0.049999997, -0.25, -0.25)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4gn53"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_816py"]
+
+[node name="HealthTerminalTemp" type="StaticBody3D" unique_id=1993244436]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_q7stl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=213572237]
+mesh = SubResource("BoxMesh_q7stl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=567584182]
+shape = SubResource("ConcavePolygonShape3D_w58ck")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=898837163]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.037501752, -0.0988207, -0.10140817)
+mesh = SubResource("CylinderMesh_4gn53")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=445740086]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.034820706, -0.14824256, 0.12241632)
+mesh = SubResource("BoxMesh_816py")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1210387761]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.034820706, -0.004210174, 0.12241632)
+mesh = SubResource("BoxMesh_816py")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=360039683]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.034820706, 0.14667413, 0.12241632)
+mesh = SubResource("BoxMesh_816py")

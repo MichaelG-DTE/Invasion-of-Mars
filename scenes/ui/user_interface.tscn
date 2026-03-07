@@ -18,6 +18,10 @@ radius = 15.0
 [node name="Control" type="Control" parent="." unique_id=478329540]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 12.0
+offset_top = 523.0
+offset_right = 12.0
+offset_bottom = 523.0
 
 [node name="Health" type="Label" parent="Control" unique_id=580376041]
 layout_mode = 0

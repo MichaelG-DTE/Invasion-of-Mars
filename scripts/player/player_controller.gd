@@ -118,3 +118,6 @@ func check_fall_speed() -> bool:
 		
 func get_input_direction() -> Vector2:
 	return _input_dir
+	
+func trigger():
+	print("Just like liberals, you got triggered")

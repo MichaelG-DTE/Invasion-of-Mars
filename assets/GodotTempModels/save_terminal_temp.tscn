@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://2ntals7kk4kc"]
+
+[ext_resource type="Script" uid="uid://7n5jj3hugdey" path="res://scripts/Interactables/terminals/save_terminal_temp.gd" id="1_xqckf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylvn3"]
+albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ycecf"]
+material = SubResource("StandardMaterial3D_ylvn3")
+size = Vector3(0.1, 0.5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xqckf"]
+data = PackedVector3Array(-0.049999997, 0.25, 0.5, 0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, -0.049999997, 0.25, -0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, -0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, -0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, 0.25, -0.5, 0.049999997, 0.25, -0.5, -0.049999997, -0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, -0.25, -0.5, -0.049999997, -0.25, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o126c"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x1u8a"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.05
+
+[sub_resource type="Animation" id="Animation_xqckf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o126c"]
+resource_name = "Saved"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.9853695), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1u8a"]
+_data = {
+&"RESET": SubResource("Animation_xqckf"),
+&"Saved": SubResource("Animation_o126c")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1wj7"]
+font_color = Color(1, 1, 1, 0)
+
+[node name="SaveTerminalTemp" type="StaticBody3D" unique_id=1575750007]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_xqckf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1675563070]
+mesh = SubResource("BoxMesh_ycecf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1747536736]
+shape = SubResource("ConcavePolygonShape3D_xqckf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1346289553]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.053199977, 0.0031215996, -0.39738202)
+mesh = SubResource("BoxMesh_o126c")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=365183844]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.056854993, 0, 0.24518049)
+mesh = SubResource("CylinderMesh_x1u8a")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=506402553]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.053199977, 0.0031215996, -0.24792665)
+mesh = SubResource("BoxMesh_o126c")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=457714678]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.053199977, 0.0031215996, -0.092547834)
+mesh = SubResource("BoxMesh_o126c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1872080038]
+libraries/ = SubResource("AnimationLibrary_x1u8a")
+
+[node name="Label" type="Label" parent="." unique_id=164178731]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Saved!"
+label_settings = SubResource("LabelSettings_u1wj7")

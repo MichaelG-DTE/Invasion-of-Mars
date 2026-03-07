@@ -44,9 +44,6 @@ var _step_timer : float = 0.0
 func _process(delta: float) -> void:
 	calculate_view_offset(delta)
 	
-	if Input.is_action_just_pressed("test"):
-		add_damage_kick(_damage_pitch, _damage_roll, Vector3.ZERO)
-
 func calculate_view_offset(delta):
 	if not player: # ensures player is being referenced 
 		return

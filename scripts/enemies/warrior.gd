@@ -7,6 +7,7 @@ class_name Warrior extends GenisysEnemy
 @onready var state_chart: StateChart = $StateChart
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 
 var target : Node3D
 var state_machine
@@ -20,6 +21,7 @@ var attack_timer := 1.0
 func _ready() -> void:
 	super._ready()
 	
+	animation_player.play("Teleport")
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
 	

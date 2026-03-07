@@ -42,7 +42,7 @@ func heal(amount: float) -> void:
 	current_health = min(max_health, current_health + actual_heal)
 	
 	health_changed.emit(current_health, max_health)
-	
+	print(current_health)
 
 func _handle_death() -> void:
 	if not is_alive:

@@ -29,6 +29,8 @@
 [ext_resource type="Script" uid="uid://d2k1v8nni1cf7" path="res://assets/weapons/scripts/states/weapon_firing_state.gd" id="26_6cv16"]
 [ext_resource type="Script" uid="uid://chuh43i7rnix0" path="res://assets/weapons/scripts/weapon_state.gd" id="26_uniwh"]
 [ext_resource type="Script" uid="uid://bxcfplb85mpvu" path="res://assets/weapons/scripts/states/weapon_empty_state.gd" id="27_j4nxn"]
+[ext_resource type="PackedScene" uid="uid://ccqyuednxqcbu" path="res://scenes/ui/user_interface.tscn" id="30_iqsei"]
+[ext_resource type="Script" uid="uid://clp4csb8iead6" path="res://scripts/ui/interact_text.gd" id="31_tffgl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
 
@@ -72,9 +74,12 @@ _data = {
 &"torchpoweron": SubResource("Animation_tffgl")
 }
 
-[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "torch")]
+[sub_resource type="LabelSettings" id="LabelSettings_iqsei"]
+font_size = 18
+
+[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "torch") groups=["player"]]
 collision_layer = 2
-collision_mask = 25
+collision_mask = 89
 script = ExtResource("1_gmlin")
 step_handler = NodePath("Components/StepHandler")
 camera = NodePath("CameraController")
@@ -121,6 +126,7 @@ run_roll = 0.3
 
 [node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D" unique_id=1291529059]
 target_position = Vector3(0, 0, -3)
+collision_mask = 33
 script = ExtResource("4_8ydkj")
 
 [node name="Torch" type="SpotLight3D" parent="." unique_id=1702032370]
@@ -333,6 +339,30 @@ script = ExtResource("26_6cv16")
 
 [node name="EmptyState" type="Node" parent="WeaponStateMachine/WeaponState" unique_id=2105045720]
 script = ExtResource("27_j4nxn")
+
+[node name="UserInterface" parent="." unique_id=738552373 instance=ExtResource("30_iqsei")]
+
+[node name="BoxContainer" type="BoxContainer" parent="UserInterface" unique_id=236303715]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -78.0
+offset_right = 86.5
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractText" type="Label" parent="UserInterface/BoxContainer" unique_id=240334406]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Press \"E\" to interact"
+label_settings = SubResource("LabelSettings_iqsei")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("31_tffgl")
 
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded" to="StateMachine/MovementState/GroundedState" method="_on_grounded_state_physics_processing"]
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/GroundedState/IdleState" method="_on_idle_state_physics_processing"]

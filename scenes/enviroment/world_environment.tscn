@@ -300,10 +300,10 @@ tracks/9/path = NodePath(".:environment:sky:sky_material:sky_top_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 2.0326169),
+"times": PackedFloat32Array(0, 2.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.80682987, 2.4546682e-06, 0.4534521, 1), Color(0.21050677, 0.25070682, 0.25060907, 1)]
+"values": [Color(0.80682987, 2.4546682e-06, 0.4534521, 1), Color(0.2671443, 0.31354335, 0.31353724, 1)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -312,10 +312,10 @@ tracks/10/path = NodePath(".:environment:sky:sky_material:ground_horizon_color")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 1.9998326),
+"times": PackedFloat32Array(0, 2.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 0.4627451, 0.4627451, 1), Color(0.26870683, 0.30049488, 0.3095789, 1)]
+"values": [Color(1, 0.4627451, 0.4627451, 1), Color(0.2671443, 0.31354335, 0.31353724, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -324,10 +324,10 @@ tracks/11/path = NodePath(".:environment:sky:sky_material:sky_horizon_color")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 1.9998326),
+"times": PackedFloat32Array(0, 2.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 0.46186632, 0.46263558, 1), Color(0.27058825, 0.3019608, 0.30980393, 1)]
+"values": [Color(1, 0.46186632, 0.46263558, 1), Color(0.2671443, 0.31354335, 0.31353724, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u46sn"]

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bc8vqdjiwv4lv"]
+
+[ext_resource type="Texture2D" uid="uid://nlo75sirvfdv" path="res://assets/textures/9813.jpg" id="1_8ev0g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btktk"]
+albedo_texture = ExtResource("1_8ev0g")
+emission_enabled = true
+emission = Color(0.055247292, 0.18134019, 1, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="TorusMesh" id="TorusMesh_175yc"]
+material = SubResource("StandardMaterial3D_btktk")
+inner_radius = 1.0
+outer_radius = 0.9
+rings = 10
+ring_segments = 10
+
+[node name="TeleportAnimation" type="Node3D" unique_id=507090103]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=882989881]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2000758147]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1707159441]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=761180733]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.5, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1326869321]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1203971985]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.25654936, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1121227203]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.75654936, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1160212110]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.2565494, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=758558388]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.7565494, 0)
+mesh = SubResource("TorusMesh_175yc")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=2064147804]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.2565494, 0)
+mesh = SubResource("TorusMesh_175yc")
