@@ -10,11 +10,14 @@ func _ready() -> void:
 func interact():
 	var health = player.get_node_or_null("HealthComponent")
 	while health.current_health != 100:
-		_apply_health_to_player(player)
-		print("Player healed 10 hp")
-		if health.current_health == 100:
+		if health.current_health > 0:
+			_apply_health_to_player(player)
+			print("Player healed 10 hp")
+			if health.current_health == 100:
+				break
+		else:
 			break
-
+		
 func _apply_health_to_player(target: Node3D) -> void:
 	# check if target has health component
 	var health = target.get_node_or_null("HealthComponent")

@@ -18,10 +18,6 @@ data = PackedVector3Array(-0.049999997, 0.25, 0.5, 0.049999997, 0.25, 0.5, -0.04
 [sub_resource type="BoxMesh" id="BoxMesh_a2gr8"]
 material = SubResource("StandardMaterial3D_btkvi")
 
-[sub_resource type="LabelSettings" id="LabelSettings_sgqei"]
-font = ExtResource("2_a2gr8")
-font_color = Color(0.82981527, 0.9353881, 1.540184e-06, 1)
-
 [node name="TerminalTemp" type="StaticBody3D" unique_id=1285270131]
 collision_layer = 32
 collision_mask = 2
@@ -44,32 +40,38 @@ mesh = SubResource("BoxMesh_a2gr8")
 [node name="TerminalPage" type="Control" parent="." unique_id=257505728]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="TerminalPage" unique_id=1316822426]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1110.0
-offset_bottom = 613.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="TerminalPage" unique_id=231172890]
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage" unique_id=2101751698]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = 31.0
-offset_right = 921.0
-offset_bottom = 428.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage/MarginContainer" unique_id=1647182907]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_a2gr8")
+bbcode_enabled = true
 text = "You are Awake.
 
 The Night has come to an end.
@@ -90,14 +92,14 @@ Earth, and all her people will perish.
 
 We are glad you are awake to witness it.
 "
-label_settings = SubResource("LabelSettings_sgqei")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage" unique_id=1871847832]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 1152.0
-offset_bottom = 651.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 border_color = Color(0.82981527, 0.9353881, 1.540184e-06, 1)
 border_width = 5.0
 editor_only = false

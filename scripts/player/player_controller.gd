@@ -121,3 +121,6 @@ func get_input_direction() -> Vector2:
 	
 func trigger():
 	print("Just like liberals, you got triggered")
+
+func apply_velocity():
+	velocity.y += 15
