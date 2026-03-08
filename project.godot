@@ -23,6 +23,7 @@ managers="*uid://cmaae7pyhqp5j"
 
 window/size/mode=3
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
