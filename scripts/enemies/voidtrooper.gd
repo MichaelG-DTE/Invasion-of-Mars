@@ -10,7 +10,6 @@ class_name VoidTrooper extends GenisysEnemy
 @onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 @onready var health_component: HealthComponent = $HealthComponent
 @export var projectile_scene : PackedScene
-@onready var marker_3d: Marker3D = $Marker3D
 
 var target : Node3D
 var state_machine
@@ -131,15 +130,15 @@ func _spawn_projectile() -> void:
 	
 	# position at camera
 	
-	projectile.global_transform = marker_3d.global_transform
+	projectile.global_transform = $%Marker3D.global_transform
 	
 	# calculate direction and velocity
-	var forward = marker_3d.global_transform.basis.z
+	var forward = $%Marker3D.global_transform.basis.z
 	
 	var accuracy_spread = (100 - accuracy) / 1000.0
 	var accuracy_x = randf_range(-accuracy_spread, accuracy_spread)
 	var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
-	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * marker_3d.global_transform.basis
+	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * $%Marker3D.global_transform.basis
 	
 	var velocity = direction * projectile_speed
 	

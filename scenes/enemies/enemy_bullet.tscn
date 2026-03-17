@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b0rto6mcr8jx5" path="res://scripts/enemies/enemy_bullet.gd" id="1_uhr6c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pi6h"]
-albedo_color = Color(1, 0, 1, 1)
+albedo_color = Color(0, 1, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 1, 1)
 emission_energy_multiplier = 5.0

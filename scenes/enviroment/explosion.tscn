@@ -11,6 +11,7 @@ script = ExtResource("1_64g3k")
 explosionvfx = NodePath("ExplosionVFX")
 
 [node name="ExplosionVFX" parent="." unique_id=1145968805 instance=ExtResource("2_441lk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="ExplosionDetectionRange" type="Area3D" parent="." unique_id=611222927]
 collision_layer = 16

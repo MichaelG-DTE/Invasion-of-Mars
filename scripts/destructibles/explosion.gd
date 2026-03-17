@@ -12,8 +12,9 @@ func _ready() -> void:
 	queue_free()
 	
 func _on_explosion_detection_range_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
-		body.apply_velocity()
+	if body.has_method("apply_velocity"):
+			body.apply_velocity()
+			
 	var health_component = body.get_node_or_null("HealthComponent")
 	
 	if health_component and health_component.has_method("take_damage"):

@@ -16,7 +16,7 @@ class_name PlayerController extends CharacterBody3D
 var acceleration : float = 2
 var deceleration : float = 14
 @export_group("Speed")
-@export var default_speed : float = 7.0
+@export var default_speed : float = 8.50
 @export var sprint_speed : float = 5.0
 @export var crouch_speed : float = -5.0
 @export_category("Jump Settings")

@@ -7,6 +7,7 @@ class_name Weapon extends Resource
 @export var starting_ammo : int = 100
 @export var fire_rate: float = 2.0
 @export var is_automatic : bool = false
+@warning_ignore("shadowed_global_identifier")
 @export var range: float = 25.0
 @export_range(0, 100) var accuracy: int = 100
 @export var projectile_speed: float = 30.0

@@ -98,6 +98,18 @@ follow_speed = 4.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.481727, 1.5060363, -5.4825315)
 follow_speed = 4.5
 
+[node name="Warrior10" parent="NavigationRegion3D" unique_id=1197628792 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.503481, 1.5, 12.749496)
+follow_speed = 4.5
+
+[node name="Warrior11" parent="NavigationRegion3D" unique_id=458314046 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.707348, 1.5, -12.994049)
+follow_speed = 4.5
+
+[node name="Warrior12" parent="NavigationRegion3D" unique_id=294850037 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.481727, 1.5060363, -5.4825315)
+follow_speed = 4.5
+
 [node name="VoidTrooper" parent="NavigationRegion3D" unique_id=879734878 instance=ExtResource("2_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.793858, 1.5372157, 0)
 
@@ -105,6 +117,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.793858, 1.5372157, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.117977, 1.5372157, -2.8522892)
 
 [node name="VoidTrooper3" parent="NavigationRegion3D" unique_id=240915814 instance=ExtResource("2_w7r7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.174755, 1.5372157, 2.9346204)
+
+[node name="VoidTrooper4" parent="NavigationRegion3D" unique_id=910635710 instance=ExtResource("2_w7r7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.793858, 1.5372157, 0)
+
+[node name="VoidTrooper5" parent="NavigationRegion3D" unique_id=1991140863 instance=ExtResource("2_w7r7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.117977, 1.5372157, -2.8522892)
+
+[node name="VoidTrooper6" parent="NavigationRegion3D" unique_id=447163577 instance=ExtResource("2_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.174755, 1.5372157, 2.9346204)
 
 [node name="Geometry" type="Node3D" parent="." unique_id=941615642 groups=["geometry"]]
