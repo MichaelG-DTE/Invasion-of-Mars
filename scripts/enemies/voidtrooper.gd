@@ -23,6 +23,7 @@ var accuracy := 70
 var projectile_speed := 30.0
 var damage := 10.0
 var fire_rate := 7.50
+var fire_volley := 5
 
 func _ready() -> void:
 	super._ready()
@@ -127,23 +128,23 @@ func apply_velocity():
 func _spawn_projectile() -> void:
 	var projectile = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
-	
+		
 	# position at camera
-	
+		
 	projectile.global_transform = $%Marker3D.global_transform
-	
+		
 	# calculate direction and velocity
 	var forward = $%Marker3D.global_transform.basis.z
-	
+		
 	var accuracy_spread = (100 - accuracy) / 1000.0
 	var accuracy_x = randf_range(-accuracy_spread, accuracy_spread)
 	var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
 	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * $%Marker3D.global_transform.basis
-	
+		
 	var velocity = direction * projectile_speed
-	
+		
 	# prepare the projectile
 	projectile.setup(velocity, damage)
-	
+
 	can_attack = false
 	attack_timer = 1.0 / fire_rate

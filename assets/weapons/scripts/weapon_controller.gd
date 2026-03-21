@@ -4,6 +4,9 @@ class_name WeaponController extends Node
 @export var current_weapon : Weapon
 @export var weapon_model_parent : Node3D
 @export var weapon_state_chart : StateChart
+@onready var ammo_label: Label = $"../../UserInterface/Control/Ammo"
+@onready var current_weapon_label: Label = $"../../UserInterface/Control/CurrentWeapon"
+@onready var marker_3d: Marker3D = %Marker3D
 
 var current_weapon_model: Node3D
 var can_fire_next : bool = true
@@ -15,11 +18,16 @@ func _ready() -> void:
 		
 
 func _process(delta: float) -> void:
+	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
 	# fire rate for weapons
 	if fire_rate_timer > 0:
 		fire_rate_timer -= delta
 		if fire_rate_timer <= 0:
 			can_fire_next = true
+	
+	ammo_label.text = "Ammo: " + str(weapon_data.ammo)
+	current_weapon_label.text = "Current Weapon: " + get_weapon_name()
+
 
 func spawn_weapon_model():
 	if current_weapon_model:
@@ -114,17 +122,17 @@ func _spawn_projectile() -> void:
 	var projectile = current_weapon.projectile_scene.instantiate() as Projectile
 	get_tree().current_scene.add_child(projectile)
 	
-	# position at camera
+	# position at Marker3D
 	
-	projectile.global_transform = camera.global_transform
+	projectile.global_transform = marker_3d.global_transform
 	
 	# calculate direction and velocity
-	var forward = -camera.global_transform.basis.z
+	var forward = -marker_3d.global_transform.basis.z
 	
 	var accuracy_spread = (100 - current_weapon.accuracy) / 1000.0
 	var accuracy_x = randf_range(-accuracy_spread, accuracy_spread)
 	var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
-	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * camera.global_transform.basis
+	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * marker_3d.global_transform.basis
 	
 	var velocity = direction * current_weapon.projectile_speed
 	
@@ -147,12 +155,13 @@ func has_ammo() -> bool: # helper function for finding ammo
 
 func reload_weapon():
 	if current_weapon.total_ammo > 0:
+		ammo_label.text = "Reloading..."
 		var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
 		weapon_data.ammo = current_weapon.max_ammo
 		current_weapon.total_ammo -= current_weapon.max_ammo
-		print("reloaded")
-		print(current_weapon.total_ammo)
+
 		await get_tree().create_timer(1.5).timeout
+		ammo_label.text = "Reloaded!"
 		
 		weapon_state_chart.send_event("OnIdle")
 		
@@ -162,3 +171,7 @@ func _apply_damage_to_target(target: Node3D) -> void:
 	
 	if health_component and health_component.has_method("take_damage"):
 		health_component.take_damage(current_weapon.damage, owner)
+
+func get_weapon_name():
+	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
+	return str(weapon_data.weapon.weapon_name)

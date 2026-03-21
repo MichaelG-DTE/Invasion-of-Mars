@@ -8,7 +8,7 @@
 script = ExtResource("1_jdnyo")
 max_ammo = 20
 fire_rate = 8.0
-range = 40.0
+range = 45.0
 accuracy = 90
 weapon_model = ExtResource("2_744yx")
 projectile_scene = ExtResource("1_j44sx")

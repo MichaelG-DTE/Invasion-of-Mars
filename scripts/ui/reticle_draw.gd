@@ -1,4 +1,3 @@
-@tool
 extends Control
 
 @export var radius : float = 30.0 : set = set_crosshair_radius

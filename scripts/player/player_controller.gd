@@ -11,19 +11,30 @@ class_name PlayerController extends CharacterBody3D
 @export var crouch_check : ShapeCast3D
 @export var interaction_raycast : RayCast3D
 @export var torch : SpotLight3D
+@export var health_component : HealthComponent
+@export var reticle_draw : Control
+
 @export_category("Movement Settings")
 @export_group("Easing")
-var acceleration : float = 2
+var acceleration : float = 6
 var deceleration : float = 14
 @export_group("Speed")
-@export var default_speed : float = 8.50
-@export var sprint_speed : float = 5.0
+@export var default_speed : float = 7
+@export var sprint_speed : float = 4
 @export var crouch_speed : float = -5.0
 @export_category("Jump Settings")
 @export var jump_velocity : float = 7
-@export var fall_velocity_threshold : float = -5.0
+@export var fall_velocity_threshold : float = -6.5
 
 @onready var animation_player: AnimationPlayer = $Torch/AnimationPlayer
+@onready var weapon_zoom: AnimationPlayer = $WeaponZoom
+@onready var health: Label = $UserInterface/Control/Health
+const MD_ARE_18 = preload("uid://d0mhjhy1536qp")
+const MD_BMR_99 = preload("uid://cwb7ejvgbfthi")
+const MD_P_11 = preload("uid://d2e3oxubj53dw")
+const MD_RICO_KBM = preload("uid://bwnd6lufp0ey2")
+
+
 
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
@@ -34,10 +45,15 @@ var current_fall_velocity : float
 var previous_velocity : Vector3
 var flashlight_rotation := 15.0 # smooth rotation
 var flashlight_position := 15.0 # smooth position
+var zoom := 50.0
+var default_fov := 90.0
+var fovtween: Tween
+
 
 # booleans
-var is_sprinting = false
-var is_crouching = false
+var is_sprinting := false
+var is_crouching := false
+var zoomed_in := false
 
 func _physics_process(delta: float) -> void:
 	previous_velocity = velocity
@@ -74,6 +90,46 @@ func _process(delta: float) -> void:
 		if torch.visible:
 			animation_player.play("torchpoweron")
 
+# simple zoom in and zoom out functionality
+
+	elif Input.is_action_pressed("Zoom"):
+		if not zoomed_in:
+			change_fov(zoom, 0.3)
+			zoomed_in = true
+			if weapon_controller.current_weapon == MD_P_11:
+				weapon_zoom.play("PistolWeaponZoom")
+			elif weapon_controller.current_weapon == MD_ARE_18:
+				weapon_zoom.play("ARWeaponZoom")
+			elif weapon_controller.current_weapon == MD_BMR_99:
+				weapon_zoom.play("PistolWeaponZoom")
+			elif weapon_controller.current_weapon == MD_RICO_KBM:
+				weapon_zoom.play("RPGWeaponZoom")
+				
+				
+	elif Input.is_action_just_released("Zoom"):
+		if zoomed_in:
+			change_fov(default_fov, 0.3)
+			zoomed_in = false
+			if weapon_controller.current_weapon == MD_P_11:
+				weapon_zoom.play_backwards("PistolWeaponZoom")
+			elif weapon_controller.current_weapon == MD_ARE_18:
+				weapon_zoom.play_backwards("ARWeaponZoom")
+			elif weapon_controller.current_weapon == MD_BMR_99:
+				weapon_zoom.play_backwards("PistolWeaponZoom")
+			elif weapon_controller.current_weapon == MD_RICO_KBM:
+				weapon_zoom.play_backwards("RPGWeaponZoom")
+			
+	health.text = "Health: " + str(health_component.current_health)
+
+func change_fov(fov, duration):
+	if fovtween:
+		fovtween.kill()
+	
+	fovtween = create_tween()
+	fovtween.set_ease(Tween.EASE_OUT)
+	fovtween.set_trans(Tween.TRANS_SINE)
+	fovtween.tween_property(camera_effects, "fov", fov, duration)
+	
 func update_flashlight(delta):
 	torch.global_transform = Transform3D(
 		torch.global_transform.basis.slerp(camera.global_transform.basis, delta * flashlight_rotation),
@@ -123,4 +179,4 @@ func trigger():
 	print("Just like liberals, you got triggered")
 
 func apply_velocity():
-	velocity.y += 15
+	velocity.y += 8

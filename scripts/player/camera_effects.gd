@@ -24,10 +24,10 @@ class_name CameraEffects extends Camera3D
 @export_subgroup("Weapon Kick")
 @export var weapon_decay : float = 0.5
 @export_subgroup("Headbob")
-@export_range(0.0, 0.1, 0.001) var bob_pitch := 0.05
-@export_range(0.0, 0.1, 0.001) var bob_roll := 0.025
+@export_range(0.0, 0.1, 0.001) var bob_pitch := 0.1
+@export_range(0.0, 0.1, 0.001) var bob_roll := 0.05
 @export_range(0.0, 0.4, 0.001) var bob_up := 0.05
-@export_range(5.0, 10.0, 0.001) var bob_frequency := 8.0
+@export_range(5.0, 15.0, 0.001) var bob_frequency := 10.0
 
 
 var _fall_value : float = 0.0
@@ -97,13 +97,13 @@ func calculate_view_offset(delta):
 		angles += _weapon_kick_angles
 		
 	if enable_head_bob:
-		var pitch_delta = bob_sin * deg_to_rad(bob_pitch) * speed
+		var pitch_delta = bob_sin * deg_to_rad(bob_pitch) * speed * delta
 		angles.x -= pitch_delta
 		
-		var roll_delta = bob_sin * deg_to_rad(bob_roll) * speed
+		var roll_delta = bob_sin * deg_to_rad(bob_roll) * speed * delta
 		angles.z -= roll_delta
 		
-		var bob_height = bob_sin * speed * bob_up
+		var bob_height = bob_sin * speed * bob_up 
 		offset.y += bob_height
 	
 	

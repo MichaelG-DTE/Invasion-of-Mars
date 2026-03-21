@@ -29,7 +29,8 @@
 [ext_resource type="Script" uid="uid://d2k1v8nni1cf7" path="res://assets/weapons/scripts/states/weapon_firing_state.gd" id="26_6cv16"]
 [ext_resource type="Script" uid="uid://chuh43i7rnix0" path="res://assets/weapons/scripts/weapon_state.gd" id="26_uniwh"]
 [ext_resource type="Script" uid="uid://bxcfplb85mpvu" path="res://assets/weapons/scripts/states/weapon_empty_state.gd" id="27_j4nxn"]
-[ext_resource type="PackedScene" uid="uid://ccqyuednxqcbu" path="res://scenes/ui/user_interface.tscn" id="30_iqsei"]
+[ext_resource type="Script" uid="uid://bs8erwsixcw1b" path="res://scripts/ui/reticle.gd" id="31_5mf0n"]
+[ext_resource type="PackedScene" uid="uid://qb8wblcieqyh" path="res://scenes/ui/reticle_draw.tscn" id="31_pk8ii"]
 [ext_resource type="Script" uid="uid://clp4csb8iead6" path="res://scripts/ui/interact_text.gd" id="31_tffgl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
@@ -77,7 +78,159 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_iqsei"]
 font_size = 18
 
-[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "torch") groups=["player"]]
+[sub_resource type="Animation" id="Animation_4hvnv"]
+resource_name = "ARWeaponZoom"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.12, 0, -0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../UserInterface/Reticle/ReticleDraw:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.29999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [15.0, 7.5]
+}
+
+[sub_resource type="Animation" id="Animation_5mf0n"]
+resource_name = "Weapon_Zoom"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.3, 0, -0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../UserInterface/Reticle/ReticleDraw:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.29999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [15.0, 7.5]
+}
+
+[sub_resource type="Animation" id="Animation_pk8ii"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../CameraController/Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [90.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../UserInterface/Reticle/ReticleDraw:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [20.0]
+}
+
+[sub_resource type="Animation" id="Animation_kxw46"]
+resource_name = "RPGWeaponZoom"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.05, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../UserInterface/Reticle/ReticleDraw:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20.0, 10.0]
+}
+
+[sub_resource type="Animation" id="Animation_bbmj2"]
+resource_name = "ZoomIn"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CameraController/Camera3D:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [90.0, 50.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hvnv"]
+_data = {
+&"ARWeaponZoom": SubResource("Animation_4hvnv"),
+&"PistolWeaponZoom": SubResource("Animation_5mf0n"),
+&"RESET": SubResource("Animation_pk8ii"),
+&"RPGWeaponZoom": SubResource("Animation_kxw46"),
+&"ZoomIn": SubResource("Animation_bbmj2")
+}
+
+[node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "torch", "health_component", "reticle_draw") groups=["player"]]
+physics_interpolation_mode = 1
 collision_layer = 2
 collision_mask = 121
 script = ExtResource("1_gmlin")
@@ -91,6 +244,8 @@ crouching_collision = NodePath("Crouching Collision")
 crouch_check = NodePath("CrouchCheck")
 interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
 torch = NodePath("Torch")
+health_component = NodePath("HealthComponent")
+reticle_draw = NodePath("UserInterface/Reticle/ReticleDraw")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1816197178]
 script = ExtResource("2_uniwh")
@@ -121,13 +276,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 fov = 90.0
 script = ExtResource("4_3j4b4")
 player = NodePath("../..")
-run_pitch = 0.15
-run_roll = 0.3
+run_pitch = 0.2
+run_roll = 0.4
+max_pitch = 1.5
+max_roll = 3.0
 
 [node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D" unique_id=1291529059]
 target_position = Vector3(0, 0, -3)
 collision_mask = 33
 script = ExtResource("4_8ydkj")
+
+[node name="WeaponModelContainer" type="Node3D" parent="CameraController/Camera3D" unique_id=1910018613]
+
+[node name="Marker3D" type="Marker3D" parent="CameraController/Camera3D/WeaponModelContainer" unique_id=175883979]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, -1.3)
 
 [node name="Torch" type="SpotLight3D" parent="." unique_id=1702032370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.1111711)
@@ -153,7 +316,7 @@ player = NodePath("../..")
 script = ExtResource("8_cnsyf")
 camera = NodePath("../../CameraController/Camera3D")
 current_weapon = ExtResource("9_007i1")
-weapon_model_parent = NodePath("../../CameraController/Camera3D")
+weapon_model_parent = NodePath("../../CameraController/Camera3D/WeaponModelContainer")
 weapon_state_chart = NodePath("../../WeaponStateChart")
 
 [node name="StateChart" type="Node" parent="." unique_id=980142948]
@@ -340,9 +503,9 @@ script = ExtResource("26_6cv16")
 [node name="EmptyState" type="Node" parent="WeaponStateMachine/WeaponState" unique_id=2105045720]
 script = ExtResource("27_j4nxn")
 
-[node name="UserInterface" parent="." unique_id=738552373 instance=ExtResource("30_iqsei")]
+[node name="UserInterface" type="CanvasLayer" parent="." unique_id=941427506]
 
-[node name="BoxContainer" type="BoxContainer" parent="UserInterface" unique_id=236303715]
+[node name="BoxContainer" type="BoxContainer" parent="UserInterface" unique_id=307790939]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -355,7 +518,7 @@ offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InteractText" type="Label" parent="UserInterface/BoxContainer" unique_id=240334406]
+[node name="InteractText" type="Label" parent="UserInterface/BoxContainer" unique_id=2134718752]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Press \"E\" to interact"
@@ -363,6 +526,64 @@ label_settings = SubResource("LabelSettings_iqsei")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("31_tffgl")
+
+[node name="Reticle" type="CenterContainer" parent="UserInterface" unique_id=1389565427 node_paths=PackedStringArray("ReticalDraw", "WeaponController")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("31_5mf0n")
+ReticalDraw = NodePath("ReticleDraw")
+WeaponController = NodePath("../../Components/WeaponController")
+
+[node name="ReticleDraw" parent="UserInterface/Reticle" unique_id=1764722979 instance=ExtResource("31_pk8ii")]
+layout_mode = 2
+radius = 20.0
+thickness = 20.0
+gap_angle = 70.0
+segments = 30
+
+[node name="Control" type="Control" parent="UserInterface" unique_id=1876825497]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 523.0
+offset_right = 12.0
+offset_bottom = 523.0
+
+[node name="Health" type="Label" parent="UserInterface/Control" unique_id=1107884143]
+layout_mode = 0
+offset_right = 279.0
+offset_bottom = 32.0
+text = "Health: 0"
+
+[node name="Shield" type="Label" parent="UserInterface/Control" unique_id=689299085]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 65.0
+offset_bottom = 51.0
+text = "Shield: 0"
+
+[node name="Ammo" type="Label" parent="UserInterface/Control" unique_id=712683889]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 58.0
+offset_right = 70.0
+offset_bottom = 81.0
+text = "Ammo: 0"
+
+[node name="CurrentWeapon" type="Label" parent="UserInterface/Control" unique_id=1687273818]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 90.0
+offset_right = 147.0
+offset_bottom = 113.0
+text = "Current Weapon: 0"
+
+[node name="WeaponZoom" type="AnimationPlayer" parent="." unique_id=1420183856]
+root_node = NodePath("../Components/WeaponController")
+libraries/ = SubResource("AnimationLibrary_4hvnv")
 
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded" to="StateMachine/MovementState/GroundedState" method="_on_grounded_state_physics_processing"]
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/GroundedState/IdleState" method="_on_idle_state_physics_processing"]

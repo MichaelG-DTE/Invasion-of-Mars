@@ -2,6 +2,7 @@ extends RayCast3D
 @onready var interact_text: Label = %InteractText
 @onready var user_interface: CanvasLayer = $"../../../UserInterface"
 
+
 var current_object
 
 func _process(_delta: float) -> void:

@@ -2,7 +2,7 @@ class_name Projectile extends Area3D
 
 var velocity: Vector3
 var damage: float
-@export var explosion : PackedScene 
+var explosion : PackedScene = preload("res://scenes/enviroment/explosion.tscn")
 
 
 func _ready() -> void:
