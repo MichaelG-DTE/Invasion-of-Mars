@@ -13,7 +13,8 @@ class_name PlayerController extends CharacterBody3D
 @export var torch : SpotLight3D
 @export var health_component : HealthComponent
 @export var reticle_draw : Control
-
+@export var wmc : Node3D
+@export var mouse_capture : MouseCapture
 @export_category("Movement Settings")
 @export_group("Easing")
 var acceleration : float = 6
@@ -22,24 +23,30 @@ var deceleration : float = 14
 @export var default_speed : float = 7
 @export var sprint_speed : float = 4
 @export var crouch_speed : float = -5.0
+@export var aim_speed : float = -2.0
 @export_category("Jump Settings")
-@export var jump_velocity : float = 7
-@export var fall_velocity_threshold : float = -6.5
+@export var jump_velocity : float = 7.5
+@export var fall_velocity_threshold : float = -7
+@export_category("WeaponSwaySettings")
+@export var weapon_sway_amount := 5.0
+@export var weapon_rotation_amount := 0.1
 
+# on ready variables
 @onready var animation_player: AnimationPlayer = $Torch/AnimationPlayer
 @onready var weapon_zoom: AnimationPlayer = $WeaponZoom
 @onready var health: Label = $UserInterface/Control/Health
+
+# gun references
 const MD_ARE_18 = preload("uid://d0mhjhy1536qp")
 const MD_BMR_99 = preload("uid://cwb7ejvgbfthi")
 const MD_P_11 = preload("uid://d2e3oxubj53dw")
 const MD_RICO_KBM = preload("uid://bwnd6lufp0ey2")
 
-
-
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 var sprint_modifier : float = 0.0
 var crouch_modifier : float = 0.0
+var aim_modifier : float = 0.0
 var speed : float = 0.0
 var current_fall_velocity : float 
 var previous_velocity : Vector3
@@ -48,12 +55,18 @@ var flashlight_position := 15.0 # smooth position
 var zoom := 50.0
 var default_fov := 90.0
 var fovtween: Tween
-
+var def_weapon_holder_pos : Vector3
+var mouse_input : Vector2
 
 # booleans
 var is_sprinting := false
 var is_crouching := false
 var zoomed_in := false
+var torch_visible := false
+
+func _ready() -> void:
+	# sets the weapon holder position to its starting position (zero)
+	def_weapon_holder_pos = wmc.position
 
 func _physics_process(delta: float) -> void:
 	previous_velocity = velocity
@@ -61,7 +74,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta #gets gravity value and multiplies by delta
 
-	var speed_modifier = sprint_modifier + crouch_modifier # modifies speed based on what state player is in
+	var speed_modifier = sprint_modifier + crouch_modifier + aim_modifier # modifies speed based on what state player is in
 	speed = default_speed + speed_modifier 
 	
 	_input_dir = Input.get_vector("Left","Right","Forward","Back")
@@ -75,47 +88,53 @@ func _physics_process(delta: float) -> void:
 	
 	_movement_velocity = Vector3(current_velocity.x, velocity.y, current_velocity.y) #velocity in 3D Space (Vector 3D)
 	
-	velocity = _movement_velocity
+	velocity = _movement_velocity 
 	
-	move_and_slide()  
+	move_and_slide() 
 	 
 	if is_on_floor(): # prevents step checks from running while in air
 		step_handler.handle_step_climbing()
-		
+	weapon_tilt(_input_dir.x, delta)
+	weapon_sway(delta)
+	
 func _process(delta: float) -> void:
 	update_flashlight(delta)
 	
 	if Input.is_action_just_pressed("torch"):
-		torch.visible = not torch.visible 
-		if torch.visible:
+		if not torch_visible:
 			animation_player.play("torchpoweron")
+			torch_visible = true
+		else:
+			if torch_visible:
+				animation_player.play_backwards("torchpoweron")
+				torch_visible = false
 
 # simple zoom in and zoom out functionality
 
 	elif Input.is_action_pressed("Zoom"):
 		if not zoomed_in:
+			aim()
 			change_fov(zoom, 0.3)
-			zoomed_in = true
 			if weapon_controller.current_weapon == MD_P_11:
 				weapon_zoom.play("PistolWeaponZoom")
 			elif weapon_controller.current_weapon == MD_ARE_18:
 				weapon_zoom.play("ARWeaponZoom")
 			elif weapon_controller.current_weapon == MD_BMR_99:
-				weapon_zoom.play("PistolWeaponZoom")
+				weapon_zoom.play("BMRWeaponZoom")
 			elif weapon_controller.current_weapon == MD_RICO_KBM:
 				weapon_zoom.play("RPGWeaponZoom")
 				
 				
 	elif Input.is_action_just_released("Zoom"):
 		if zoomed_in:
+			stop_aiming()
 			change_fov(default_fov, 0.3)
-			zoomed_in = false
 			if weapon_controller.current_weapon == MD_P_11:
 				weapon_zoom.play_backwards("PistolWeaponZoom")
 			elif weapon_controller.current_weapon == MD_ARE_18:
 				weapon_zoom.play_backwards("ARWeaponZoom")
 			elif weapon_controller.current_weapon == MD_BMR_99:
-				weapon_zoom.play_backwards("PistolWeaponZoom")
+				weapon_zoom.play_backwards("BMRWeaponZoom")
 			elif weapon_controller.current_weapon == MD_RICO_KBM:
 				weapon_zoom.play_backwards("RPGWeaponZoom")
 			
@@ -180,3 +199,21 @@ func trigger():
 
 func apply_velocity():
 	velocity.y += 8
+
+func aim() -> void:
+	zoomed_in = true
+	aim_modifier = aim_speed
+
+func stop_aiming() -> void:
+	zoomed_in = false
+	aim_modifier = 0.0
+
+func weapon_tilt(input_x, delta):
+	if wmc:
+		wmc.rotation.z = lerp(wmc.rotation.z, -input_x * weapon_rotation_amount, 10 * delta) 
+
+func weapon_sway(delta):
+	wmc.rotation.x = lerp(wmc.rotation.x, -mouse_capture.mouse_input.y / 2 * weapon_rotation_amount,  4 * delta) 
+	wmc.rotation.y = lerp(wmc.rotation.y, -mouse_capture.mouse_input.x / 2 * weapon_rotation_amount, 4 * delta) 
+	wmc.rotation.y = clamp(wmc.rotation.y, -0.6, 0.6)
+	wmc.rotation.x = clamp(wmc.rotation.x, -0.6, 0.6)

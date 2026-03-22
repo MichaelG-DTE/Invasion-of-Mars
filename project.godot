@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 managers="*uid://cmaae7pyhqp5j"
+SignalBus="*uid://csivnn5kad0o8"
 
 [display]
 

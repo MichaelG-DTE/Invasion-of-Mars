@@ -38,6 +38,7 @@ func _on_body_entered(body: Node3D) -> void:
 		health_component.take_damage(damage, self)
 	queue_free()
 	
+@warning_ignore("shadowed_variable_base_class")
 func _spawn_impact_marker(position: Vector3) -> void:
 	var marker = MeshInstance3D.new()
 	var box = BoxMesh.new()

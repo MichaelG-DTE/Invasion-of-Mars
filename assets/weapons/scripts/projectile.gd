@@ -43,6 +43,7 @@ func _on_body_entered(body: Node3D) -> void:
 		health_component.take_damage(damage, self)
 	queue_free()
 	
+@warning_ignore("shadowed_variable_base_class")
 func _spawn_impact_marker(position: Vector3) -> void:
 	var marker = MeshInstance3D.new()
 	var box = BoxMesh.new()
@@ -59,6 +60,7 @@ func _spawn_impact_marker(position: Vector3) -> void:
 	# remove after 2 seconds
 	get_tree().create_timer(2.0).timeout.connect(marker.queue_free)
 	
+@warning_ignore("shadowed_variable_base_class")
 func _instance_explosion(position: Vector3):
 	var explosioneffect = explosion.instantiate()
 	get_tree().current_scene.add_child(explosioneffect)

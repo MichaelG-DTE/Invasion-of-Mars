@@ -10,22 +10,6 @@
 [ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
 [ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="11_u4ui1"]
-[ext_resource type="PackedScene" uid="uid://ctbf4v2it14bo" path="res://scenes/interactables/weaponpickups/kbm_weapon_pickup.tscn" id="12_ej42f"]
-[ext_resource type="PackedScene" uid="uid://gbv436xmkqlv" path="res://scenes/interactables/weaponpickups/shotgun_weapon_pickup.tscn" id="13_f0yxw"]
-[ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weaponpickups/weapon_pickup.tscn" id="14_ntw5w"]
-[ext_resource type="Resource" uid="uid://d0mhjhy1536qp" path="res://assets/weapons/resources/MD ARE-18.tres" id="15_f0yxw"]
-[ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="15_m6y63"]
-[ext_resource type="PackedScene" uid="uid://cewvskl68d21d" path="res://scenes/interactables/ammopickups/md_bmr_99_ammo.tscn" id="16_501xk"]
-[ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="17_64la1"]
-[ext_resource type="Script" uid="uid://b02a3b2nwrej6" path="res://scripts/Interactables/pickups/ammo_pickup.gd" id="17_ntw5w"]
-[ext_resource type="PackedScene" uid="uid://bhs86bv0auhwy" path="res://scenes/interactables/ammopickups/md_rico_kbm_ammo.tscn" id="18_24q0b"]
-[ext_resource type="PackedScene" uid="uid://bk4cyvot0mt0s" path="res://scenes/interactables/Destructibles/destructible_box.tscn" id="19_b0gx0"]
-[ext_resource type="PackedScene" uid="uid://baix0o464t85u" path="res://assets/GodotTempModels/terminal_temp.tscn" id="21_ntw5w"]
-[ext_resource type="PackedScene" uid="uid://ofyb6jaxvtnq" path="res://assets/GodotTempModels/health_terminal_temp.tscn" id="22_m6y63"]
-[ext_resource type="PackedScene" uid="uid://2ntals7kk4kc" path="res://assets/GodotTempModels/save_terminal_temp.tscn" id="23_501xk"]
-[ext_resource type="PackedScene" uid="uid://r2e82rnfc7q4" path="res://scenes/interactables/events/event_trigger.tscn" id="24_64la1"]
-[ext_resource type="PackedScene" uid="uid://dkmuqsdwo3l1c" path="res://scenes/interactables/events/door.tscn" id="25_24q0b"]
-[ext_resource type="PackedScene" uid="uid://c02sooips8e2w" path="res://scenes/interactables/events/button.tscn" id="26_b0gx0"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
 
@@ -52,67 +36,3 @@ player = NodePath("../../CurrentLevel/Player")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.4852347, -8.129205)
 
 [node name="WorldEnvironment" parent="." unique_id=1091596004 instance=ExtResource("11_u4ui1")]
-
-[node name="KBMWeaponPickup" parent="." unique_id=1825521633 instance=ExtResource("12_ej42f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2867033, 1.6952505, 5.102611)
-
-[node name="ShotgunWeaponPickup" parent="." unique_id=272788974 instance=ExtResource("13_f0yxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.151542, 1.6952505, 5.102611)
-
-[node name="ARWeaponPickup" parent="." unique_id=1029809246 instance=ExtResource("14_ntw5w")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.70725167, 1.6952505, 5.102611)
-weapon_slot = 2
-weapon_resource = ExtResource("15_f0yxw")
-
-[node name="MD ARE ammo" parent="." unique_id=1184460451 instance=ExtResource("15_m6y63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.910788, 1.65, 6.6279945)
-script = ExtResource("17_ntw5w")
-weapon_slot = 2
-ammo_amount = 60
-
-[node name="MD BMR-99 Ammo" parent="." unique_id=353895433 instance=ExtResource("16_501xk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37611783, 1.65, 6.6279945)
-script = ExtResource("17_ntw5w")
-weapon_slot = 3
-ammo_amount = 8
-
-[node name="MD P-11 Ammo" parent="." unique_id=1377808865 instance=ExtResource("17_64la1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1808023, 1.65, 6.6279945)
-script = ExtResource("17_ntw5w")
-weapon_slot = 1
-ammo_amount = 10
-
-[node name="MD RICO KBM Ammo" parent="." unique_id=592797949 instance=ExtResource("18_24q0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6869726, 1.65, 6.6279945)
-script = ExtResource("17_ntw5w")
-weapon_slot = 4
-ammo_amount = 4
-
-[node name="DestructibleBox" parent="." unique_id=1683781294 instance=ExtResource("19_b0gx0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77649, 2.051859, 6.6279945)
-
-[node name="DestructibleBox2" parent="." unique_id=891109744 instance=ExtResource("19_b0gx0")]
-transform = Transform3D(0.73416847, 0, -0.67896736, 0, 1, 0, 0.67896736, 0, 0.73416847, 5.77649, 2.051859, 3.8280964)
-
-[node name="DestructibleBox3" parent="." unique_id=1796061023 instance=ExtResource("19_b0gx0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6212153, 2.051859, 8.567518)
-
-[node name="TerminalTemp" parent="." unique_id=1285270131 instance=ExtResource("21_ntw5w")]
-transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -30.525675, 2.7, 2.596)
-
-[node name="HealthTerminalTemp" parent="." unique_id=1993244436 instance=ExtResource("22_m6y63")]
-transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -30.591307, 2.8821065, 0.68409896)
-
-[node name="SaveTerminalTemp" parent="." unique_id=1575750007 instance=ExtResource("23_501xk")]
-transform = Transform3D(-2, 1.7484555e-07, 0, -1.7484555e-07, -2, 0, 0, 0, 2, -30.529314, 2.7268875, -1.1698502)
-
-[node name="EventTrigger" parent="." unique_id=1581121877 instance=ExtResource("24_64la1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6645031, -0.23574495)
-collision_layer = 64
-collision_mask = 2
-
-[node name="Door" parent="." unique_id=267784101 instance=ExtResource("25_24q0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.309824, 1.5, -2.4740138)
-
-[node name="Button" parent="." unique_id=1062697064 instance=ExtResource("26_b0gx0")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -30.519037, 2.7188625, -2.9451609)

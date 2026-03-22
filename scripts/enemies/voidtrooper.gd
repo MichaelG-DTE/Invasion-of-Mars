@@ -22,8 +22,7 @@ var attack_timer := 0.0
 var accuracy := 70
 var projectile_speed := 30.0
 var damage := 10.0
-var fire_rate := 7.50
-var fire_volley := 5
+var fire_rate := 4
 
 func _ready() -> void:
 	super._ready()
@@ -141,6 +140,7 @@ func _spawn_projectile() -> void:
 	var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
 	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * $%Marker3D.global_transform.basis
 		
+	@warning_ignore("shadowed_variable_base_class")
 	var velocity = direction * projectile_speed
 		
 	# prepare the projectile

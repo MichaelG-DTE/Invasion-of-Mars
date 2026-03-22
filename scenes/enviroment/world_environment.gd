@@ -2,6 +2,8 @@ extends WorldEnvironment
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("collapse"):
-		animation_player.play("suncollapse")
+func _ready() -> void:
+	SignalBus.button_pressed.connect(collapse)
+
+func collapse():
+	animation_player.play("suncollapse")
