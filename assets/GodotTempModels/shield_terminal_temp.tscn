@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ofyb6jaxvtnq"]
+[gd_scene format=3 uid="uid://dltwws7obw1bv"]
 
-[ext_resource type="Script" uid="uid://cwyeiqlfu4s21" path="res://scripts/Interactables/terminals/health_terminal_temp.gd" id="1_q7stl"]
+[ext_resource type="Script" uid="uid://c7o1wkgb4mh8a" path="res://scripts/Interactables/terminals/shield_terminal_temp.gd" id="1_hmcqa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -19,20 +19,20 @@ height = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_816py"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp25o"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxv1b"]
+albedo_color = Color(0, 0, 1, 1)
 emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 2.5
+emission = Color(0, 0.2, 1, 1)
+emission_energy_multiplier = 2.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_w58ck"]
-material = SubResource("StandardMaterial3D_tp25o")
+[sub_resource type="BoxMesh" id="BoxMesh_d68ge"]
+material = SubResource("StandardMaterial3D_nxv1b")
 size = Vector3(0.05, 0.15, 0.1)
 
-[node name="HealthTerminalTemp" type="StaticBody3D" unique_id=1993244436]
+[node name="ShieldTerminalTemp" type="StaticBody3D" unique_id=1993244436]
 collision_layer = 32
 collision_mask = 2
-script = ExtResource("1_q7stl")
+script = ExtResource("1_hmcqa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=213572237]
 mesh = SubResource("BoxMesh_q7stl")
@@ -58,4 +58,4 @@ mesh = SubResource("BoxMesh_816py")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1946102087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05940622, 0.12448831, -0.1017213)
-mesh = SubResource("BoxMesh_w58ck")
+mesh = SubResource("BoxMesh_d68ge")

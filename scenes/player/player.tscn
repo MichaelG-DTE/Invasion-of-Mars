@@ -39,6 +39,8 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uf5tr"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pk8ii"]
+
 [sub_resource type="Animation" id="Animation_uniwh"]
 length = 0.001
 tracks/0/type = "value"
@@ -174,7 +176,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.25, 0, -0.1)]
+"values": [Vector3(0, 0, -1), Vector3(-0.25, 0, -1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -283,6 +285,291 @@ _data = {
 &"ZoomIn": SubResource("Animation_bbmj2")
 }
 
+[sub_resource type="Animation" id="Animation_vo27k"]
+resource_name = "AssaultRifleShoot"
+length = 0.05
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05),
+"transitions": PackedFloat32Array(0.5, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.005), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_genst"]
+resource_name = "AssaultRifleShootAim"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.2),
+"transitions": PackedFloat32Array(0.5, 1.5, 1),
+"update": 0,
+"values": [Vector3(-0.12, 0, -0.1), Vector3(-0.12, 0, -0.095), Vector3(-0.12, 0, -0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_5q8fn"]
+resource_name = "PistolShoot"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 0.75, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1), Vector3(0, 0, -1), Vector3(0, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 0.75, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.2617994, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wva7c"]
+resource_name = "PistolShootAim"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1006776, 0.2),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [Vector3(-0.25, 0, -1), Vector3(-0.25, 0, -1), Vector3(-0.25, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.5, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.2617994, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7obkq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_niom3"]
+resource_name = "RocketLauncherShoot"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75),
+"transitions": PackedFloat32Array(0.2, 2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.75),
+"transitions": PackedFloat32Array(0.2, 2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.08726646, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ttakn"]
+resource_name = "RocketLauncherShootAim"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75),
+"transitions": PackedFloat32Array(0.2, 2, 1),
+"update": 0,
+"values": [Vector3(-0.05, 0, 0), Vector3(-0.05, 0, 0.05), Vector3(-0.05, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.75),
+"transitions": PackedFloat32Array(0.2, 2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.08726646, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rw8a5"]
+resource_name = "ShotgunShoot"
+length = 0.35
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.35),
+"transitions": PackedFloat32Array(0.75, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.15), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.21, 0.35),
+"transitions": PackedFloat32Array(0.75, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.10471976, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iwuka"]
+resource_name = "ShotgunShootAim"
+length = 0.35
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.35),
+"transitions": PackedFloat32Array(0.75, 0.5, 1),
+"update": 0,
+"values": [Vector3(-0.3, 0, 0), Vector3(-0.3, 0, 0.15), Vector3(-0.3, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.21, 0.35),
+"transitions": PackedFloat32Array(0.75, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.10471976, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vo27k"]
+_data = {
+&"AssaultRifleShoot": SubResource("Animation_vo27k"),
+&"AssaultRifleShootAim": SubResource("Animation_genst"),
+&"PistolShoot": SubResource("Animation_5q8fn"),
+&"PistolShootAim": SubResource("Animation_wva7c"),
+&"RESET": SubResource("Animation_7obkq"),
+&"RocketLauncherShoot": SubResource("Animation_niom3"),
+&"RocketLauncherShootAim": SubResource("Animation_ttakn"),
+&"ShotgunShoot": SubResource("Animation_rw8a5"),
+&"ShotgunShootAim": SubResource("Animation_iwuka")
+}
+
+[sub_resource type="Animation" id="Animation_1u1sw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hyqqp"]
+resource_name = "Reload"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController/Camera3D/WeaponModelContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.6981317, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2t3bg"]
+_data = {
+&"RESET": SubResource("Animation_1u1sw"),
+&"Reload": SubResource("Animation_hyqqp")
+}
+
 [node name="Player" type="CharacterBody3D" unique_id=96954163 node_paths=PackedStringArray("step_handler", "camera", "camera_effects", "weapon_controller", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast", "torch", "health_component", "reticle_draw", "wmc", "mouse_capture") groups=["player"]]
 physics_interpolation_mode = 1
 collision_layer = 2
@@ -302,6 +589,7 @@ health_component = NodePath("HealthComponent")
 reticle_draw = NodePath("UserInterface/Reticle/ReticleDraw")
 wmc = NodePath("CameraController/Camera3D/WeaponModelContainer")
 mouse_capture = NodePath("Components/MouseCapture")
+weapon_sway_amount = 0.2
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1816197178]
 script = ExtResource("2_uniwh")
@@ -321,6 +609,9 @@ target_position = Vector3(0, 0.5, 0)
 [node name="WorldModel" type="Node3D" parent="." unique_id=1894365616]
 
 [node name="PlayerContainer" type="Node3D" parent="WorldModel" unique_id=1128691981]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel/PlayerContainer" unique_id=1548192369]
+mesh = SubResource("CapsuleMesh_pk8ii")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=378673298 node_paths=PackedStringArray("player_controller", "component_mouse_capture")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -641,6 +932,12 @@ text = "Current Weapon: 0"
 [node name="WeaponZoom" type="AnimationPlayer" parent="." unique_id=1420183856]
 root_node = NodePath("../Components/WeaponController")
 libraries/ = SubResource("AnimationLibrary_4hvnv")
+
+[node name="WeaponShoot" type="AnimationPlayer" parent="." unique_id=1412667378]
+libraries/ = SubResource("AnimationLibrary_vo27k")
+
+[node name="WeaponReload" type="AnimationPlayer" parent="." unique_id=1863608703]
+libraries/ = SubResource("AnimationLibrary_2t3bg")
 
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded" to="StateMachine/MovementState/GroundedState" method="_on_grounded_state_physics_processing"]
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/GroundedState/IdleState" method="_on_idle_state_physics_processing"]

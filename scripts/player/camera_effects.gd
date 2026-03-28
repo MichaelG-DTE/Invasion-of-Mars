@@ -8,7 +8,7 @@ class_name CameraEffects extends Camera3D
 @export var enable_fall_kick : bool = true
 @export var enable_damage_kick : bool = true
 @export var enable_weapon_kick : bool = true
-@export var enable_head_bob: bool = true
+@export var enable_head_bob : bool = true
 
 @export_category("Kick & Recoil Settings")
 @export_group("Run Tilt")
@@ -28,7 +28,6 @@ class_name CameraEffects extends Camera3D
 @export_range(0.0, 0.1, 0.001) var bob_roll := 0.05
 @export_range(0.0, 0.4, 0.001) var bob_up := 0.05
 @export_range(5.0, 15.0, 0.001) var bob_frequency := 10.0
-
 
 var _fall_value : float = 0.0
 var _fall_timer : float = 0.0
@@ -105,8 +104,7 @@ func calculate_view_offset(delta):
 		
 		var bob_height = bob_sin * speed * bob_up 
 		offset.y += bob_height
-	
-	
+		
 	position = offset # updates the cameras rotation based on the offset
 	rotation = angles # updates the cameras rotation based on the angles
 

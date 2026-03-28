@@ -30,11 +30,15 @@ var deceleration : float = 14
 @export_category("WeaponSwaySettings")
 @export var weapon_sway_amount := 5.0
 @export var weapon_rotation_amount := 0.1
+@export_category("WeaponBobSettings")
+@export var bob_speed := 0.01
+@export var bob_amount := 0.01
 
 # on ready variables
 @onready var animation_player: AnimationPlayer = $Torch/AnimationPlayer
 @onready var weapon_zoom: AnimationPlayer = $WeaponZoom
 @onready var health: Label = $UserInterface/Control/Health
+@onready var shield: Label = $UserInterface/Control/Shield
 
 # gun references
 const MD_ARE_18 = preload("uid://d0mhjhy1536qp")
@@ -55,8 +59,7 @@ var flashlight_position := 15.0 # smooth position
 var zoom := 50.0
 var default_fov := 90.0
 var fovtween: Tween
-var def_weapon_holder_pos : Vector3
-var mouse_input : Vector2
+var startY
 
 # booleans
 var is_sprinting := false
@@ -66,7 +69,8 @@ var torch_visible := false
 
 func _ready() -> void:
 	# sets the weapon holder position to its starting position (zero)
-	def_weapon_holder_pos = wmc.position
+	startY = wmc.position.y
+	wmc.position.z = -1
 
 func _physics_process(delta: float) -> void:
 	previous_velocity = velocity
@@ -96,6 +100,7 @@ func _physics_process(delta: float) -> void:
 		step_handler.handle_step_climbing()
 	weapon_tilt(_input_dir.x, delta)
 	weapon_sway(delta)
+	weapon_bob()
 	
 func _process(delta: float) -> void:
 	update_flashlight(delta)
@@ -124,7 +129,6 @@ func _process(delta: float) -> void:
 			elif weapon_controller.current_weapon == MD_RICO_KBM:
 				weapon_zoom.play("RPGWeaponZoom")
 				
-				
 	elif Input.is_action_just_released("Zoom"):
 		if zoomed_in:
 			stop_aiming()
@@ -138,7 +142,9 @@ func _process(delta: float) -> void:
 			elif weapon_controller.current_weapon == MD_RICO_KBM:
 				weapon_zoom.play_backwards("RPGWeaponZoom")
 			
+	# labels for health and shield
 	health.text = "Health: " + str(health_component.current_health)
+	shield.text = "Shield: " + str(health_component.current_shield)
 
 func change_fov(fov, duration):
 	if fovtween:
@@ -181,7 +187,8 @@ func crouch() -> void:
 func jump() -> void:
 	if not crouch_check.is_colliding():
 		velocity.y += jump_velocity 
-
+		
+		
 func check_fall_speed() -> bool:
 	if current_fall_velocity < fall_velocity_threshold:
 		current_fall_velocity = 0.0
@@ -195,7 +202,7 @@ func get_input_direction() -> Vector2:
 	return _input_dir
 	
 func trigger():
-	print("Just like liberals, you got triggered")
+	print("Trigger activated")
 
 func apply_velocity():
 	velocity.y += 8
@@ -210,10 +217,16 @@ func stop_aiming() -> void:
 
 func weapon_tilt(input_x, delta):
 	if wmc:
-		wmc.rotation.z = lerp(wmc.rotation.z, -input_x * weapon_rotation_amount, 10 * delta) 
+		if is_on_floor():
+			wmc.rotation.z = lerp(wmc.rotation.z, -input_x * weapon_rotation_amount, 10 * delta) 
 
 func weapon_sway(delta):
 	wmc.rotation.x = lerp(wmc.rotation.x, -mouse_capture.mouse_input.y / 2 * weapon_rotation_amount,  4 * delta) 
 	wmc.rotation.y = lerp(wmc.rotation.y, -mouse_capture.mouse_input.x / 2 * weapon_rotation_amount, 4 * delta) 
 	wmc.rotation.y = clamp(wmc.rotation.y, -0.6, 0.6)
 	wmc.rotation.x = clamp(wmc.rotation.x, -0.6, 0.6)
+
+func weapon_bob():
+	if is_on_floor():
+		var time = float(Time.get_ticks_msec())
+		wmc.position.y = startY + sin(time * bob_speed) * bob_amount * (velocity.length() / speed)

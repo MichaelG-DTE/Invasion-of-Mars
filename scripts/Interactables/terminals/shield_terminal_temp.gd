@@ -8,16 +8,16 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player") 
 
 func interact():
-	var health = player.get_node_or_null("HealthComponent")
-	if health.current_health < health.max_health:
-		heal_amount = health.max_health - health.current_health
+	var shield = player.get_node_or_null("HealthComponent")
+	if shield.current_shield != shield.max_shield:
+		heal_amount = shield.max_shield - shield.current_shield
 		_apply_health_to_player(player)
 	else:
 		pass
-		
+
 func _apply_health_to_player(target: Node3D) -> void:
 	# check if target has health component
-	var health = target.get_node_or_null("HealthComponent")
+	var shield = target.get_node_or_null("HealthComponent")
 	
-	if health and health.has_method("heal"):
-		health.heal(heal_amount)
+	if shield and shield.has_method("heal_shield"):
+		shield.heal_shield(heal_amount)

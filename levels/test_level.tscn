@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://baix0o464t85u" path="res://assets/GodotTempModels/terminal_temp.tscn" id="15_kbjoq"]
 [ext_resource type="PackedScene" uid="uid://ofyb6jaxvtnq" path="res://assets/GodotTempModels/health_terminal_temp.tscn" id="16_m2xr1"]
 [ext_resource type="PackedScene" uid="uid://2ntals7kk4kc" path="res://assets/GodotTempModels/save_terminal_temp.tscn" id="17_hj2pq"]
+[ext_resource type="PackedScene" uid="uid://dltwws7obw1bv" path="res://assets/GodotTempModels/shield_terminal_temp.tscn" id="17_n4g7x"]
 [ext_resource type="PackedScene" uid="uid://r2e82rnfc7q4" path="res://scenes/interactables/events/event_trigger.tscn" id="18_04rbu"]
 [ext_resource type="PackedScene" uid="uid://dkmuqsdwo3l1c" path="res://scenes/interactables/events/door.tscn" id="19_ndqk6"]
 [ext_resource type="PackedScene" uid="uid://c02sooips8e2w" path="res://scenes/interactables/events/button.tscn" id="20_c5dyf"]
@@ -269,7 +270,7 @@ shape = SubResource("ConcavePolygonShape3D_e7anx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.90597, 4.005796, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/BigWall" unique_id=1246227223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7905636, 0, 0)
+transform = Transform3D(0.9996976, 0.02458921, 0, -0.02458921, 0.9996976, 0, 0, 0, 1, 0.7905636, 0, 0)
 mesh = SubResource("BoxMesh_x25rp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/BigWall" unique_id=1111859994]
@@ -354,10 +355,13 @@ transform = Transform3D(0.73416847, 0, -0.67896736, 0, 1, 0, 0.67896736, 0, 0.73
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6212153, 2.051859, 8.567518)
 
 [node name="TerminalTemp" parent="." unique_id=1285270131 instance=ExtResource("15_kbjoq")]
-transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -30.525675, 2.7, 2.596)
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -30.525675, 2.7, 3.992147)
 
 [node name="HealthTerminalTemp" parent="." unique_id=1993244436 instance=ExtResource("16_m2xr1")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -30.591307, 2.8821065, 0.68409896)
+
+[node name="ShieldTerminalTemp" parent="." unique_id=722594015 instance=ExtResource("17_n4g7x")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, -30.591, 2.882, 1.952)
 
 [node name="SaveTerminalTemp" parent="." unique_id=1575750007 instance=ExtResource("17_hj2pq")]
 transform = Transform3D(-2, 1.7484555e-07, 0, -1.7484555e-07, -2, 0, 0, 0, 2, -30.529314, 2.7268875, -1.1698502)

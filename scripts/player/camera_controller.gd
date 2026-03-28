@@ -19,7 +19,7 @@ var _step_smoothing : bool = false
 var offset_height : float
 
 
-var _rotation : Vector3 #underscored to prevent Godot from throwing an error
+var _rotation : Vector3 # underscored to prevent Godot from throwing an error
 
 const DEFAULT_HEIGHT : float = 0.5
 
