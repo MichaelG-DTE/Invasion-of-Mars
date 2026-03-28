@@ -1,32 +1,105 @@
 [gd_scene format=3 uid="uid://dxj2et5neev31"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_cymoj"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.91
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cymoj"]
+albedo_color = Color(0.6814234, 0.6814234, 0.6814234, 1)
+metallic = 0.15
+roughness = 0.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8dh08"]
+material = SubResource("StandardMaterial3D_cymoj")
+top_radius = 0.11
+bottom_radius = 0.11
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dh08"]
+albedo_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8dh08"]
+material = SubResource("StandardMaterial3D_8dh08")
 size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yn61i"]
+albedo_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cymoj"]
+material = SubResource("StandardMaterial3D_yn61i")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_yn61i"]
+size = Vector3(0.05, 0.2, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5n12"]
+albedo_color = Color(0.6158285, 0.6158285, 0.6158285, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f5n12"]
+material = SubResource("StandardMaterial3D_f5n12")
+size = Vector3(0.21, 0.3, 0.1)
 
 [node name="RocketLauncherTemp" type="Node3D" unique_id=1634502107]
 transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=19293748]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.08049005, 0, -3.5183318e-09)
-mesh = SubResource("CylinderMesh_cymoj")
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 6.352747e-22, 0, 1, 0.32072943, 0, 1.4019528e-08)
+mesh = SubResource("CylinderMesh_8dh08")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1038988767]
-transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, 0.053854078, -0.1)
+transform = Transform3D(3.0865219, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, 0.070898145, -0.00019194136)
 mesh = SubResource("BoxMesh_8dh08")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=766679754]
-transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, 0.053854078, 0.10411171)
-mesh = SubResource("BoxMesh_8dh08")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2001459318]
-transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, -0.080166996, -0.1)
+transform = Transform3D(3.0865219, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, 0.070898145, 0.09936581)
 mesh = SubResource("BoxMesh_8dh08")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=2048377343]
-transform = Transform3D(3.0865214, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, -0.080166996, 0.10411171)
+transform = Transform3D(3.0865216, 0, 0, 0, 1, 0, 0, 0, 1, -0.32942447, -0.080166996, 0.09936581)
 mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=147860472]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.1175824e-22, 0, 1, -0.040839016, 0, -1.78513e-09)
+mesh = SubResource("CylinderMesh_cymoj")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=173637462]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 6.352747e-22, 0, 1, -0.42795366, 0, -1.8706448e-08)
+mesh = SubResource("CylinderMesh_8dh08")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=484112016]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 8.4703295e-22, 0, 1, -0.22697985, 0, -9.921604e-09)
+mesh = SubResource("CylinderMesh_8dh08")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=894694503]
+transform = Transform3D(1, 1.2962003e-08, -1.6171404e-08, -2.0134257e-08, 0.792577, -0.60977185, 4.9132325e-09, 0.60977185, 0.792577, -0.07966231, -0.08785848, -0.10367965)
+mesh = SubResource("BoxMesh_yn61i")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=1744749290]
+transform = Transform3D(0.85682553, 0.5156064, -6.258354e-09, -0.5156064, 0.85682553, -2.2537872e-08, -6.2583645e-09, 2.253787e-08, 1, -0.33705175, -0.10933095, 4.3485304e-10)
+mesh = SubResource("BoxMesh_f5n12")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=1512390769]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.0587912e-21, 0, 1, 0.29942423, 0, 1.3088248e-08)
+mesh = SubResource("CylinderMesh_8dh08")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=1059077071]
+transform = Transform3D(3.0865219, 0, 0, 0, 1, 0, 0, 0, 1, 0.017102957, 0.070898145, -0.00019192591)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=1282332792]
+transform = Transform3D(3.0865219, 0, 0, 0, 1, 0, 0, 0, 1, 0.017102955, 0.070898145, 0.09936582)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=1086489964]
+transform = Transform3D(3.0865219, 0, 0, 0, 1, 0, 0, 0, 1, 0.017102957, -0.08, 0.09936582)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=947842619]
+transform = Transform3D(3.0865219, 0, 0, 0, 1, 0, 0, 0, 1, 0.017, -0.08, 0.0002540994)
+mesh = SubResource("BoxMesh_8dh08")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="." unique_id=2085441501]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.0587912e-21, 0, 1, -0.079790644, 0, -3.4877596e-09)
+mesh = SubResource("CylinderMesh_8dh08")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="." unique_id=1216989323]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.2705494e-21, 0, 1, 0.12118315, 0, 5.2970828e-09)
+mesh = SubResource("CylinderMesh_8dh08")

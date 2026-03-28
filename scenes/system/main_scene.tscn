@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://msugkxtpvtas" path="res://levels/test_level.tscn" id="1_mgb3u"]
 [ext_resource type="Script" uid="uid://c076hdkvkmp2v" path="res://scripts/system/gamemanager.gd" id="1_qoi2i"]
+[ext_resource type="Script" uid="uid://cmaae7pyhqp5j" path="res://scripts/system/managers.gd" id="1_u4ui1"]
 [ext_resource type="Script" uid="uid://dli6v4cw3ijmm" path="res://scripts/system/weapon_manager.gd" id="2_bvk2m"]
 [ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://assets/weapons/scripts/weapon_data.gd" id="3_rc0n7"]
 [ext_resource type="Resource" uid="uid://ddm18y0rrtd12" path="res://assets/weapons/resources/data/MD P-11 Data.tres" id="4_tpgha"]
@@ -14,6 +15,7 @@
 [node name="MainScene" type="Node" unique_id=99574882]
 
 [node name="Managers" type="Node" parent="." unique_id=977669407]
+script = ExtResource("1_u4ui1")
 
 [node name="GameManager" type="Node" parent="Managers" unique_id=967645447]
 script = ExtResource("1_qoi2i")

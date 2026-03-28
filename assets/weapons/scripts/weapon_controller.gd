@@ -11,6 +11,7 @@ class_name WeaponController extends Node
 @onready var player: PlayerController = $"../.."
 @onready var weapon_shoot: AnimationPlayer = $"../../WeaponShoot"
 @onready var weapon_reload: AnimationPlayer = $"../../WeaponReload"
+@onready var managers: Node = $"../../../../Managers"
 
 var current_weapon_model: Node3D
 var can_fire_next : bool = true
