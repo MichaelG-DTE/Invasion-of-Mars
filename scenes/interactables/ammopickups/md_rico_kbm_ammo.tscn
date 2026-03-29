@@ -1,18 +1,32 @@
 [gd_scene format=3 uid="uid://bhs86bv0auhwy"]
 
 [ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="1_tio07"]
+[ext_resource type="PackedScene" uid="uid://d1jg8677o3yiv" path="res://scenes/weapons/Missileasset.tscn" id="2_2xj21"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xj21"]
-albedo_color = Color(0.21806103, 0.21806103, 0.21806103, 1)
+albedo_color = Color(0.6484881, 0.6484881, 0.6484881, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_cfbjm"]
+[sub_resource type="BoxMesh" id="BoxMesh_2xj21"]
 material = SubResource("StandardMaterial3D_2xj21")
-size = Vector3(0.6, 0.3, 0.6)
+size = Vector3(0.3, 0.15, 0.3)
 
 [node name="MD RICO KBM Ammo" unique_id=1825521633 instance=ExtResource("1_tio07")]
 
 [node name="MeshInstance3D" parent="." index="1" unique_id=42939125]
 visible = false
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=1944512116]
-mesh = SubResource("BoxMesh_cfbjm")
+[node name="Missile" parent="." index="2" unique_id=45120929 instance=ExtResource("2_2xj21")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.1, 0, -0.1)
+
+[node name="Missile2" parent="." index="3" unique_id=710299925 instance=ExtResource("2_2xj21")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.1, 0, 0.1)
+
+[node name="Missile3" parent="." index="4" unique_id=1070837737 instance=ExtResource("2_2xj21")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.1, 0, -0.1)
+
+[node name="Missile4" parent="." index="5" unique_id=1280675535 instance=ExtResource("2_2xj21")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.1, 0, 0.1)
+
+[node name="missileholder" type="MeshInstance3D" parent="." index="6" unique_id=926009608]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.080432236, 0)
+mesh = SubResource("BoxMesh_2xj21")

@@ -2,7 +2,17 @@
 
 [ext_resource type="Script" uid="uid://c3ddp7mnxfun2" path="res://scripts/Interactables/Events/door.gd" id="1_xbefs"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbefs"]
+albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+metallic = 0.35
+roughness = 0.5
+rim_enabled = true
+rim_tint = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_r7xnl"]
+material = SubResource("StandardMaterial3D_xbefs")
 size = Vector3(0.1, 2.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xbefs"]

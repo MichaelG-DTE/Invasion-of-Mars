@@ -4,8 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bo65jlpbw8tsy" path="res://scenes/enemies/voidtrooper.tscn" id="2_w7r7j"]
 [ext_resource type="Texture2D" uid="uid://dbqlifn5revim" path="res://assets/textures/2K/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg" id="3_e7anx"]
 [ext_resource type="PackedScene" uid="uid://bp4sjqg8j3e40" path="res://scenes/enemies/warrior.tscn" id="3_gmgay"]
+[ext_resource type="PackedScene" uid="uid://cpt48xcgk82ul" path="res://scenes/enemies/adept_warrior.tscn" id="3_vr6yy"]
+[ext_resource type="PackedScene" uid="uid://dwdnmc54er0if" path="res://scenes/enemies/shielded_adept_warrior.tscn" id="4_ra35m"]
 [ext_resource type="PackedScene" uid="uid://ctbf4v2it14bo" path="res://scenes/interactables/weaponpickups/kbm_weapon_pickup.tscn" id="5_68kkm"]
+[ext_resource type="PackedScene" uid="uid://od5mfeqy8ma1" path="res://scenes/enemies/adept_voidtrooper.tscn" id="5_ra35m"]
 [ext_resource type="PackedScene" uid="uid://gbv436xmkqlv" path="res://scenes/interactables/weaponpickups/shotgun_weapon_pickup.tscn" id="6_n4g7x"]
+[ext_resource type="PackedScene" uid="uid://d31ta66iqad1j" path="res://scenes/enemies/shielded_adept_voidtrooper.tscn" id="6_x7oem"]
 [ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weaponpickups/weapon_pickup.tscn" id="7_atrxo"]
 [ext_resource type="Resource" uid="uid://d0mhjhy1536qp" path="res://assets/weapons/resources/MD ARE-18.tres" id="8_vr6yy"]
 [ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="9_ra35m"]
@@ -84,51 +88,51 @@ navigation_mesh = SubResource("NavigationMesh_x25rp")
 
 [node name="Warrior" parent="NavigationRegion3D" unique_id=1958788082 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6947775, 1.5, 0.77175665)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior2" parent="NavigationRegion3D" unique_id=1673916328 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.761509, 1.5, 1.9010296)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior3" parent="NavigationRegion3D" unique_id=1107905286 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9234447, 1.5, 9.340221)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior4" parent="NavigationRegion3D" unique_id=1583147260 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1273117, 1.5, -16.403324)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior5" parent="NavigationRegion3D" unique_id=1519258735 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8852587, 1.5, 4.181032)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior6" parent="NavigationRegion3D" unique_id=1127552273 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.341545, 1.5, 5.310305)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior7" parent="NavigationRegion3D" unique_id=2083162227 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.503481, 1.5, 12.749496)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior8" parent="NavigationRegion3D" unique_id=847079429 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.707348, 1.5, -12.994049)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior9" parent="NavigationRegion3D" unique_id=2098230597 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.481727, 1.5060363, -5.4825315)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior10" parent="NavigationRegion3D" unique_id=1197628792 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.503481, 1.5, 12.749496)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior11" parent="NavigationRegion3D" unique_id=458314046 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.707348, 1.5, -12.994049)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="Warrior12" parent="NavigationRegion3D" unique_id=294850037 instance=ExtResource("3_gmgay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.481727, 1.5060363, -5.4825315)
-follow_speed = 4.5
+follow_speed = 3.0
 
 [node name="VoidTrooper" parent="NavigationRegion3D" unique_id=879734878 instance=ExtResource("2_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.793858, 1.5372157, 0)
@@ -147,6 +151,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.117977, 1.5372157, -2.852
 
 [node name="VoidTrooper6" parent="NavigationRegion3D" unique_id=447163577 instance=ExtResource("2_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.174755, 1.5372157, 2.9346204)
+
+[node name="Adept Warrior" parent="NavigationRegion3D" unique_id=68986232 instance=ExtResource("3_vr6yy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.487665, 1.5583196, -6.905204)
+
+[node name="Adept Warrior2" parent="NavigationRegion3D" unique_id=1962526607 instance=ExtResource("3_vr6yy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.748963, 1.5583196, -6.905204)
+
+[node name="Adept Warrior3" parent="NavigationRegion3D" unique_id=2058176915 instance=ExtResource("3_vr6yy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.748963, 1.5583196, -8.656685)
+
+[node name="Shielded Adept Warrior" parent="NavigationRegion3D" unique_id=359650807 instance=ExtResource("4_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.007484, 1.5343648, -4.958351)
+
+[node name="Shielded Adept Warrior2" parent="NavigationRegion3D" unique_id=1484047780 instance=ExtResource("4_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.109365, 1.5343648, 0)
+
+[node name="Shielded Adept Warrior3" parent="NavigationRegion3D" unique_id=1516307108 instance=ExtResource("4_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.887732, 1.5343648, 0)
+
+[node name="Shielded Adept Warrior4" parent="NavigationRegion3D" unique_id=1123956656 instance=ExtResource("4_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38115358, 1.5343648, -3.041935)
+
+[node name="Adept Voidtrooper" parent="NavigationRegion3D" unique_id=1101027778 instance=ExtResource("5_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.401898, 1.4828598, 0)
+
+[node name="Adept Voidtrooper2" parent="NavigationRegion3D" unique_id=1311012583 instance=ExtResource("5_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.180657, 1.4828598, 0)
+
+[node name="Adept Voidtrooper3" parent="NavigationRegion3D" unique_id=51409201 instance=ExtResource("5_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.401898, 1.4828598, -1.1273439)
+
+[node name="Adept Voidtrooper4" parent="NavigationRegion3D" unique_id=1796862670 instance=ExtResource("5_ra35m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.818324, 1.4828598, 0)
+
+[node name="Shielded Adept Voidtrooper" parent="NavigationRegion3D" unique_id=1343759164 instance=ExtResource("6_x7oem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.244982, 1.5518548, 4.1584196)
+
+[node name="Shielded Adept Voidtrooper2" parent="NavigationRegion3D" unique_id=51057182 instance=ExtResource("6_x7oem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.02752, 1.5518548, 4.1584196)
 
 [node name="Geometry" type="Node3D" parent="." unique_id=941615642 groups=["geometry"]]
 
@@ -310,69 +353,71 @@ mesh = SubResource("BoxMesh_x25rp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7905636, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ly3hx")
 
-[node name="KBMWeaponPickup" parent="." unique_id=1825521633 instance=ExtResource("5_68kkm")]
+[node name="InteractableEnvironment" type="Node3D" parent="." unique_id=1073257592]
+
+[node name="KBMWeaponPickup" parent="InteractableEnvironment" unique_id=1825521633 instance=ExtResource("5_68kkm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2867033, 1.6952505, 5.102611)
 
-[node name="ShotgunWeaponPickup" parent="." unique_id=326100782 instance=ExtResource("6_n4g7x")]
+[node name="ShotgunWeaponPickup" parent="InteractableEnvironment" unique_id=326100782 instance=ExtResource("6_n4g7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.151542, 1.6952505, 5.102611)
 
-[node name="ARWeaponPickup" parent="." unique_id=2019189845 instance=ExtResource("7_atrxo")]
+[node name="ARWeaponPickup" parent="InteractableEnvironment" unique_id=2019189845 instance=ExtResource("7_atrxo")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.70725167, 1.6952505, 5.102611)
 weapon_slot = 2
 weapon_resource = ExtResource("8_vr6yy")
 
-[node name="MD ARE ammo" parent="." unique_id=1278150945 instance=ExtResource("9_ra35m")]
+[node name="MD ARE ammo" parent="InteractableEnvironment" unique_id=1278150945 instance=ExtResource("9_ra35m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.910788, 1.65, 6.6279945)
 script = ExtResource("10_x7oem")
 weapon_slot = 2
 ammo_amount = 60
 
-[node name="MD BMR-99 Ammo" parent="." unique_id=624920063 instance=ExtResource("11_ec2iw")]
+[node name="MD BMR-99 Ammo" parent="InteractableEnvironment" unique_id=624920063 instance=ExtResource("11_ec2iw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37611783, 1.65, 6.6279945)
 script = ExtResource("10_x7oem")
 weapon_slot = 3
 ammo_amount = 8
 
-[node name="MD P-11 Ammo" parent="." unique_id=1203022274 instance=ExtResource("12_ulql8")]
+[node name="MD P-11 Ammo" parent="InteractableEnvironment" unique_id=1203022274 instance=ExtResource("12_ulql8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1808023, 1.65, 6.6279945)
 script = ExtResource("10_x7oem")
 weapon_slot = 1
 ammo_amount = 10
 
-[node name="MD RICO KBM Ammo" parent="." unique_id=1039210768 instance=ExtResource("13_3i7yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6869726, 1.65, 6.6279945)
+[node name="MD RICO KBM Ammo" parent="InteractableEnvironment" unique_id=1039210768 instance=ExtResource("13_3i7yh")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.6869726, 1.8055459, 6.6279945)
 script = ExtResource("10_x7oem")
 weapon_slot = 4
 ammo_amount = 4
 
-[node name="DestructibleBox" parent="." unique_id=1683781294 instance=ExtResource("14_5y2bn")]
+[node name="DestructibleBox" parent="InteractableEnvironment" unique_id=1683781294 instance=ExtResource("14_5y2bn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77649, 2.051859, 6.6279945)
 
-[node name="DestructibleBox2" parent="." unique_id=1153748977 instance=ExtResource("14_5y2bn")]
+[node name="DestructibleBox2" parent="InteractableEnvironment" unique_id=1153748977 instance=ExtResource("14_5y2bn")]
 transform = Transform3D(0.73416847, 0, -0.67896736, 0, 1, 0, 0.67896736, 0, 0.73416847, 5.77649, 2.051859, 3.8280964)
 
-[node name="DestructibleBox3" parent="." unique_id=1810861842 instance=ExtResource("14_5y2bn")]
+[node name="DestructibleBox3" parent="InteractableEnvironment" unique_id=1810861842 instance=ExtResource("14_5y2bn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6212153, 2.051859, 8.567518)
 
-[node name="TerminalTemp" parent="." unique_id=1285270131 instance=ExtResource("15_kbjoq")]
+[node name="TerminalTemp" parent="InteractableEnvironment" unique_id=1285270131 instance=ExtResource("15_kbjoq")]
 transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -30.525675, 2.7, 3.992147)
 
-[node name="HealthTerminalTemp" parent="." unique_id=1993244436 instance=ExtResource("16_m2xr1")]
+[node name="HealthTerminalTemp" parent="InteractableEnvironment" unique_id=1993244436 instance=ExtResource("16_m2xr1")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -30.591307, 2.8821065, 0.68409896)
 
-[node name="ShieldTerminalTemp" parent="." unique_id=722594015 instance=ExtResource("17_n4g7x")]
+[node name="ShieldTerminalTemp" parent="InteractableEnvironment" unique_id=722594015 instance=ExtResource("17_n4g7x")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, -30.591, 2.882, 1.952)
 
-[node name="SaveTerminalTemp" parent="." unique_id=1575750007 instance=ExtResource("17_hj2pq")]
+[node name="SaveTerminalTemp" parent="InteractableEnvironment" unique_id=1575750007 instance=ExtResource("17_hj2pq")]
 transform = Transform3D(-2, 1.7484555e-07, 0, -1.7484555e-07, -2, 0, 0, 0, 2, -30.529314, 2.7268875, -1.1698502)
 
-[node name="EventTrigger" parent="." unique_id=1581121877 instance=ExtResource("18_04rbu")]
+[node name="EventTrigger" parent="InteractableEnvironment" unique_id=1581121877 instance=ExtResource("18_04rbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6645031, -0.23574495)
 collision_layer = 64
 collision_mask = 2
 
-[node name="Door" parent="." unique_id=267784101 instance=ExtResource("19_ndqk6")]
+[node name="Door" parent="InteractableEnvironment" unique_id=267784101 instance=ExtResource("19_ndqk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.309824, 1.5, -2.4740138)
 
-[node name="Button" parent="." unique_id=1062697064 instance=ExtResource("20_c5dyf")]
+[node name="Button" parent="InteractableEnvironment" unique_id=1062697064 instance=ExtResource("20_c5dyf")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -30.519037, 2.7188625, -2.9451609)

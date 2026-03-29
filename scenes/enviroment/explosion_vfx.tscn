@@ -93,7 +93,7 @@ color_ramp = SubResource("GradientTexture1D_xj2pc")
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_0golt"]
+[sub_resource type="CurveTexture" id="CurveTexture_xj2pc"]
 curve = SubResource("Curve_hkttp")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fc7lv"]
@@ -106,7 +106,7 @@ initial_velocity_max = 2.0
 gravity = Vector3(0, 0, 0)
 scale_min = 3.0
 scale_max = 4.0
-scale_curve = SubResource("CurveTexture_0golt")
+scale_curve = SubResource("CurveTexture_xj2pc")
 color = Color(0, 0, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_rjbei"]
@@ -118,7 +118,7 @@ script = ExtResource("1_1pj1w")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_afsig")
 emitting = false
-amount = 20
+amount = 50
 lifetime = 0.6
 one_shot = true
 explosiveness = 1.0
@@ -130,7 +130,7 @@ draw_pass_1 = SubResource("QuadMesh_0golt")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = ExtResource("2_afsig")
 emitting = false
-amount = 1
+amount = 50
 lifetime = 0.1
 one_shot = true
 explosiveness = 1.0
@@ -142,7 +142,7 @@ draw_pass_1 = SubResource("QuadMesh_srn1y")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = ExtResource("2_afsig")
 emitting = false
-amount = 14
+amount = 50
 lifetime = 0.55
 one_shot = true
 explosiveness = 1.0
@@ -154,7 +154,7 @@ draw_pass_1 = SubResource("QuadMesh_hkttp")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 material_override = ExtResource("2_afsig")
 emitting = false
-amount = 10
+amount = 50
 lifetime = 0.8
 one_shot = true
 explosiveness = 1.0

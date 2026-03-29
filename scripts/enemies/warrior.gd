@@ -1,6 +1,8 @@
 class_name Warrior extends GenisysEnemy
 
 @export var follow_speed : float = 3.0
+@export var attack_damage := 10.0
+@export var is_shielded := false
 @onready var detection_area: Area3D = $DetectionArea
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
@@ -9,12 +11,10 @@ class_name Warrior extends GenisysEnemy
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 
-
 var target : Node3D
 var state_machine
 var dead := false
 var attack_range := 2.0
-var attack_damage := 10.0
 var following := true
 var can_attack := true
 var attack_timer := 3.0
@@ -26,12 +26,13 @@ func _ready() -> void:
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
 	
+	if is_shielded:
+		$ShieldPlayer.play("shield activate and deactivate")
 	# connect signals
 	health_component.died.connect(_on_died)
 	navigation_agent_3d.velocity_computed.connect(_on_velocity_computed)
 	state_machine = animation_tree.get("parameters/playback")
 
-	
 func _physics_process(delta: float) -> void:
 	if !dead:
 		# give the enemies gravity
@@ -51,6 +52,10 @@ func _process(delta: float) -> void:
 		if attack_timer <= 0:
 			can_attack = true
 			attack_timer = 3.0
+			
+	if health_component.current_shield == 0:
+		if is_shielded and !dead:
+			$ShieldPlayer.play_backwards("shield activate and deactivate")
 
 func on_triggered() -> void:
 	state_chart.send_event("OnFollow")

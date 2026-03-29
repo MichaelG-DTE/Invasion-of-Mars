@@ -1,6 +1,7 @@
 class_name VoidTrooper extends GenisysEnemy
 
 @export var follow_speed : float = 3.0
+@export var attack_damage := 10.0
 @onready var detection_area: Area3D = $DetectionArea
 @onready var state_chart: StateChart = $StateChart
 @onready var base_collision_shape_3d: CollisionShape3D = $CollisionShape3D
@@ -10,12 +11,12 @@ class_name VoidTrooper extends GenisysEnemy
 @onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 @onready var health_component: HealthComponent = $HealthComponent
 @export var projectile_scene : PackedScene
+@export var is_shielded := false
 
 var target : Node3D
 var state_machine
 var dead := false
 var attack_range := 10.0
-var attack_damage := 10.0
 var following := true
 var can_attack := true
 var attack_timer := 0.0
@@ -24,12 +25,16 @@ var projectile_speed := 30.0
 var damage := 10.0
 var fire_rate := 4
 
+
 func _ready() -> void:
 	super._ready()
 	
 	animation_player.play("Teleport")
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
+	
+	if is_shielded:
+		$VoidtrooperShieldPlayer.play("shield activate and deactivate")
 	
 	# connect signals
 	health_component.died.connect(_on_died)
@@ -54,6 +59,10 @@ func _process(delta: float) -> void:
 		attack_timer -= delta
 		if attack_timer <= 0:
 			can_attack = true
+
+	if health_component.current_shield == 0:
+		if is_shielded and !dead:
+			$VoidtrooperShieldPlayer.play_backwards("shield activate and deactivate")
 
 func on_triggered() -> void:
 	state_chart.send_event("OnFollow")

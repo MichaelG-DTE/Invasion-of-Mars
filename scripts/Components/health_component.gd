@@ -24,7 +24,6 @@ func _ready() -> void:
 		current_health = max_health
 		max_shield = 0.0
 
-
 func take_damage(amount : float, source : Node3D = null) -> void:
 	if not is_alive:
 		return

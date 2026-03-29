@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d1jg8677o3yiv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl370"]
+albedo_color = Color(0.28778407, 0.28778407, 0.28778407, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jeb72"]
+material = SubResource("StandardMaterial3D_vl370")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp4n5"]
+albedo_color = Color(0.28778407, 0.28778407, 0.28778407, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bpc7o"]
+material = SubResource("StandardMaterial3D_qp4n5")
+top_radius = 0.001
+bottom_radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwxup"]
+albedo_color = Color(0.28778407, 0.28778407, 0.28778407, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rx7tc"]
+material = SubResource("StandardMaterial3D_bwxup")
+top_radius = 0.09
+bottom_radius = 0.09
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwani"]
+albedo_color = Color(0.28778407, 0.28778407, 0.28778407, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1r0uk"]
+material = SubResource("StandardMaterial3D_dwani")
+top_radius = 0.001
+bottom_radius = 0.1
+height = 0.25
+
+[node name="Missile" type="Node3D" unique_id=45120929]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1265610350]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.15095702)
+mesh = SubResource("CylinderMesh_jeb72")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=417898611]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.35086265)
+mesh = SubResource("CylinderMesh_bpc7o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1448867773]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.031592973)
+mesh = SubResource("CylinderMesh_rx7tc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2069425049]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.10759987)
+mesh = SubResource("CylinderMesh_1r0uk")

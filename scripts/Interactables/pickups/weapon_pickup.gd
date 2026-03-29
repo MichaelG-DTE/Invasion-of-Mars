@@ -2,7 +2,8 @@ class_name WeaponPickup extends BasePickup
 
 @export var weapon_slot : int = 1
 @export var weapon_resource : Weapon
-@onready var managers: Node = $"../../../Managers"
+@onready var managers: Node = $"../../../../Managers"
+
 
 func can_pickup(player: PlayerController) -> bool:
 	var weapon_data = managers.weapon_manager.weapons[weapon_slot]

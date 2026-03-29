@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://mqhagwpejucb"]
 
-[ext_resource type="PackedScene" uid="uid://msugkxtpvtas" path="res://levels/test_level.tscn" id="1_mgb3u"]
 [ext_resource type="Script" uid="uid://c076hdkvkmp2v" path="res://scripts/system/gamemanager.gd" id="1_qoi2i"]
 [ext_resource type="Script" uid="uid://cmaae7pyhqp5j" path="res://scripts/system/managers.gd" id="1_u4ui1"]
 [ext_resource type="Script" uid="uid://dli6v4cw3ijmm" path="res://scripts/system/weapon_manager.gd" id="2_bvk2m"]
@@ -10,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
 [ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
+[ext_resource type="Script" uid="uid://xh45d6v0vvbq" path="res://scripts/system/enemy_manager.gd" id="9_7r8fc"]
+[ext_resource type="PackedScene" uid="uid://bupaqukakeo13" path="res://levels/level_one.tscn" id="10_ufluw"]
 [ext_resource type="PackedScene" uid="uid://dsx6nmvwbwudy" path="res://scenes/enviroment/world_environment.tscn" id="11_u4ui1"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
@@ -30,11 +31,15 @@ weapons = Dictionary[int, ExtResource("3_rc0n7")]({
 })
 player = NodePath("../../CurrentLevel/Player")
 
+[node name="EnemyManager" type="Node" parent="Managers" unique_id=1636199687]
+script = ExtResource("9_7r8fc")
+
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=353157369]
 
-[node name="TestLevel" parent="CurrentLevel" unique_id=136392307 instance=ExtResource("1_mgb3u")]
+[node name="Level One" parent="CurrentLevel" unique_id=1303562626 instance=ExtResource("10_ufluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.317327, -10.773289)
 
 [node name="Player" parent="CurrentLevel" unique_id=96954163 instance=ExtResource("8_ufluw")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.4852347, -8.129205)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.30914307, 5.4852347, -10.344288)
 
 [node name="WorldEnvironment" parent="." unique_id=1091596004 instance=ExtResource("11_u4ui1")]

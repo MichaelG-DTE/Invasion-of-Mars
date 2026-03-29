@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://d31ta66iqad1j"]
+
+[ext_resource type="PackedScene" uid="uid://od5mfeqy8ma1" path="res://scenes/enemies/adept_voidtrooper.tscn" id="1_ia20w"]
+[ext_resource type="PackedScene" uid="uid://bqo3es5yd4r70" path="res://addons/nojoule-energy-shield/shield_sphere.tscn" id="2_ng5f2"]
+[ext_resource type="Shader" uid="uid://dcko35tc4k343" path="res://addons/nojoule-energy-shield/shield.gdshader" id="3_lsy65"]
+[ext_resource type="Texture2D" uid="uid://dnqegf8mxqli" path="res://addons/nojoule-energy-shield/shield_noise.tres" id="4_3toac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3q470"]
+render_priority = 0
+shader = ExtResource("3_lsy65")
+shader_parameter/_quantization = true
+shader_parameter/_steps_quantization = 5
+shader_parameter/_object_scale = 1.0
+shader_parameter/_object_size = 1.0
+shader_parameter/_only_on_wave_visibility = false
+shader_parameter/_start_falloff_visibility = 0.5
+shader_parameter/_end_falloff_visibility = 0.3
+shader_parameter/_time_multiplier_activation = 1.0
+shader_parameter/_distance_multiplier_activation = 1.0
+shader_parameter/_width_time_activation = 1.0
+shader_parameter/_enable_highlight_intersection = true
+shader_parameter/_width_highlight_intersection = 1.0
+shader_parameter/_noise_texture = ExtResource("4_3toac")
+shader_parameter/_speed_noise = Vector2(0.02, 0.02)
+shader_parameter/_origin_generate = Vector3(0, 0.5, 0)
+shader_parameter/_time_generate = 1.0
+shader_parameter/_thickness_generate = 0.25
+shader_parameter/_collapse = false
+shader_parameter/_color_shield = Color(0.26, 0.975, 1, 1)
+shader_parameter/_color_brightness_shield = 15.0
+shader_parameter/_intensity_shield = 3.0
+shader_parameter/glow_enabled = true
+shader_parameter/glow_strength = 0.1
+shader_parameter/_active_static = true
+shader_parameter/_origin_static = Vector3(0, 0.5, 0)
+shader_parameter/_speed_static = 0.1
+shader_parameter/_frequency_static = 80.0
+shader_parameter/_amplitude_static = 0.002
+shader_parameter/_normal_amplitude_static = 0.002
+shader_parameter/_effect_radius_static = 1.2
+shader_parameter/_active_static_offset_hl = true
+shader_parameter/_strength_static_offset_hl = 1.0
+shader_parameter/_intensity_static_offset_hl = 5.0
+shader_parameter/_relative_origin_static = true
+shader_parameter/_origin_impact = PackedVector3Array(0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/_time_impact = PackedFloat32Array(0, 0, 0, 0, 0)
+shader_parameter/_frequency_impact = 20.0
+shader_parameter/_waves_impact = 0.0
+shader_parameter/_fade_waves_impact = 2.0
+shader_parameter/_amplitude_impact = 0.02
+shader_parameter/_normal_amplitude_impact = 0.05
+shader_parameter/_radius_impact = 1.0
+shader_parameter/_active_impact_offset_hl = true
+shader_parameter/_strength_impact_offset_hl = 1.0
+shader_parameter/_intensity_impact_offset_hl = 5.0
+shader_parameter/_relative_origin_impact = false
+shader_parameter/_active_border = false
+shader_parameter/_intensity_border = 2.0
+shader_parameter/_percentage_border = 0.1
+shader_parameter/_show_normals = false
+
+[sub_resource type="SphereMesh" id="SphereMesh_ng5f2"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_3q470")
+radius = 1.0
+height = 2.0
+radial_segments = 256
+rings = 256
+
+[sub_resource type="Curve" id="Curve_lsy65"]
+resource_local_to_scene = true
+resource_name = "animation_curve"
+_data = [Vector2(0, 0), 0.0, 2.60088, 0, 0, Vector2(0.996183, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_oaynf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShieldSphere:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShieldSphere:mesh:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_05ey3"]
+resource_name = "shield activate and deactivate"
+length = 2.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShieldSphere:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShieldSphere:mesh:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.001, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmlrx"]
+_data = {
+&"RESET": SubResource("Animation_oaynf"),
+&"shield activate and deactivate": SubResource("Animation_05ey3")
+}
+
+[node name="Shielded Adept Voidtrooper" unique_id=879734878 instance=ExtResource("1_ia20w")]
+is_shielded = true
+
+[node name="HealthComponent" parent="." index="0" unique_id=543528916]
+has_shields = true
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(775898126) index="0" unique_id=1510153051]
+bones/0/position = Vector3(0.62109137, -0.89367366, -96.817726)
+bones/0/rotation = Quaternion(-0.68481404, -0.2692027, 0.2489959, 0.62973064)
+bones/1/rotation = Quaternion(0.0119423065, 0.040512796, -0.006769571, 0.9990848)
+bones/2/rotation = Quaternion(0.096488096, 0.08151688, -0.011447325, 0.9919244)
+bones/3/rotation = Quaternion(0.096421026, 0.08153094, -0.011458746, 0.99192965)
+bones/4/rotation = Quaternion(0.011446858, -0.010470762, 0.0015355179, 0.9998786)
+bones/5/rotation = Quaternion(-0.06962823, 0.17851527, -0.0051552723, 0.9814569)
+bones/7/rotation = Quaternion(-0.57781094, -0.41794893, 0.58328897, -0.38887936)
+bones/8/rotation = Quaternion(0.4267684, -0.09771306, 0.031167727, 0.8985264)
+bones/9/rotation = Quaternion(0.020694792, 0.057543293, 0.41476706, 0.9078705)
+bones/10/rotation = Quaternion(-0.115810044, 0.14959647, -0.031118294, 0.9814483)
+bones/11/rotation = Quaternion(0.27098632, 0.14131872, 0.21288176, 0.92805)
+bones/12/rotation = Quaternion(-0.0074851518, -0.0011607851, 0.008963919, 0.9999312)
+bones/15/rotation = Quaternion(0.050823204, -0.00034159477, 0.13012882, 0.9901936)
+bones/16/rotation = Quaternion(0.17422149, -0.0016219153, -0.03842659, 0.98395514)
+bones/19/rotation = Quaternion(0.122524805, 0.0076577133, -0.01596467, 0.99230754)
+bones/20/rotation = Quaternion(0.19924033, -0.0012841163, -0.012079635, 0.97987545)
+bones/23/rotation = Quaternion(0.2609165, -0.012133093, -0.077005945, 0.96220875)
+bones/24/rotation = Quaternion(0.2853907, 0.0008872913, 0.0046014898, 0.95839983)
+bones/27/rotation = Quaternion(0.28329238, -0.033120804, -0.13089263, 0.94948184)
+bones/28/rotation = Quaternion(0.3481102, 0.012491932, 0.02132902, 0.9371277)
+bones/31/rotation = Quaternion(0.6263998, -0.37894848, 0.5489345, 0.40335134)
+bones/32/rotation = Quaternion(0.38821274, 0.09830851, 0.20024917, 0.8941626)
+bones/33/rotation = Quaternion(0.082981184, 0.012750774, -0.35843274, 0.9297729)
+bones/34/rotation = Quaternion(0.12703499, -0.09020967, -0.040578198, 0.98695385)
+bones/35/rotation = Quaternion(0.19702567, -0.0037801093, -0.26784897, 0.9430925)
+bones/36/rotation = Quaternion(0.0030347672, 0.0025031252, 0.16279146, 0.98665273)
+bones/39/rotation = Quaternion(0.029302903, 0.0059856977, -0.057199568, 0.9979147)
+bones/40/rotation = Quaternion(0.14672212, 0.000247465, 0.035962716, 0.9885238)
+bones/43/rotation = Quaternion(0.098494455, 0.005663749, -0.03721901, 0.99442524)
+bones/44/rotation = Quaternion(0.29846975, 0.0026019446, 0.0028963913, 0.95441115)
+bones/47/rotation = Quaternion(0.19084238, -0.0099852355, 0.013924586, 0.9814712)
+bones/48/rotation = Quaternion(0.33833697, -0.0015525138, -0.017682858, 0.9408576)
+bones/52/rotation = Quaternion(0.36957532, -0.0132203195, -0.052211773, 0.92763853)
+bones/55/rotation = Quaternion(0.07574184, 0.20699544, 0.9707662, -0.09502192)
+bones/56/rotation = Quaternion(-0.31734908, 0.11923736, -0.022287818, 0.9405186)
+bones/57/rotation = Quaternion(0.52299386, -0.105115384, 0.04372336, 0.8446991)
+bones/58/rotation = Quaternion(0.30728182, -0.034608815, -0.010450723, 0.95093167)
+bones/60/rotation = Quaternion(-0.12195825, 0.010070534, 0.9844498, 0.12602922)
+bones/61/rotation = Quaternion(-0.30154863, 0.0813891, -0.024042994, 0.9496664)
+bones/62/rotation = Quaternion(0.6193046, 0.15245597, 0.039389525, 0.7691992)
+
+[node name="BoneAttachment3D" parent="Armature/Skeleton3D" index="1" unique_id=1239330380]
+transform = Transform3D(-0.22627403, -0.15016472, 0.9624186, 0.94611925, 0.2010814, 0.25381684, -0.23163909, 0.9679959, 0.0965742, -33.74454, -16.921547, -100.37995)
+
+[node name="ShieldSphere" parent="." index="10" unique_id=1287300855 instance=ExtResource("2_ng5f2")]
+unique_name_in_owner = true
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.65, 0)
+visible = false
+mesh = SubResource("SphereMesh_ng5f2")
+animation_curve = SubResource("Curve_lsy65")
+shield_origin = Vector3(1, 1, 0)
+
+[node name="VoidtrooperShieldPlayer" type="AnimationPlayer" parent="." index="11" unique_id=349730574]
+libraries/ = SubResource("AnimationLibrary_lmlrx")

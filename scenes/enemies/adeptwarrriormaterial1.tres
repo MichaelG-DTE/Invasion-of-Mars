@@ -1,0 +1,34 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfwbah0jgbrl8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i3m1b"]
+load_path = "res://.godot/imported/GLBAlienSoldier_Ch44_1002_Diffuse.png-dbef1547c2b70004ee0f9c846af3bbfc.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y4prh"]
+load_path = "res://.godot/imported/GLBAlienSoldier_Ch44_1002_Emissive.png-d8cfe3ec56e00c71e2c08c97bd7f57f0.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3hxyn"]
+load_path = "res://.godot/imported/GLBAlienSoldier_Ch44_1002_Glossiness.png-0a0661587d7b2292141412d6b538e2f7.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i1g2b"]
+load_path = "res://.godot/imported/GLBAlienSoldier_Ch44_1002_Normal.png-7fabdb43ff9c8e5674726bcaa6b482c3.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a5lhn"]
+load_path = "res://.godot/imported/GLBAlienSoldier_Ch44_1002_Glossiness.png-0a0661587d7b2292141412d6b538e2f7.s3tc.ctex"
+
+[resource]
+resource_name = "Ch44_Body"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_i3m1b")
+metallic = 0.5
+metallic_texture = SubResource("CompressedTexture2D_3hxyn")
+metallic_texture_channel = 2
+roughness_texture = SubResource("CompressedTexture2D_a5lhn")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 2.0
+emission_operator = 1
+emission_texture = SubResource("CompressedTexture2D_y4prh")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_i1g2b")
