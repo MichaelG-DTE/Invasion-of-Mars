@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://dhqcp78d42ant"]
 
 [ext_resource type="Script" uid="uid://b0rto6mcr8jx5" path="res://scripts/enemies/enemy_bullet.gd" id="1_uhr6c"]
+[ext_resource type="Texture2D" uid="uid://nlo75sirvfdv" path="res://assets/textures/9813.jpg" id="2_8gdk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pi6h"]
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 1, 1)
 emission_enabled = true
 emission = Color(1, 0, 1, 1)
-emission_energy_multiplier = 5.0
+emission_texture = ExtResource("2_8gdk0")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar_sharpness = 150.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_uhr6c"]
 material = SubResource("StandardMaterial3D_6pi6h")
@@ -14,6 +17,7 @@ material = SubResource("StandardMaterial3D_6pi6h")
 [sub_resource type="SphereShape3D" id="SphereShape3D_8gdk0"]
 
 [node name="EnemyBullet" type="Area3D" unique_id=1016117527]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 collision_layer = 128
 collision_mask = 3
 script = ExtResource("1_uhr6c")

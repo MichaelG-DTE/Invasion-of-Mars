@@ -611,7 +611,6 @@ target_position = Vector3(0, 0.5, 0)
 [node name="PlayerContainer" type="Node3D" parent="WorldModel" unique_id=1128691981]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModel/PlayerContainer" unique_id=1548192369]
-visible = false
 mesh = SubResource("CapsuleMesh_pk8ii")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=378673298 node_paths=PackedStringArray("player_controller", "component_mouse_capture")]
@@ -868,7 +867,6 @@ grow_vertical = 2
 
 [node name="InteractText" type="Label" parent="UserInterface/BoxContainer" unique_id=2134718752]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 text = "Press \"E\" to interact"
 label_settings = SubResource("LabelSettings_iqsei")

@@ -3,14 +3,15 @@ extends StaticBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-
+@export var locked := false
 
 
 func interact():
-	if not is_open():
-		animation_player.play("open")
-	if is_open():
-		animation_player.play("close")
+	if not locked:
+		if not is_open():
+			animation_player.play("open")
+		if is_open():
+			animation_player.play("close")
 		
 		
 func is_open() -> bool:

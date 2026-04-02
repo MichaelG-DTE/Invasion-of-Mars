@@ -5,7 +5,7 @@ class_name VoidTrooper extends GenisysEnemy
 @onready var detection_area: Area3D = $DetectionArea
 @onready var state_chart: StateChart = $StateChart
 @onready var base_collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var collision_shape_3d: CollisionShape3D = $DetectionArea/CollisionShape3D
+@onready var collision_shape_3d_2: CollisionShape3D = $DetectionArea/CollisionShape3D2
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
@@ -72,7 +72,7 @@ func _on_died() -> void:
 	dead = true
 	state_machine.travel("Death")
 	detection_area.set_deferred("monitoring", false)
-	collision_shape_3d.set_deferred("monitoring", false)
+	collision_shape_3d_2.set_deferred("monitoring", false)
 	await get_tree().create_timer(3).timeout
 	queue_free()
 
@@ -157,3 +157,18 @@ func _spawn_projectile() -> void:
 
 	can_attack = false
 	attack_timer = 1.0 / fire_rate
+
+func _on_see_timer_timeout() -> void:
+	if !dead:
+		var overlaps = $DetectionArea.get_overlapping_bodies()
+		if overlaps.size() > 0:
+			for overlap in overlaps:
+				if overlap.name == "player":
+					var playerposition = overlap.global_position
+					$SeeCast.look_at(playerposition, Vector3.UP)
+					$SeeCast.force_raycast_update()
+					
+					if $SeeCast.is_colliding():
+						var collider = $SeeCast.get_collider()
+						if collider.name == "player":
+							on_triggered()

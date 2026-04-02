@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 				if Input.is_action_just_pressed("Interact"):
 					object.interact()
 					if object.name == "TerminalTemp":
-						user_interface.visible = not user_interface.visible 
+						user_interface.visible = not user_interface.visible
 			else:
 				interact_text.hide()
 		else:

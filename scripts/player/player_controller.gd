@@ -22,7 +22,7 @@ var deceleration : float = 14
 @export_group("Speed")
 @export var default_speed : float = 7
 @export var sprint_speed : float = 4
-@export var crouch_speed : float = -3.5
+@export var crouch_speed : float = -5.0
 @export var aim_speed : float = -2.0
 @export_category("Jump Settings")
 @export var jump_velocity : float = 7.5
@@ -141,14 +141,11 @@ func _process(delta: float) -> void:
 				weapon_zoom.play_backwards("BMRWeaponZoom")
 			elif weapon_controller.current_weapon == MD_RICO_KBM:
 				weapon_zoom.play_backwards("RPGWeaponZoom")
-			
-	# labels for health and shield
+	
+	# labels!!! REMEMBER THESE ARE HERE
 	health.text = "Health: " + str(health_component.current_health)
 	shield.text = "Shield: " + str(health_component.current_shield)
-	
-	if Input.is_action_pressed("reload"):
-		weapon_controller.manual_reload()
-	
+
 func change_fov(fov, duration):
 	if fovtween:
 		fovtween.kill()
@@ -168,9 +165,8 @@ func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input) # updates rotation of player
 
 func sprint() -> void:
-	if not crouch_check.is_colliding():
-		is_sprinting = true
-		sprint_modifier = sprint_speed
+	is_sprinting = true
+	sprint_modifier = sprint_speed
 	
 func walk() -> void:
 	is_sprinting = false
@@ -191,8 +187,7 @@ func crouch() -> void:
 func jump() -> void:
 	if not crouch_check.is_colliding():
 		velocity.y += jump_velocity 
-		
-		
+
 func check_fall_speed() -> bool:
 	if current_fall_velocity < fall_velocity_threshold:
 		current_fall_velocity = 0.0

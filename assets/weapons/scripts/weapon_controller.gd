@@ -233,11 +233,3 @@ func _apply_damage_to_target(target: Node3D) -> void:
 func get_weapon_name():
 	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
 	return str(weapon_data.weapon.weapon_name)
-
-func manual_reload():
-	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
-	if current_weapon.max_ammo != weapon_data.ammo:
-		ammo_label.text = "Reloading..."
-		weapon_data.ammo = current_weapon.max_ammo
-		current_weapon.total_ammo -= current_weapon.max_ammo
-	

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xn3mkgw7q5rx"]
+
+[ext_resource type="Texture2D" uid="uid://q8mhnebux10w" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/MetalPanel-01V_64.png" id="1_u3fde"]
+
+[resource]
+albedo_texture = ExtResource("1_u3fde")
+uv1_offset = Vector3(0, 0.25, 0)
+uv1_triplanar = true

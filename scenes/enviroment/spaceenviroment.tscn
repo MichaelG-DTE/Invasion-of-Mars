@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bhsc6gekshwca"]
+
+[ext_resource type="Texture2D" uid="uid://d4j8tau12mr5x" path="res://assets/textures/ringed_gas_giant_planet.png" id="1_13mw3"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_f7oet"]
+ground_color = Color(1, 1, 1, 1)
+energy_multiplier = 2.0
+night_sky = ExtResource("1_13mw3")
+
+[sub_resource type="Sky" id="Sky_dils6"]
+sky_material = SubResource("PhysicalSkyMaterial_f7oet")
+radiance_size = 4
+
+[sub_resource type="Environment" id="Environment_dfv00"]
+background_mode = 2
+sky = SubResource("Sky_dils6")
+ambient_light_color = Color(1, 1, 1, 1)
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=578584184]
+environment = SubResource("Environment_dfv00")

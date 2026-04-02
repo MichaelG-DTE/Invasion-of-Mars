@@ -15,7 +15,7 @@ var target : Node3D
 var state_machine
 var dead := false
 var attack_range := 2.0
-var following := true
+var following := false
 var can_attack := true
 var attack_timer := 3.0
 
@@ -132,3 +132,24 @@ func _on_attack_state_state_physics_processing(_delta: float) -> void:
 
 func apply_velocity():
 	velocity.y += 15
+
+func _on_see_timer_timeout() -> void:
+	if !dead:
+		var overlaps = $DetectionArea.get_overlapping_bodies()
+		if overlaps.size() > 0:
+			for overlap in overlaps:
+				if overlap.name == "player":
+					var playerposition = overlap.global_position
+					$SeeCast.look_at(playerposition, Vector3.UP)
+					$SeeCast.force_raycast_update()
+					
+					if $SeeCast.is_colliding():
+						var collider = $SeeCast.get_collider()
+						if collider.name == "player":
+							on_triggered()
+					else:
+						pass
+
+		#if !following:
+			#if health_component.current_health != health_component.max_health:
+				#on_triggered()

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cx2qrlf6y46h1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c35el"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Window" type="StaticBody3D" unique_id=660494449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.07417521, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1727369003]
+shape = SubResource("ConvexPolygonShape3D_c35el")

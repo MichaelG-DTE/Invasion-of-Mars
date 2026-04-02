@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dgqonu2pobb4c"]
+
+[ext_resource type="Texture2D" uid="uid://kixowon7yxpy" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-002_Base-001.png" id="1_ftwrv"]
+[ext_resource type="Texture2D" uid="uid://iqd67af5dgof" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Metal-Panel_Base-004.png" id="2_oamky"]
+[ext_resource type="Texture2D" uid="uid://dcv7tducocokr" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Vent-001_Base-004.png" id="3_ui8c0"]
+[ext_resource type="PackedScene" uid="uid://baix0o464t85u" path="res://assets/GodotTempModels/terminal_temp.tscn" id="4_oamky"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yp17f"]
+albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
+albedo_texture = ExtResource("1_ftwrv")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0, 0, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifo32"]
+albedo_texture = ExtResource("2_oamky")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oamky"]
+albedo_texture = ExtResource("3_ui8c0")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.3, 0, 0.3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oan87"]
+albedo_texture = ExtResource("3_ui8c0")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(-0.3, 0, 0.3)
+uv1_triplanar = true
+
+[node name="Terminalstand" type="Node3D" unique_id=1834999456]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=264585176]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1461690327]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0.15)
+size = Vector3(1, 0.5, 0.7)
+material = SubResource("StandardMaterial3D_yp17f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1124996351]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, -0.9659258, 0, 0.9659258, 0.25881907, 0, 0.17860062, 0.26724318)
+size = Vector3(1, 0.2, 0.5)
+material = SubResource("StandardMaterial3D_ifo32")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1054754117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0.10000001)
+size = Vector3(1, 0.45000002, 0.4)
+material = SubResource("StandardMaterial3D_ifo32")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=791336453]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.6, -0.3, 0.12500003)
+size = Vector3(0.55, 0.4, 0.2)
+material = SubResource("StandardMaterial3D_oamky")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1757240762]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6, -0.3, 0.12500003)
+size = Vector3(0.55, 0.4, 0.2)
+material = SubResource("StandardMaterial3D_oan87")
+
+[node name="TerminalTemp" parent="." unique_id=1285270131 instance=ExtResource("4_oamky")]
+transform = Transform3D(-3.386255e-08, -2.8912073e-10, 0.75, -0.1941143, 0.7244444, -8.485005e-09, -0.7244444, -0.1941143, -3.278354e-08, 0, 0.23, 0.35)

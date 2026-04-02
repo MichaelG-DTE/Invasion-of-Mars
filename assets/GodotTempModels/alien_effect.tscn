@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://brpebsjdygn3i"]
+
+[ext_resource type="Material" uid="uid://d0uh3oseb2l0g" path="res://assets/textures/mat_flare.tres" id="1_pki6r"]
+
+[sub_resource type="Gradient" id="Gradient_c2noh"]
+offsets = PackedFloat32Array(0, 0.002057613, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0.28659728, 1, 0.34901962, 1, 0.4627451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rtvr7"]
+gradient = SubResource("Gradient_c2noh")
+
+[sub_resource type="Curve" id="Curve_4b3jp"]
+_limits = [-1.0, 5.0, 0.0, 1.0]
+
+[sub_resource type="CurveTexture" id="CurveTexture_kni4k"]
+curve = SubResource("Curve_4b3jp")
+
+[sub_resource type="Curve" id="Curve_afrgn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xj2pc"]
+curve = SubResource("Curve_afrgn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_npw22"]
+lifetime_randomness = 0.5
+spread = 180.0
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_xj2pc")
+color_ramp = SubResource("GradientTexture1D_rtvr7")
+color_initial_ramp = SubResource("GradientTexture1D_rtvr7")
+emission_curve = SubResource("CurveTexture_kni4k")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ca84l"]
+
+[node name="AlienEffect" type="Node3D" unique_id=2146462994]
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=1775635037]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = ExtResource("1_pki6r")
+amount = 50
+lifetime = 0.8
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_npw22")
+draw_pass_1 = SubResource("QuadMesh_ca84l")

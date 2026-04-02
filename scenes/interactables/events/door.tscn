@@ -1,22 +1,14 @@
 [gd_scene format=3 uid="uid://dkmuqsdwo3l1c"]
 
 [ext_resource type="Script" uid="uid://c3ddp7mnxfun2" path="res://scripts/Interactables/Events/door.gd" id="1_xbefs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbefs"]
-albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
-metallic = 0.35
-roughness = 0.5
-rim_enabled = true
-rim_tint = 0.0
-clearcoat_enabled = true
-clearcoat_roughness = 1.0
+[ext_resource type="Material" uid="uid://xn3mkgw7q5rx" path="res://assets/textures/doormaterial.tres" id="2_b4yo5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r7xnl"]
-material = SubResource("StandardMaterial3D_xbefs")
+material = ExtResource("2_b4yo5")
 size = Vector3(0.1, 2.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xbefs"]
-size = Vector3(0.1, 2.5, 2)
+size = Vector3(0.6, 2.5, 2.5)
 
 [sub_resource type="Animation" id="Animation_b4yo5"]
 length = 0.001
@@ -57,7 +49,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 3.5, 0), Vector3(0, 1.25, 0)]
+"values": [Vector3(0, 3, 0), Vector3(0, 1.25, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -69,7 +61,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 3.5, 0), Vector3(0, 1.25, 0)]
+"values": [Vector3(0, 3, 0), Vector3(0, 1.25, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ymtgt"]
@@ -84,7 +76,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 1.25, 0), Vector3(0, 3.5, 0)]
+"values": [Vector3(0, 1.25, 0), Vector3(0, 3, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -96,7 +88,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 1.25, 0), Vector3(0, 3.5, 0)]
+"values": [Vector3(0, 1.25, 0), Vector3(0, 3, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8jdfs"]
