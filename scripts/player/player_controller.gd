@@ -114,7 +114,7 @@ func _process(delta: float) -> void:
 				animation_player.play_backwards("torchpoweron")
 				torch_visible = false
 
-# simple zoom in and zoom out functionality
+# zoom in and zoom out on the weapons 
 
 	elif Input.is_action_pressed("Zoom"):
 		if not zoomed_in:
@@ -201,7 +201,7 @@ func get_input_direction() -> Vector2:
 	return _input_dir
 	
 func trigger():
-	print("Trigger activated")
+	SignalBus.terminal_change.emit()
 
 func apply_velocity():
 	velocity.y += 8

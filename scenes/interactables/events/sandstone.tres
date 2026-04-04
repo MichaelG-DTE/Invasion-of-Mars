@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://utwv0mknk13u"]
+
+[ext_resource type="Texture2D" uid="uid://dgqwakiv0qx3l" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/ConcreteFloor-02_64.png" id="1_isebj"]
+
+[resource]
+albedo_color = Color(1, 1, 0.49411765, 1)
+albedo_texture = ExtResource("1_isebj")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true

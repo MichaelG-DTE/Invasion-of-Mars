@@ -6,6 +6,8 @@
 size = Vector3(1, 0.5, 1)
 
 [node name="EventTrigger" type="Area3D" unique_id=1581121877]
+collision_layer = 64
+collision_mask = 2
 script = ExtResource("1_r47r8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1209254711]

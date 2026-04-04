@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://crw7p12gvllsh"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_sbe58"]
+ground_color = Color(0.6552071, 0.5295334, 0.38962522, 1)
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_gtapt"]
+sky_material = SubResource("PhysicalSkyMaterial_sbe58")
+
+[sub_resource type="Environment" id="Environment_ekxo8"]
+background_mode = 2
+sky = SubResource("Sky_gtapt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=491799346]
+environment = SubResource("Environment_ekxo8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1616920102]
+transform = Transform3D(-0.77451897, -0.45312467, 0.44135952, 0.15849365, 0.5364698, 0.8289027, -0.61237246, 0.7119536, -0.34368873, 0, 0, 0)
+light_indirect_energy = 5.0
+light_angular_distance = 1.0
+shadow_enabled = true

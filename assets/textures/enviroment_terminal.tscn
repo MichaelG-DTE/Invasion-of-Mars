@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b34jv07m2t4u7"]
+
+[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="1_j6dnt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tskx"]
+albedo_texture = ExtResource("1_j6dnt")
+uv1_scale = Vector3(0.7, 1, 0.7)
+uv1_offset = Vector3(0, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xxmp3"]
+material = SubResource("StandardMaterial3D_2tskx")
+size = Vector3(0.001, 1, 1.5)
+
+[node name="Enviroment Terminal" type="Node3D" unique_id=1942100244]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=925399077]
+mesh = SubResource("BoxMesh_xxmp3")

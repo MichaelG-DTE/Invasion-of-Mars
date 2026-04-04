@@ -9,12 +9,12 @@
 [ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
 [ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
-[ext_resource type="Script" uid="uid://xh45d6v0vvbq" path="res://scripts/system/enemy_manager.gd" id="9_7r8fc"]
-[ext_resource type="PackedScene" uid="uid://bupaqukakeo13" path="res://levels/level_one.tscn" id="10_ufluw"]
+[ext_resource type="PackedScene" uid="uid://cks5kigjjks6e" path="res://levels/level_two.tscn" id="9_tpgha"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
 
 [node name="Managers" type="Node" parent="." unique_id=977669407]
+unique_name_in_owner = true
 script = ExtResource("1_u4ui1")
 
 [node name="GameManager" type="Node" parent="Managers" unique_id=967645447]
@@ -30,12 +30,9 @@ weapons = Dictionary[int, ExtResource("3_rc0n7")]({
 })
 player = NodePath("../../CurrentLevel/Player")
 
-[node name="EnemyManager" type="Node" parent="Managers" unique_id=1636199687]
-script = ExtResource("9_7r8fc")
-
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=353157369]
 
-[node name="Player" parent="CurrentLevel" unique_id=96954163 instance=ExtResource("8_ufluw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30914307, -2.7621365, 33.751347)
+[node name="LevelTwo" parent="CurrentLevel" unique_id=464958670 instance=ExtResource("9_tpgha")]
 
-[node name="Level One" parent="CurrentLevel" unique_id=1303562626 instance=ExtResource("10_ufluw")]
+[node name="Player" parent="CurrentLevel" unique_id=96954163 instance=ExtResource("8_ufluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)

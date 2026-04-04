@@ -8,5 +8,6 @@ func interact():
 	if has_pressed == false:
 		print("haha button press")
 		animation_player.play("pressed")
-		SignalBus.button_pressed.emit()
+		$"../TerminalTemp".page_number += 1
+		$"../Door".locked = false
 		has_pressed = true

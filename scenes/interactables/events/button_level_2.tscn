@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c02sooips8e2w"]
+[gd_scene format=3 uid="uid://cphhc75gqf02g"]
 
-[ext_resource type="Script" uid="uid://sw0jn1jrpktk" path="res://scripts/Interactables/Events/button.gd" id="1_tp25o"]
+[ext_resource type="Script" uid="uid://cug1rbeubb50q" path="res://scripts/Interactables/Events/button_level_2.gd" id="2_n46qi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -12,11 +12,11 @@ size = Vector3(0.1, 0.5, 0.5)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tp25o"]
 data = PackedVector3Array(-0.049999997, 0.25, 0.25, 0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, -0.049999997, 0.25, -0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, -0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, -0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, 0.25, -0.25, 0.049999997, 0.25, -0.25, -0.049999997, -0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, -0.25, -0.25, -0.049999997, -0.25, -0.25)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne8dw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfuy8"]
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ne8dw"]
-material = SubResource("StandardMaterial3D_ne8dw")
+material = SubResource("StandardMaterial3D_nfuy8")
 top_radius = 0.13
 bottom_radius = 0.13
 height = 0.1
@@ -116,8 +116,8 @@ emission_energy_multiplier = 2.5
 material = SubResource("StandardMaterial3D_tp25o")
 size = Vector3(0.05, 0.05, 0.1)
 
-[node name="Button" type="StaticBody3D" unique_id=1062697064]
-script = ExtResource("1_tp25o")
+[node name="ButtonLevel2" type="StaticBody3D" unique_id=1062697064]
+script = ExtResource("2_n46qi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2060651007]
 mesh = SubResource("BoxMesh_d6ioh")

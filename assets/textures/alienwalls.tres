@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://udraf2a1aa31"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e70pa"]
+load_path = "res://.godot/imported/ConcretePanel-01_64.png-d5d065f9d79f4e600c9320532a15e1eb.s3tc.ctex"
+
+[resource]
+albedo_color = Color(0.7046392, 0.7046392, 0.70463914, 1)
+albedo_texture = SubResource("CompressedTexture2D_e70pa")
+metallic = 0.75
+roughness = 0.45
+uv1_triplanar = true

@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b7a8h6i226e7o" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/ConcretePanel-01_64.png" id="1_sepf0"]
 
 [resource]
-albedo_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
+albedo_color = Color(0.21806103, 0.21806103, 0.21806103, 1)
 albedo_texture = ExtResource("1_sepf0")
 uv1_triplanar = true
