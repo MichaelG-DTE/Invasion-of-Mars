@@ -22,10 +22,10 @@
 [ext_resource type="Script" uid="uid://bkfikp6qp5x0d" path="res://scripts/Interactables/Events/button_controller_level2.gd" id="18_5o1ln"]
 [ext_resource type="Script" uid="uid://cug1rbeubb50q" path="res://scripts/Interactables/Events/button_level_2.gd" id="18_irsfh"]
 [ext_resource type="PackedScene" uid="uid://cphhc75gqf02g" path="res://scenes/interactables/events/button_level_2.tscn" id="19_mh078"]
-[ext_resource type="PackedScene" uid="uid://cn7126lfn6eng" path="res://assets/GodotTempModels/secret_medal.tscn" id="22_bwmxl"]
 [ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weaponpickups/weapon_pickup.tscn" id="24_jjuep"]
 [ext_resource type="Resource" uid="uid://d0mhjhy1536qp" path="res://assets/weapons/resources/MD ARE-18.tres" id="25_l2hbg"]
 [ext_resource type="PackedScene" uid="uid://2ntals7kk4kc" path="res://assets/GodotTempModels/save_terminal_temp.tscn" id="26_l2hbg"]
+[ext_resource type="Script" uid="uid://cpcwgiefaurq4" path="res://scripts/Interactables/terminals/terminal_3_level_2.gd" id="26_vdwy1"]
 [ext_resource type="PackedScene" uid="uid://bcm3pkbmsrmia" path="res://scenes/interactables/teleporter.tscn" id="27_vunrv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1t2tr"]
@@ -216,6 +216,18 @@ transform = Transform3D(0.5000001, 0, 0.8660253, 0, 1, 0, -0.8660253, 0, 0.50000
 
 [node name="VoidTrooper2" parent="NavigationRegion3D" unique_id=189739296 instance=ExtResource("3_d3qt7")]
 transform = Transform3D(-0.25881898, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881898, -29.961752, 6.35, 2.156296)
+
+[node name="Adept Warrior4" parent="NavigationRegion3D" unique_id=1052090176 instance=ExtResource("1_mlt17")]
+transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, 5.3500004, 6.05, -36.85)
+
+[node name="VoidTrooper3" parent="NavigationRegion3D" unique_id=134166194 instance=ExtResource("3_d3qt7")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 4.6000004, 6.05, -39.85)
+
+[node name="Adept Warrior5" parent="NavigationRegion3D" unique_id=1603574213 instance=ExtResource("1_mlt17")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -5.35, 6.05, -36.85)
+
+[node name="VoidTrooper4" parent="NavigationRegion3D" unique_id=1402772703 instance=ExtResource("3_d3qt7")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -5.35, 6.05, -39.85)
 
 [node name="Geometry" type="Node3D" parent="." unique_id=218121686 groups=["geometry"]]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -1177,9 +1189,6 @@ mesh = SubResource("BoxMesh_5o1ln")
 [node name="SecondButtonLevel2" parent="ButtonController" unique_id=2070504429 instance=ExtResource("19_mh078")]
 transform = Transform3D(1.5, 0, -9.535957e-08, 0, 1.5, 0, 9.535957e-08, 0, 1.5, -33.500004, 1.4, -0.099999964)
 
-[node name="SecretMedal" parent="." unique_id=1000368411 instance=ExtResource("22_bwmxl")]
-transform = Transform3D(-0.11757062, -0.37802392, 0.057228226, -0.029736755, 0.068732895, 0.39292687, -0.38117298, 0.11123719, -0.048305433, -7.3, 12.800001, 12.499999)
-
 [node name="ARWeaponPickup" parent="." unique_id=841640842 instance=ExtResource("24_jjuep")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.364418e-07, 0.1999991, -40.899998)
 weapon_slot = 2
@@ -1187,7 +1196,7 @@ weapon_resource = ExtResource("25_l2hbg")
 
 [node name="Terminal3Level2" parent="." unique_id=1463598278 instance=ExtResource("12_6vcva")]
 transform = Transform3D(-4.23195e-07, 0, 1.5, 0, 1.5, 0, -1.5, 0, -4.23195e-07, -2.4999988, 1.4, -42.7)
-script = null
+script = ExtResource("26_vdwy1")
 
 [node name="SaveTerminalTemp" parent="." unique_id=1575750007 instance=ExtResource("26_l2hbg")]
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 2.5, 1.4, -42.7)

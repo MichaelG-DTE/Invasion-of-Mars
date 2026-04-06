@@ -105,7 +105,7 @@ Sf'arl has done it. The [Insane Genius?] he is.
 
 Stars have become [Immaterial?]
 
-The universe has always been our dominion, our [Labyrnth?] to design.
+The universe has always been our dominion, our [labyrinth?] to design.
 
 With [The Collapsing Fire?] we have unlocked the key to our next frontier.
 
@@ -221,5 +221,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 border_color = Color(1, 0.9372549, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage3" type="Control" parent="." unique_id=917919031]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=989723575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=673638846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=1537233637]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_jvekv")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Incoming transmission from White Winged Guardian...>
+
+Hmm...
+
+There's not much to work with here.
+
+The infomation you've given me from these ancient terminals is very cryptic, if you couldn't tell.
+
+One inference we can make is that the \"Collapsing Fire\" and the \"Naaro Kora'thun\" are most likely the same, considering the aliens aboard the ship were also looking through anything that had the word 'star' in it, and the ancient terminal speaking of stars becoming... 'immaterial?'
+
+As for the other terminal, I am completely lost, even with my 12 billion neural processers and predictive algorithms. 
+
+One thing from that terminal that I have been able to piece together is that somehow, the beings who invented the 'collapsing fire' also discovered some way to breach the fabric of spacetime, either into another dimension or outside the universe.
+
+So no, we can't go knocking on their doorstep and ask what they meant with their terminals and where to find their 'collapsing fire' that they left behind on Meridia.
+
+One last thing to note, and this is a stretch, but maybe the collapsing fire, or the breaching of space-time caused the signal that brought the USN and this malevolent alien race to Meridia?
+
+It's a long shot, but who knows.
+
+We now know why these aliens are excavating, they're trying to find any bit of info about the collapsing fire, or any other artifact they could make use of.
+
+Anyway, I'm sending you halfway across the planet now, so hold on to your helmet and your shiny new gun, which you can thank me for, I teleported it down for you. 
+
+
+
+<End Transmission. Press 'E' to exit Terminal>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=222166002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0, 0.9372549, 0, 1)
 border_width = 5.0
 editor_only = false

@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://vvqqydrltyrv"]
+
+[node name="LevelThree" type="Node3D" unique_id=753389288]
+
+[node name="Geometry" type="Node3D" parent="." unique_id=680420762]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CanyonOneFloor" type="CSGCombiner3D" parent="Geometry" unique_id=70063692]
+use_collision = true
+
+[node name="ConnectingFloor" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=259211156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.00049999356, 0)
+size = Vector3(2.5, 0.001, 1)
+
+[node name="Floor" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=1484505581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.00049999356, -1.25)
+size = Vector3(1.5, 0.001, 1.5)
+
+[node name="Floor2" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=787382318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.00049999356, 1.5)
+size = Vector3(1.5, 0.001, 2)
+
+[node name="Floor3" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=248583132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.00049999356, 0)
+size = Vector3(1.5, 0.001, 2)
+
+[node name="Floor4" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=1158488734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.00049999356, -1.25)
+size = Vector3(1, 0.001, 0.5)
+
+[node name="Floor5" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=41453774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.00049999356, -1)
+size = Vector3(0.5, 0.001, 1)
+
+[node name="Floor6" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=2077664559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.00049999356, 1.5)
+size = Vector3(1, 0.001, 1)
+
+[node name="Floor7" type="CSGBox3D" parent="Geometry/CanyonOneFloor" unique_id=601059581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.00049999356, 1.25)
+size = Vector3(0.5, 0.001, 1.5)
+
+[node name="CanyonTwoFloor" type="CSGCombiner3D" parent="Geometry" unique_id=518123186]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 0, 0)
+use_collision = true
+
+[node name="ConnectingFloor" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=291943847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.00049999356, 0)
+size = Vector3(3, 0.001, 1)
+
+[node name="Floor" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=1644560889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00049999356, -1.5)
+size = Vector3(2, 0.001, 2)
+
+[node name="Floor2" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=2013095635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 0.00049999356, 1.75)
+size = Vector3(2, 0.001, 2.5)
+
+[node name="Floor3" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=1903578591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.00049999356, -2.842171e-14)
+size = Vector3(2, 0.001, 2)
+
+[node name="Floor4" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=2135777563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.00049999356, -1.5)
+size = Vector3(1.5, 0.001, 1)
+
+[node name="Floor5" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=1420601530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.00049999356, -1.25)
+size = Vector3(0.5, 0.001, 1.5)
+
+[node name="Floor6" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=1876202309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.00049999356, 1.75)
+size = Vector3(1.5, 0.001, 1.5)
+
+[node name="Floor7" type="CSGBox3D" parent="Geometry/CanyonTwoFloor" unique_id=1091800574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.00049999356, 1.25)
+size = Vector3(0.5, 0.001, 1.5)
+
+[node name="CanyonLowerWalls" type="CSGCombiner3D" parent="Geometry" unique_id=1949477000]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=784468663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, -1)
+size = Vector3(1, 0.5, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=873900550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 1.25)
+size = Vector3(1, 0.5, 1.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1660926982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 2.5)
+size = Vector3(2, 0.5, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1274007873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, 2.75)
+size = Vector3(1.5, 0.5, 0.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1786882591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 2.25)
+size = Vector3(1, 0.5, 0.5)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1144671686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.25, 1.5)
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1214788733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.25, 0)
+size = Vector3(0.5, 0.5, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1876239745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.25, -1.25)
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=2137214351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, -1.75)
+size = Vector3(1, 0.5, 0.5)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=878105397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, -2.25)
+size = Vector3(1.5, 0.5, 0.5)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1111864266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0.25, -2)
+size = Vector3(1.5, 0.5, 1)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=255507573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.25, -2.5)
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=2017213953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.25, 2.75)
+size = Vector3(2, 0.5, 0.5)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1585319011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0.25, 2.25)
+size = Vector3(1.5, 0.5, 0.5)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=2060029371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, 1.5)
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1279506127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 0.25, 0)
+size = Vector3(0.5, 0.5, 2)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1495753284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, -1.75)
+size = Vector3(0.5, 0.5, 1.5)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=1127111648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0.25, -2.75)
+size = Vector3(1.5, 0.5, 0.5)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Geometry/CanyonLowerWalls" unique_id=251816591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0009995, 0.25, -3.25)
+size = Vector3(2, 0.5, 0.5)
