@@ -5,13 +5,13 @@ class_name VoidTrooper extends GenisysEnemy
 @onready var detection_area: Area3D = $DetectionArea
 @onready var state_chart: StateChart = $StateChart
 @onready var base_collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var collision_shape_3d_2: CollisionShape3D = $DetectionArea/CollisionShape3D2
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 @onready var health_component: HealthComponent = $HealthComponent
 @export var projectile_scene : PackedScene
 @export var is_shielded := false
+@onready var see_cast: RayCast3D = $SeeCast
 
 var target : Node3D
 var state_machine
@@ -49,8 +49,9 @@ func _physics_process(delta: float) -> void:
 			
 		if following:
 			if can_attack:
-				if global_position.distance_to(target.global_position) < attack_range:
-					state_chart.send_event("ToAttack")
+				if following:
+					if global_position.distance_to(target.global_position) < attack_range:
+						state_chart.send_event("ToAttack")
 			move_and_slide()
 
 func _process(delta: float) -> void:
@@ -72,7 +73,6 @@ func _on_died() -> void:
 	dead = true
 	state_machine.travel("Death")
 	detection_area.set_deferred("monitoring", false)
-	collision_shape_3d_2.set_deferred("monitoring", false)
 	await get_tree().create_timer(3).timeout
 	queue_free()
 
@@ -108,12 +108,6 @@ func _on_follow_state_state_physics_processing(delta: float) -> void:
 				rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta)
 		else:
 			state_chart.send_event("Idle")
-
-func _on_detection_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		on_triggered()
-	else:
-		state_chart.send_event("OnIdle")
 
 func _on_idle_state_state_physics_processing(_delta: float) -> void:
 	if !dead:
@@ -151,7 +145,7 @@ func _spawn_projectile() -> void:
 		
 	@warning_ignore("shadowed_variable_base_class")
 	var velocity = direction * projectile_speed
-		
+	
 	# prepare the projectile
 	projectile.setup(velocity, damage)
 
@@ -163,12 +157,22 @@ func _on_see_timer_timeout() -> void:
 		var overlaps = $DetectionArea.get_overlapping_bodies()
 		if overlaps.size() > 0:
 			for overlap in overlaps:
-				if overlap.name == "player":
+				if overlap.is_in_group("player"):
 					var playerposition = overlap.global_position
-					$SeeCast.look_at(playerposition, Vector3.UP)
-					$SeeCast.force_raycast_update()
-					
-					if $SeeCast.is_colliding():
-						var collider = $SeeCast.get_collider()
-						if collider.name == "player":
+					see_cast.look_at(playerposition, Vector3.UP)
+					see_cast.force_raycast_update()
+				
+					if see_cast.is_colliding():
+						var collider = see_cast.get_collider()
+						print(collider)
+						if collider.is_in_group("player"):
+							# sends the enemies to the run state and follows the player
+							print("see player")
 							on_triggered()
+						else:
+							# stops the enemies from moving if they don't see the player
+							print("dont see player")
+							state_chart.send_event("OnIdle")
+							state_machine.travel("Idle")
+							velocity = Vector3.ZERO
+							navigation_agent_3d.velocity = Vector3.ZERO

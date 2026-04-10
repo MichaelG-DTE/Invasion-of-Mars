@@ -22,6 +22,14 @@ func _process(_delta: float) -> void:
 						user_interface.visible = not user_interface.visible
 					if object.name == "Terminal3Level2":
 						user_interface.visible = not user_interface.visible
+					if object.name == "TerminalLevel3":
+						user_interface.visible = not user_interface.visible
+					if object.name == "Terminal_2_level_3":
+						user_interface.visible = not user_interface.visible
+					if object.name == "Terminal_3_level_3":
+						user_interface.visible = not user_interface.visible
+					if object.name == "Terminal_4_level_3":
+						user_interface.visible = not user_interface.visible
 			else:
 				interact_text.hide()
 		else:

@@ -5,7 +5,7 @@ extends StaticBody3D
 @onready var animation_player2: AnimationPlayer = $"../SecondButtonLevel2/AnimationPlayer"
 @onready var first_button_level_2: StaticBody3D = $"."
 @onready var second_button_level_2: StaticBody3D = $"../SecondButtonLevel2"
-@onready var button_controller: Node3D = $".."
+
 
 func interact():
 	if !has_pressed:

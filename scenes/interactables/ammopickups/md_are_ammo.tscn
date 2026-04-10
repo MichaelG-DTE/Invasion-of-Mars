@@ -10,6 +10,8 @@ material = SubResource("StandardMaterial3D_6wjh8")
 size = Vector3(0.6, 0.3, 0.6)
 
 [node name="MD ARE ammo" unique_id=1825521633 instance=ExtResource("1_6wjh8")]
+weapon_slot = 2
+ammo_amount = 60
 
 [node name="MeshInstance3D" parent="." index="1" unique_id=42939125]
 visible = false

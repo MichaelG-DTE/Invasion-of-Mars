@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://guw5c6e8xh67"]
+
+[ext_resource type="Script" uid="uid://vockd5v1qlyj" path="res://scripts/Interactables/Events/elevator.gd" id="1_qfamh"]
+[ext_resource type="Texture2D" uid="uid://16yvfkkcpa2w" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-001-2_Base-001.png" id="2_xg1bi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xg1bi"]
+size = Vector3(1, 0.13, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd4lh"]
+albedo_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+albedo_texture = ExtResource("2_xg1bi")
+uv1_scale = Vector3(2, 0.5, 2)
+uv1_offset = Vector3(0, 0.75, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_cd4lh"]
+material = SubResource("StandardMaterial3D_cd4lh")
+
+[sub_resource type="Animation" id="Animation_xg1bi"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.001000002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MeshInstance3D:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_cd4lh"]
+resource_name = "elevator"
+length = 10.0
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.001000002, -0.25, 0, 5, 0, -10.001, -7, 1.667, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.001, -0.25, 0, 5, 0, -10.001, -7, 1.667, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MeshInstance3D:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpqug"]
+_data = {
+&"RESET": SubResource("Animation_xg1bi"),
+&"elevator": SubResource("Animation_cd4lh")
+}
+
+[node name="Elevator" type="StaticBody3D" unique_id=1974065013]
+constant_linear_velocity = Vector3(0, -30, 0)
+script = ExtResource("1_qfamh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1868063121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001000002, 0)
+shape = SubResource("BoxShape3D_xg1bi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=998253500]
+transform = Transform3D(1, 0, 0, 0, 0.13309996, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_cd4lh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=215033751]
+libraries/ = SubResource("AnimationLibrary_qpqug")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1036856990]
+height = 0.5
+vertices = PackedVector3Array(0.49890208, 0, -0.5025959, 0.50728345, 0, 0.49237376, -0.5068433, 0, 0.49117643, -0.4984622, 0, -0.49301738)

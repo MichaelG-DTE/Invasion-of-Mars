@@ -10,6 +10,8 @@ material = SubResource("StandardMaterial3D_wqnxc")
 size = Vector3(0.6, 0.3, 0.6)
 
 [node name="MD BMR-99 Ammo" unique_id=1825521633 instance=ExtResource("1_wqnxc")]
+weapon_slot = 3
+ammo_amount = 8
 
 [node name="MeshInstance3D2" parent="." index="2" unique_id=593489857]
 visible = false

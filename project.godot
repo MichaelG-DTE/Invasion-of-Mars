@@ -136,6 +136,7 @@ Zoom={
 3d_physics/layer_8="EnemyProjectile"
 3d_physics/layer_9="Teleporter"
 3d_physics/layer_10="SecretMedal"
+3d_physics/layer_11="Elevator"
 
 [physics]
 

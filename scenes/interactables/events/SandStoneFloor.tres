@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cql5q178vw27i"]
+
+[ext_resource type="Texture2D" uid="uid://cddd3edpbalij" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Metal-Panel_Base-001.png" id="1_0rsql"]
+
+[resource]
+albedo_color = Color(0.6642321, 0.6545152, 5.7756904e-07, 1)
+albedo_texture = ExtResource("1_0rsql")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0

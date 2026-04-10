@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvqb5fugcfm5k"]
+[gd_scene format=3 uid="uid://bvqb5fugcfm5k"]
 
 [ext_resource type="Script" uid="uid://sgldwin4tbiv" path="res://addons/nojoule-energy-shield/shield.gd" id="1_sja5q"]
 [ext_resource type="Shader" uid="uid://dcko35tc4k343" path="res://addons/nojoule-energy-shield/shield.gdshader" id="1_uxet6"]
@@ -23,7 +23,6 @@ shader_parameter/_width_highlight_intersection = 1.0
 shader_parameter/_noise_texture = ExtResource("2_0o82n")
 shader_parameter/_speed_noise = Vector2(0.02, 0.02)
 shader_parameter/_origin_generate = Vector3(0, 0.5, 0)
-shader_parameter/_relative_origin_generate = true
 shader_parameter/_time_generate = 1.0
 shader_parameter/_thickness_generate = 0.25
 shader_parameter/_collapse = false
@@ -70,13 +69,14 @@ subdivide_depth = 128
 [sub_resource type="BoxShape3D" id="BoxShape3D_4004b"]
 size = Vector3(1, 0.05, 1)
 
-[node name="ShieldPlane" type="MeshInstance3D"]
+[node name="ShieldPlane" type="MeshInstance3D" unique_id=406193081]
 mesh = SubResource("PlaneMesh_7myad")
 script = ExtResource("1_sja5q")
 animation_curve = ExtResource("2_6wogk")
+body_entered_impact = true
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=14473824]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=981608854]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0)
 shape = SubResource("BoxShape3D_4004b")

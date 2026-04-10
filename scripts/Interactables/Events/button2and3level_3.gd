@@ -1,12 +1,13 @@
 extends StaticBody3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var firstbutton_level_3: StaticBody3D = $"."
+
 
 var has_pressed := false
 
 func interact():
-	if has_pressed == false:
-		animation_player.play("pressed")
-		$"../TerminalTemp".page_number += 1
-		$"../Door".locked = false
+	if not has_pressed:
 		has_pressed = true
+		if self == firstbutton_level_3:
+			animation_player.play("pressed")

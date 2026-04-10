@@ -1,12 +1,15 @@
 extends StaticBody3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var door: StaticBody3D = $"../Door"
+@onready var door_2: StaticBody3D = $"../Door2"
 
 var has_pressed := false
 
 func interact():
-	if has_pressed == false:
+	if not has_pressed:
 		animation_player.play("pressed")
-		$"../TerminalTemp".page_number += 1
-		$"../Door".locked = false
+		door.locked = false
+		door_2.locked = false
 		has_pressed = true
+		

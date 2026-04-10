@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bupaqukakeo13"]
 
+[ext_resource type="Script" uid="uid://cui7ygyl0oh2b" path="res://scripts/levels/level_one.gd" id="1_86ljn"]
 [ext_resource type="PackedScene" uid="uid://bp4sjqg8j3e40" path="res://scenes/enemies/warrior.tscn" id="1_qgle8"]
 [ext_resource type="PackedScene" uid="uid://bo65jlpbw8tsy" path="res://scenes/enemies/voidtrooper.tscn" id="2_tfbuk"]
 [ext_resource type="PackedScene" uid="uid://ofyb6jaxvtnq" path="res://assets/GodotTempModels/health_terminal_temp.tscn" id="3_nbfia"]
@@ -7,7 +8,7 @@
 [ext_resource type="Material" uid="uid://6ku28kosvoob" path="res://assets/textures/gridfloor.tres" id="3_tfbuk"]
 [ext_resource type="Material" uid="uid://c8aai7ipi5kw3" path="res://assets/textures/wallmaterial.tres" id="4_4wl7b"]
 [ext_resource type="Texture2D" uid="uid://b7a8h6i226e7o" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/ConcretePanel-01_64.png" id="5_m04wh"]
-[ext_resource type="Texture2D" uid="uid://16yvfkkcpa2w" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-001-2_Base-001.png" id="6_hu4x8"]
+[ext_resource type="Material" uid="uid://dlrykrnb275vd" path="res://assets/textures/roofmaterial.tres" id="6_gr874"]
 [ext_resource type="PackedScene" uid="uid://cx2qrlf6y46h1" path="res://scenes/enviroment/window.tscn" id="7_moue2"]
 [ext_resource type="PackedScene" uid="uid://dec6yt5t46enq" path="res://scenes/enviroment/Props/prop_barrel_12.tscn" id="8_c85u1"]
 [ext_resource type="PackedScene" uid="uid://bhsc6gekshwca" path="res://scenes/enviroment/spaceenviroment.tscn" id="8_jj3p3"]
@@ -44,11 +45,6 @@ albedo_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
 albedo_texture = ExtResource("5_m04wh")
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj3p3"]
-albedo_color = Color(0.7146291, 0.71462905, 0.71462905, 1)
-albedo_texture = ExtResource("6_hu4x8")
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbfia"]
 albedo_color = Color(0.22959325, 0.22959325, 0.22959322, 1)
 albedo_texture = ExtResource("5_m04wh")
@@ -75,6 +71,7 @@ material = SubResource("StandardMaterial3D_2cbsj")
 size = Vector3(1, 3, 0.25)
 
 [node name="Level One" type="Node3D" unique_id=1303562626]
+script = ExtResource("1_86ljn")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1089783330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
@@ -267,12 +264,12 @@ material = ExtResource("4_4wl7b")
 [node name="Roof6" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1787640918]
 transform = Transform3D(-4.3711392e-08, -1, -3.640266e-15, 0.9203205, -4.0228482e-08, -0.5867476, 0.39116508, -1.7098367e-08, 1.3804808, -5.993164, 4.2451797, 9.367749)
 size = Vector3(0.5, 3.014, 6)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Roof7" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=132853994]
 transform = Transform3D(-4.3711392e-08, -1, -3.640266e-15, 0.9203205, -4.0228482e-08, -0.5867476, 0.39116508, -1.7098367e-08, 1.3804808, 6.006836, 4.245179, 9.367749)
 size = Vector3(0.5, 3.014, 6)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Wall4" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=636820250]
 transform = Transform3D(0.96592593, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.96592593, -3.5, 2.3808596, -3.732051)
@@ -287,22 +284,22 @@ material = ExtResource("3_tfbuk")
 [node name="Roof2" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1708503226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4995, 3.5)
 size = Vector3(9, 1, 9)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Roof3" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1909251412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 5.5, 3.75)
 size = Vector3(4, 1, 9.5)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Roof4" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=908577598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4000006, 5.4995003, 3.75)
 size = Vector3(4, 1, 9.5)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Roof" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=980109283]
 transform = Transform3D(2.5232765e-07, 0, 1, -1, -4.371139e-08, 2.5232765e-07, 4.371139e-08, -1, -1.1029592e-14, -5.9604645e-08, 2.2500002, 16.75)
 size = Vector3(0.5, 7.5, 15)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Wall27" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=296024731]
 transform = Transform3D(2.5232765e-07, 0, 1, 0, 1, 0, -1, 0, 2.5232765e-07, -5.25, -0.25, 19.499998)
@@ -434,7 +431,7 @@ material = ExtResource("4_4wl7b")
 [node name="Roof5" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=937331413]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 2.25, 9.0625)
 size = Vector3(0.5, 8.5, 8.12)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Wall25" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1367277086]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -8, -1.6875, 16.5)
@@ -494,12 +491,12 @@ material = ExtResource("3_tfbuk")
 [node name="Roof8" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1733431476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999475, 5.4995, -2.6000009)
 size = Vector3(7.7000003, 1, 3.5)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Roof9" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1318273552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999475, 5.4995, -5.950001)
 size = Vector3(5.9, 1, 3.3)
-material = SubResource("StandardMaterial3D_jj3p3")
+material = ExtResource("6_gr874")
 
 [node name="Wall39" type="CSGBox3D" parent="Geometry/CSGCombiner3D" unique_id=1583662055]
 transform = Transform3D(2.5232765e-07, 0, 1, 0, 1, 0, -1, 0, 2.5232765e-07, -1.7499999, 3.5, 4.5005007)
@@ -704,13 +701,9 @@ ammo_amount = 20
 
 [node name="MD ARE ammo" parent="." unique_id=2123061534 instance=ExtResource("18_2cbsj")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 4.6, -1.5, 7.3)
-weapon_slot = 2
-ammo_amount = 60
 
 [node name="MD RICO KBM Ammo" parent="." unique_id=1517685120 instance=ExtResource("19_2cbsj")]
 transform = Transform3D(0.9829628, 0.18301271, 0.017037092, -0.01703694, 0.18301274, -0.98296285, -0.1830127, 0.9659257, 0.18301265, 5, -1.4, -1.8)
-weapon_slot = 4
-ammo_amount = 4
 
 [node name="ExtraSurfaces" type="Node3D" parent="." unique_id=1143309418]
 
@@ -900,6 +893,9 @@ transform = Transform3D(6, 0, 0, 0, 8, 0, 0, 0, 1, 0, -4, 6.938)
 
 [node name="Teleporter" parent="." unique_id=416160206 instance=ExtResource("29_86ljn")]
 transform = Transform3D(-2, 0, 3.019916e-07, 0, 2, 0, -3.019916e-07, 0, -2, 0, 5, 9)
+
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=863292647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.75, 33.25)
 
 [editable path="Light12"]
 [editable path="Light13"]

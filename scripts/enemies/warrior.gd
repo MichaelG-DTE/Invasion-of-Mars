@@ -10,6 +10,7 @@ class_name Warrior extends GenisysEnemy
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
+@onready var see_cast: RayCast3D = $SeeCast
 
 var target : Node3D
 var state_machine
@@ -58,19 +59,19 @@ func _process(delta: float) -> void:
 			$ShieldPlayer.play_backwards("shield activate and deactivate")
 
 func on_triggered() -> void:
+	following = true
 	state_chart.send_event("OnFollow")
 	state_machine.travel("Run")
 	
 func _on_died() -> void:
 	dead = true
 	state_machine.travel("Death")
-	detection_area.set_deferred("monitoring", false)
-	collision_shape_3d.set_deferred("monitoring", false)
+	detection_area.call_deferred("queue_free")
+	collision_shape_3d.call_deferred("queue_free")
 	await get_tree().create_timer(3).timeout
 	queue_free()
 	
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
-	following = true
 	velocity.x = safe_velocity.x
 	velocity.z = safe_velocity.z
 
@@ -90,7 +91,7 @@ func _on_follow_state_state_physics_processing(delta: float) -> void:
 				
 			# get next positon 
 			var next_pos = navigation_agent_3d.get_next_path_position()
-			var direction = (next_pos - global_position).normalized()
+			var direction = (next_pos - self.global_position).normalized()
 			
 			# set velocity
 			navigation_agent_3d.velocity = direction * follow_speed
@@ -101,12 +102,6 @@ func _on_follow_state_state_physics_processing(delta: float) -> void:
 				rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta)
 		else:
 			state_chart.send_event("Idle")
-
-func _on_detection_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		on_triggered()
-	else:
-		state_chart.send_event("OnIdle")
 
 func _on_idle_state_state_physics_processing(_delta: float) -> void:
 	if !dead:
@@ -138,18 +133,22 @@ func _on_see_timer_timeout() -> void:
 		var overlaps = $DetectionArea.get_overlapping_bodies()
 		if overlaps.size() > 0:
 			for overlap in overlaps:
-				if overlap.name == "player":
+				if overlap.is_in_group("player"):
 					var playerposition = overlap.global_position
-					$SeeCast.look_at(playerposition, Vector3.UP)
-					$SeeCast.force_raycast_update()
+					see_cast.look_at(playerposition, Vector3.UP)
+					see_cast.force_raycast_update()
 					
-					if $SeeCast.is_colliding():
-						var collider = $SeeCast.get_collider()
-						if collider.name == "player":
+					if see_cast.is_colliding():
+						var collider = see_cast.get_collider()
+						print(collider)
+						if collider.is_in_group("player"):
+							# sends the enemies to the run state and follows the player
+							print("see player")
 							on_triggered()
-					else:
-						pass
-
-		#if !following:
-			#if health_component.current_health != health_component.max_health:
-				#on_triggered()
+						else:
+							# stops the enemies from moving if they don't see the player
+							print("dont see player")
+							state_chart.send_event("OnIdle")
+							state_machine.travel("Idle")
+							velocity = Vector3.ZERO
+							navigation_agent_3d.velocity = Vector3.ZERO

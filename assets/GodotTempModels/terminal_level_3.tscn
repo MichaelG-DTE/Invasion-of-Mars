@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://baix0o464t85u"]
+[gd_scene format=3 uid="uid://dbue806he51mg"]
 
-[ext_resource type="Script" uid="uid://bop271n2d33p" path="res://scripts/Interactables/terminals/terminal_temp.gd" id="1_sgqei"]
-[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="2_a2gr8"]
-[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="2_btkvi"]
+[ext_resource type="Script" uid="uid://b83c15wp3iw6s" path="res://scripts/Interactables/terminals/terminal_level_2.gd" id="1_rq6e6"]
+[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="2_y8kct"]
+[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="3_3bkuk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2gr8"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -28,7 +28,7 @@ material = SubResource("StandardMaterial3D_btkvi")
 material = SubResource("StandardMaterial3D_btkvi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tskx"]
-albedo_texture = ExtResource("2_btkvi")
+albedo_texture = ExtResource("2_y8kct")
 uv1_scale = Vector3(0.7, 1, 0.7)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
@@ -37,10 +37,10 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_2tskx")
 size = Vector3(0.001, 1, 1.5)
 
-[node name="TerminalTemp" type="StaticBody3D" unique_id=1285270131]
+[node name="TerminalLevel3" type="StaticBody3D" unique_id=1285270131]
 collision_layer = 32
 collision_mask = 2
-script = ExtResource("1_sgqei")
+script = ExtResource("1_rq6e6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1089870880]
 mesh = SubResource("BoxMesh_ylvn3")
@@ -60,83 +60,7 @@ mesh = SubResource("BoxMesh_hw3aw")
 transform = Transform3D(-0.45, 0, 3.934025e-08, 0, 0.45, 0, -3.934025e-08, 0, -0.45, -0.05, 0, 0.1)
 mesh = SubResource("BoxMesh_v6w3l")
 
-[node name="TerminalPage" type="Control" parent="." unique_id=257505728]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="TerminalPage" unique_id=1316822426]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage" unique_id=2101751698]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="Label" type="RichTextLabel" parent="TerminalPage/MarginContainer" unique_id=1647182907]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "Whit1 \"inged {uardian - S]an*by Iniative One - Prot<c$l Omega <Meridia Defense [etwork Des>roye1>
-
-
-P/lsar: $e{f Asses>men} St*tus:
-Comp!lete.
-
-
-
-Assessment 2onclusion <Internal Dial8gu{ = Fa3se>:
-
-Sh=p Com>~om#sed? <They are Assaulting our *tronghold>
-
-
-
-Assessment Detail:
-
-I$vader@ aboard - Bridge under Attack <Se7king Knowl~d:e Unkn{wn>
-
-
-
-Subsequent @@ncti8n:
-
-Counter At/ack <Impos(2ble>
-
-
-
-'inal Solution:
-
-Breach the dr8aming 2le[p. <Awaken the >hampion, the ?ero, the Victor>"
-
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage" unique_id=1871847832]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-border_color = Color(0.82981527, 0.9353881, 1.540184e-06, 1)
-border_width = 5.0
-editor_only = false
-
-[node name="TerminalPage2" type="Control" parent="." unique_id=383959763]
+[node name="TerminalPage" type="Control" parent="." unique_id=521135292]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -145,7 +69,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="TerminalPage2" unique_id=587156554]
+[node name="ColorRect" type="ColorRect" parent="TerminalPage" unique_id=665544009]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage2" unique_id=1591804880]
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage" unique_id=1061653089]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,58 +90,57 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="Label" type="RichTextLabel" parent="TerminalPage2/MarginContainer" unique_id=1815556343]
+[node name="Label" type="RichTextLabel" parent="TerminalPage/MarginContainer" unique_id=1765544289]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
+theme_override_fonts/normal_font = ExtResource("3_3bkuk")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "<Connection Re-established. Incoming Transmission from Pulsar>
+text = "<Incoming Transmission from Pulsar...>
 
-Good.
+Sorry to teleport you in amongst the aliens.
 
-I'm glad you're capable of the immense feat of pushing buttons.
-
-What? Y'wanna medal or something?
-
-Anyway, to more pressing matters.
+Just kidding. I might do it again.
 
 
-An unknown alien force has invaded Meridia. Wiped out the USN fleet. Poof! Just like that.
+Anyway,
 
-They teleported multiple units aboard this ship, and were busy scrambling my logic cores and searching for any reference to a \"Naaro Kora'thun\" in my databases.
+From low-orbit geological scans, I have detected a structure below the surface, in the next canyon.
 
+You'll have to get the tunnel opened up again, the aliens sealed it when you arrived.
 
-I detected various forms of explosives being used on the surface of Meridia, followed by apparent excavations. I'm going to send you down to find out more about what they are doing.
-
-But first, go collect some ammo and recharge your shields. You're going to need it.
-There's an weapons cache downstairs, underneath the bridge. 
-Hopefully, the aliens haven't completely ransacked it.
+Unfortunately they forgot that the emergency unlock button was in this canyon. Idiots.
 
 
-Then, return to this terminal and I'll teleport you down to Meridia.
+There's an elevator in the other canyon that leads to the underground structure. Be warned that the power in the central structure is no longer active, so if you haven't used your torch now's a good time to learn how. Press 'f'. Simple as that.
+
+
+Once you're down there, explore the area and find out as much as you can. We need any advantage we can get. 
+
+I've noticed increased alien activity in the north regions of Meridia. They might be close to discovering their ancient technology that they so desire.
+
+
+There's a teleporter somewhere in the underground structure that I can extract you from.
+
+
+Oh, and I may have left a present somewhere down there for you as well.
 
 
 
+<End Transmission>"
 
-
-
-
-<Page 1 of 2, press Right Arrow to view page 2> "
-fit_content = true
-
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage2" unique_id=1820267761]
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage" unique_id=736415125]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-border_color = Color(0.82981527, 0.9353881, 1.540184e-06, 1)
+border_color = Color(0, 0.9372549, 0, 1)
 border_width = 5.0
 editor_only = false
 
-[node name="TerminalPage3" type="Control" parent="." unique_id=1122258670]
+[node name="TerminalPage2" type="Control" parent="." unique_id=1624825037]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -226,7 +149,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=301046382]
+[node name="ColorRect" type="ColorRect" parent="TerminalPage2" unique_id=906730256]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,7 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=1772700986]
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage2" unique_id=415643618]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -247,135 +170,216 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=2059827826]
+[node name="Label" type="RichTextLabel" parent="TerminalPage2/MarginContainer" unique_id=1120588969]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3bkuk")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "And, if you try pull the \"Why don't we contact Earth??????????\" card, let me tell you this.
+text = "<Translating...>
+
+<Begin Data Upload>
+
+The preliminary tests have been completed. 112 stars destroyed.
 
 
+Our triumph shall be like the jubilation of the Heavens.
 
-We are 20 e+144 light years away from Earth.
-
-Even at light speed, any infomation will not get there fast enough.
-
+Now we will open the [Dreaming Gates?] and step through, into our [Dominion?].
 
 
-
-So stop whining and go kill aliens for me.
-
-<End Transmission. Message Transmitter - Pulsar, Message Reciever - Bridge Terminal>
+I record this log so that those who are drawn to our technology in the future will know what we have accomplished.
 
 
+Understand this.
+
+Using the power of the stars [dying breaths?] we exited the boundaries of the [waves?] of time and space.
 
 
+From beyond, we will observe all, and await those who join us.
 
 
-
-
-
-
-
-
-
-
+But the ignorant, they will use our discoveries as weapons, to destroy each other. 
 
 
 
 
+Let it be so.
 
-<Page 2 of 2. Press 'E' to exit Terminal, or press Left Arrow to view page 1>
+
+
+
+<End Data Upload>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage2" unique_id=1334594069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(1, 0.9372549, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage3" type="Control" parent="." unique_id=1070755514]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=631900303]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=804073995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=1385573696]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3bkuk")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Translating...>
+
+<Begin Data Upload>
+
+And who are the wise? They are the ones who first [escaped?] the boundaries.
+
+They guide us, and others, to seek the gates.
+
+
+The ancient [terror?] is the one who enslaved us, the one that we deny our service.
+
+From beyond, we are no longer ensnared by the [terror?].
+
+
+That chaos dragged many of our kind into sleep, into the dream that we do not understand.
+
+
+
+Now that we are free, we can guide others out of the dream. 
+
+
+Use our technology, join us.
+
+
+Join us.
+
+Join us.
+
+Join us.
+
+
+
+
+<End Data Upload> "
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=960351523]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(1, 0.9372549, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage4" type="Control" parent="." unique_id=1949081670]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage4" unique_id=163201543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage4" unique_id=699067228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage4/MarginContainer" unique_id=1015668514]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3bkuk")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Incoming transmission from Pulsar...>
+
+A unique opportunity has revealed itself to us.
+
+While you've been busy searching on the ground, I have been assaulting the largest of the alien carriers with enough cyberattacks to overwhelm the entirety of the United Stellar Nations home fleet. 
+
+
+They have a onboard AI - although it was more of a tin can than an actual intellegence - it was very good at preventing my attacks, successfully repelling the majority. 
+
+Until I noticed and targeted a weak point in the ships architecture, assaulting a bypass used for rerouting commands to the primary teleporters. 
+
+
+So I was able to obtain teleport coordinates inside their ship.
+
+
+You ever wanted to see inside an alien ship?
+
+
+Well now's your chance.
+
+
+Move quickly, I've noticed more activity in the north.
+
+Find out as much as you can about these aliens, and what they're doing in the north. 
+
+
+We don't have much time.
+
+
+
+<End Transmission. Teleport coordinates locked (30452, -4990, -23401)>
 "
-fit_content = true
 
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=147975566]
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage4" unique_id=150576090]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-border_color = Color(0.82981527, 0.9353881, 1.540184e-06, 1)
-border_width = 5.0
-editor_only = false
-
-[node name="TerminalPage4" type="Control" parent="." unique_id=1125273754]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="TerminalPage4" unique_id=152384769]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage4" unique_id=672133367]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="Label" type="RichTextLabel" parent="TerminalPage4/MarginContainer" unique_id=1414810070]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "Do you know why the USN colonised Meridia?
-
-Why choose a random planet absurdly close to a gas giant?
-
-When humanity first explored beyond the solar system, setting foot on other worlds, they picked up a signal.
-
-Not any kind of normal signal, like a radio wave or laser, but a burst of supercharged radiation, the kind you would expect from a supernova or other interstellar phenomenon.
-
-Only, it wasn't from any of those.
-
-Evidently, the USN wasn't the only ones to discover the signal and come here.
-
-That's how we're in this mess.
-
-
-
-
-Anyway! Enough story time. 
-
-I've set the teleport coordinates for the first excavation site I want you to explore, so just step into the teleporter behind you. 
-
-I'll teleport you out of the site once you've explored it fully.
-
-
-
-Oh, and remember to kill any aliens you see. 
-
-
-
-
-<End Transmission. Teleport coordinates locked (0534, -0.3, 2043)>"
-fit_content = true
-
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage4" unique_id=1268077925]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-border_color = Color(0.82981527, 0.9353881, 1.540184e-06, 1)
+border_color = Color(0, 0.9372549, 0, 1)
 border_width = 5.0
 editor_only = false

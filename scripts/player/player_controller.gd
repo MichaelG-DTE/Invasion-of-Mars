@@ -229,3 +229,6 @@ func weapon_bob():
 	if is_on_floor():
 		var time = float(Time.get_ticks_msec())
 		wmc.position.y = startY + sin(time * bob_speed) * bob_amount * (velocity.length() / speed)
+
+func elevator_falling():
+	current_fall_velocity = current_fall_velocity * 10

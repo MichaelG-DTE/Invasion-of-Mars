@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cf5r8ua87pmhf"]
+
+[ext_resource type="PackedScene" uid="uid://bi01al82tavxo" path="res://scenes/interactables/events/firstbutton_level_3.tscn" id="1_61nk3"]
+
+[node name="SecondbuttonLevel3" unique_id=1749394320 instance=ExtResource("1_61nk3")]

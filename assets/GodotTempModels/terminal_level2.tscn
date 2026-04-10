@@ -260,7 +260,7 @@ theme_override_colors/default_color = Color(0, 1, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_jvekv")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "<Incoming transmission from White Winged Guardian...>
+text = "<Incoming transmission from Pulsar... >
 
 Hmm...
 
@@ -286,7 +286,7 @@ Anyway, I'm sending you halfway across the planet now, so hold on to your helmet
 
 
 
-<End Transmission. Press 'E' to exit Terminal>"
+<End Transmission. Teleport coordinates locked (10032, -94, 4902)>"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=222166002]
 layout_mode = 1
