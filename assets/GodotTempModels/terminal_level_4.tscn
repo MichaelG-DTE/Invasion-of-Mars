@@ -1,0 +1,458 @@
+[gd_scene format=3 uid="uid://dbcr3pphrvevf"]
+
+[ext_resource type="Script" uid="uid://cumurhj20yfik" path="res://scripts/Interactables/terminals/terminal_level_4.gd" id="1_3ypq3"]
+[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="1_o1hd2"]
+[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="2_3ypq3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2gr8"]
+albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+metallic = 0.2
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ylvn3"]
+material = SubResource("StandardMaterial3D_a2gr8")
+size = Vector3(0.1, 0.5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sgqei"]
+data = PackedVector3Array(-0.049999997, 0.25, 0.5, 0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, -0.049999997, 0.25, -0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, -0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, -0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, 0.25, -0.5, 0.049999997, 0.25, -0.5, -0.049999997, -0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, -0.25, -0.5, -0.049999997, -0.25, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btkvi"]
+albedo_color = Color(0.36926737, 0.6586416, 1, 1)
+metallic = 0.1
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_btkvi"]
+material = SubResource("StandardMaterial3D_btkvi")
+
+[sub_resource type="BoxMesh" id="BoxMesh_hw3aw"]
+material = SubResource("StandardMaterial3D_btkvi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ypq3"]
+albedo_texture = ExtResource("1_o1hd2")
+emission_enabled = true
+emission = Color(0.17634407, 7.0655944e-05, 0.60501647, 1)
+emission_texture = ExtResource("1_o1hd2")
+uv1_scale = Vector3(0.7, 1, 0.7)
+uv1_offset = Vector3(0, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_v6w3l"]
+material = SubResource("StandardMaterial3D_3ypq3")
+size = Vector3(0.001, 1, 1.5)
+
+[node name="TerminalLevel4" type="StaticBody3D" unique_id=1285270131]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_3ypq3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1089870880]
+mesh = SubResource("BoxMesh_ylvn3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2102682394]
+shape = SubResource("ConcavePolygonShape3D_sgqei")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1258598054]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.03507802, 0.14875081, -0.39738202)
+mesh = SubResource("BoxMesh_btkvi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=414458593]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.034820706, -0.14824256, -0.39591503)
+mesh = SubResource("BoxMesh_hw3aw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1209639825]
+transform = Transform3D(-0.45, 0, 3.934025e-08, 0, 0.45, 0, -3.934025e-08, 0, -0.45, -0.05, 0, 0.1)
+mesh = SubResource("BoxMesh_v6w3l")
+
+[node name="TerminalPage" type="Control" parent="." unique_id=521135292]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage" unique_id=665544009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage" unique_id=1061653089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage/MarginContainer" unique_id=1765544289]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3ypq3")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Translating...>
+
+ATTENTION ALL WARRIOR AND VOIDTROOPER CLASS UNITS: 
+
+UNKNOWN HOSTILE HAS ENTERED OUR VESSEL.
+
+EARLY REPORTS INDICATE HOSTILE IS A MEMBER OF THE DEFILERS WHO INHABITED OUR PROMISED WORLD.
+
+ALTHOUGH IT DOES NOT POSSESS ANY LIKENESS TO IT'S RACE, MAKE NO MISTAKE OF IT'S ABILITIES AND WEAPONS.
+
+
+DESTROY IT AT ONCE, LEST OUR JOURNEY TO THIS WORLD BE IN VAIN.
+
+
+
+TO ALL ADEPT CLASS UNITS:
+
+OVERSEE YOUR INFERIOR COUNTERPARTS IN THE DEFENSE OF OUR VESSEL. 
+
+
+DO NOT FEAR, FOR WE HAVE FOUND WHAT WE HAVE SOUGHT, EVEN WITH THE HOSTILES INTERFERENCE.
+
+
+
+
+
+
+WE WILL FOLLOW OUR MASTERS CALLINGS.
+
+
+
+
+
+<End of Transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage" unique_id=736415125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage2" type="Control" parent="." unique_id=2018922468]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage2" unique_id=1780146391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage2" unique_id=91207537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage2/MarginContainer" unique_id=1889687064]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3ypq3")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Translating...>
+(Excerpt from Biological Records)
+
+... Our kind, the Nexyr, have always been divided into classes. When we became a spacefairing civilisation, and stepped beyond the Jyrr system, with aid from the Masters technology, those classes have become our rankings. 
+
+These classes, as follows, are ordered from lowest to highest, with a brief explanation of what they are and what they do.
+
+1. Servant. Servant classes maintain lower level systems, such as waste, manufacturing, and low level computer work. Servants, unlike the superior rankings, cannot elevate their own ranking, but their children will be put through the trials of warriorhood, and have the opportunity to rise up.
+
+2. Technician. Technicians operate the high level computer and technological infrastructure, and are trained in the expertise and knowledge needed to interface with the Masters technology. They can elevate their ranking, but are already held in high regard for their knowledge of our Masters technology.
+
+3. Warrior and Voidtrooper. Warriors and Voidtroopers are considered the same rank, as they can interchange their roles at anytime. This class makes up the bulk of our military forces, especially Warriors.
+
+4. Adepts. These are Warriors or Voidtroopers who have mastered their craft, and are sometimes granted shields for protection. The Adepts are often faster and stronger than their lesser counterparts, and have more tatical knowledge, allowing them to lead groups of lesser units.
+
+5. Shipmaster. Shipmasters are the tatical geniuses that lead our fleets to victory against all who oppose us. Many shipmasters can operate a Vessel at once, but each Vessel has it's own Captain who leads the others. 
+
+6. Fleetmaster / Grandmaster. One of the most prestigious roles in our society, the Fleetmaster leads a whole fleet, sometimes even multiple.
+
+7. The Emperor of the Nexyr, and the High Court. The High Court and the Emperor still reside on Jyrr Prime, and await when we discover how to control the universe, like our masters once did.
+
+(End of Excerpt)
+<End of Terminal>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage2" unique_id=620944759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage3" type="Control" parent="." unique_id=308242662]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=1967782841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=911655245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=1613861929]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3ypq3")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Translating...>
+
+URGENT MESSAGE TO JYRR PRIME.
+
+THE 12TH BATTLE GROUP (52 FLEETS) HAS DISCOVERED THE SOURCE OF THE SIGNAL WE SET OUT 30 YEARS AGO TO FIND. 
+
+
+OUR MASTERS HAVE LEFT TECHNOLOGY CAPABLE OF USING A STARS ENERGY TO OPEN A PATH OUTSIDE OF THE UNIVERSE.
+
+
+THIS EXPLAINS WHY THEY LEFT OUR ANCESTORS OVER 34 MILLION YEARS AGO.
+
+
+THIS IS HOW WE CONTROL THE UNIVERSE.
+
+
+GRANDMASTER J'YMA IMPLORES THAT YOU, O EMPEROR, WITNESS THE MOMENT.
+
+
+
+
+
+
+MAKE HASTE, AS OTHER RACES HAVE FOUND THE SOURCE OF THE SIGNAL.
+
+WE FOUGHT ONE SUCH, AND THEY HAVE RETAILIATED FROM BEYOND THE GRAVE.
+
+THEY HAVE RELEASED A TERRIFYING MACHINE-MAN, THAT ONLY KNOWS WAR.
+
+MAKE HASTE.
+
+
+
+<End of Transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=249751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage4" type="Control" parent="." unique_id=1686316980]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage4" unique_id=378632162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage4" unique_id=1100098178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage4/MarginContainer" unique_id=210540591]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3ypq3")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Translating...>
+
+<Message from Grandmaster J'yma>
+
+
+Understand, machine... 
+
+I don't know what you are. But you, and whatever bipedal spacefairing race you come from, are defiling my promised world.
+
+When my technicians are finished preparing the Void Bringer, I will personally see you destroyed. 
+
+It is not long until this star will be collapsed. Maybe I'll get the Emperor's authorisation to use it on your homeworld. 
+
+
+
+And that AI... Why my fleets didn't destroy your ship when they had the chance I will never understand. Imbeciles. 
+
+That AI, along with you, will be dissassembled, studied by the technicians, then melted down into a heap of slag.
+
+I might get the slag thrown into a star, then collapse the star.
+
+That way you can't respawn from the save terminals.
+
+
+
+The Nexyr understand more than you realise. 
+
+How else have we kept our empire running?
+
+You played us for fools, but we have already won.
+
+
+
+<End of Transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage4" unique_id=1426759137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage5" type="Control" parent="." unique_id=1744237886]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage5" unique_id=1621448563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage5" unique_id=1969377374]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage5/MarginContainer" unique_id=966158452]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3ypq3")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Incoming transmission from Pulsar...>
+
+Well, well, well.
+
+That fool just told me everything I need.
+
+Oh no, Mr 'GrAnDMaSteR J'yMa' will melt me down. Sure.
+
+Not once I take control of his ship and space his entire crew.
+
+Hacking this ship's system was too easy, his will be no different.
+
+
+Anyway. We have a lot more infomation, but still not a lot of time.
+
+As I understand it, the Void Bringer, the \"Naaro Kora'thun\", and the Ancients 'Collapsing Fire' are all the same. 
+
+The ancients and the masters are also the same. Evidently the ancients ruled or guided the Nexyr during the formation of their people, allowing them to become spacefairing much faster than humanity. 
+
+The activity in the north is the Nexyr preparing the Void Bringer, to collapse Meridia's star, MIR - 49, as a trial and a show for their Emperor, who evidently has a much more powerful drive or was able to warp directly here instead of needed to traverse the stars to find the signal, which will be why it took the fleets 30 years to get here. 
+
+I detected over 4000 ships warp in a few moments ago, meaning the Nexyr are going to collapse the sun soon.
+
+You must stop them, or they will be able to hold any species hostage with the Void Bringer, or worse.
+
+Return to the teleporter you entered the ship from, and I'll teleport you to the Void Bringer in the north. 
+You will have to find some way of destroying it or deactivating it permanently. I'll send down another toy for you to wipe out the very many hordes of aliens you will encounter.
+
+
+<End transmission.>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage5" unique_id=1168981411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0, 1, 0, 1)
+border_width = 5.0
+editor_only = false

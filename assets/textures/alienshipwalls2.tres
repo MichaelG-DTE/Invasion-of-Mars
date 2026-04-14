@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfferqmf4rnbp"]
+
+[ext_resource type="Texture2D" uid="uid://bxqao2i4y5bda" path="res://assets/glTF/T_Trim_01_ORM.png" id="1_txmuv"]
+
+[resource]
+albedo_color = Color(0.509719, 0.035959832, 0.43958628, 1)
+albedo_texture = ExtResource("1_txmuv")
+metallic = 0.7
+roughness = 0.35
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

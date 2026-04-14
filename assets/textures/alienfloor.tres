@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck54ia2oj61fb"]
+
+[ext_resource type="Texture2D" uid="uid://dj1u32rowsuk" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/MetalGrateFloor-01_64.png" id="1_iava6"]
+
+[resource]
+albedo_color = Color(0.5663907, 0.00023247153, 0.5663868, 1)
+albedo_texture = ExtResource("1_iava6")
+uv1_triplanar = true

@@ -3,6 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://16yvfkkcpa2w" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-001-2_Base-001.png" id="1_h8bvm"]
 
 [resource]
-albedo_color = Color(0.7146291, 0.71462905, 0.71462905, 1)
 albedo_texture = ExtResource("1_h8bvm")
 uv1_triplanar = true

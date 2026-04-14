@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://u5w5n1e6fbjk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2sgu"]
+load_path = "res://.godot/imported/Grid-001-2_Base-001.png-bddfe5ad3fa87276830d0c02a3c9e19b.s3tc.ctex"
+
+[resource]
+albedo_color = Color(1, 0.29803923, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_r2sgu")
+uv1_triplanar = true

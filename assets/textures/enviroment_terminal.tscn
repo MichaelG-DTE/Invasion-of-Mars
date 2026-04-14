@@ -2,14 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="1_j6dnt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tskx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6dnt"]
 albedo_texture = ExtResource("1_j6dnt")
+emission_enabled = true
+emission = Color(0.17634407, 7.0655944e-05, 0.60501647, 1)
+emission_texture = ExtResource("1_j6dnt")
 uv1_scale = Vector3(0.7, 1, 0.7)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_xxmp3"]
-material = SubResource("StandardMaterial3D_2tskx")
+material = SubResource("StandardMaterial3D_j6dnt")
 size = Vector3(0.001, 1, 1.5)
 
 [node name="Enviroment Terminal" type="Node3D" unique_id=1942100244]

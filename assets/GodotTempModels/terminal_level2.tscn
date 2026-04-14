@@ -16,25 +16,39 @@ size = Vector3(0.1, 0.5, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sgqei"]
 data = PackedVector3Array(-0.049999997, 0.25, 0.5, 0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, -0.049999997, 0.25, -0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, -0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, -0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, 0.25, -0.5, 0.049999997, 0.25, -0.5, -0.049999997, -0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, -0.25, -0.5, -0.049999997, -0.25, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btkvi"]
-albedo_color = Color(0.6484881, 0.6484881, 0.6484881, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvekv"]
+albedo_color = Color(0.36926737, 0.6586416, 1, 1)
 metallic = 0.1
 roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_btkvi"]
-material = SubResource("StandardMaterial3D_btkvi")
+material = SubResource("StandardMaterial3D_jvekv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmkj6"]
+albedo_color = Color(0.36926737, 0.6586416, 1, 1)
+metallic = 0.1
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_hw3aw"]
-material = SubResource("StandardMaterial3D_btkvi")
+material = SubResource("StandardMaterial3D_xmkj6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tskx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2b8wl"]
 albedo_texture = ExtResource("2_jvekv")
+emission_enabled = true
+emission = Color(0.17634407, 7.0655944e-05, 0.60501647, 1)
+emission_texture = ExtResource("2_jvekv")
 uv1_scale = Vector3(0.7, 1, 0.7)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_v6w3l"]
-material = SubResource("StandardMaterial3D_2tskx")
+material = SubResource("StandardMaterial3D_2b8wl")
 size = Vector3(0.001, 1, 1.5)
 
 [node name="TerminalLevel2" type="StaticBody3D" unique_id=1285270131]

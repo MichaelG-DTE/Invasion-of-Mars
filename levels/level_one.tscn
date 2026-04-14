@@ -78,37 +78,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
 navigation_mesh = SubResource("NavigationMesh_nxahq")
 
 [node name="Warrior" parent="NavigationRegion3D" unique_id=1958788082 instance=ExtResource("1_qgle8")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -3.9947774, 2.5, 4.271757)
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -3.9947774, 2, 4.271757)
 
 [node name="Warrior2" parent="NavigationRegion3D" unique_id=1507289947 instance=ExtResource("1_qgle8")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 2.961509, 2.5, 3.9010296)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 2.961509, 2, 3.9010296)
 
 [node name="Warrior5" parent="NavigationRegion3D" unique_id=934181832 instance=ExtResource("1_qgle8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.695, 2.1, 19.472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.695, 1.8499999, 19.472)
 
 [node name="Warrior6" parent="NavigationRegion3D" unique_id=1513987403 instance=ExtResource("1_qgle8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.762, 2.1, 18.601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.762, 1.8499999, 18.601)
 
 [node name="VoidTrooper" parent="NavigationRegion3D" unique_id=879734878 instance=ExtResource("2_tfbuk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7635007, 10.5, -2.7000008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7635007, 10, -2.7000008)
 
 [node name="Warrior3" parent="NavigationRegion3D" unique_id=1057131499 instance=ExtResource("1_qgle8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6947775, 10.5, 2.7717571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6947775, 10, 2.7717571)
 
 [node name="Warrior4" parent="NavigationRegion3D" unique_id=138152521 instance=ExtResource("1_qgle8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.761509, 10.5, 3.9010296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.761509, 10, 3.9010296)
 
 [node name="Warrior7" parent="NavigationRegion3D" unique_id=193973995 instance=ExtResource("1_qgle8")]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 10.5, 6.34)
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 10, 6.34)
 
 [node name="Warrior8" parent="NavigationRegion3D" unique_id=1221376525 instance=ExtResource("1_qgle8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23849106, 2.5, 0.4010296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23849106, 2, 0.4010296)
 
 [node name="Warrior9" parent="NavigationRegion3D" unique_id=1865477646 instance=ExtResource("1_qgle8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 20.901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8499999, 20.901)
 
 [node name="VoidTrooper2" parent="NavigationRegion3D" unique_id=758811831 instance=ExtResource("2_tfbuk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6753774, 10.5, -2.7000008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6753774, 10, -2.7000008)
 
 [node name="Geometry" type="Node3D" parent="." unique_id=618952781 groups=["geometry"]]
 
