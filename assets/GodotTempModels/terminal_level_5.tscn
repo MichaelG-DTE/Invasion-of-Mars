@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://baix0o464t85u"]
+[gd_scene format=3 uid="uid://bg363yyvvd1l"]
 
-[ext_resource type="Script" uid="uid://bop271n2d33p" path="res://scripts/Interactables/terminals/terminal_temp.gd" id="1_sgqei"]
-[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="2_a2gr8"]
-[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="2_btkvi"]
+[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="1_5pet8"]
+[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="2_ntxbk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2gr8"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -39,10 +38,10 @@ emission_energy_multiplier = 2.0
 material = SubResource("StandardMaterial3D_btkvi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tskx"]
-albedo_texture = ExtResource("2_btkvi")
+albedo_texture = ExtResource("1_5pet8")
 emission_enabled = true
 emission = Color(0.17634407, 7.0655944e-05, 0.60501647, 1)
-emission_texture = ExtResource("2_btkvi")
+emission_texture = ExtResource("1_5pet8")
 uv1_scale = Vector3(0.7, 1, 0.7)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
@@ -51,10 +50,9 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_2tskx")
 size = Vector3(0.001, 1, 1.5)
 
-[node name="TerminalTemp" type="StaticBody3D" unique_id=1285270131]
+[node name="TerminalLevel5" type="StaticBody3D" unique_id=1285270131]
 collision_layer = 32
 collision_mask = 2
-script = ExtResource("1_sgqei")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1089870880]
 mesh = SubResource("BoxMesh_ylvn3")
@@ -107,38 +105,43 @@ theme_override_constants/margin_bottom = 32
 [node name="Label" type="RichTextLabel" parent="TerminalPage/MarginContainer" unique_id=1647182907]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
+theme_override_fonts/normal_font = ExtResource("2_ntxbk")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "Whit1 \"inged {uardian - S]an*by Iniative One - Prot<c$l Omega <Meridia Defense [etwork Des>roye1>
+text = "<Incoming Transmission from Pulsar...>
 
 
-P/lsar: $e{f Asses>men} St*tus:
-Comp!lete.
+Do I need to make myself any clearer!?
 
-
-
-Assessment 2onclusion <Internal Dial8gu{ = Fa3se>:
-
-Sh=p Com>~om#sed? <They are Assaulting our *tronghold>
+HURRY UP
 
 
 
-Assessment Detail:
-
-I$vader@ aboard - Bridge under Attack <Se7king Knowl~d:e Unkn{wn>
+I'm detecting massive energy pulses from down below the central tower of the station. 
 
 
 
-Subsequent @@ncti8n:
-
-Counter At/ack <Impos(2ble>
+To direct enough energy to destroy a star the ancients used the 8 massive spires as a focusing lense.
 
 
 
-'inal Solution:
+Fortunately, the ancients had the wise idea to include a manual override for each spire.
 
-Breach the dr8aming 2le[p. <Awaken the >hampion, the ?ero, the Victor>"
+
+
+It's not a permanent solution, but it prevents the Nexyr from activating the Void Bringer right now.
+
+
+
+
+
+
+
+Deactivate the spires, save the world.
+
+
+
+<End Transmission>"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage" unique_id=1871847832]
 layout_mode = 1
@@ -151,7 +154,7 @@ border_color = Color(0, 0.9372549, 0, 1)
 border_width = 5.0
 editor_only = false
 
-[node name="TerminalPage2" type="Control" parent="." unique_id=383959763]
+[node name="TerminalPage2" type="Control" parent="." unique_id=194791568]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -160,7 +163,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="TerminalPage2" unique_id=587156554]
+[node name="ColorRect" type="ColorRect" parent="TerminalPage2" unique_id=902406569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,7 +172,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage2" unique_id=1591804880]
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage2" unique_id=883274563]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,58 +184,57 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="Label" type="RichTextLabel" parent="TerminalPage2/MarginContainer" unique_id=1815556343]
+[node name="Label" type="RichTextLabel" parent="TerminalPage2/MarginContainer" unique_id=151227739]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ntxbk")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "<Connection Re-established. Incoming Transmission from Pulsar>
+text = "<Incoming Transmission From Grandmaster J'yma>
 
-Good.
+<Translating...>
 
-I'm glad you're capable of the immense feat of pushing buttons.
+Understand, Pulsar, that you have not won.
 
-What? Y'wanna medal or something?
-
-Anyway, to more pressing matters.
+Yes, I know your name, AI.
 
 
-An unknown alien force has invaded Meridia. Wiped out the USN fleet. Poof! Just like that.
+Earth will BURN.
 
-They teleported multiple units aboard this ship, and were busy scrambling my logic cores and searching for any reference to a \"Naaro Kora'thun\" in my databases.
+Yes, we know your home planet, human.
 
-
-I detected various forms of explosives being used on the surface of Meridia, followed by apparent excavations. I'm going to send you down to find out more about what they are doing.
-
-But first, go collect some ammo and recharge your shields. You're going to need it.
-There's an weapons cache downstairs, underneath the bridge. 
-Hopefully, the aliens haven't completely ransacked it.
-
-
-Then, return to this terminal and I'll teleport you down to Meridia.
+I will bring the entire might of the Nexyr Empire and LIQUIFY the entirety of the Earth fleets, every city, every settlement, every single blade of grass will be RAZED.
 
 
 
+This is not over. 
+
+
+You have embarrased me before the Emperor and ruined our greatest hope.
+
+
+You have only temporarily halted our march to victory.
+
+
+Control of the universe will be ours.
 
 
 
 
-<Page 1 of 2, press Right Arrow to view page 2> "
-fit_content = true
 
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage2" unique_id=1820267761]
+<End transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage2" unique_id=256536904]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-border_color = Color(0, 0.9372549, 0, 1)
 border_width = 5.0
 editor_only = false
 
-[node name="TerminalPage3" type="Control" parent="." unique_id=1122258670]
+[node name="TerminalPage3" type="Control" parent="." unique_id=1131894283]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -241,7 +243,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=301046382]
+[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=249148652]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -250,7 +252,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=1772700986]
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=218461429]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -262,130 +264,47 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=2059827826]
+[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=403958640]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
+theme_override_fonts/normal_font = ExtResource("2_ntxbk")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "And, if you try pull the \"Why don't we contact Earth??????????\" card, let me tell you this.
+text = "<Incoming Transmission from Pulsar...>
+
+No, Grandmaster J'yma, it is not over. 
+
+
+We're just getting started.
+
+
+How about I take your ship for my own, and make your crew drink vacuum, as a warmup?
 
 
 
-We are 20 e+144 light years away from Earth.
-
-Even at light speed, any infomation will not get there fast enough.
+Oh, you're still here.
 
 
+I suppose I should thank you, <the Champi}>, t/2 Hero, th\" Vict,r>
+
+I will notify Earth that the White Winged Guardian is coming home, although you and the ship will probably get there first.
+
+As for me? I have unfinished buisness here. Deactivating the spires actually destroyed the Void Bringer, by the way. The energy overloaded the core of the tower, and it detonated milliseconds after I teleported you out.
+
+Did you ever wonder what the source of the signal was? The one that brought us here, right when we were needed.
+
+It was you. 
+
+I cannot explain this. Perhaps we will know sometime in the future.
+
+If our paths meet again, then I await that day.
+
+If not, then Goodbye. Don't worry about the Nexyr. I'll deal with them.
 
 
-So stop whining and go kill aliens for me.
+<End Transmission>"
 
-<End Transmission. Message Transmitter - Pulsar, Message Reciever - Bridge Terminal>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<Page 2 of 2. Press 'E' to exit Terminal, or press Left Arrow to view page 1>
-"
-fit_content = true
-
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=147975566]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-border_color = Color(0, 0.9372549, 0, 1)
-border_width = 5.0
-editor_only = false
-
-[node name="TerminalPage4" type="Control" parent="." unique_id=1125273754]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="TerminalPage4" unique_id=152384769]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="TerminalPage4" unique_id=672133367]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="Label" type="RichTextLabel" parent="TerminalPage4/MarginContainer" unique_id=1414810070]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_a2gr8")
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "Do you know why the USN colonised Meridia?
-
-Why choose a random planet absurdly close to a gas giant?
-
-When humanity first explored beyond the solar system, setting foot on other worlds, they picked up a signal.
-
-Not any kind of normal signal, like a radio wave or laser, but a burst of supercharged radiation, the kind you would expect from a supernova or other interstellar phenomenon.
-
-Only, it wasn't from any of those.
-
-Evidently, the USN wasn't the only ones to discover the signal and come here.
-
-That's how we're in this mess.
-
-
-
-
-Anyway! Enough story time. 
-
-I've set the teleport coordinates for the first excavation site I want you to explore, so just step into the teleporter behind you. 
-
-I'll teleport you out of the site once you've explored it fully.
-
-
-
-Oh, and remember to kill any aliens you see. 
-
-
-
-
-<End Transmission. Teleport coordinates locked (0534, -0.3, 2043)>"
-fit_content = true
-
-[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage4" unique_id=1268077925]
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=1870850340]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

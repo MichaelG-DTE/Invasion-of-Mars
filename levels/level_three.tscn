@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="14_jvuyf"]
 [ext_resource type="PackedScene" uid="uid://dec6yt5t46enq" path="res://scenes/enviroment/Props/prop_barrel_12.tscn" id="14_q7a04"]
 [ext_resource type="PackedScene" uid="uid://cewvskl68d21d" path="res://scenes/interactables/ammopickups/md_bmr_99_ammo.tscn" id="16_igjkf"]
+[ext_resource type="Script" uid="uid://bhl4h4jau81qe" path="res://scripts/Interactables/Events/elevator_level_3.gd" id="16_qvb58"]
 [ext_resource type="PackedScene" uid="uid://gbv436xmkqlv" path="res://scenes/interactables/weaponpickups/shotgun_weapon_pickup.tscn" id="17_67kcd"]
 [ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="18_nndmk"]
 [ext_resource type="PackedScene" uid="uid://dbue806he51mg" path="res://assets/GodotTempModels/terminal_level_3.tscn" id="21_mj8hj"]
@@ -1311,6 +1312,7 @@ material = ExtResource("3_y5xn8")
 
 [node name="Elevator" parent="." unique_id=1974065013 instance=ExtResource("1_ncmil")]
 transform = Transform3D(4.75, 0, 0, 0, 4.75, 0, 0, 0, 4.75, 21.375, -0.296875, 0)
+script = ExtResource("16_qvb58")
 
 [node name="Door" parent="." unique_id=267784101 instance=ExtResource("10_5u7pi")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.875, 0, 0.375)

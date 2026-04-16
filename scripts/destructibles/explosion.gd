@@ -8,7 +8,7 @@ var explosion_damage := 50.0
 func _ready() -> void:
 	explosionvfx.call_explosion()
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	queue_free()
 	
 func _on_explosion_detection_range_body_entered(body: Node3D) -> void:

@@ -12,5 +12,4 @@ func _ready() -> void:
 	SignalBus.level_change.connect(change_level)
 	
 func change_level():
-	if level == 1:
-		print("level change")
+	print("level change")

@@ -9,7 +9,6 @@ class_name Warrior extends GenisysEnemy
 @onready var state_chart: StateChart = $StateChart
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 @onready var see_cast: RayCast3D = $SeeCast
 
 var target : Node3D
@@ -23,12 +22,9 @@ var attack_timer := 3.0
 func _ready() -> void:
 	super._ready()
 	
-	animation_player.play("Teleport")
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
 	
-	if is_shielded:
-		$ShieldPlayer.play("shield activate and deactivate")
 	# connect signals
 	health_component.died.connect(_on_died)
 	navigation_agent_3d.velocity_computed.connect(_on_velocity_computed)

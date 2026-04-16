@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://baf2nx4m7wmbq" path="res://scenes/enviroment/alien_light.tscn" id="7_yue8w"]
 [ext_resource type="PackedScene" uid="uid://djlddlt3aem8n" path="res://scenes/interactables/teleport_pad.tscn" id="8_m58f6"]
 [ext_resource type="PackedScene" uid="uid://bhsc6gekshwca" path="res://scenes/enviroment/spaceenviroment.tscn" id="11_m16dl"]
+[ext_resource type="PackedScene" uid="uid://bcm3pkbmsrmia" path="res://scenes/interactables/teleporter.tscn" id="13_y6tde"]
 [ext_resource type="Texture2D" uid="uid://b13m75acv6vdx" path="res://assets/textures/wall.jpg" id="14_jsgfo"]
 [ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="15_1a5p8"]
 [ext_resource type="PackedScene" uid="uid://cgadu1geou47t" path="res://scenes/enviroment/round_alien_light.tscn" id="15_26nyl"]
@@ -1102,8 +1103,8 @@ size = Vector3(6.25, 4.25, 0.75)
 material = SubResource("StandardMaterial3D_yfxcc")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/FinalRoom" unique_id=1131696689]
-transform = Transform3D(0.9659258, 0, -0.25881895, 0, 1, 0, 0.25881895, 0, 0.9659258, 48.66944, 1.875, -6.9943514)
-size = Vector3(6.25, 4.25, 0.75)
+transform = Transform3D(0.9659258, 0, -0.25881895, 0, 1, 0, 0.25881895, 0, 0.9659258, 48.66944, 2.5, -6.9943514)
+size = Vector3(6.25, 3, 0.75)
 material = ExtResource("3_r2sgu")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/FinalRoom" unique_id=1452493943]
@@ -1140,6 +1141,19 @@ material = SubResource("StandardMaterial3D_n7wnt")
 transform = Transform3D(0.25881898, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881898, 51.394745, 1.625, 6.275296)
 size = Vector3(1.75, 2.5, 0.75)
 material = SubResource("StandardMaterial3D_n7wnt")
+
+[node name="Teleporter" parent="Geometry/FinalRoom" unique_id=416160206 instance=ExtResource("13_y6tde")]
+transform = Transform3D(0.4829629, 0, -0.12940954, 0, 0.5, 0, 0.12940954, 0, 0.4829629, 48.75, 0.25, -6.85)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Geometry/FinalRoom" unique_id=1625498728]
+transform = Transform3D(0.9659258, 0, -0.25881895, 0, 1, 0, 0.25881895, 0, 0.9659258, 47.104, 0.5, -7.415)
+size = Vector3(2.8, 1, 0.75)
+material = ExtResource("3_r2sgu")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Geometry/FinalRoom" unique_id=17665808]
+transform = Transform3D(0.9659258, 0, -0.25881895, 0, 1, 0, 0.25881895, 0, 0.9659258, 50.334183, 0.5, -6.5486073)
+size = Vector3(2.5, 1, 0.75)
+material = ExtResource("3_r2sgu")
 
 [node name="Roof" type="CSGCombiner3D" parent="Geometry" unique_id=576292722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.625, 0)

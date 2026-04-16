@@ -7,7 +7,6 @@ class_name VoidTrooper extends GenisysEnemy
 @onready var base_collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var animation_player: AnimationPlayer = $TeleportAnimation/AnimationPlayer
 @onready var health_component: HealthComponent = $HealthComponent
 @export var projectile_scene : PackedScene
 @export var is_shielded := false
@@ -29,12 +28,9 @@ var fire_rate := 4
 func _ready() -> void:
 	super._ready()
 	
-	animation_player.play("Teleport")
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
 	
-	if is_shielded:
-		$VoidtrooperShieldPlayer.play("shield activate and deactivate")
 	
 	# connect signals
 	health_component.died.connect(_on_died)
