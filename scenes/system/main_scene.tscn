@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
 [ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
+[ext_resource type="Script" uid="uid://oxv41wjgwnj4" path="res://scripts/system/save_manager.gd" id="9_u4ui1"]
 [ext_resource type="PackedScene" uid="uid://cwcy8djptf2xj" path="res://levels/level_five.tscn" id="11_u4ui1"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
@@ -30,9 +31,16 @@ weapons = Dictionary[int, ExtResource("3_rc0n7")]({
 })
 player = NodePath("../../CurrentLevel/Player")
 
+[node name="SaveManager" type="Node" parent="Managers" unique_id=2091622599]
+script = ExtResource("9_u4ui1")
+pistol_data = ExtResource("4_tpgha")
+are_data = ExtResource("5_u4ui1")
+bmr_data = ExtResource("6_7r8fc")
+rico_kbm_data = ExtResource("7_tpgha")
+
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=353157369]
 
 [node name="Player" parent="CurrentLevel" unique_id=96954163 instance=ExtResource("8_ufluw")]
-transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, -124.707115, 2, 173.87866)
+transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, -8.0345, 2, 10.536982)
 
 [node name="LevelFive" parent="CurrentLevel" unique_id=1584652831 instance=ExtResource("11_u4ui1")]

@@ -8,3 +8,4 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	player.global_position = player_spawn.global_position
 	player.global_rotation = player_spawn.global_rotation
+	globalvar.current_level = 1

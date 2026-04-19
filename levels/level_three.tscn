@@ -25,10 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://dyd6ebcsh8t3x" path="res://scenes/interactables/events/buttonlevel_3.tscn" id="22_vrr03"]
 [ext_resource type="Script" uid="uid://c4plkkbfipx0d" path="res://scripts/Interactables/terminals/terminal_2_level_3.gd" id="23_bkjym"]
 [ext_resource type="Script" uid="uid://sqqoqs2lscfh" path="res://scripts/Interactables/Events/button_controller_level_3.gd" id="23_jokqw"]
-[ext_resource type="Script" uid="uid://d1x1qm44lqb1j" path="res://scripts/Interactables/Events/button2and3level_3.gd" id="24_skvd1"]
 [ext_resource type="Script" uid="uid://ccdqulm5rhi0" path="res://scripts/Interactables/terminals/terminal_3_level_3.gd" id="24_ttxdm"]
 [ext_resource type="Script" uid="uid://bmj6uxgs7ldug" path="res://scripts/Interactables/terminals/terminal_4_level_3.gd" id="25_a7ie0"]
 [ext_resource type="PackedScene" uid="uid://bcm3pkbmsrmia" path="res://scenes/interactables/teleporter.tscn" id="27_ttxdm"]
+[ext_resource type="PackedScene" uid="uid://bi01al82tavxo" path="res://scenes/interactables/events/firstbutton_level_3.tscn" id="28_qvb58"]
 [ext_resource type="PackedScene" uid="uid://2ntals7kk4kc" path="res://assets/GodotTempModels/save_terminal_temp.tscn" id="28_wtj3i"]
 [ext_resource type="PackedScene" uid="uid://ofyb6jaxvtnq" path="res://assets/GodotTempModels/health_terminal_temp.tscn" id="30_u2imr"]
 [ext_resource type="PackedScene" uid="uid://dltwws7obw1bv" path="res://assets/GodotTempModels/shield_terminal_temp.tscn" id="31_qvb58"]
@@ -84,124 +84,10 @@ metallic = 0.65
 roughness = 0.45
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
-albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_d6ioh"]
-material = SubResource("StandardMaterial3D_kwox3")
-size = Vector3(0.1, 0.5, 0.5)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tp25o"]
-data = PackedVector3Array(-0.049999997, 0.25, 0.25, 0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, -0.049999997, 0.25, -0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, -0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, -0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, 0.25, -0.25, 0.049999997, 0.25, -0.25, -0.049999997, -0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, -0.25, -0.25, -0.049999997, -0.25, -0.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne8dw"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ne8dw"]
-material = SubResource("StandardMaterial3D_ne8dw")
-top_radius = 0.13
-bottom_radius = 0.13
-height = 0.1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp25o"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 2.5
-
-[sub_resource type="BoxMesh" id="BoxMesh_ne8dw"]
-material = SubResource("StandardMaterial3D_tp25o")
-size = Vector3(0.05, 0.05, 0.1)
-
-[sub_resource type="Animation" id="Animation_ne8dw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D2:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D3:mesh:material:albedo_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D3:mesh:material:emission")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_dmqqi"]
-resource_name = "pressed"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D2:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.070531, 0),
-"update": 0,
-"values": [0.1, 0.00999999999999999]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D3:mesh:material:albedo_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(0, 1, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D3:mesh:material:emission")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(0, 1, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqxyd"]
-_data = {
-&"RESET": SubResource("Animation_ne8dw"),
-&"pressed": SubResource("Animation_dmqqi")
-}
-
 [node name="LevelThree" type="Node3D" unique_id=753389288]
 script = ExtResource("1_sngq1")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1747255970]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1747255970 groups=["NavigationGroup"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
 navigation_mesh = SubResource("NavigationMesh_t8sbe")
 
@@ -1383,26 +1269,8 @@ script = ExtResource("25_a7ie0")
 [node name="ButtonController" type="Node3D" parent="." unique_id=1410434289]
 script = ExtResource("23_jokqw")
 
-[node name="FirstbuttonLevel3" type="StaticBody3D" parent="ButtonController" unique_id=1749394320]
+[node name="FirstbuttonLevel3" parent="ButtonController" unique_id=687162512 instance=ExtResource("28_qvb58")]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 72.828, -46.998, -4.212)
-script = ExtResource("24_skvd1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonController/FirstbuttonLevel3" unique_id=666453362]
-mesh = SubResource("BoxMesh_d6ioh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonController/FirstbuttonLevel3" unique_id=362067734]
-shape = SubResource("ConcavePolygonShape3D_tp25o")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="ButtonController/FirstbuttonLevel3" unique_id=281603953]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.045774788, 0, 0)
-mesh = SubResource("CylinderMesh_ne8dw")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="ButtonController/FirstbuttonLevel3" unique_id=412771688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042915165, 0.17861666, 0)
-mesh = SubResource("BoxMesh_ne8dw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonController/FirstbuttonLevel3" unique_id=560437581]
-libraries/ = SubResource("AnimationLibrary_jqxyd")
 
 [node name="Teleporter" parent="." unique_id=416160206 instance=ExtResource("27_ttxdm")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 61.488003, -48.132, -15.936999)

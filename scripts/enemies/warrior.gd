@@ -19,6 +19,32 @@ var following := false
 var can_attack := true
 var attack_timer := 3.0
 
+func on_save_game(saved_data : Array[SavedData]):
+	if dead:
+		return
+	
+	var my_data = SavedData.new()
+	my_data.transform = global_transform
+	my_data.scene_path = scene_file_path
+	my_data.health = health_component.current_health
+	my_data.shield = health_component.current_shield
+	my_data.is_following = following
+	if is_shielded:
+		my_data.shield_visible = %ShieldSphere.visible
+	
+	saved_data.append(my_data)
+
+func on_before_load_game():
+	queue_free()
+
+func on_load_game(saved_data : SavedData):
+	global_transform = saved_data.transform
+	health_component.current_health = saved_data.health
+	health_component.current_shield = saved_data.shield
+	following = saved_data.is_following
+	if is_shielded:
+		%ShieldSphere.visible = saved_data.shield_visible
+	
 func _ready() -> void:
 	super._ready()
 	

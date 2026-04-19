@@ -26,13 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://dltwws7obw1bv" path="res://assets/GodotTempModels/shield_terminal_temp.tscn" id="19_u22j6"]
 [ext_resource type="PackedScene" uid="uid://dbcr3pphrvevf" path="res://assets/GodotTempModels/terminal_level_4.tscn" id="20_r2fxe"]
 [ext_resource type="Script" uid="uid://bxb014pawebtk" path="res://scripts/Interactables/terminals/terminal_2_level_4.gd" id="21_mh7c3"]
-[ext_resource type="PackedScene" uid="uid://c02sooips8e2w" path="res://scenes/interactables/events/button.tscn" id="22_oh3dc"]
-[ext_resource type="Script" uid="uid://b150qhxudxuen" path="res://scripts/Interactables/Events/button_level_4.gd" id="23_2vxxq"]
 [ext_resource type="PackedScene" uid="uid://ce1vs7n04fxnc" path="res://scenes/interactables/events/aliendoor.tscn" id="24_gbhv5"]
 [ext_resource type="PackedScene" uid="uid://2ntals7kk4kc" path="res://assets/GodotTempModels/save_terminal_temp.tscn" id="25_bkon5"]
 [ext_resource type="Script" uid="uid://bcgvfowch44av" path="res://scripts/Interactables/terminals/terminal_3_level_4.gd" id="26_sfaup"]
-[ext_resource type="Script" uid="uid://baf4i7p6vsg2h" path="res://scripts/Interactables/Events/button_level_4_2.gd" id="27_2isr0"]
+[ext_resource type="PackedScene" uid="uid://bvd1xd6qrgqqd" path="res://scenes/interactables/events/button_level_4.tscn" id="27_cf4qm"]
 [ext_resource type="Script" uid="uid://d4mjpjxl0bqof" path="res://scripts/Interactables/terminals/terminal_5_level_4.gd" id="29_7vtm4"]
+[ext_resource type="PackedScene" uid="uid://c3grhmcwb6585" path="res://scenes/interactables/events/button_2_level_4.tscn" id="29_y6tde"]
 [ext_resource type="Script" uid="uid://dnymm2wsqj0f4" path="res://scripts/Interactables/terminals/terminal_4_level_4.gd" id="31_cf4qm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yfxcc"]
@@ -180,124 +179,10 @@ _data = {
 &"pulsateandspin": SubResource("Animation_r2sgu")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
-albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_d6ioh"]
-material = SubResource("StandardMaterial3D_kwox3")
-size = Vector3(0.1, 0.5, 0.5)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tp25o"]
-data = PackedVector3Array(-0.049999997, 0.25, 0.25, 0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, -0.049999997, 0.25, -0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, 0.25, -0.25, 0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, -0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, 0.25, 0.25, -0.049999997, 0.25, 0.25, 0.049999997, 0.25, -0.25, -0.049999997, 0.25, 0.25, -0.049999997, 0.25, -0.25, 0.049999997, 0.25, -0.25, -0.049999997, -0.25, 0.25, 0.049999997, -0.25, 0.25, -0.049999997, -0.25, -0.25, 0.049999997, -0.25, 0.25, 0.049999997, -0.25, -0.25, -0.049999997, -0.25, -0.25)
-
-[sub_resource type="Animation" id="Animation_ne8dw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D2:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D3:mesh:material:albedo_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D3:mesh:material:emission")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_dmqqi"]
-resource_name = "pressed"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D2:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.070531, 0),
-"update": 0,
-"values": [0.1, 0.00999999999999999]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D3:mesh:material:albedo_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(0, 1, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D3:mesh:material:emission")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(0, 1, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kjnsm"]
-_data = {
-&"RESET": SubResource("Animation_ne8dw"),
-&"pressed": SubResource("Animation_dmqqi")
-}
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne8dw"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ne8dw"]
-material = SubResource("StandardMaterial3D_ne8dw")
-top_radius = 0.13
-bottom_radius = 0.13
-height = 0.1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp25o"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 2.5
-
-[sub_resource type="BoxMesh" id="BoxMesh_ne8dw"]
-material = SubResource("StandardMaterial3D_tp25o")
-size = Vector3(0.05, 0.05, 0.1)
-
 [node name="LevelFour" type="Node3D" unique_id=1120307861]
 script = ExtResource("1_26nyl")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2076550510]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2076550510 groups=["NavigationGroup"]]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, -5.5, 0)
 navigation_mesh = SubResource("NavigationMesh_yfxcc")
 
@@ -1497,9 +1382,11 @@ transform = Transform3D(0.07850396, 0, 1.4979442, 0, 1.5, 0, -1.4979442, 0, 0.07
 transform = Transform3D(0.07850395, 0, -1.4979441, 0, 1.5, 0, 1.4979441, 0, 0.07850395, 52.25, 1.5, -16.3)
 script = ExtResource("21_mh7c3")
 
-[node name="Button" parent="." unique_id=1062697064 instance=ExtResource("22_oh3dc")]
+[node name="Button" parent="." unique_id=1790701374 instance=ExtResource("27_cf4qm")]
 transform = Transform3D(1.13246855e-07, 0, 1.5, 0, 1.5, 0, -1.5, 0, 1.13246855e-07, 51, 1.5, -16.25)
-script = ExtResource("23_2vxxq")
+
+[node name="Button2" parent="." unique_id=1663880726 instance=ExtResource("29_y6tde")]
+transform = Transform3D(1.4488887, 0, -0.38822883, 0, 1.5, 0, 0.38822883, 0, 1.4488887, 130, 1.5, 39.5)
 
 [node name="Door" parent="." unique_id=267784101 instance=ExtResource("24_gbhv5")]
 transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 4, 92.5, -1, 0)
@@ -1521,27 +1408,6 @@ script = ExtResource("26_sfaup")
 [node name="Terminal4Level4" parent="." unique_id=1132544204 instance=ExtResource("20_r2fxe")]
 transform = Transform3D(-1.4488888, 0, 0.3882287, 0, 1.5, 0, -0.3882287, 0, -1.4488888, 129.6, 1.5, 41.25)
 script = ExtResource("31_cf4qm")
-
-[node name="Button2" type="StaticBody3D" parent="." unique_id=378013961]
-transform = Transform3D(1.4488887, 0, -0.38822883, 0, 1.5, 0, 0.38822883, 0, 1.4488887, 130, 1.5, 39.5)
-script = ExtResource("27_2isr0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Button2" unique_id=2060651007]
-mesh = SubResource("BoxMesh_d6ioh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button2" unique_id=1245461206]
-shape = SubResource("ConcavePolygonShape3D_tp25o")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Button2" unique_id=163356045]
-libraries/ = SubResource("AnimationLibrary_kjnsm")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Button2" unique_id=982152509]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.045774788, 0, 0)
-mesh = SubResource("CylinderMesh_ne8dw")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Button2" unique_id=342169375]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042915165, 0.17861666, 0)
-mesh = SubResource("BoxMesh_ne8dw")
 
 [node name="Terminal5Level4" parent="." unique_id=2047036237 instance=ExtResource("20_r2fxe")]
 transform = Transform3D(-1.4488887, 0, 0.38822877, 0, 1.5, 0, -0.38822877, 0, -1.4488887, 182, 1.5, -14.35)

@@ -60,6 +60,7 @@ var zoom := 50.0
 var default_fov := 90.0
 var fovtween: Tween
 var startY
+var dead = false
 
 # booleans
 var is_sprinting := false
@@ -68,79 +69,82 @@ var zoomed_in := false
 var torch_visible := false
 
 func _ready() -> void:
+	health_component.died.connect(on_dead)
 	# sets the weapon holder position to its starting position (zero)
 	startY = wmc.position.y
 	wmc.position.z = -1
 
 func _physics_process(delta: float) -> void:
-	previous_velocity = velocity
-	
-	if not is_on_floor():
-		velocity += get_gravity() * delta #gets gravity value and multiplies by delta
+	if !dead:
+		previous_velocity = velocity
+		
+		if not is_on_floor():
+			velocity += get_gravity() * delta #gets gravity value and multiplies by delta
 
-	var speed_modifier = sprint_modifier + crouch_modifier + aim_modifier # modifies speed based on what state player is in
-	speed = default_speed + speed_modifier 
-	
-	_input_dir = Input.get_vector("Left","Right","Forward","Back")
-	var current_velocity = Vector2(_movement_velocity.x, _movement_velocity.z)
-	var direction = (transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized() # gets the direction the player is facing
-	
-	if direction:
-		current_velocity = lerp(current_velocity, Vector2(direction.x, direction.z) * speed, acceleration * delta) # when moving, accelerate towards max speed value
-	else:
-		current_velocity = current_velocity.move_toward(Vector2.ZERO, deceleration * delta) #when stopping movement, slow down towards zero
-	
-	_movement_velocity = Vector3(current_velocity.x, velocity.y, current_velocity.y) #velocity in 3D Space (Vector 3D)
-	
-	velocity = _movement_velocity 
-	
-	move_and_slide() 
-	 
-	if is_on_floor(): # prevents step checks from running while in air
-		step_handler.handle_step_climbing()
-	weapon_tilt(_input_dir.x, delta)
-	weapon_sway(delta)
-	weapon_bob()
+		var speed_modifier = sprint_modifier + crouch_modifier + aim_modifier # modifies speed based on what state player is in
+		speed = default_speed + speed_modifier 
+		
+		_input_dir = Input.get_vector("Left","Right","Forward","Back")
+		var current_velocity = Vector2(_movement_velocity.x, _movement_velocity.z)
+		var direction = (transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized() # gets the direction the player is facing
+		
+		if direction:
+			current_velocity = lerp(current_velocity, Vector2(direction.x, direction.z) * speed, acceleration * delta) # when moving, accelerate towards max speed value
+		else:
+			current_velocity = current_velocity.move_toward(Vector2.ZERO, deceleration * delta) #when stopping movement, slow down towards zero
+		
+		_movement_velocity = Vector3(current_velocity.x, velocity.y, current_velocity.y) #velocity in 3D Space (Vector 3D)
+		
+		velocity = _movement_velocity 
+		
+		move_and_slide() 
+		 
+		if is_on_floor(): # prevents step checks from running while in air
+			step_handler.handle_step_climbing()
+		weapon_tilt(_input_dir.x, delta)
+		weapon_sway(delta)
+		weapon_bob()
 	
 func _process(delta: float) -> void:
-	update_flashlight(delta)
-	
-	if Input.is_action_just_pressed("torch"):
-		if not torch_visible:
-			animation_player.play("torchpoweron")
-			torch_visible = true
-		else:
-			if torch_visible:
-				animation_player.play_backwards("torchpoweron")
-				torch_visible = false
+	if !dead:
+		update_flashlight(delta)
+		
+		if Input.is_action_just_pressed("torch"):
+			if not torch_visible:
+				animation_player.play("torchpoweron")
+				torch_visible = true
+			else:
+				if torch_visible:
+					animation_player.play_backwards("torchpoweron")
+					torch_visible = false
 
 # zoom in and zoom out on the weapons 
 
-	elif Input.is_action_pressed("Zoom"):
-		if not zoomed_in:
-			aim()
-			change_fov(zoom, 0.3)
-			if weapon_controller.current_weapon == MD_P_11:
-				weapon_zoom.play("PistolWeaponZoom")
-			elif weapon_controller.current_weapon == MD_ARE_18:
-				weapon_zoom.play("ARWeaponZoom")
-			elif weapon_controller.current_weapon == MD_BMR_99:
-				weapon_zoom.play("BMRWeaponZoom")
-			elif weapon_controller.current_weapon == MD_RICO_KBM:
-				weapon_zoom.play("RPGWeaponZoom")
-				
-	elif Input.is_action_just_released("Zoom"):
-		if zoomed_in:
-			stop_aiming()
-			change_fov(default_fov, 0.3)
-			if weapon_controller.current_weapon == MD_P_11:
-				weapon_zoom.play_backwards("PistolWeaponZoom")
-			elif weapon_controller.current_weapon == MD_ARE_18:
-				weapon_zoom.play_backwards("ARWeaponZoom")
-			elif weapon_controller.current_weapon == MD_BMR_99:
-				weapon_zoom.play_backwards("BMRWeaponZoom")
-			elif weapon_controller.current_weapon == MD_RICO_KBM:
-				weapon_zoom.play_backwards("RPGWeaponZoom")
+		elif Input.is_action_pressed("Zoom"):
+			if not zoomed_in:
+				aim()
+				change_fov(zoom, 0.3)
+				if weapon_controller.current_weapon == MD_P_11:
+					weapon_zoom.play("PistolWeaponZoom")
+				elif weapon_controller.current_weapon == MD_ARE_18:
+					weapon_zoom.play("ARWeaponZoom")
+				elif weapon_controller.current_weapon == MD_BMR_99:
+					weapon_zoom.play("BMRWeaponZoom")
+				elif weapon_controller.current_weapon == MD_RICO_KBM:
+					weapon_zoom.play("RPGWeaponZoom")
+					
+		elif Input.is_action_just_released("Zoom"):
+			if zoomed_in:
+				stop_aiming()
+				change_fov(default_fov, 0.3)
+				if weapon_controller.current_weapon == MD_P_11:
+					weapon_zoom.play_backwards("PistolWeaponZoom")
+				elif weapon_controller.current_weapon == MD_ARE_18:
+					weapon_zoom.play_backwards("ARWeaponZoom")
+				elif weapon_controller.current_weapon == MD_BMR_99:
+					weapon_zoom.play_backwards("BMRWeaponZoom")
+				elif weapon_controller.current_weapon == MD_RICO_KBM:
+					weapon_zoom.play_backwards("RPGWeaponZoom")
 	
 	# labels!!! REMEMBER THESE ARE HERE
 	health.text = "Health: " + str(health_component.current_health)
@@ -204,7 +208,8 @@ func trigger():
 	SignalBus.terminal_change.emit()
 
 func apply_velocity():
-	velocity.y += 8
+	if !dead:
+		velocity.y += 8
 
 func aim() -> void:
 	zoomed_in = true
@@ -215,20 +220,24 @@ func stop_aiming() -> void:
 	aim_modifier = 0.0
 
 func weapon_tilt(input_x, delta):
-	if wmc:
-		if is_on_floor():
-			wmc.rotation.z = lerp(wmc.rotation.z, -input_x * weapon_rotation_amount, 10 * delta) 
+	if !dead:
+		if wmc:
+			if is_on_floor():
+				wmc.rotation.z = lerp(wmc.rotation.z, -input_x * weapon_rotation_amount, 10 * delta) 
 
 func weapon_sway(delta):
-	wmc.rotation.x = lerp(wmc.rotation.x, -mouse_capture.mouse_input.y / 2 * weapon_rotation_amount,  4 * delta) 
-	wmc.rotation.y = lerp(wmc.rotation.y, -mouse_capture.mouse_input.x / 2 * weapon_rotation_amount, 4 * delta) 
-	wmc.rotation.y = clamp(wmc.rotation.y, -0.6, 0.6)
-	wmc.rotation.x = clamp(wmc.rotation.x, -0.6, 0.6)
+	if !dead:
+		wmc.rotation.x = lerp(wmc.rotation.x, -mouse_capture.mouse_input.y / 2 * weapon_rotation_amount,  4 * delta) 
+		wmc.rotation.y = lerp(wmc.rotation.y, -mouse_capture.mouse_input.x / 2 * weapon_rotation_amount, 4 * delta) 
+		wmc.rotation.y = clamp(wmc.rotation.y, -0.6, 0.6)
+		wmc.rotation.x = clamp(wmc.rotation.x, -0.6, 0.6)
 
 func weapon_bob():
-	if is_on_floor():
-		var time = float(Time.get_ticks_msec())
-		wmc.position.y = startY + sin(time * bob_speed) * bob_amount * (velocity.length() / speed)
+	if !dead:
+		if is_on_floor():
+			var time = float(Time.get_ticks_msec())
+			wmc.position.y = startY + sin(time * bob_speed) * bob_amount * (velocity.length() / speed)
 
-func elevator_falling():
-	current_fall_velocity = current_fall_velocity * 10
+func on_dead():
+	dead = true
+	

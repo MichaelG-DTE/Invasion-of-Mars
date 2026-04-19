@@ -6,5 +6,4 @@
 [resource]
 script = ExtResource("1_dlrik")
 weapon = ExtResource("2_t7qkd")
-unlocked = true
 ammo = 60

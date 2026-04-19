@@ -1,9 +1,12 @@
 extends Node3D
 
-@onready var firstbutton_level_3: StaticBody3D = $FirstbuttonLevel3
 @onready var door_3: StaticBody3D = $"../Door3"
 
 
 func _process(_delta: float) -> void:
-	if firstbutton_level_3.has_pressed == true:
+	var buttons = get_tree().get_nodes_in_group("levelbuttons")
+	for button in buttons:
+		if !button.has_pressed:
+			return
+			
 		door_3.locked = false

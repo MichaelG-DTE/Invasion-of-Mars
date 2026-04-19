@@ -98,7 +98,7 @@ _data = {
 &"open": SubResource("Animation_ymtgt")
 }
 
-[node name="Door" type="StaticBody3D" unique_id=267784101]
+[node name="Door" type="StaticBody3D" unique_id=267784101 groups=["interactable_events"]]
 script = ExtResource("1_xbefs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=447372225]

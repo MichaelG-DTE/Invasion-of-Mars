@@ -19,3 +19,6 @@ func is_open() -> bool:
 		return false
 	else:
 		return true
+
+func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
+	pass

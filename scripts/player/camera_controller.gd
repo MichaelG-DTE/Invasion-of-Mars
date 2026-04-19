@@ -28,15 +28,16 @@ func _ready() -> void:
 	offset_height = DEFAULT_HEIGHT
 
 func _process(delta: float) -> void:
-	update_camera_rotation(component_mouse_capture.mouse_input, delta)
-	
-	if _step_smoothing:
-		_target_height = lerp(_target_height, 0.0, step_speed * delta)
-		if abs(_target_height) < 0.01:
-			_target_height = 0.0
-			_step_smoothing = false
-			
-		position.y = offset_height + _target_height
+	if !player_controller.dead:
+		update_camera_rotation(component_mouse_capture.mouse_input, delta)
+		
+		if _step_smoothing:
+			_target_height = lerp(_target_height, 0.0, step_speed * delta)
+			if abs(_target_height) < 0.01:
+				_target_height = 0.0
+				_step_smoothing = false
+				
+			position.y = offset_height + _target_height
 	
 func update_camera_rotation(input : Vector2, delta) -> void:
 	_rotation.x += input.y * delta
@@ -54,8 +55,9 @@ func update_camera_rotation(input : Vector2, delta) -> void:
 	_rotation.z = 0.0
 	
 func update_camera_height(delta: float, direction: int):
-	if position.y >= crouch_offset and position.y <= DEFAULT_HEIGHT: # checks if the y position has been changed to be greater than the crouch offset but less than the default height
-		position.y = clampf(position.y + (crouch_speed * direction) * delta, crouch_offset, DEFAULT_HEIGHT) # changes the camera position to be lower 
+	if !player_controller.dead:
+		if position.y >= crouch_offset and position.y <= DEFAULT_HEIGHT: # checks if the y position has been changed to be greater than the crouch offset but less than the default height
+			position.y = clampf(position.y + (crouch_speed * direction) * delta, crouch_offset, DEFAULT_HEIGHT) # changes the camera position to be lower 
 
 # activates step smoothing to prevent camera jitter
 func smooth_step(height_change : float):

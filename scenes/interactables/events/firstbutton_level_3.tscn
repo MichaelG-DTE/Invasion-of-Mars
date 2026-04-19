@@ -116,23 +116,23 @@ _data = {
 &"pressed": SubResource("Animation_dmqqi")
 }
 
-[node name="FirstbuttonLevel3" type="StaticBody3D" unique_id=1749394320]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+[node name="FirstbuttonLevel3" type="StaticBody3D" unique_id=687162512 groups=["interactable_events", "levelbuttons"]]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 0, 0, 0)
 script = ExtResource("1_jqxyd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=666453362]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1534903483]
 mesh = SubResource("BoxMesh_d6ioh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=362067734]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=862971846]
 shape = SubResource("ConcavePolygonShape3D_tp25o")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=281603953]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1850373394]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.045774788, 0, 0)
 mesh = SubResource("CylinderMesh_ne8dw")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=412771688]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1184868752]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042915165, 0.17861666, 0)
 mesh = SubResource("BoxMesh_ne8dw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=560437581]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=626853579]
 libraries/ = SubResource("AnimationLibrary_jqxyd")

@@ -106,7 +106,7 @@ _data = {
 &"open": SubResource("Animation_ymtgt")
 }
 
-[node name="Door" type="StaticBody3D" unique_id=267784101]
+[node name="Door" type="StaticBody3D" unique_id=267784101 groups=["interactable_events"]]
 script = ExtResource("1_tear1")
 locked = true
 

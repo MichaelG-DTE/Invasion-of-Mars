@@ -4,6 +4,7 @@ class_name WeaponController extends Node
 @export var current_weapon : Weapon
 @export var weapon_model_parent : Node3D
 @export var weapon_state_chart : StateChart
+@export var player_controller : PlayerController
 @onready var ammo_label: Label = $"../../UserInterface/Control/Ammo"
 @onready var current_weapon_label: Label = $"../../UserInterface/Control/CurrentWeapon"
 @onready var marker_3d: Marker3D = %Marker3D
@@ -28,15 +29,16 @@ func _ready() -> void:
 		
 
 func _process(delta: float) -> void:
-	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
-	# fire rate for weapons
-	if fire_rate_timer > 0:
-		fire_rate_timer -= delta
-		if fire_rate_timer <= 0:
-			can_fire_next = true
-			
-	ammo_label.text = "Ammo: " + str(weapon_data.ammo)
-	current_weapon_label.text = "Current Weapon: " + get_weapon_name()
+	if !player_controller.dead:
+		var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
+		# fire rate for weapons
+		if fire_rate_timer > 0:
+			fire_rate_timer -= delta
+			if fire_rate_timer <= 0:
+				can_fire_next = true
+				
+		ammo_label.text = "Ammo: " + str(weapon_data.ammo)
+		current_weapon_label.text = "Current Weapon: " + get_weapon_name()
 
 func spawn_weapon_model():
 	if current_weapon_model:
@@ -53,25 +55,26 @@ func can_fire() -> bool:
 	return weapon_data.ammo > 0 and can_fire_next
 		
 func fire_weapon() -> void:
-	if can_fire(): # checks for the ammo amount
-		managers.weapon_manager.use_ammo(managers.weapon_manager.current_slot) # removes one bullet
-		# weapon firing animation for both shooting and shooting while aiming
-		if current_weapon == MD_P_11:
-			weapon_shoot.play("PistolShoot")
-			if player.zoomed_in:
-				weapon_shoot.play("PistolShootAim")
-		if current_weapon == MD_ARE_18:
-			weapon_shoot.play("AssaultRifleShoot")
-			if player.zoomed_in:
-				weapon_shoot.play("AssaultRifleShootAim")
-		if current_weapon == MD_BMR_99:
-			weapon_shoot.play("ShotgunShoot")
-			if player.zoomed_in:
-				weapon_shoot.play("ShotgunShootAim")
-		if current_weapon == MD_RICO_KBM:
-			weapon_shoot.play("RocketLauncherShoot")
-			if player.zoomed_in:
-				weapon_shoot.play("RocketLauncherShootAim")
+	if !player_controller.dead:
+		if can_fire(): # checks for the ammo amount
+			managers.weapon_manager.use_ammo(managers.weapon_manager.current_slot) # removes one bullet
+			# weapon firing animation for both shooting and shooting while aiming
+			if current_weapon == MD_P_11:
+				weapon_shoot.play("PistolShoot")
+				if player.zoomed_in:
+					weapon_shoot.play("PistolShootAim")
+			if current_weapon == MD_ARE_18:
+				weapon_shoot.play("AssaultRifleShoot")
+				if player.zoomed_in:
+					weapon_shoot.play("AssaultRifleShootAim")
+			if current_weapon == MD_BMR_99:
+				weapon_shoot.play("ShotgunShoot")
+				if player.zoomed_in:
+					weapon_shoot.play("ShotgunShootAim")
+			if current_weapon == MD_RICO_KBM:
+				weapon_shoot.play("RocketLauncherShoot")
+				if player.zoomed_in:
+					weapon_shoot.play("RocketLauncherShootAim")
 
 		# firing cooldown
 		can_fire_next = false
@@ -167,35 +170,36 @@ func _spawn_projectile() -> void:
 	projectile.setup(velocity, current_weapon.damage)
 
 func switch_weapon(weapon_data: WeaponData) -> void:
-	current_weapon = weapon_data.weapon
-	# sets the position of the weapon model container depending on the weapon and its zoomed in state
-	if current_weapon == MD_P_11:
-		wmc.position.z = -1
-		wmc.position.x = 0
-		if player.zoomed_in:
-			wmc.position.x = -0.25
-	if current_weapon == MD_ARE_18:
-		wmc.position.z = 0
-		wmc.position.x = 0
-		if player.zoomed_in:
-			wmc.position.x = -0.12
-			wmc.position.z = -0.1
-	if current_weapon == MD_BMR_99:
-		wmc.position.z = 0
-		wmc.position.x = 0
-		if player.zoomed_in:
-			wmc.position.x = -0.3
-	if current_weapon == MD_RICO_KBM:
-		wmc.position.z = 0
-		wmc.position.x = 0
-		if player.zoomed_in:
-			wmc.position.x = -0.05
-	if current_weapon_model:
-		current_weapon_model.queue_free()
+	if !player_controller.dead:
+		current_weapon = weapon_data.weapon
+		# sets the position of the weapon model container depending on the weapon and its zoomed in state
+		if current_weapon == MD_P_11:
+			wmc.position.z = -1
+			wmc.position.x = 0
+			if player.zoomed_in:
+				wmc.position.x = -0.25
+		if current_weapon == MD_ARE_18:
+			wmc.position.z = 0
+			wmc.position.x = 0
+			if player.zoomed_in:
+				wmc.position.x = -0.12
+				wmc.position.z = -0.1
+		if current_weapon == MD_BMR_99:
+			wmc.position.z = 0
+			wmc.position.x = 0
+			if player.zoomed_in:
+				wmc.position.x = -0.3
+		if current_weapon == MD_RICO_KBM:
+			wmc.position.z = 0
+			wmc.position.x = 0
+			if player.zoomed_in:
+				wmc.position.x = -0.05
+		if current_weapon_model:
+			current_weapon_model.queue_free()
 		
-	spawn_weapon_model()
+		spawn_weapon_model()
 	
-	weapon_state_chart.send_event("OnIdle")
+		weapon_state_chart.send_event("OnIdle")
 
 func has_ammo() -> bool: # helper function for finding ammo
 	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]

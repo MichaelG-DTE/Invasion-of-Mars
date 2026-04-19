@@ -116,7 +116,7 @@ emission_energy_multiplier = 2.5
 material = SubResource("StandardMaterial3D_cjs08")
 size = Vector3(0.05, 0.05, 0.1)
 
-[node name="Button7Level5" type="StaticBody3D" unique_id=350071858]
+[node name="Button7Level5" type="StaticBody3D" unique_id=350071858 groups=["interactable_events"]]
 transform = Transform3D(1.0606601, 0, 1.0606601, 0, 1.5, 0, -1.0606601, 0, 1.0606601, 0, 0, 0)
 script = ExtResource("1_hin1u")
 
