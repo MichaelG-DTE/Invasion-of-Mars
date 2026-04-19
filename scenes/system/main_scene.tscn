@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
 [ext_resource type="Script" uid="uid://oxv41wjgwnj4" path="res://scripts/system/save_manager.gd" id="9_u4ui1"]
-[ext_resource type="PackedScene" uid="uid://cwcy8djptf2xj" path="res://levels/level_five.tscn" id="11_u4ui1"]
+[ext_resource type="PackedScene" uid="uid://d2ff3ocau7igq" path="res://levels/level_four.tscn" id="13_dilm7"]
 
 [node name="MainScene" type="Node" unique_id=99574882]
 
@@ -43,4 +43,4 @@ rico_kbm_data = ExtResource("7_tpgha")
 [node name="Player" parent="CurrentLevel" unique_id=96954163 instance=ExtResource("8_ufluw")]
 transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, -8.0345, 2, 10.536982)
 
-[node name="LevelFive" parent="CurrentLevel" unique_id=1584652831 instance=ExtResource("11_u4ui1")]
+[node name="LevelFour" parent="CurrentLevel" unique_id=1120307861 instance=ExtResource("13_dilm7")]

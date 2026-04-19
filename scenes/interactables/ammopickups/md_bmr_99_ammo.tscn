@@ -9,7 +9,7 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_wqnxc")
 size = Vector3(0.6, 0.3, 0.6)
 
-[node name="MD BMR-99 Ammo" unique_id=1825521633 instance=ExtResource("1_wqnxc")]
+[node name="MD BMR-99 Ammo" unique_id=1825521633 groups=["interactable_events"] instance=ExtResource("1_wqnxc")]
 weapon_slot = 3
 ammo_amount = 8
 

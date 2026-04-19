@@ -59,7 +59,7 @@ metallic = 0.65
 roughness = 0.45
 uv1_triplanar = true
 
-[node name="LevelTwo" type="Node3D" unique_id=464958670]
+[node name="LevelTwo" type="Node3D" unique_id=464958670 groups=["level"]]
 script = ExtResource("1_703w7")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=660276824 groups=["NavigationGroup"]]

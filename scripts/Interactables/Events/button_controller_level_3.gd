@@ -1,7 +1,5 @@
 extends Node3D
 
-@onready var door_3: StaticBody3D = $"../Door3"
-
 
 func _process(_delta: float) -> void:
 	var buttons = get_tree().get_nodes_in_group("levelbuttons")
@@ -9,4 +7,5 @@ func _process(_delta: float) -> void:
 		if !button.has_pressed:
 			return
 			
-		door_3.locked = false
+		var door = get_tree().get_first_node_in_group("door")
+		door.locked = false

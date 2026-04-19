@@ -38,6 +38,7 @@ enemies=""
 game_events=""
 NavigationGroup=""
 interactable_events=""
+level=""
 
 [input]
 

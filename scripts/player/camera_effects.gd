@@ -41,7 +41,8 @@ var _weapon_kick_angles : Vector3 = Vector3.ZERO
 var _step_timer : float = 0.0
 
 func _process(delta: float) -> void:
-	calculate_view_offset(delta)
+	if !player.dead:
+		calculate_view_offset(delta)
 	
 func calculate_view_offset(delta):
 	if not player: # ensures player is being referenced 

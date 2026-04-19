@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cewvskl68d21d" path="res://scenes/interactables/ammopickups/md_bmr_99_ammo.tscn" id="16_igjkf"]
 [ext_resource type="Script" uid="uid://bhl4h4jau81qe" path="res://scripts/Interactables/Events/elevator_level_3.gd" id="16_qvb58"]
 [ext_resource type="PackedScene" uid="uid://gbv436xmkqlv" path="res://scenes/interactables/weaponpickups/shotgun_weapon_pickup.tscn" id="17_67kcd"]
+[ext_resource type="PackedScene" uid="uid://8kim8dnigen7" path="res://scenes/interactables/events/end_door_level_3.tscn" id="18_hh4wk"]
 [ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="18_nndmk"]
 [ext_resource type="PackedScene" uid="uid://dbue806he51mg" path="res://assets/GodotTempModels/terminal_level_3.tscn" id="21_mj8hj"]
 [ext_resource type="PackedScene" uid="uid://dyd6ebcsh8t3x" path="res://scenes/interactables/events/buttonlevel_3.tscn" id="22_vrr03"]
@@ -1208,9 +1209,8 @@ locked = true
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.25, 0, 0.375)
 locked = true
 
-[node name="Door3" parent="." unique_id=436570591 instance=ExtResource("10_5u7pi")]
+[node name="EndDoor" parent="." unique_id=1439958220 instance=ExtResource("18_hh4wk")]
 transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 61.299, -48.636, -10.083001)
-locked = true
 
 [node name="MD ARE ammo" parent="." unique_id=1825521633 instance=ExtResource("14_jvuyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.449, 0.18900001, 8.568)

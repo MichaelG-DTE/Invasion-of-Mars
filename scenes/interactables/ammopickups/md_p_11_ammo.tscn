@@ -6,10 +6,11 @@
 [sub_resource type="BoxMesh" id="BoxMesh_t826o"]
 size = Vector3(0.6, 0.3, 0.6)
 
-[node name="MD P-11 Ammo" unique_id=1825521633 instance=ExtResource("1_aox64")]
+[node name="MD P-11 Ammo" unique_id=1825521633 groups=["interactable_events"] instance=ExtResource("1_aox64")]
 script = ExtResource("2_jim5h")
 weapon_slot = 1
 ammo_amount = 10
+has_picked_up = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=42939125]
 mesh = SubResource("BoxMesh_t826o")

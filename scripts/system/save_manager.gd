@@ -1,7 +1,6 @@
 extends Node
 
 @onready var player: PlayerController = $"../../CurrentLevel/Player"
-@onready var weapon_manager: WeaponManager = $"../WeaponManager"
 
 @onready var level_one: Node3D = $"../../CurrentLevel/Level One"
 @onready var level_two: Node3D = $"../../CurrentLevel/LevelTwo"
@@ -94,6 +93,7 @@ func load_game():
 	rocketlauncher.ammo = saved_game.rocketlauncher_ammo
 	rocketlauncher.weapon.total_ammo = saved_game.rocketlauncher_total_ammo
 	
+
 	get_tree().call_group("game_events", "on_before_load_game")
 	
 	for item in saved_game.saved_data:

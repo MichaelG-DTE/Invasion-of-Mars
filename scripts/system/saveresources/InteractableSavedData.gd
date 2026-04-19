@@ -5,3 +5,5 @@ extends Resource
 @export var is_door_locked : bool
 @export var scene_path : String
 @export var transform : Transform3D
+@export var door_mesh_height : float
+@export var door_collision_height : float

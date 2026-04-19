@@ -39,6 +39,7 @@ var deceleration : float = 14
 @onready var weapon_zoom: AnimationPlayer = $WeaponZoom
 @onready var health: Label = $UserInterface/Control/Health
 @onready var shield: Label = $UserInterface/Control/Shield
+@onready var death: AnimationPlayer = $Death
 
 # gun references
 const MD_ARE_18 = preload("uid://d0mhjhy1536qp")
@@ -240,4 +241,4 @@ func weapon_bob():
 
 func on_dead():
 	dead = true
-	
+	death.play("Death")
