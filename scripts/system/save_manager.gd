@@ -1,23 +1,37 @@
 extends Node
 
 @onready var player: PlayerController = $"../../CurrentLevel/Player"
+@onready var weapon_manager: WeaponManager = $"../WeaponManager"
 
-@onready var level_one: Node3D = $"../../CurrentLevel/Level One"
-@onready var level_two: Node3D = $"../../CurrentLevel/LevelTwo"
-@onready var level_three: Node3D = $"../../CurrentLevel/LevelThree"
-@onready var level_four: Node3D = $"../../CurrentLevel/LevelFour"
-@onready var level_five: Node3D = $"../../CurrentLevel/LevelFive"
-
-@onready var navigation_region_3d_lvl_1: NavigationRegion3D = $"../../CurrentLevel/Level One/NavigationRegion3D"
-@onready var navigation_region_3d_lvl_2: NavigationRegion3D = $"../../CurrentLevel/LevelTwo/NavigationRegion3D"
-@onready var navigation_region_3d_lvl_3: NavigationRegion3D = $"../../CurrentLevel/LevelThree/NavigationRegion3D"
-@onready var navigation_region_3d_lvl_4: NavigationRegion3D = $"../../CurrentLevel/LevelFour/NavigationRegion3D"
-@onready var navigation_region_3d_lvl_5: NavigationRegion3D = $"../../CurrentLevel/LevelFive/NavigationRegion3D"
+var nav_region
+var current_level
 
 @export var pistol_data : WeaponData
 @export var are_data : WeaponData
 @export var bmr_data : WeaponData
 @export var rico_kbm_data : WeaponData
+
+func _ready() -> void:
+	SignalBus.connect("save_level", save_game)
+	SignalBus.connect("load_level", load_game)
+	find_nav_regions()
+	find_current_level()
+
+func find_nav_regions():
+	var nav_in_levels = get_tree().get_nodes_in_group("NavigationGroup")
+	for nav_level in nav_in_levels:
+		if nav_level == null:
+			return
+		else:
+			nav_region = nav_level
+
+func find_current_level():
+	var levels = get_tree().get_nodes_in_group("level")
+	for level in levels:
+		if level == null:
+			return
+		else:
+			current_level = level
 
 func save_game():
 	var saved_game : SavedGame = SavedGame.new()
@@ -33,6 +47,15 @@ func save_game():
 	saved_game.torch_visible = player.torch.visible
 	saved_game.torch_energy = player.torch.light_energy
 	saved_game.torch_active = player.torch_visible
+	
+	if player.weapon_controller.current_weapon == pistol.weapon:
+		saved_game.current_slot = pistol.weapon.weapon_slot
+	elif player.weapon_controller.current_weapon == assaultrifle.weapon:
+		saved_game.current_slot = assaultrifle.weapon.weapon_slot
+	elif player.weapon_controller.current_weapon == shotgun.weapon:
+		saved_game.current_slot = shotgun.weapon.weapon_slot
+	elif player.weapon_controller.current_weapon == rocketlauncher.weapon:
+		saved_game.current_slot = rocketlauncher.weapon.weapon_slot
 	
 	# pistol save values
 	saved_game.pistol_unlocked = pistol.unlocked
@@ -76,6 +99,9 @@ func load_game():
 	player.torch.light_energy = saved_game.torch_energy
 	player.torch_visible = saved_game.torch_active
 	
+	var new_slot = saved_game.current_slot
+	weapon_manager.switch_to_slot(new_slot)
+	
 	# load pistol values
 	pistol.unlocked = saved_game.pistol_unlocked
 	pistol.ammo = saved_game.pistol_ammo
@@ -93,22 +119,15 @@ func load_game():
 	rocketlauncher.ammo = saved_game.rocketlauncher_ammo
 	rocketlauncher.weapon.total_ammo = saved_game.rocketlauncher_total_ammo
 	
-
+	find_nav_regions()
+	find_current_level()
+	
 	get_tree().call_group("game_events", "on_before_load_game")
 	
 	for item in saved_game.saved_data:
 		var scene = load(item.scene_path) as PackedScene
 		var restored_node = scene.instantiate()
-		if globalvar.current_level == 1:
-			navigation_region_3d_lvl_1.add_child(restored_node)
-		if globalvar.current_level == 2:
-			navigation_region_3d_lvl_2.add_child(restored_node)
-		if globalvar.current_level == 3:
-			navigation_region_3d_lvl_3.add_child(restored_node)
-		if globalvar.current_level == 4:
-			navigation_region_3d_lvl_4.add_child(restored_node)
-		if globalvar.current_level == 5:
-			navigation_region_3d_lvl_5.add_child(restored_node)
+		nav_region.add_child(restored_node)
 		
 		if restored_node.has_method("on_load_game"):
 			restored_node.on_load_game(item)
@@ -118,23 +137,12 @@ func load_game():
 	for item in saved_game.interactables_saved_data:
 		var scene = load(item.scene_path) as PackedScene
 		var restored_node = scene.instantiate()
-		if globalvar.current_level == 1:
-			level_one.add_child(restored_node)
-		if globalvar.current_level == 2:
-			level_two.add_child(restored_node)
-		if globalvar.current_level == 3:
-			level_three.add_child(restored_node)
-		if globalvar.current_level == 4:
-			level_four.add_child(restored_node)
-		if globalvar.current_level == 5:
-			level_five.add_child(restored_node)
+		current_level.add_child(restored_node)
 		
 		if restored_node.has_method("on_load_game"):
 			restored_node.on_load_game(item)
+			
+	player.dead = false
+	player.health_component.is_alive = true
+	player.death.play("RESET")
 	
-# save and load testing inputs
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("save"):
-		save_game()
-	elif Input.is_action_just_pressed("load"):
-		load_game()

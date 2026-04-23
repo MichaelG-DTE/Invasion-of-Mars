@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://dkmuqsdwo3l1c"]
+[gd_scene format=3 uid="uid://cnqgbw3sqjtrg"]
 
-[ext_resource type="Script" uid="uid://c3ddp7mnxfun2" path="res://scripts/Interactables/Events/door.gd" id="1_xbefs"]
-[ext_resource type="Material" uid="uid://xn3mkgw7q5rx" path="res://assets/textures/doormaterial.tres" id="2_b4yo5"]
+[ext_resource type="Script" uid="uid://c3ddp7mnxfun2" path="res://scripts/Interactables/Events/door.gd" id="1_3g55g"]
+[ext_resource type="Material" uid="uid://xn3mkgw7q5rx" path="res://assets/textures/doormaterial.tres" id="2_3y820"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r7xnl"]
-material = ExtResource("2_b4yo5")
+material = ExtResource("2_3y820")
 size = Vector3(0.1, 2.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xbefs"]
@@ -98,16 +98,18 @@ _data = {
 &"open": SubResource("Animation_ymtgt")
 }
 
-[node name="Door" type="StaticBody3D" unique_id=267784101 groups=["door", "interactable_events"]]
-script = ExtResource("1_xbefs")
+[node name="Door" type="StaticBody3D" unique_id=257345446 groups=["door", "interactable_events"]]
+transform = Transform3D(-4.371139e-08, 0, -1.8, 0, 1.7, 0, 1, 0, -7.86805e-08, 0, 0, 0)
+script = ExtResource("1_3g55g")
+locked = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=447372225]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1073249181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 mesh = SubResource("BoxMesh_r7xnl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=762976318]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1928629191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("BoxShape3D_xbefs")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1284902988]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=270144082]
 libraries/ = SubResource("AnimationLibrary_8jdfs")

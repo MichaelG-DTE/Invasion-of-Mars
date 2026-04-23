@@ -3,7 +3,6 @@ extends Node3D
 var player 
 @onready var player_spawn: Marker3D = $PlayerSpawn
 
-var nav
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +10,4 @@ func _ready() -> void:
 	player.global_position = player_spawn.global_position
 	player.global_rotation = player_spawn.global_rotation
 	globalvar.can_teleport = false
-	globalvar.current_level = 3
-	nav = get_tree().get_first_node_in_group("NavigationGroup")
-	print(nav)
+	SignalBus.save_level.emit()

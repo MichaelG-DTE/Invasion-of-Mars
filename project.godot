@@ -39,6 +39,8 @@ game_events=""
 NavigationGroup=""
 interactable_events=""
 level=""
+door=""
+levelbuttons=""
 
 [input]
 

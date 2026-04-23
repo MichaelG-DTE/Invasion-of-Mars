@@ -11,7 +11,8 @@ func interact():
 	if has_pressed == false:
 		animation_player.play("pressed")
 		$"../TerminalTemp".page_number += 1
-		$"../Door".locked = false
+		var door = get_tree().get_first_node_in_group("door")
+		door.locked = false
 		has_pressed = true
 
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):

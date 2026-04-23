@@ -185,14 +185,11 @@ func _on_see_timer_timeout() -> void:
 				
 					if see_cast.is_colliding():
 						var collider = see_cast.get_collider()
-						print(collider)
 						if collider.is_in_group("player"):
 							# sends the enemies to the run state and follows the player
-							print("see player")
 							on_triggered()
 						else:
 							# stops the enemies from moving if they don't see the player
-							print("dont see player")
 							state_chart.send_event("OnIdle")
 							state_machine.travel("Idle")
 							velocity = Vector3.ZERO

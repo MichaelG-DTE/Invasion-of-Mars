@@ -179,10 +179,11 @@ _data = {
 &"pulsateandspin": SubResource("Animation_r2sgu")
 }
 
-[node name="LevelFour" type="Node3D" unique_id=1120307861]
+[node name="LevelFour" type="Node3D" unique_id=1120307861 groups=["level"]]
 script = ExtResource("1_26nyl")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2076550510 groups=["NavigationGroup"]]
+unique_name_in_owner = true
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, -5.5, 0)
 navigation_mesh = SubResource("NavigationMesh_yfxcc")
 

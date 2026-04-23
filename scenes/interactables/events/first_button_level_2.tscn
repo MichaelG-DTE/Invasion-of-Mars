@@ -116,7 +116,7 @@ emission_energy_multiplier = 2.5
 material = SubResource("StandardMaterial3D_tp25o")
 size = Vector3(0.05, 0.05, 0.1)
 
-[node name="FirstButtonLevel2" type="StaticBody3D" unique_id=1514942729 groups=["interactable_events"]]
+[node name="FirstButtonLevel2" type="StaticBody3D" unique_id=1514942729 groups=["interactable_events", "levelbuttons"]]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 0, 0, 0)
 script = ExtResource("1_1w06l")
 

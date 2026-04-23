@@ -17,4 +17,5 @@ weapon_model = ExtResource("2_4yieg")
 pellet_count = 8
 spread_angle = 0.1
 weapon_position = Vector3(0.4, -0.3, -0.6)
+weapon_slot = 3
 metadata/_custom_type_script = "uid://1o5b5fhg1r5b"

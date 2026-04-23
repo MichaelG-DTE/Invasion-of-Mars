@@ -242,3 +242,5 @@ func weapon_bob():
 func on_dead():
 	dead = true
 	death.play("Death")
+	await get_tree().create_timer(5.0).timeout
+	SignalBus.load_level.emit()

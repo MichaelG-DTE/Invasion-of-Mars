@@ -4,32 +4,27 @@ extends StaticBody3D
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @export var locked := false
-
+var active := false
 
 func interact():
 	if not locked:
-		if not is_open():
+		if !active:
 			animation_player.play("open")
-		if is_open():
+			active = true
+		else:
 			animation_player.play("close")
-		
-		
-func is_open() -> bool:
-	if mesh_instance_3d.position.y and collision_shape_3d.position.y == 1.25:
-		return false
-	else:
-		return true
+			active = false
 
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	var my_data = InteractableSavedData.new()
 	my_data.is_door_locked = locked
 	my_data.transform = global_transform
 	my_data.scene_path = scene_file_path
-	if not is_open():
+	if not active:
 		my_data.door_mesh_height = 1.25
 		my_data.door_collision_height = 1.25
 		
-	if is_open():
+	if active:
 		my_data.door_mesh_height = 3.0
 		my_data.door_collision_height = 3.0
 	

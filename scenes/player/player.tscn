@@ -591,7 +591,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0.5, -0.25, 0, 3, 0, -1, -2, 0.167, 0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 3, 0, -0.9, -2, 0.167, 0, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/2/type = "bezier"
@@ -737,8 +737,6 @@ weapon_sway_amount = 0.2
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1816197178]
 script = ExtResource("2_uniwh")
-max_health = 10.0
-max_shield = 0.0
 metadata/_custom_type_script = "uid://dhed3bgiuoryi"
 
 [node name="Standing Collision" type="CollisionShape3D" parent="." unique_id=741992447]

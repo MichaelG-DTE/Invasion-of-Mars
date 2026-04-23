@@ -441,10 +441,11 @@ _data = {
 &"elevate": SubResource("Animation_nefly")
 }
 
-[node name="LevelFive" type="Node3D" unique_id=1584652831]
+[node name="LevelFive" type="Node3D" unique_id=1584652831 groups=["level"]]
 script = ExtResource("1_22haf")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=537565541 groups=["NavigationGroup"]]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
 navigation_mesh = SubResource("NavigationMesh_nefly")
 
@@ -1162,7 +1163,7 @@ transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0.
 transform = Transform3D(-4, 0, -6.039832e-07, 0, 4, 0, 6.039832e-07, 0, -4, 106.97844, -78.47577, -0.059850216)
 
 [node name="PlayerSpawn" type="Marker3D" parent="." unique_id=930492662]
-transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, -124.707115, 2, 173.87866)
+transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, -124.707115, 2.1, 173.87866)
 
 [node name="HealthTerminalTemp" parent="." unique_id=1993244436 instance=ExtResource("30_q80dg")]
 transform = Transform3D(1.0606601, 0, 1.0606601, 0, 1.5, 0, -1.0606601, 0, 1.0606601, 3.9918525, 46.100002, 29.579721)

@@ -8,6 +8,7 @@ extends Resource
 @export var torch_visible : bool
 @export var torch_energy : float
 @export var torch_active : bool
+@export var current_slot : int
 
 @export_category("pistolsavevalues")
 @export var pistol_unlocked : bool

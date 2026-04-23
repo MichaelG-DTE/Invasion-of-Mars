@@ -12,10 +12,10 @@
 [ext_resource type="Material" uid="uid://udraf2a1aa31" path="res://assets/textures/alienwalls.tres" id="6_ba5af"]
 [ext_resource type="Material" uid="uid://cfvws80tg7okm" path="res://scenes/interactables/events/pale_sandstone.tres" id="7_vdwy1"]
 [ext_resource type="Texture2D" uid="uid://16yvfkkcpa2w" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-001-2_Base-001.png" id="8_2wd80"]
-[ext_resource type="PackedScene" uid="uid://dkmuqsdwo3l1c" path="res://scenes/interactables/events/door.tscn" id="10_ffb46"]
 [ext_resource type="PackedScene" uid="uid://ofyb6jaxvtnq" path="res://assets/GodotTempModels/health_terminal_temp.tscn" id="11_6knvk"]
 [ext_resource type="PackedScene" uid="uid://cefcnw8fqw46j" path="res://assets/GodotTempModels/terminal_level2.tscn" id="12_6vcva"]
 [ext_resource type="PackedScene" uid="uid://dltwws7obw1bv" path="res://assets/GodotTempModels/shield_terminal_temp.tscn" id="13_6vcva"]
+[ext_resource type="PackedScene" uid="uid://cnqgbw3sqjtrg" path="res://scenes/interactables/events/door_level_2.tscn" id="13_703w7"]
 [ext_resource type="Script" uid="uid://0yjwa0c4lfkw" path="res://scripts/Interactables/terminals/terminal_2_level_2.gd" id="14_lwysx"]
 [ext_resource type="PackedScene" uid="uid://c23kpglq4pmfo" path="res://scenes/interactables/ammopickups/md_p_11_ammo.tscn" id="14_sxbjg"]
 [ext_resource type="PackedScene" uid="uid://d2l4jcwlu7r70" path="res://scenes/interactables/ammopickups/md_are_ammo.tscn" id="15_7cwh4"]
@@ -63,6 +63,7 @@ uv1_triplanar = true
 script = ExtResource("1_703w7")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=660276824 groups=["NavigationGroup"]]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
 navigation_mesh = SubResource("NavigationMesh_1t2tr")
 
@@ -257,7 +258,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.3
 size = Vector3(0.25, 0.5, 6)
 
 [node name="UpperLevel" type="CSGCombiner3D" parent="Geometry" unique_id=278354654]
-material_override = ExtResource("5_703w7")
+material_override = ExtResource("7_vdwy1")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry/UpperLevel" unique_id=1897718251]
@@ -988,9 +989,8 @@ material = ExtResource("7_vdwy1")
 
 [node name="WorldEnvironment" parent="." unique_id=491799346 instance=ExtResource("4_ikojo")]
 
-[node name="Door" parent="." unique_id=267784101 instance=ExtResource("10_ffb46")]
+[node name="Door" parent="." unique_id=257345446 groups=["door"] instance=ExtResource("13_703w7")]
 transform = Transform3D(-4.371139e-08, 0, -1.8, 0, 1.7, 0, 1, 0, -7.86805e-08, 0, -0.25, -14.6)
-locked = true
 
 [node name="HealthTerminalTemp" parent="." unique_id=1993244436 instance=ExtResource("11_6knvk")]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, -33.5, 1.3, 1.5)
@@ -1053,3 +1053,4 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, -43.8)
 
 [node name="PlayerSpawn" type="Marker3D" parent="." unique_id=1694591961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)

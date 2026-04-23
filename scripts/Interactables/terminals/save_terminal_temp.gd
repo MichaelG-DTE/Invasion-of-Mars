@@ -9,4 +9,4 @@ func _ready() -> void:
 func interact():
 	label.show()
 	animation_player.play("Saved")
-	#Saveload._save()
+	SignalBus.save_level.emit()
