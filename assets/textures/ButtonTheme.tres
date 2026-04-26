@@ -1,0 +1,30 @@
+[gd_resource type="Theme" format=3 uid="uid://dqe0crshdo38c"]
+
+[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/Codex-yYVPV.ttf" id="1_s3mh7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm48a"]
+bg_color = Color(0.28778416, 0.28778404, 0.287784, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k0ut"]
+bg_color = Color(0.04395192, 0.043951936, 0.043951876, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wt06"]
+bg_color = Color(0.1288298, 0.12882978, 0.12882978, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[resource]
+Button/fonts/font = ExtResource("1_s3mh7")
+Button/styles/hover = SubResource("StyleBoxFlat_tm48a")
+Button/styles/normal = SubResource("StyleBoxFlat_7k0ut")
+Button/styles/pressed = SubResource("StyleBoxFlat_3wt06")

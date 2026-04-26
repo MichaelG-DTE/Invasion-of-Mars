@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cddd3edpbalij"
 path.s3tc="res://.godot/imported/Metal-Panel_Base-001.png-20df77d259c5537a8c8e697f75271d4b.s3tc.ctex"
+path.etc2="res://.godot/imported/Metal-Panel_Base-001.png-20df77d259c5537a8c8e697f75271d4b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Metal-Panel_Base-001.png"
-dest_files=["res://.godot/imported/Metal-Panel_Base-001.png-20df77d259c5537a8c8e697f75271d4b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Metal-Panel_Base-001.png-20df77d259c5537a8c8e697f75271d4b.s3tc.ctex", "res://.godot/imported/Metal-Panel_Base-001.png-20df77d259c5537a8c8e697f75271d4b.etc2.ctex"]
 
 [params]
 

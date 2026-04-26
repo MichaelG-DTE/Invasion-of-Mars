@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdb8nvetekc7p"
 path.s3tc="res://.godot/imported/T_Trim_01_BaseColor_Red.png-0c791a7d94fb6d585c92025271bf6f83.s3tc.ctex"
+path.etc2="res://.godot/imported/T_Trim_01_BaseColor_Red.png-0c791a7d94fb6d585c92025271bf6f83.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/glTF/T_Trim_01_BaseColor_Red.png"
-dest_files=["res://.godot/imported/T_Trim_01_BaseColor_Red.png-0c791a7d94fb6d585c92025271bf6f83.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_Trim_01_BaseColor_Red.png-0c791a7d94fb6d585c92025271bf6f83.s3tc.ctex", "res://.godot/imported/T_Trim_01_BaseColor_Red.png-0c791a7d94fb6d585c92025271bf6f83.etc2.ctex"]
 
 [params]
 

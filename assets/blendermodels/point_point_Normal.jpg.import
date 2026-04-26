@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clio7f3ow7ykk"
 path.s3tc="res://.godot/imported/point_point_Normal.jpg-4ee28bf94c723d59ab734c69279dfe15.s3tc.ctex"
+path.etc2="res://.godot/imported/point_point_Normal.jpg-4ee28bf94c723d59ab734c69279dfe15.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/blendermodels/point_point_Normal.jpg"
-dest_files=["res://.godot/imported/point_point_Normal.jpg-4ee28bf94c723d59ab734c69279dfe15.s3tc.ctex"]
+dest_files=["res://.godot/imported/point_point_Normal.jpg-4ee28bf94c723d59ab734c69279dfe15.s3tc.ctex", "res://.godot/imported/point_point_Normal.jpg-4ee28bf94c723d59ab734c69279dfe15.etc2.ctex"]
 
 [params]
 

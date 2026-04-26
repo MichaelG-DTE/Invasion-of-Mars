@@ -31,6 +31,7 @@ func on_save_game(saved_data : Array[SavedData]):
 	my_data.is_following = following
 	if is_shielded:
 		my_data.shield_visible = %ShieldSphere.visible
+	my_data.my_level = globalvar.current_level
 	
 	saved_data.append(my_data)
 
@@ -44,6 +45,9 @@ func on_load_game(saved_data : SavedData):
 	following = saved_data.is_following
 	if is_shielded:
 		%ShieldSphere.visible = saved_data.shield_visible
+	if saved_data.my_level != globalvar.current_level:
+		print("you shouldn't be here")
+		queue_free()
 	
 func _ready() -> void:
 	super._ready()

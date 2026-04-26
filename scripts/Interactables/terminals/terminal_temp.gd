@@ -7,6 +7,7 @@ extends StaticBody3D
 var page_number = 1
 var in_terminal = false
 
+
 func _ready() -> void:
 	SignalBus.terminal_change.connect(change_terminal_page)
 
@@ -36,7 +37,7 @@ func _process(_delta: float) -> void:
 				print(page_number)
 				terminal_page_2.visible = true
 				terminal_page_3.visible = false
-	
+
 func change_terminal_page():
 	page_number = 4
 	print("Terminal Changed")

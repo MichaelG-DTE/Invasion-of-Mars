@@ -113,27 +113,27 @@ text = "<Incoming Transmission from Pulsar...>
 
 Do I need to make myself any clearer!?
 
-HURRY UP
+HURRY UP!
 
 
-
-I'm detecting massive energy pulses from down below the central tower of the station. 
-
-
+I'm detecting massive energy pulses coming from down below the central tower of this station. 
 
 To direct enough energy to destroy a star the ancients used the 8 massive spires as a focusing lense.
 
-
-
 Fortunately, the ancients had the wise idea to include a manual override for each spire.
 
+At the base of the towers, in the pit below, are four buttons that you can use to deactivate the spires. 
+
+There's also four more for the spires of the central tower. 
 
 
 It's not a permanent solution, but it prevents the Nexyr from activating the Void Bringer right now.
 
+Maybe, without anywhere to go, the energy will build and build until it destroys itself.
 
+We can only hope. 
 
-
+But for now,
 
 
 
@@ -203,7 +203,7 @@ Earth will BURN.
 
 Yes, we know your home planet, human.
 
-I will bring the entire might of the Nexyr Empire and LIQUIFY the entirety of the Earth fleets, every city, every settlement, every single blade of grass will be RAZED.
+I will bring the entire might of the Nexyr Empire and RAZE your home fleet, destroy every city, and glass the surface of your world until there is NOTHING LEFT.
 
 
 
@@ -235,7 +235,6 @@ border_width = 5.0
 editor_only = false
 
 [node name="TerminalPage3" type="Control" parent="." unique_id=1131894283]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -272,7 +271,7 @@ theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "<Incoming Transmission from Pulsar...>
 
-No, Grandmaster J'yma, it is not over. 
+You're right, Grandmaster J'yma, this is not over. 
 
 
 We're just getting started.
@@ -293,13 +292,13 @@ As for me? I have unfinished buisness here. Deactivating the spires actually des
 
 Did you ever wonder what the source of the signal was? The one that brought us here, right when we were needed.
 
-It was you. 
+It was you.
 
 I cannot explain this. Perhaps we will know sometime in the future.
 
 If our paths meet again, then I await that day.
 
-If not, then Goodbye. Don't worry about the Nexyr. I'll deal with them.
+If not, then goodbye. Don't worry about the Nexyr. I'll deal with them. Permanently.
 
 
 <End Transmission>"

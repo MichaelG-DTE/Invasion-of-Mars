@@ -37,8 +37,8 @@ var deceleration : float = 14
 # on ready variables
 @onready var animation_player: AnimationPlayer = $Torch/AnimationPlayer
 @onready var weapon_zoom: AnimationPlayer = $WeaponZoom
-@onready var health: Label = $UserInterface/Control/Health
-@onready var shield: Label = $UserInterface/Control/Shield
+@onready var health: TextureProgressBar = $UserInterface/Control/Health
+@onready var shield: TextureProgressBar = $UserInterface/Control/Shield
 @onready var death: AnimationPlayer = $Death
 
 # gun references
@@ -148,8 +148,8 @@ func _process(delta: float) -> void:
 					weapon_zoom.play_backwards("RPGWeaponZoom")
 	
 	# labels!!! REMEMBER THESE ARE HERE
-	health.text = "Health: " + str(health_component.current_health)
-	shield.text = "Shield: " + str(health_component.current_shield)
+	health.value = health_component.current_health
+	shield.value = health_component.current_shield
 
 func change_fov(fov, duration):
 	if fovtween:

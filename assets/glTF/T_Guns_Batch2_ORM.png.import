@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1v5fvlgrsdxi"
 path.s3tc="res://.godot/imported/T_Guns_Batch2_ORM.png-643c170b5f63a4f8efe4e86c5f784484.s3tc.ctex"
+path.etc2="res://.godot/imported/T_Guns_Batch2_ORM.png-643c170b5f63a4f8efe4e86c5f784484.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/glTF/T_Guns_Batch2_ORM.png"
-dest_files=["res://.godot/imported/T_Guns_Batch2_ORM.png-643c170b5f63a4f8efe4e86c5f784484.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_Guns_Batch2_ORM.png-643c170b5f63a4f8efe4e86c5f784484.s3tc.ctex", "res://.godot/imported/T_Guns_Batch2_ORM.png-643c170b5f63a4f8efe4e86c5f784484.etc2.ctex"]
 
 [params]
 

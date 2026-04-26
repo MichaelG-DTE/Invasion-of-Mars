@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be8m8wmppdthf"
 path.s3tc="res://.godot/imported/Grid-001_Base-001.png-ae2c85e7fbde9ae2e95389843a62dd22.s3tc.ctex"
+path.etc2="res://.godot/imported/Grid-001_Base-001.png-ae2c85e7fbde9ae2e95389843a62dd22.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-001_Base-001.png"
-dest_files=["res://.godot/imported/Grid-001_Base-001.png-ae2c85e7fbde9ae2e95389843a62dd22.s3tc.ctex"]
+dest_files=["res://.godot/imported/Grid-001_Base-001.png-ae2c85e7fbde9ae2e95389843a62dd22.s3tc.ctex", "res://.godot/imported/Grid-001_Base-001.png-ae2c85e7fbde9ae2e95389843a62dd22.etc2.ctex"]
 
 [params]
 

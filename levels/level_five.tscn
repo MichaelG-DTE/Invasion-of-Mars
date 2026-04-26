@@ -469,6 +469,7 @@ transform = Transform3D(0.95262796, 0, -0.55, 0, 1.1, 0, 0.55, 0, 0.95262796, -1
 
 [node name="Shielded Adept Warrior" parent="NavigationRegion3D" unique_id=2110419004 instance=ExtResource("2_25lsr")]
 transform = Transform3D(0.54999995, 0, -0.952628, 0, 1.1, 0, 0.952628, 0, 0.54999995, -113.6, 8.099999, 159.75002)
+follow_speed = 5.0
 
 [node name="VoidTrooper" parent="NavigationRegion3D" unique_id=879734878 instance=ExtResource("3_nq8im")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -130.25, 10.65, 29.65)
@@ -556,15 +557,19 @@ transform = Transform3D(-1.1, 0, 9.616505e-08, 0, 1.1, 0, -9.616505e-08, 0, -1.1
 
 [node name="Shielded Adept Warrior2" parent="NavigationRegion3D" unique_id=793224028 instance=ExtResource("2_25lsr")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 51.81, 32.55)
+follow_speed = 5.0
 
 [node name="Shielded Adept Warrior3" parent="NavigationRegion3D" unique_id=1657599970 instance=ExtResource("2_25lsr")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 51.910004, -37.5)
+follow_speed = 5.0
 
 [node name="Shielded Adept Warrior4" parent="NavigationRegion3D" unique_id=1131426619 instance=ExtResource("2_25lsr")]
 transform = Transform3D(-4.8082526e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.8082526e-08, -35.025, 51.960003, -2.4750018)
+follow_speed = 5.0
 
 [node name="Shielded Adept Warrior5" parent="NavigationRegion3D" unique_id=1332650784 instance=ExtResource("2_25lsr")]
 transform = Transform3D(-4.8082526e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.8082526e-08, 35.025, 51.65, -2.474999)
+follow_speed = 5.0
 
 [node name="Shielded Adept Voidtrooper" parent="NavigationRegion3D" unique_id=578919875 instance=ExtResource("6_ev87x")]
 transform = Transform3D(-1.1, 0, 9.616505e-08, 0, 1.1, 0, -9.616505e-08, 0, -1.1, 0, 56.65, 17.75)

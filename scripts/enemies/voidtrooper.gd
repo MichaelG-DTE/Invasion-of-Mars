@@ -11,11 +11,12 @@ class_name VoidTrooper extends GenisysEnemy
 @export var projectile_scene : PackedScene
 @export var is_shielded := false
 @onready var see_cast: RayCast3D = $SeeCast
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var target : Node3D
 var state_machine
 var dead := false
-var attack_range := 10.0
+var attack_range := 7.50
 var following := true
 var can_attack := true
 var attack_timer := 0.0
@@ -36,7 +37,8 @@ func on_save_game(saved_data : Array[SavedData]):
 	my_data.is_following = following
 	if is_shielded:
 		my_data.shield_visible = %ShieldSphere.visible
-		
+	my_data.my_level = globalvar.current_level
+	print(my_data.my_level)
 	saved_data.append(my_data)
 
 func on_before_load_game():
@@ -49,13 +51,16 @@ func on_load_game(saved_data : SavedData):
 	following = saved_data.is_following
 	if is_shielded:
 		%ShieldSphere.visible = saved_data.shield_visible
-
+	print(saved_data.my_level)
+	if saved_data.my_level != globalvar.current_level:
+		print("you shouldn't be here")
+		queue_free()
+	
 func _ready() -> void:
 	super._ready()
 	
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
-	
 	
 	# connect signals
 	health_component.died.connect(_on_died)
@@ -67,7 +72,9 @@ func _physics_process(delta: float) -> void:
 		# give the enemies gravity
 		if not is_on_floor():
 			velocity.y -= 20.0 * delta
-			
+		
+		
+		
 		if following:
 			if can_attack:
 				if following:
@@ -85,6 +92,8 @@ func _process(delta: float) -> void:
 	if health_component.current_shield == 0:
 		if is_shielded and !dead:
 			$VoidtrooperShieldPlayer.play_backwards("shield activate and deactivate")
+	
+	
 
 func on_triggered() -> void:
 	state_chart.send_event("OnFollow")
@@ -135,14 +144,22 @@ func _on_idle_state_state_physics_processing(_delta: float) -> void:
 		if !following:
 			state_machine.travel("Idle")
 
-func _on_attack_state_state_physics_processing(_delta: float) -> void:
+func _on_attack_state_state_physics_processing(delta: float) -> void:
 	# plays attack animation and applies damage to target
 	if !dead:
 		if can_attack:
+			var next_pos = navigation_agent_3d.get_next_path_position()
+			var direction = (next_pos - global_position).normalized()
+			var target_rotation = atan2(direction.x, direction.z)
+			rotation.y = lerp_angle(rotation.y, target_rotation, 20 * delta)
+			velocity = Vector3.ZERO
+			navigation_agent_3d.velocity = Vector3.ZERO
+			animation_player.speed_scale = 4.0
 			state_machine.travel("Attack")
 			_spawn_projectile()
 			can_attack = false
 		else:
+			animation_player.speed_scale = 1.0
 			state_chart.send_event("OnFollow")
 
 func apply_velocity():

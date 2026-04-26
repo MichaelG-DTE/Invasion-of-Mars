@@ -989,7 +989,7 @@ material = ExtResource("7_vdwy1")
 
 [node name="WorldEnvironment" parent="." unique_id=491799346 instance=ExtResource("4_ikojo")]
 
-[node name="Door" parent="." unique_id=257345446 groups=["door"] instance=ExtResource("13_703w7")]
+[node name="Door" parent="." unique_id=257345446 instance=ExtResource("13_703w7")]
 transform = Transform3D(-4.371139e-08, 0, -1.8, 0, 1.7, 0, 1, 0, -7.86805e-08, 0, -0.25, -14.6)
 
 [node name="HealthTerminalTemp" parent="." unique_id=1993244436 instance=ExtResource("11_6knvk")]
@@ -1031,10 +1031,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 0.3, 3.7)
 [node name="ButtonController" type="Node3D" parent="." unique_id=813098212]
 script = ExtResource("18_5o1ln")
 
-[node name="FirstButtonLevel2" parent="." unique_id=1514942729 groups=["levelbuttons"] instance=ExtResource("23_703w7")]
+[node name="FirstButtonLevel2" parent="." unique_id=1514942729 instance=ExtResource("23_703w7")]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 39.5, 1.4, -0.7)
 
-[node name="SecondButtonLevel2" parent="." unique_id=2070504429 groups=["levelbuttons"] instance=ExtResource("19_mh078")]
+[node name="SecondButtonLevel2" parent="." unique_id=2070504429 instance=ExtResource("19_mh078")]
 transform = Transform3D(1.5, 0, -9.535957e-08, 0, 1.5, 0, 9.535957e-08, 0, 1.5, -33.500004, 1.4, -0.099999964)
 
 [node name="ARWeaponPickup" parent="." unique_id=841640842 instance=ExtResource("24_jjuep")]

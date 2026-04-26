@@ -22,6 +22,8 @@ func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	my_data.scene_path = scene_file_path
 	my_data.transform = global_transform
 	
+	my_data.my_level = globalvar.current_level
+	
 	interactable_saved_data.append(my_data)
 
 func on_before_load_game():
@@ -38,3 +40,6 @@ func on_load_game(interactable_saved_data : InteractableSavedData):
 		mesh_instance_3d_2.mesh.height = 0.1
 		mesh_instance_3d_3.mesh.material.albedo_color = Color.RED
 		mesh_instance_3d_3.mesh.material.emission = Color.RED
+	
+	if interactable_saved_data.my_level != globalvar.current_level:
+		queue_free()

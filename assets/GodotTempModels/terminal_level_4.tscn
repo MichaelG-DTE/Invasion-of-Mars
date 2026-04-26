@@ -110,7 +110,7 @@ UNKNOWN HOSTILE HAS ENTERED OUR VESSEL.
 
 EARLY REPORTS INDICATE HOSTILE IS A MEMBER OF THE DEFILERS WHO INHABITED OUR PROMISED WORLD.
 
-ALTHOUGH IT DOES NOT POSSESS ANY LIKENESS TO ITS RACE, MAKE NO MISTAKE OF ITS ABILITIES AND WEAPONS.
+ALTHOUGH IT DOES NOT POSSESS FULL LIKENESS TO ITS RACE, MAKE NO MISTAKE OF ITS ABILITIES AND WEAPONS.
 
 
 DESTROY IT AT ONCE, LEST OUR JOURNEY TO THIS WORLD BE IN VAIN.
@@ -255,9 +255,9 @@ theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "<Translating...>
 
-URGENT MESSAGE TO JYRR PRIME.
+URGENT MESSAGE TO J'YRR PRIME.
 
-THE 12TH BATTLE GROUP (52 FLEETS) HAS DISCOVERED THE SOURCE OF THE SIGNAL WE SET OUT 30 YEARS AGO TO FIND. 
+THE 12TH BATTLE GROUP HAS DISCOVERED THE SOURCE OF THE SIGNAL WE SET OUT 30 YEARS AGO TO FIND. 
 
 
 OUR MASTERS HAVE LEFT TECHNOLOGY CAPABLE OF USING A STARS ENERGY TO OPEN A PATH OUTSIDE OF THE UNIVERSE.
@@ -278,7 +278,7 @@ GRANDMASTER J'YMA IMPLORES THAT YOU, O EMPEROR, WITNESS THE MOMENT.
 
 MAKE HASTE, AS OTHER RACES HAVE FOUND THE SOURCE OF THE SIGNAL.
 
-WE FOUGHT ONE SUCH, AND THEY HAVE RETAILIATED FROM BEYOND THE GRAVE.
+WE FOUGHT ONE SUCH, AND THEY HAVE RETALIATED FROM BEYOND THE GRAVE.
 
 THEY HAVE RELEASED A TERRIFYING MACHINE-MAN, THAT ONLY KNOWS WAR.
 
@@ -339,13 +339,13 @@ text = "<Translating...>
 <Message from Grandmaster J'yma>
 
 
-Understand, machine... 
+Understand, Thing... 
 
 I don't know what you are. But you, and whatever bipedal spacefairing race you come from, are defiling my promised world.
 
 When my technicians are finished preparing the Void Bringer, I will personally see you destroyed. 
 
-It is not long until this star will be collapsed. Maybe I'll get the Emperor's authorisation to use it on your homeworld. 
+It is not long until this star will be collapsed. Maybe I'll get the Emperor's authorisation to use it on your homeworld's star too. 
 
 
 
@@ -434,7 +434,7 @@ As I understand it, the Void Bringer, the \"Naaro Kora'thun\", and the Ancients 
 
 The ancients and the masters are also the same. Evidently the ancients ruled or guided the Nexyr during the formation of their people, allowing them to become spacefairing much faster than humanity. 
 
-The activity in the north is the Nexyr preparing the Void Bringer, to collapse Meridia's star, MIR - 49, as a trial and a show for their Emperor, who evidently has a much more powerful drive or was able to warp directly here instead of needed to traverse the stars to find the signal, which will be why it took the fleets 30 years to get here. 
+The activity in the north is the Nexyr preparing the Void Bringer, to collapse Meridia's star, MIR - 49, as a trial and a show for their Emperor, who evidently has a much more powerful drive or was able to warp directly here instead of needed to traverse the stars to find the signals source, which will be why it took the fleets 30 years to get here. 
 
 I detected over 4000 ships warp in a few moments ago, meaning the Nexyr are going to collapse the sun soon.
 

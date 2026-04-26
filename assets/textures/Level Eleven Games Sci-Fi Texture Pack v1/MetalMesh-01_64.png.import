@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyghh0up5t0iw"
 path.s3tc="res://.godot/imported/MetalMesh-01_64.png-0c8ec38b3664aa2fd94c77db080d8b92.s3tc.ctex"
+path.etc2="res://.godot/imported/MetalMesh-01_64.png-0c8ec38b3664aa2fd94c77db080d8b92.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/MetalMesh-01_64.png"
-dest_files=["res://.godot/imported/MetalMesh-01_64.png-0c8ec38b3664aa2fd94c77db080d8b92.s3tc.ctex"]
+dest_files=["res://.godot/imported/MetalMesh-01_64.png-0c8ec38b3664aa2fd94c77db080d8b92.s3tc.ctex", "res://.godot/imported/MetalMesh-01_64.png-0c8ec38b3664aa2fd94c77db080d8b92.etc2.ctex"]
 
 [params]
 

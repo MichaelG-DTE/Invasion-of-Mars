@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfmmlkqo3wejb"
 path.s3tc="res://.godot/imported/T_Props_Batch1_BaseColor.png-e1eb76e041ea906b52d7d0bd30e98c9d.s3tc.ctex"
+path.etc2="res://.godot/imported/T_Props_Batch1_BaseColor.png-e1eb76e041ea906b52d7d0bd30e98c9d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/glTF/T_Props_Batch1_BaseColor.png"
-dest_files=["res://.godot/imported/T_Props_Batch1_BaseColor.png-e1eb76e041ea906b52d7d0bd30e98c9d.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_Props_Batch1_BaseColor.png-e1eb76e041ea906b52d7d0bd30e98c9d.s3tc.ctex", "res://.godot/imported/T_Props_Batch1_BaseColor.png-e1eb76e041ea906b52d7d0bd30e98c9d.etc2.ctex"]
 
 [params]
 

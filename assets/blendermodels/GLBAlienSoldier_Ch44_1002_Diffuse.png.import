@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://beinvbyvyw3gm"
 path.s3tc="res://.godot/imported/GLBAlienSoldier_Ch44_1002_Diffuse.png-dbef1547c2b70004ee0f9c846af3bbfc.s3tc.ctex"
+path.etc2="res://.godot/imported/GLBAlienSoldier_Ch44_1002_Diffuse.png-dbef1547c2b70004ee0f9c846af3bbfc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/blendermodels/GLBAlienSoldier_Ch44_1002_Diffuse.png"
-dest_files=["res://.godot/imported/GLBAlienSoldier_Ch44_1002_Diffuse.png-dbef1547c2b70004ee0f9c846af3bbfc.s3tc.ctex"]
+dest_files=["res://.godot/imported/GLBAlienSoldier_Ch44_1002_Diffuse.png-dbef1547c2b70004ee0f9c846af3bbfc.s3tc.ctex", "res://.godot/imported/GLBAlienSoldier_Ch44_1002_Diffuse.png-dbef1547c2b70004ee0f9c846af3bbfc.etc2.ctex"]
 
 [params]
 

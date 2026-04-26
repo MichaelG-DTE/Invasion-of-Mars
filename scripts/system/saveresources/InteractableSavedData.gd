@@ -7,3 +7,4 @@ extends Resource
 @export var transform : Transform3D
 @export var door_mesh_height : float
 @export var door_collision_height : float
+@export var my_level : int

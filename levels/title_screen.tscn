@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://djg2xr3g6anx6"]
+
+[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/Codex-yYVPV.ttf" id="1_cfdf3"]
+[ext_resource type="Theme" uid="uid://dqe0crshdo38c" path="res://assets/textures/ButtonTheme.tres" id="2_0dgt5"]
+
+[sub_resource type="Theme" id="Theme_1xnr2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dgt5"]
+font = ExtResource("1_cfdf3")
+font_size = 80
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0dgt5"]
+load_path = "res://.godot/imported/Logo.png-81f5ccc333f5ba00708c69f9d8f0cd54.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1xnr2"]
+load_path = "res://.godot/imported/Logo.png-81f5ccc333f5ba00708c69f9d8f0cd54.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gynrd"]
+load_path = "res://.godot/imported/Logo.png-81f5ccc333f5ba00708c69f9d8f0cd54.ctex"
+
+[node name="Title Screen" type="Control" unique_id=1530861829]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1xnr2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=294338097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1777256673]
+layout_mode = 1
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 225.0
+offset_bottom = 90.0
+text = "Collapse"
+label_settings = SubResource("LabelSettings_0dgt5")
+
+[node name="Play" type="Button" parent="." unique_id=1474256152]
+modulate = Color(1.769, 1.769, 1.769, 1)
+layout_mode = 0
+offset_left = 72.0
+offset_top = 203.0
+offset_right = 285.0
+offset_bottom = 251.0
+theme = ExtResource("2_0dgt5")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[node name="Settings" type="Button" parent="." unique_id=29490944]
+modulate = Color(1.769, 1.769, 1.769, 1)
+layout_mode = 0
+offset_left = 72.0
+offset_top = 285.0
+offset_right = 285.0
+offset_bottom = 333.0
+theme = ExtResource("2_0dgt5")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="Quit" type="Button" parent="." unique_id=1520502565]
+modulate = Color(1.769, 1.769, 1.769, 1)
+layout_mode = 0
+offset_left = 72.0
+offset_top = 367.0
+offset_right = 285.0
+offset_bottom = 415.0
+theme = ExtResource("2_0dgt5")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Credits" type="TextureButton" parent="." unique_id=1717221572]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -163.0
+offset_right = 416.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 160)
+texture_normal = SubResource("CompressedTexture2D_0dgt5")
+texture_pressed = SubResource("CompressedTexture2D_1xnr2")
+texture_hover = SubResource("CompressedTexture2D_gynrd")
+stretch_mode = 0

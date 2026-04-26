@@ -28,6 +28,7 @@ func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 		my_data.door_mesh_height = 3.0
 		my_data.door_collision_height = 3.0
 	
+	my_data.my_level = globalvar.current_level
 	interactable_saved_data.append(my_data)
 	
 func on_before_load_game():
@@ -39,3 +40,7 @@ func on_load_game(interactable_saved_data : InteractableSavedData):
 	
 	mesh_instance_3d.position.y = interactable_saved_data.door_mesh_height
 	collision_shape_3d.position.y = interactable_saved_data.door_collision_height
+	
+	if interactable_saved_data.my_level != globalvar.current_level:
+		queue_free()
+		

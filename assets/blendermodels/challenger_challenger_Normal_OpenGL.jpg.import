@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://djtg15lygmf6b"
 path.s3tc="res://.godot/imported/challenger_challenger_Normal_OpenGL.jpg-dfd54b213ffda71b57c985d5f6c347e7.s3tc.ctex"
+path.etc2="res://.godot/imported/challenger_challenger_Normal_OpenGL.jpg-dfd54b213ffda71b57c985d5f6c347e7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/blendermodels/challenger_challenger_Normal_OpenGL.jpg"
-dest_files=["res://.godot/imported/challenger_challenger_Normal_OpenGL.jpg-dfd54b213ffda71b57c985d5f6c347e7.s3tc.ctex"]
+dest_files=["res://.godot/imported/challenger_challenger_Normal_OpenGL.jpg-dfd54b213ffda71b57c985d5f6c347e7.s3tc.ctex", "res://.godot/imported/challenger_challenger_Normal_OpenGL.jpg-dfd54b213ffda71b57c985d5f6c347e7.etc2.ctex"]
 
 [params]
 

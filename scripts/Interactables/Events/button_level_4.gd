@@ -1,15 +1,28 @@
 extends StaticBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var door: StaticBody3D = $"../Door"
 @onready var mesh_instance_3d_2: MeshInstance3D = $MeshInstance3D2
 @onready var mesh_instance_3d_3: MeshInstance3D = $MeshInstance3D3
 
 var has_pressed := false
+var door
+
+
+func finddoor():
+	var doors = get_tree().get_nodes_in_group("door")
+	for neodoor in doors:
+		if neodoor == null:
+			return
+		else:
+			door = neodoor
+
+func _ready() -> void:
+	finddoor()
 
 func interact():
 	if not has_pressed:
 		has_pressed = true
 		animation_player.play("pressed")
+		finddoor()
 		door.locked = false
 		
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):

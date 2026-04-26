@@ -612,7 +612,7 @@ transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.9999
 
 [node name="WorldEnvironment" parent="." unique_id=578584184 instance=ExtResource("8_jj3p3")]
 
-[node name="Door" parent="." unique_id=267784101 groups=["door"] instance=ExtResource("3_nxahq")]
+[node name="Door" parent="." unique_id=267784101 instance=ExtResource("3_nxahq")]
 transform = Transform3D(-6.556708e-08, 0, 3.421323, 0, 1.7294096, 0, -1.5, 0, -1.4955077e-07, -0.027061582, -4.5, 9)
 locked = true
 

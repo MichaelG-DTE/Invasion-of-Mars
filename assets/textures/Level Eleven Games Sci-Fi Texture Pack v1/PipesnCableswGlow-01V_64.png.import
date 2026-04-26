@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://6btt0esgetk7"
 path.s3tc="res://.godot/imported/PipesnCableswGlow-01V_64.png-61a9a2e3cf2edcd1b50b3f6505929176.s3tc.ctex"
+path.etc2="res://.godot/imported/PipesnCableswGlow-01V_64.png-61a9a2e3cf2edcd1b50b3f6505929176.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/PipesnCableswGlow-01V_64.png"
-dest_files=["res://.godot/imported/PipesnCableswGlow-01V_64.png-61a9a2e3cf2edcd1b50b3f6505929176.s3tc.ctex"]
+dest_files=["res://.godot/imported/PipesnCableswGlow-01V_64.png-61a9a2e3cf2edcd1b50b3f6505929176.s3tc.ctex", "res://.godot/imported/PipesnCableswGlow-01V_64.png-61a9a2e3cf2edcd1b50b3f6505929176.etc2.ctex"]
 
 [params]
 

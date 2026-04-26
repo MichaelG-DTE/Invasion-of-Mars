@@ -136,7 +136,7 @@ Counter At/ack <Impos(2ble>
 
 
 
-'inal Solution:
+'inal S0lution:
 
 Breach the dr8aming 2le[p. <Awaken the >hampion, the ?ero, the Victor>"
 
@@ -187,23 +187,23 @@ theme_override_colors/default_color = Color(0, 1, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_a2gr8")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "<Connection Re-established. Incoming Transmission from Pulsar>
+text = "<Connection Reestablished. Incoming Transmission from Pulsar>
 
 Good.
 
 I'm glad you're capable of the immense feat of pushing buttons.
 
-What? Y'wanna medal or something?
+What? You wanna medal or something?
 
 Anyway, to more pressing matters.
 
 
-An unknown alien force has invaded Meridia. Wiped out the USN fleet. Poof! Just like that.
+An unknown alien force has invaded Meridia. Wiped out the United Stellar Nations fleet. Boom! Just like that.
 
-They teleported multiple units aboard this ship, and were busy scrambling my logic cores and searching for any reference to a \"Naaro Kora'thun\" in my databases.
+They teleported many of their soldiers aboard this ship, and were busy scrambling my logic cores and searching for any reference to a \"Naaro Kora'thun\" in my databases.
 
 
-I detected various forms of explosives being used on the surface of Meridia, followed by apparent excavations. I'm going to send you down to find out more about what they are doing.
+I've detected large scale excavations on the surface of Meridia. The aliens are searching for something. I'm going to send you down to find out what.
 
 But first, go collect some ammo and recharge your shields. You're going to need it.
 There's an weapons cache downstairs, underneath the bridge. 
@@ -272,19 +272,20 @@ text = "And, if you try pull the \"Why don't we contact Earth??????????\" card, 
 
 
 
-We are 20 e+144 light years away from Earth.
+We are 2000 light years away from Earth.
 
 Even at light speed, any infomation will not get there fast enough.
 
+We're on our own out here, so it's best you cooperate with me.
+
+
+Otherwise, I'm sure our new alien 'friends' would like to meet you for a 'friendly chat'.
 
 
 
 So stop whining and go kill aliens for me.
 
 <End Transmission. Message Transmitter - Pulsar, Message Reciever - Bridge Terminal>
-
-
-
 
 
 
@@ -356,16 +357,17 @@ text = "Do you know why the USN colonised Meridia?
 
 Why choose a random planet absurdly close to a gas giant?
 
-When humanity first explored beyond the solar system, setting foot on other worlds, they picked up a signal.
+When humanity first explored beyond the solar system, setting foot on other worlds, the pioneers picked up a signal.
 
 Not any kind of normal signal, like a radio wave or laser, but a burst of supercharged radiation, the kind you would expect from a supernova or other interstellar phenomenon.
 
-Only, it wasn't from any of those.
+Only, astronomy reports dictated there had been no kind of phenomenon like that for well over 30 something years.
 
-Evidently, the USN wasn't the only ones to discover the signal and come here.
+Strangely, the signal (as logged in my databases) bears a striking resemblance to android idenification codes.
 
-That's how we're in this mess.
 
+
+Weird.
 
 
 

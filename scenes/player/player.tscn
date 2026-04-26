@@ -32,6 +32,9 @@
 [ext_resource type="Script" uid="uid://bs8erwsixcw1b" path="res://scripts/ui/reticle.gd" id="31_5mf0n"]
 [ext_resource type="PackedScene" uid="uid://qb8wblcieqyh" path="res://scenes/ui/reticle_draw.tscn" id="31_pk8ii"]
 [ext_resource type="Script" uid="uid://clp4csb8iead6" path="res://scripts/ui/interact_text.gd" id="31_tffgl"]
+[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="33_5mf0n"]
+[ext_resource type="Texture2D" uid="uid://cvchyakbjt6fp" path="res://assets/textures/outerboarderimage.png" id="33_bbmj2"]
+[ext_resource type="Texture2D" uid="uid://bylcl016kvmaj" path="res://assets/textures/innerimage.png" id="34_kxw46"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
 
@@ -99,8 +102,23 @@ _data = {
 &"torchpoweron": SubResource("Animation_tffgl")
 }
 
+[sub_resource type="Theme" id="Theme_bbmj2"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_iqsei"]
+font = ExtResource("33_5mf0n")
 font_size = 18
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bbmj2"]
+font = ExtResource("33_5mf0n")
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8qxvo"]
+load_path = "res://.godot/imported/innerimage.png-5038973ecc942e12847454a1d5fc80cf.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hvnv"]
+font = ExtResource("33_5mf0n")
+font_color = Color(0, 1, 0, 1)
 
 [sub_resource type="Animation" id="Animation_4hvnv"]
 resource_name = "ARWeaponZoom"
@@ -991,20 +1009,36 @@ script = ExtResource("27_j4nxn")
 
 [node name="UserInterface" type="CanvasLayer" parent="." unique_id=941427506]
 
-[node name="BoxContainer" type="BoxContainer" parent="UserInterface" unique_id=307790939]
+[node name="Interact" type="Control" parent="UserInterface" unique_id=1482770408]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UserInterface/Interact" unique_id=901383816]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 244.0
+offset_right = 691.5
+offset_bottom = 272.0
+theme = SubResource("Theme_bbmj2")
+
+[node name="BoxContainer" type="BoxContainer" parent="UserInterface/Interact" unique_id=307790939]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -86.5
-offset_top = -78.0
-offset_right = 86.5
-offset_bottom = -52.0
+offset_left = 442.5
+offset_top = 226.0
+offset_right = 669.5
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InteractText" type="Label" parent="UserInterface/BoxContainer" unique_id=2134718752]
+[node name="InteractText" type="Label" parent="UserInterface/Interact/BoxContainer" unique_id=2134718752]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Press \"E\" to interact"
@@ -1039,37 +1073,133 @@ offset_top = 523.0
 offset_right = 12.0
 offset_bottom = 523.0
 
-[node name="Health" type="Label" parent="UserInterface/Control" unique_id=1107884143]
+[node name="Background2" type="ColorRect" parent="UserInterface/Control" unique_id=573917080]
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 64.0
-offset_right = 1295.0
-offset_bottom = 96.0
-text = "Health: 0"
+offset_left = -200.0
+offset_top = 147.0
+offset_right = -32.923706
+offset_bottom = 676.5892
+rotation = -1.5707964
+scale = Vector2(0.96, 1)
+pivot_offset = Vector2(20, 20)
+color = Color(0, 0, 0, 1)
 
-[node name="Shield" type="Label" parent="UserInterface/Control" unique_id=689299085]
+[node name="MarginContainer2" type="MarginContainer" parent="UserInterface/Control" unique_id=749855299]
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 92.0
-offset_right = 1081.0
-offset_bottom = 115.0
-text = "Shield: 0"
+offset_left = -197.0
+offset_top = 29.0
+offset_right = 326.0
+offset_bottom = 183.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="UserInterface/Control/MarginContainer2" unique_id=1053356432]
+layout_mode = 2
+border_color = Color(0, 0.9372549, 0, 1)
+editor_only = false
 
 [node name="Ammo" type="Label" parent="UserInterface/Control" unique_id=712683889]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 58.0
+offset_top = 45.0
 offset_right = 70.0
-offset_bottom = 81.0
+offset_bottom = 68.0
 text = "Ammo: 0"
+label_settings = SubResource("LabelSettings_bbmj2")
 
 [node name="CurrentWeapon" type="Label" parent="UserInterface/Control" unique_id=1687273818]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 90.0
-offset_right = 147.0
-offset_bottom = 113.0
+offset_top = 81.0
+offset_right = 165.0
+offset_bottom = 104.0
 text = "Current Weapon: 0"
+label_settings = SubResource("LabelSettings_bbmj2")
+
+[node name="Background" type="ColorRect" parent="UserInterface/Control" unique_id=441281232]
+layout_mode = 0
+offset_left = 758.1354
+offset_top = 146.99998
+offset_right = 912.88837
+offset_bottom = 539.6443
+rotation = -1.5707964
+scale = Vector2(0.96, 1)
+pivot_offset = Vector2(20, 20)
+color = Color(0, 0, 0, 1)
+
+[node name="Health" type="TextureProgressBar" parent="UserInterface/Control" unique_id=296162493]
+texture_filter = 1
+layout_mode = 0
+offset_left = 850.0
+offset_top = 87.0
+offset_right = 1210.0
+offset_bottom = 114.0
+scale = Vector2(0.75, 0.75)
+value = 100.0
+rounded = true
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = SubResource("CompressedTexture2D_8qxvo")
+texture_over = ExtResource("33_bbmj2")
+texture_progress = ExtResource("34_kxw46")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(0.14333999, 0.14334002, 0.14333996, 1)
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="Shield" type="TextureProgressBar" parent="UserInterface/Control" unique_id=669044797]
+texture_filter = 1
+layout_mode = 0
+offset_left = 850.00006
+offset_top = 55.0
+offset_right = 1210.0
+offset_bottom = 82.0
+scale = Vector2(0.75, 0.75)
+value = 100.0
+rounded = true
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = SubResource("CompressedTexture2D_8qxvo")
+texture_over = ExtResource("33_bbmj2")
+texture_progress = ExtResource("34_kxw46")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(0.14333999, 0.14334002, 0.14333996, 1)
+tint_progress = Color(0.44313726, 0.5882353, 1, 1)
+
+[node name="HealthLabel" type="Label" parent="UserInterface/Control" unique_id=1291068895]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 87.0
+offset_right = 845.0
+offset_bottom = 110.0
+text = "Health:"
+label_settings = SubResource("LabelSettings_4hvnv")
+
+[node name="ShieldLabel" type="Label" parent="UserInterface/Control" unique_id=1198756031]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 55.0
+offset_right = 845.0
+offset_bottom = 78.0
+text = "Shield:"
+label_settings = SubResource("LabelSettings_4hvnv")
+
+[node name="MarginContainer" type="MarginContainer" parent="UserInterface/Control" unique_id=2097229378]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 41.0
+offset_right = 1148.0
+offset_bottom = 183.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="UserInterface/Control/MarginContainer" unique_id=10428848]
+layout_mode = 2
+border_color = Color(0, 0.9372549, 0, 1)
+editor_only = false
 
 [node name="WeaponZoom" type="AnimationPlayer" parent="." unique_id=1420183856]
 root_node = NodePath("../Components/WeaponController")

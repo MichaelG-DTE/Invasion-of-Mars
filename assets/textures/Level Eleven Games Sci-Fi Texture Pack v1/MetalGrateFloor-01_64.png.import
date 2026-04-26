@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj1u32rowsuk"
 path.s3tc="res://.godot/imported/MetalGrateFloor-01_64.png-4b58b1a8a461edd18cb9aa06ed673772.s3tc.ctex"
+path.etc2="res://.godot/imported/MetalGrateFloor-01_64.png-4b58b1a8a461edd18cb9aa06ed673772.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/MetalGrateFloor-01_64.png"
-dest_files=["res://.godot/imported/MetalGrateFloor-01_64.png-4b58b1a8a461edd18cb9aa06ed673772.s3tc.ctex"]
+dest_files=["res://.godot/imported/MetalGrateFloor-01_64.png-4b58b1a8a461edd18cb9aa06ed673772.s3tc.ctex", "res://.godot/imported/MetalGrateFloor-01_64.png-4b58b1a8a461edd18cb9aa06ed673772.etc2.ctex"]
 
 [params]
 

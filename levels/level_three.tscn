@@ -1202,11 +1202,11 @@ material = ExtResource("3_y5xn8")
 transform = Transform3D(4.75, 0, 0, 0, 4.75, 0, 0, 0, 4.75, 21.375, -0.296875, 0)
 script = ExtResource("16_qvb58")
 
-[node name="Door" parent="." unique_id=267784101 groups=["door"] instance=ExtResource("10_5u7pi")]
+[node name="Door" parent="." unique_id=267784101 instance=ExtResource("10_5u7pi")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.875, 0, 0.375)
 locked = true
 
-[node name="Door2" parent="." unique_id=1598953392 groups=["door"] instance=ExtResource("10_5u7pi")]
+[node name="Door2" parent="." unique_id=1598953392 instance=ExtResource("10_5u7pi")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.25, 0, 0.375)
 locked = true
 

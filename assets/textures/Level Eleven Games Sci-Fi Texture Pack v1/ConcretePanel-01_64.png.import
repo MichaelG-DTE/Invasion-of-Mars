@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7a8h6i226e7o"
 path.s3tc="res://.godot/imported/ConcretePanel-01_64.png-d5d065f9d79f4e600c9320532a15e1eb.s3tc.ctex"
+path.etc2="res://.godot/imported/ConcretePanel-01_64.png-d5d065f9d79f4e600c9320532a15e1eb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/ConcretePanel-01_64.png"
-dest_files=["res://.godot/imported/ConcretePanel-01_64.png-d5d065f9d79f4e600c9320532a15e1eb.s3tc.ctex"]
+dest_files=["res://.godot/imported/ConcretePanel-01_64.png-d5d065f9d79f4e600c9320532a15e1eb.s3tc.ctex", "res://.godot/imported/ConcretePanel-01_64.png-d5d065f9d79f4e600c9320532a15e1eb.etc2.ctex"]
 
 [params]
 

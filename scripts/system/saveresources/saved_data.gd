@@ -7,3 +7,4 @@ extends Resource
 @export var shield : float
 @export var shield_visible : bool
 @export var is_following : bool
+@export var my_level : int
