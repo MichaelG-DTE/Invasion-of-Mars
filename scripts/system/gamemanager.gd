@@ -2,6 +2,8 @@ extends Node
 
 @onready var level_one: Node3D = $"../../CurrentLevel/Level One"
 @onready var current_level: Node3D = $"../../CurrentLevel"
+@onready var pause_menu: Control = $"../../Pause Menu"
+@onready var user_interface: CanvasLayer = $"../../CurrentLevel/Player/UserInterface"
 
 const LEVEL_ONE = preload("uid://bupaqukakeo13")
 const LEVEL_TWO = preload("uid://cks5kigjjks6e")
@@ -15,8 +17,12 @@ var Level_Four
 var Level_Five
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("quit"):
-		get_tree().quit()
+	if event.is_action_pressed("pause"):
+		pause_menu.play_animation()
+		pause_menu.visible = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		user_interface.visible = false
+		get_tree().paused = true
 
 func _ready() -> void:
 	SignalBus.level_change.connect(change_level)

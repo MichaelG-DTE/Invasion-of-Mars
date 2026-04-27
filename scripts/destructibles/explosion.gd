@@ -3,11 +3,12 @@ extends Node3D
 
 var explosion_damage := 50.0
 @export var explosionvfx : Node3D
+@onready var explosion_sfx: AudioStreamPlayer3D = $ExplosionSFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	explosionvfx.call_explosion()
-	
+	explosion_sfx.play()
 	await get_tree().create_timer(0.5).timeout
 	queue_free()
 	

@@ -8,4 +8,4 @@ func _process(_delta: float) -> void:
 		if !button.has_pressed:
 			return
 			
-		all_buttons_pressed = true
+	all_buttons_pressed = true

@@ -1,5 +1,6 @@
 extends StaticBody3D
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
@@ -9,9 +10,11 @@ var active := false
 func interact():
 	if not locked:
 		if !active:
+			audio_stream_player.play()
 			animation_player.play("open")
 			active = true
 		else:
+			audio_stream_player.play()
 			animation_player.play("close")
 			active = false
 

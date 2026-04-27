@@ -12,6 +12,7 @@ class_name VoidTrooper extends GenisysEnemy
 @export var is_shielded := false
 @onready var see_cast: RayCast3D = $SeeCast
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var alien_gun_sfx: AudioStreamPlayer3D = $AlienGunSFX
 
 var target : Node3D
 var state_machine
@@ -148,6 +149,7 @@ func _on_attack_state_state_physics_processing(delta: float) -> void:
 	# plays attack animation and applies damage to target
 	if !dead:
 		if can_attack:
+			alien_gun_sfx.play()
 			var next_pos = navigation_agent_3d.get_next_path_position()
 			var direction = (next_pos - global_position).normalized()
 			var target_rotation = atan2(direction.x, direction.z)

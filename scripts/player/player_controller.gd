@@ -40,6 +40,7 @@ var deceleration : float = 14
 @onready var health: TextureProgressBar = $UserInterface/Control/Health
 @onready var shield: TextureProgressBar = $UserInterface/Control/Shield
 @onready var death: AnimationPlayer = $Death
+@onready var torch_sfx: AudioStreamPlayer = $TorchSFX
 
 # gun references
 const MD_ARE_18 = preload("uid://d0mhjhy1536qp")
@@ -58,7 +59,6 @@ var previous_velocity : Vector3
 var flashlight_rotation := 15.0 # smooth rotation
 var flashlight_position := 15.0 # smooth position
 var zoom := 50.0
-var default_fov := 90.0
 var fovtween: Tween
 var startY
 var dead = false
@@ -111,6 +111,7 @@ func _process(delta: float) -> void:
 		update_flashlight(delta)
 		
 		if Input.is_action_just_pressed("torch"):
+			torch_sfx.play()
 			if not torch_visible:
 				animation_player.play("torchpoweron")
 				torch_visible = true
@@ -137,7 +138,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_released("Zoom"):
 			if zoomed_in:
 				stop_aiming()
-				change_fov(default_fov, 0.3)
+				change_fov(globalvar.fov, 0.3)
 				if weapon_controller.current_weapon == MD_P_11:
 					weapon_zoom.play_backwards("PistolWeaponZoom")
 				elif weapon_controller.current_weapon == MD_ARE_18:

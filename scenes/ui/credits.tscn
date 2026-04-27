@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cpju7svrxce8u"]
+
+[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/textures/Codex-yYVPV.ttf" id="1_oap8i"]
+[ext_resource type="Script" uid="uid://bcuswev278a21" path="res://scripts/ui/credits.gd" id="1_pqmjv"]
+[ext_resource type="Theme" uid="uid://dqe0crshdo38c" path="res://assets/textures/ButtonTheme.tres" id="2_jkvjv"]
+[ext_resource type="AudioStream" uid="uid://cncscrprrwu33" path="res://assets/soundeffects/UIButton.mp3" id="4_e5ls7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jkvjv"]
+font = ExtResource("1_oap8i")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_e5ls7"]
+font = ExtResource("1_oap8i")
+font_size = 10
+
+[node name="Credits" type="Control" unique_id=1744236085]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pqmjv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=462882224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1548715088]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 225.0
+offset_bottom = 90.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_jkvjv")
+
+[node name="Credits" type="Label" parent="." unique_id=1622224719]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 40.0
+offset_right = 1108.0
+offset_bottom = 613.0
+text = "Asset Credits:
+Explosion with Debris - Sound Effect by DRAGON-STUDIO from Pixabay  
+Rocket Launch - Sound Effect Rocket Launch | Royalty-free Music - Pixabay
+Codex Font - link: https://www.fontspace.com/codex-font-f151584 (license: Freeware)
+Courier New - link: https://fonts.adobe.com/fonts/courier-new 
+UI button sound effect - Sound Effect by Rusu Gabriel from Pixabay 
+In game button sound effect - Sound Effect by freesound_community from Pixabay  
+Door - Sound Effect by freesound_community from Pixabay 
+Terminal - Sound Effect by Sarah ⭐⭐⭐⭐ from Pixabay 
+Ambience - Sound Effect by freesound_community from Pixabay 
+Menu Theme - Sound Effect by freesound_community from Pixabay 
+Alien Gun - Sound Effect by Jurij from Pixabay 
+Player Gun - Sound Effect by freesound_community from Pixabay 
+Player Torch - Sound Effect by freesound_community from Pixabay 
+Hover Button - Sound Effect by Karim Nessim from Pixabay 
+Quake-like Sci-Fi 64x64 Texture Pack by Level Eleven Games (Quake-like Sci-Fi 64x64 Texture Pack by Level Eleven Games) is licensed under Creative Commons Attribution v4.0 International 
+Sci-Fi Essentials Kit (Standard) by Quaternius - itch.io (https://quaternius.itch.io/sci-fi-essentials-kit) is licensed under Creative Commons Zero v1.0 Universal (CC0)
+Sci-Fi Weapon - Challenger by A1MERCet (https://a1mercet.itch.io/sci-fi-challenger) is licensed under Creative Commons Zero v1.0  (CC0)
+Sci-Fi Weapon - Codreanu by A1MERCet (https://a1mercet.itch.io/sci-fi-weapon-codreanu) is licensed under Creative Commons Zero v1.0  (CC0)
+Sci-Fi Weapon - Point by A1MERCet (https://a1mercet.itch.io/sci-fi-weapon-point) is licensed under Creative Commons Zero v1.0  (CC0)
+Free futuristic weapon assets by niko-3d-models (https://niko-3d-models.itch.io/free-futuristic-weapon-assets) (No license specified but creator said that they were free to use however you like)
+Asset-jam-space-hallways by marin1234 (https://marin1234.itch.io/asset-jam-space-hallways) is licensed under Creative Commons Zero v1.0  (CC0)
+Space Spheremaps by Space Spheremaps (https://space-spheremaps.itch.io/space-spheremaps ) is licensed under CC BY 4.0 
+Interactive Energy Shield - Godot Asset Library (Submitted by user nojoule; MIT; 2025-11-24, https://godotengine.org/asset-library/asset/3628) 
+Godot State Charts - Godot Asset Library (Submitted by user derkork; MIT; 2026-03-24, https://godotengine.org/asset-library/asset/1778) 
+"
+label_settings = SubResource("LabelSettings_e5ls7")
+autowrap_mode = 2
+
+[node name="Return" type="Button" parent="." unique_id=191028378]
+modulate = Color(1.769, 1.769, 1.769, 1)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 145.0
+offset_right = 192.0
+offset_bottom = 183.0
+theme = ExtResource("2_jkvjv")
+theme_override_font_sizes/font_size = 15
+text = "Return to Menu"
+
+[node name="ReturnButtonSFX" type="AudioStreamPlayer" parent="Return" unique_id=967817292]
+stream = ExtResource("4_e5ls7")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

@@ -13,6 +13,8 @@ class_name WeaponController extends Node
 @onready var weapon_shoot: AnimationPlayer = $"../../WeaponShoot"
 @onready var weapon_reload: AnimationPlayer = $"../../WeaponReload"
 @onready var managers: Node = $"../../../../Managers"
+@onready var gun_sfx: AudioStreamPlayer = $"../../GunSFX"
+@onready var rocket_shoot_sfx: AudioStreamPlayer = $"../../RocketShootSFX"
 
 var current_weapon_model: Node3D
 var can_fire_next : bool = true
@@ -60,18 +62,22 @@ func fire_weapon() -> void:
 			managers.weapon_manager.use_ammo(managers.weapon_manager.current_slot) # removes one bullet
 			# weapon firing animation for both shooting and shooting while aiming
 			if current_weapon == MD_P_11:
+				gun_sfx.play()
 				weapon_shoot.play("PistolShoot")
 				if player.zoomed_in:
 					weapon_shoot.play("PistolShootAim")
 			if current_weapon == MD_ARE_18:
+				gun_sfx.play()
 				weapon_shoot.play("AssaultRifleShoot")
 				if player.zoomed_in:
 					weapon_shoot.play("AssaultRifleShootAim")
 			if current_weapon == MD_BMR_99:
+				gun_sfx.play()
 				weapon_shoot.play("ShotgunShoot")
 				if player.zoomed_in:
 					weapon_shoot.play("ShotgunShootAim")
 			if current_weapon == MD_RICO_KBM:
+				rocket_shoot_sfx.play()
 				weapon_shoot.play("RocketLauncherShoot")
 				if player.zoomed_in:
 					weapon_shoot.play("RocketLauncherShootAim")

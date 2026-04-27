@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dltwws7obw1bv"]
 
 [ext_resource type="Script" uid="uid://c7o1wkgb4mh8a" path="res://scripts/Interactables/terminals/shield_terminal_temp.gd" id="1_hmcqa"]
+[ext_resource type="AudioStream" uid="uid://1m1jlvusvoiq" path="res://assets/soundeffects/AccessTerminal.mp3" id="2_nxv1b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -59,3 +60,9 @@ mesh = SubResource("BoxMesh_816py")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1946102087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05940622, 0.12448831, -0.1017213)
 mesh = SubResource("BoxMesh_d68ge")
+
+[node name="TerminalAccessSFX" type="AudioStreamPlayer3D" parent="." unique_id=2058415725]
+stream = ExtResource("2_nxv1b")
+unit_size = 0.5
+max_polyphony = 2
+bus = &"SoundEffects"

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4svixgovwono"]
 
 [ext_resource type="Script" uid="uid://bg7higv3ndmao" path="res://scripts/Interactables/Events/button_8_level_5.gd" id="1_u4jjd"]
+[ext_resource type="AudioStream" uid="uid://dbqab24d01bfp" path="res://assets/soundeffects/ButtonClick.mp3" id="2_17iup"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14fie"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -136,3 +137,7 @@ libraries/ = SubResource("AnimationLibrary_xdryd")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=955902663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042915165, 0.17861666, 0)
 mesh = SubResource("BoxMesh_mdpsa")
+
+[node name="ButtonPressSFX" type="AudioStreamPlayer" parent="." unique_id=789821597]
+stream = ExtResource("2_17iup")
+bus = &"SoundEffects"

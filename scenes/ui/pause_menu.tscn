@@ -1,0 +1,560 @@
+[gd_scene format=3 uid="uid://dnhoutkqt2ud7"]
+
+[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/textures/Codex-yYVPV.ttf" id="1_6tw0m"]
+[ext_resource type="Script" uid="uid://diysilae3q665" path="res://scripts/ui/pause_menu.gd" id="1_8uki6"]
+[ext_resource type="Shader" uid="uid://c57fkui6a7m5g" path="res://assets/textures/pause_menu.gdshader" id="2_4inpj"]
+[ext_resource type="Theme" uid="uid://dqe0crshdo38c" path="res://assets/textures/ButtonTheme.tres" id="2_f6eus"]
+[ext_resource type="AudioStream" uid="uid://cncscrprrwu33" path="res://assets/soundeffects/UIButton.mp3" id="3_8uki6"]
+[ext_resource type="PackedScene" uid="uid://dg376cwcmn65s" path="res://scenes/ui/settings.tscn" id="5_0bnpd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8fwbo"]
+shader = ExtResource("2_4inpj")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu0qw"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lmf7"]
+font = ExtResource("1_6tw0m")
+font_size = 50
+
+[sub_resource type="Animation" id="Animation_4inpj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Resume:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QuitToMenu:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.5921569)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QuitToDesktop:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SettingsButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8fwbo"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.000000095]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Resume:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QuitToMenu:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0), Color(1.7691736, 1.7691736, 1.7691736, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.5921569)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QuitToDesktop:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0), Color(1.7691736, 1.7691736, 1.7691736, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SettingsButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.7691736, 1.7691736, 1.7691736, 0), Color(1.7691736, 1.7691736, 1.7691736, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rlsb"]
+_data = {
+&"RESET": SubResource("Animation_4inpj"),
+&"blur": SubResource("Animation_8fwbo")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4inpj"]
+font = ExtResource("1_6tw0m")
+font_size = 15
+
+[node name="Pause Menu" type="Control" unique_id=201975217]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uki6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=938903602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5921569)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1251781757]
+material = SubResource("ShaderMaterial_8fwbo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5921569)
+
+[node name="Panel" type="Panel" parent="." unique_id=1247643184]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pu0qw")
+
+[node name="Label" type="Label" parent="." unique_id=285372238]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 98.0
+offset_right = 61.0
+offset_bottom = 161.0
+grow_horizontal = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_0lmf7")
+
+[node name="Resume" type="Button" parent="." unique_id=507296033]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 0)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 206.0
+offset_right = 589.0
+offset_bottom = 255.0
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 30
+text = "Resume
+"
+
+[node name="ResumeButtonSFX" type="AudioStreamPlayer" parent="Resume" unique_id=1297923447]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="QuitToMenu" type="Button" parent="." unique_id=1731472506]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 0)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 275.0
+offset_right = 669.0
+offset_bottom = 325.0
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 30
+text = "Quit To Menu"
+
+[node name="QuitButtonSFX" type="AudioStreamPlayer" parent="QuitToMenu" unique_id=979065896]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="QuitToDesktop" type="Button" parent="." unique_id=635172420]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 0)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 346.0
+offset_right = 702.0
+offset_bottom = 396.0
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 30
+text = "Quit To Desktop"
+
+[node name="QuitDesktopButtonSFX" type="AudioStreamPlayer" parent="QuitToDesktop" unique_id=427602615]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="SettingsButton" type="Button" parent="." unique_id=1905763822]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 0)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 422.0
+offset_right = 589.0
+offset_bottom = 472.0
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="SettingsButtonSFX" type="AudioStreamPlayer" parent="SettingsButton" unique_id=1408365673]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="Settings" parent="." unique_id=1450746173 instance=ExtResource("5_0bnpd")]
+visible = false
+layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=996494201]
+libraries/ = SubResource("AnimationLibrary_2rlsb")
+
+[node name="QuitToMenuConfirm" type="Control" parent="." unique_id=2130557778]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="QuitToMenuConfirm" unique_id=143585712]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5921569)
+
+[node name="Panel2" type="Panel" parent="QuitToMenuConfirm" unique_id=1211843624]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -77.0
+offset_right = 137.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pu0qw")
+
+[node name="ConfirmQuit" type="Button" parent="QuitToMenuConfirm" unique_id=592751085]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -19.0
+offset_right = 67.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="QuitButtonSFX" type="AudioStreamPlayer" parent="QuitToMenuConfirm/ConfirmQuit" unique_id=234812635]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="Return" type="Button" parent="QuitToMenuConfirm" unique_id=1315945645]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 22.0
+offset_right = 67.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 20
+text = "Return"
+
+[node name="ReturnButtonSFX" type="AudioStreamPlayer" parent="QuitToMenuConfirm/Return" unique_id=1541339144]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="Label" type="Label" parent="QuitToMenuConfirm" unique_id=500157047]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 253.0
+offset_right = 108.0
+offset_bottom = 296.0
+grow_horizontal = 2
+text = "Are you sure? All game progress will be lost!"
+label_settings = SubResource("LabelSettings_4inpj")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="QuitToDesktopConfirm" type="Control" parent="." unique_id=324384111]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="QuitToDesktopConfirm" unique_id=366879232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5921569)
+
+[node name="Panel2" type="Panel" parent="QuitToDesktopConfirm" unique_id=1603355670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -77.0
+offset_right = 137.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pu0qw")
+
+[node name="ConfirmQuit" type="Button" parent="QuitToDesktopConfirm" unique_id=1389550398]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -19.0
+offset_right = 67.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="QuitButtonSFX" type="AudioStreamPlayer" parent="QuitToDesktopConfirm/ConfirmQuit" unique_id=1844528473]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="Return" type="Button" parent="QuitToDesktopConfirm" unique_id=150684507]
+modulate = Color(1.7691736, 1.7691736, 1.7691736, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 22.0
+offset_right = 67.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6eus")
+theme_override_font_sizes/font_size = 20
+text = "Return"
+
+[node name="ReturnButtonSFX" type="AudioStreamPlayer" parent="QuitToDesktopConfirm/Return" unique_id=640585945]
+stream = ExtResource("3_8uki6")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="Label" type="Label" parent="QuitToDesktopConfirm" unique_id=138404280]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 253.0
+offset_right = 108.0
+offset_bottom = 296.0
+grow_horizontal = 2
+text = "Are you sure? All game progress will be lost!"
+label_settings = SubResource("LabelSettings_4inpj")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="pressed" from="QuitToDesktop" to="." method="_on_quit_to_desktop_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="QuitToMenuConfirm/ConfirmQuit" to="." method="_on_menu_confirm_quit_pressed"]
+[connection signal="pressed" from="QuitToMenuConfirm/Return" to="." method="_on_menu_return_pressed"]
+[connection signal="pressed" from="QuitToDesktopConfirm/ConfirmQuit" to="." method="_on_desktop_confirm_quit_pressed"]
+[connection signal="pressed" from="QuitToDesktopConfirm/Return" to="." method="_on_desktop_return_pressed"]

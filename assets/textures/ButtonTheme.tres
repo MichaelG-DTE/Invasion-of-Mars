@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dqe0crshdo38c"]
 
-[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/Codex-yYVPV.ttf" id="1_s3mh7"]
+[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/textures/Codex-yYVPV.ttf" id="1_s3mh7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm48a"]
 bg_color = Color(0.28778416, 0.28778404, 0.287784, 1)

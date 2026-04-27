@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7n5jj3hugdey" path="res://scripts/Interactables/terminals/save_terminal_temp.gd" id="1_xqckf"]
 [ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="2_o126c"]
+[ext_resource type="AudioStream" uid="uid://1m1jlvusvoiq" path="res://assets/soundeffects/AccessTerminal.mp3" id="3_x1u8a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylvn3"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -98,3 +99,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Saved!"
 label_settings = SubResource("LabelSettings_x1u8a")
+
+[node name="TerminalAccessSFX" type="AudioStreamPlayer3D" parent="." unique_id=513124829]
+stream = ExtResource("3_x1u8a")
+unit_size = 0.5
+max_polyphony = 2
+bus = &"SoundEffects"

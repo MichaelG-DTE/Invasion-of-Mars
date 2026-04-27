@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cphhc75gqf02g"]
 
+[ext_resource type="AudioStream" uid="uid://dbqab24d01bfp" path="res://assets/soundeffects/ButtonClick.mp3" id="2_1nqww"]
 [ext_resource type="Script" uid="uid://cug1rbeubb50q" path="res://scripts/Interactables/Events/button_level_2.gd" id="2_n46qi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwox3"]
@@ -135,3 +136,7 @@ libraries/ = SubResource("AnimationLibrary_kjnsm")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=342169375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042915165, 0.17861666, 0)
 mesh = SubResource("BoxMesh_ne8dw")
+
+[node name="ButtonPressSFX" type="AudioStreamPlayer" parent="." unique_id=313503971]
+stream = ExtResource("2_1nqww")
+bus = &"SoundEffects"

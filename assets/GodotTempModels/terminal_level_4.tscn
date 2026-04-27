@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cumurhj20yfik" path="res://scripts/Interactables/terminals/terminal_level_4.gd" id="1_3ypq3"]
 [ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="1_o1hd2"]
 [ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="2_3ypq3"]
+[ext_resource type="AudioStream" uid="uid://1m1jlvusvoiq" path="res://assets/soundeffects/AccessTerminal.mp3" id="4_qjwh6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2gr8"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -358,7 +359,6 @@ I might get the slag thrown into a star, then collapse the star.
 That way you can't respawn from the save terminals.
 
 
-
 The Nexyr understand more than you realise. 
 
 How else have we kept our empire running?
@@ -456,3 +456,9 @@ grow_vertical = 2
 border_color = Color(0, 1, 0, 1)
 border_width = 5.0
 editor_only = false
+
+[node name="TerminalAccessSFX" type="AudioStreamPlayer3D" parent="." unique_id=1827440795]
+stream = ExtResource("4_qjwh6")
+unit_size = 0.5
+max_polyphony = 2
+bus = &"SoundEffects"

@@ -3,6 +3,8 @@ extends StaticBody3D
 @onready var terminal_page_2: Control = $TerminalPage2
 @onready var terminal_page_3: Control = $TerminalPage3
 @onready var terminal_page_4: Control = $TerminalPage4
+@onready var terminal_access_sfx: AudioStreamPlayer3D = $TerminalAccessSFX
+
 
 var page_number = 1
 var in_terminal = false
@@ -12,6 +14,7 @@ func _ready() -> void:
 	SignalBus.terminal_change.connect(change_terminal_page)
 
 func interact():
+	terminal_access_sfx.play()
 	in_terminal = true
 	if page_number == 1:
 		terminal_page.visible = not terminal_page.visible

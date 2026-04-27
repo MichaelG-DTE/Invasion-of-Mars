@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vkhhnc3jv1ts" path="res://scripts/destructibles/explosion.gd" id="1_64g3k"]
 [ext_resource type="PackedScene" uid="uid://c2lmoxdup8q1q" path="res://scenes/enviroment/explosion_vfx.tscn" id="2_441lk"]
+[ext_resource type="AudioStream" uid="uid://8yt6vgp5wsvn" path="res://assets/soundeffects/RocketExplosion.mp3" id="3_441lk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7nnpn"]
 radius = 3.0
@@ -19,5 +20,11 @@ collision_mask = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ExplosionDetectionRange" unique_id=639180608]
 shape = SubResource("SphereShape3D_7nnpn")
+
+[node name="ExplosionSFX" type="AudioStreamPlayer3D" parent="." unique_id=1430333020]
+stream = ExtResource("3_441lk")
+volume_db = -15.0
+max_db = 0.0
+bus = &"SoundEffects"
 
 [connection signal="body_entered" from="ExplosionDetectionRange" to="." method="_on_explosion_detection_range_body_entered"]

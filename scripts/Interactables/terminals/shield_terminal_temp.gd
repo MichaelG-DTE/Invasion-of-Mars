@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+@onready var terminal_access_sfx: AudioStreamPlayer3D = $TerminalAccessSFX
+
 var heal_amount : float
 
 var player = Node3D
@@ -8,6 +10,7 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player") 
 
 func interact():
+	terminal_access_sfx.play()
 	var shield = player.get_node_or_null("HealthComponent")
 	if shield.current_shield != shield.max_shield:
 		heal_amount = shield.max_shield - shield.current_shield

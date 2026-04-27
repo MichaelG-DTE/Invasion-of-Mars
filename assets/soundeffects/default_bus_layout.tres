@@ -1,0 +1,73 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://bc4pwork73o7s"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_ruug0"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_ruug0"]
+resource_name = "EQ"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_ruug0"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_ruug0"]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_ruug0"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_y3fx8"]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_y3fx8"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_y3fx8"]
+resource_name = "Distortion"
+
+[resource]
+bus/1/name = &"SoundEffects"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_ruug0")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectEQ_ruug0")
+bus/1/effect/1/enabled = true
+bus/2/name = &"Music"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/3/name = &"AlienSoundEffects"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"SoundEffects"
+bus/3/effect/0/effect = SubResource("AudioEffectPitchShift_ruug0")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectPhaser_ruug0")
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectDistortion_ruug0")
+bus/3/effect/2/enabled = true
+bus/4/name = &"Ambience"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"
+bus/5/name = &"Alien Ambience"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Ambience"
+bus/5/effect/0/effect = SubResource("AudioEffectPhaser_y3fx8")
+bus/5/effect/0/enabled = true
+bus/5/effect/1/effect = SubResource("AudioEffectPitchShift_y3fx8")
+bus/5/effect/1/enabled = true
+bus/5/effect/2/effect = SubResource("AudioEffectDistortion_y3fx8")
+bus/5/effect/2/enabled = true

@@ -49,27 +49,27 @@ shape = SubResource("ConvexPolygonShape3D_tpd0d")
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1049013778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.125)
 use_collision = true
-polygon = PackedVector2Array(0, 0, 0.1, 1, 0.2, 0.8, 0.3, 0)
+polygon = PackedVector2Array(0, -0.1, 0.1, 1, 0.2, 0.8, 0.3, -0.1)
 depth = 0.25
 material = ExtResource("2_m3dvs")
 
 [node name="CSGPolygon3D2" type="CSGPolygon3D" parent="." unique_id=127464556]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.9, 0, -0.125)
 use_collision = true
-polygon = PackedVector2Array(0, 0, 0.1, 1, 0.2, 0.8, 0.3, 0)
+polygon = PackedVector2Array(0, -0.1, 0.1, 1, 0.2, 0.8, 0.3, -0.1)
 depth = 0.25
 material = ExtResource("2_m3dvs")
 
 [node name="CSGPolygon3D3" type="CSGPolygon3D" parent="." unique_id=1315784664]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.12500004, 0, 0.9)
 use_collision = true
-polygon = PackedVector2Array(0, 0, 0.1, 1, 0.2, 0.8, 0.3, 0)
+polygon = PackedVector2Array(0, -0.1, 0.1, 1, 0.2, 0.8, 0.3, -0.1)
 depth = 0.25
 material = ExtResource("2_m3dvs")
 
 [node name="CSGPolygon3D4" type="CSGPolygon3D" parent="." unique_id=1117656500]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0.12500004, 0, -0.9)
 use_collision = true
-polygon = PackedVector2Array(0, 0, 0.1, 1, 0.2, 0.8, 0.3, 0)
+polygon = PackedVector2Array(0, -0.1, 0.1, 1, 0.2, 0.8, 0.3, -0.1)
 depth = 0.25
 material = ExtResource("2_m3dvs")

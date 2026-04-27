@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3ddp7mnxfun2" path="res://scripts/Interactables/Events/door.gd" id="1_tear1"]
 [ext_resource type="Texture2D" uid="uid://q8mhnebux10w" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/MetalPanel-01V_64.png" id="2_tear1"]
+[ext_resource type="AudioStream" uid="uid://c580ihsq5vt8r" path="res://assets/soundeffects/DoorSound.mp3" id="3_8a3se"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8a3se"]
 albedo_color = Color(0.59910834, 0.00026289016, 0.59910417, 1)
@@ -120,3 +121,8 @@ shape = SubResource("BoxShape3D_xbefs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1284902988]
 libraries/ = SubResource("AnimationLibrary_8jdfs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=498636843]
+stream = ExtResource("3_8a3se")
+volume_db = -4.0
+bus = &"AlienSoundEffects"

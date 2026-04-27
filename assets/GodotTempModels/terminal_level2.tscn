@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b83c15wp3iw6s" path="res://scripts/Interactables/terminals/terminal_level_2.gd" id="1_uv7mf"]
 [ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="2_jvekv"]
 [ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="3_jvekv"]
+[ext_resource type="AudioStream" uid="uid://1m1jlvusvoiq" path="res://assets/soundeffects/AccessTerminal.mp3" id="4_xmkj6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2gr8"]
 albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
@@ -311,3 +312,9 @@ grow_vertical = 2
 border_color = Color(0, 0.9372549, 0, 1)
 border_width = 5.0
 editor_only = false
+
+[node name="TerminalAccessSFX" type="AudioStreamPlayer3D" parent="." unique_id=1155587038]
+stream = ExtResource("4_xmkj6")
+unit_size = 0.5
+max_polyphony = 2
+bus = &"SoundEffects"

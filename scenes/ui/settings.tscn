@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://dg376cwcmn65s"]
+
+[ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/textures/Codex-yYVPV.ttf" id="1_7pacj"]
+[ext_resource type="Script" uid="uid://cexxdmyns08dr" path="res://scripts/ui/settings.gd" id="1_h175o"]
+[ext_resource type="Theme" uid="uid://dqe0crshdo38c" path="res://assets/textures/ButtonTheme.tres" id="2_h175o"]
+[ext_resource type="AudioStream" uid="uid://cncscrprrwu33" path="res://assets/soundeffects/UIButton.mp3" id="4_ptynm"]
+[ext_resource type="Theme" uid="uid://dj1bemp638neb" path="res://assets/textures/SliderTheme.tres" id="5_ncfhn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ptynm"]
+font = ExtResource("1_7pacj")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_ob3hf"]
+font = ExtResource("1_7pacj")
+
+[node name="Settings" type="Control" unique_id=1450746173]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h175o")
+MasterAudioBusName = "Master"
+SFXAudioBusName = "SoundEffects"
+MusicAudioBusName = "Music"
+AmbientAudioBusName = "Ambience"
+metadata/_edit_vertical_guides_ = [37.0, 38.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1688433311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=869435378]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 225.0
+offset_bottom = 90.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_ptynm")
+
+[node name="Return" type="Button" parent="." unique_id=1181136587]
+modulate = Color(1.769, 1.769, 1.769, 1)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 145.0
+offset_right = 192.0
+offset_bottom = 183.0
+theme = ExtResource("2_h175o")
+theme_override_font_sizes/font_size = 15
+text = "Return to Menu"
+
+[node name="ReturnButtonSFX" type="AudioStreamPlayer" parent="Return" unique_id=358720852]
+stream = ExtResource("4_ptynm")
+volume_db = 1.5
+bus = &"SoundEffects"
+
+[node name="MVolumeSlider" type="HSlider" parent="." unique_id=1055719177]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 203.0
+offset_right = 605.0
+offset_bottom = 219.0
+theme = ExtResource("5_ncfhn")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SoundEffectsSlider" type="HSlider" parent="." unique_id=405105808]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 246.0
+offset_right = 605.0
+offset_bottom = 262.0
+theme = ExtResource("5_ncfhn")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=1285795935]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 289.0
+offset_right = 605.0
+offset_bottom = 305.0
+theme = ExtResource("5_ncfhn")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="AmbientSlider" type="HSlider" parent="." unique_id=544540729]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 332.0
+offset_right = 605.0
+offset_bottom = 348.0
+theme = ExtResource("5_ncfhn")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Sensitivity" type="HSlider" parent="." unique_id=1079007328]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 425.0
+offset_right = 605.0
+offset_bottom = 441.0
+theme = ExtResource("5_ncfhn")
+min_value = 0.01
+max_value = 0.1
+step = 0.01
+value = 0.060000000000000005
+
+[node name="FOV" type="HSlider" parent="." unique_id=293767801]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 467.0
+offset_right = 605.0
+offset_bottom = 483.0
+theme = ExtResource("5_ncfhn")
+min_value = 60.0
+value = 90.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1421853282]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0
+offset_top = -121.0
+offset_right = 280.0
+offset_bottom = 160.0
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="MVolume" type="Label" parent="VBoxContainer" unique_id=1713149965]
+layout_mode = 2
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="SoundEffectsVolume" type="Label" parent="VBoxContainer" unique_id=1277118691]
+layout_mode = 2
+text = "Sound Effects Volume"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="MusicVolume" type="Label" parent="VBoxContainer" unique_id=1967491052]
+layout_mode = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="AmbientVolume" type="Label" parent="VBoxContainer" unique_id=1327904759]
+layout_mode = 2
+text = "Ambient Volume"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="Quality" type="Label" parent="VBoxContainer" unique_id=632999711]
+layout_mode = 2
+text = "Quality"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="Sensitivity" type="Label" parent="VBoxContainer" unique_id=432017645]
+layout_mode = 2
+text = "Sensitivity"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="Sensitivity2" type="Label" parent="VBoxContainer" unique_id=1895408514]
+layout_mode = 2
+text = "FOV"
+label_settings = SubResource("LabelSettings_ob3hf")
+
+[node name="QualityButton" type="OptionButton" parent="." unique_id=150923575]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 369.0
+offset_right = 550.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("1_7pacj")
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Ultra"
+popup/item_0/id = 0
+popup/item_1/text = "High"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "Low"
+popup/item_3/id = 3
+
+[node name="FullscreenToggle" type="CheckButton" parent="." unique_id=374842959]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 499.0
+offset_right = 337.0
+offset_bottom = 528.0
+theme_override_fonts/font = ExtResource("1_7pacj")
+button_pressed = true
+text = "Fullscreen"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="value_changed" from="MVolumeSlider" to="." method="_on_m_volume_slider_value_changed"]
+[connection signal="value_changed" from="SoundEffectsSlider" to="." method="_on_sound_effects_slider_value_changed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="AmbientSlider" to="." method="_on_ambient_slider_value_changed"]
+[connection signal="value_changed" from="Sensitivity" to="." method="_on_sensitivity_value_changed"]
+[connection signal="value_changed" from="FOV" to="." method="_on_fov_value_changed"]
+[connection signal="item_selected" from="QualityButton" to="." method="_on_quality_button_item_selected"]
+[connection signal="toggled" from="FullscreenToggle" to="." method="_on_fullscreen_toggle_toggled"]

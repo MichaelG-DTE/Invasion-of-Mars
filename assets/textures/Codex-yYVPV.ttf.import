@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b7xa6kxumlwnr"
-path="res://.godot/imported/Codex-yYVPV.ttf-b414fb37f043fd72aeb1f1117fdc62b2.fontdata"
+path="res://.godot/imported/Codex-yYVPV.ttf-372ea553bc56592f0eb3a4af85c28f16.fontdata"
 
 [deps]
 
-source_file="res://assets/Codex-yYVPV.ttf"
-dest_files=["res://.godot/imported/Codex-yYVPV.ttf-b414fb37f043fd72aeb1f1117fdc62b2.fontdata"]
+source_file="res://assets/textures/Codex-yYVPV.ttf"
+dest_files=["res://.godot/imported/Codex-yYVPV.ttf-372ea553bc56592f0eb3a4af85c28f16.fontdata"]
 
 [params]
 
