@@ -21,7 +21,6 @@ func _on_resume_pressed() -> void:
 	animation_player.play_backwards("blur")
 	user_interface.visible = true
 	
-	
 func _on_quit_to_menu_pressed() -> void:
 	quit_button_sfx.play()
 	quit_to_menu_confirm.visible = true

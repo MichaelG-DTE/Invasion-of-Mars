@@ -6,3 +6,5 @@ var current_level := 0
 var sensitivity : float = 0.06
 
 var fov : float = 90
+
+var in_terminal : bool = false

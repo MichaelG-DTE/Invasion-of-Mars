@@ -2,6 +2,7 @@ extends Node3D
 
 var player
 @onready var player_spawn: Marker3D = $PlayerSpawn
+@onready var new_player_position: Marker3D = $Geometry/Epilogue/NewPlayerPosition
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,3 +11,7 @@ func _ready() -> void:
 	player.global_rotation = player_spawn.global_rotation
 	globalvar.can_teleport = false
 	SignalBus.save_level.emit()
+
+func _process(_delta: float) -> void:
+	if globalvar.can_teleport == true:
+		player.global_position = new_player_position

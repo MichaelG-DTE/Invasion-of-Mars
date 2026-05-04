@@ -11,40 +11,43 @@ func _process(_delta: float) -> void:
 		if is_colliding():
 			var object = get_collider()
 			if object == current_object:
-				if object.has_method("interact"):
-					interact.show()
-					if Input.is_action_just_pressed("Interact"):
-						object.interact()
-						if object.name == "TerminalTemp":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal1Level2":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal2Level2":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal3Level2":
-							user_interface.visible = not user_interface.visible
-						if object.name == "TerminalLevel3":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal_2_level_3":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal_3_level_3":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal_4_level_3":
-							user_interface.visible = not user_interface.visible
-						if object.name == "TerminalLevel4":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal2Level4":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal3Level4":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal4Level4":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal5Level4":
-							user_interface.visible = not user_interface.visible
-						if object.name == "TerminalLevel5":
-							user_interface.visible = not user_interface.visible
-						if object.name == "Terminal2Level5":
-							user_interface.visible = not user_interface.visible
+				if object != null:
+					if object.has_method("interact"):
+						interact.show()
+						if Input.is_action_just_pressed("Interact"):
+							object.interact()
+							if object.name == "TerminalTemp":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal1Level2":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal2Level2":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal3Level2":
+								user_interface.visible = not user_interface.visible
+							if object.name == "TerminalLevel3":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal_2_level_3":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal_3_level_3":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal_4_level_3":
+								user_interface.visible = not user_interface.visible
+							if object.name == "TerminalLevel4":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal2Level4":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal3Level4":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal4Level4":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal5Level4":
+								user_interface.visible = not user_interface.visible
+							if object.name == "TerminalLevel5":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal2Level5":
+								user_interface.visible = not user_interface.visible
+							if object.name == "Terminal3Level5":
+								user_interface.visible = not user_interface.visible
 						
 				else:
 					interact.hide()

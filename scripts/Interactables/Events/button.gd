@@ -20,6 +20,7 @@ func interact():
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	
 	var my_data = InteractableSavedData.new()
+
 	my_data.is_button_pressed = has_pressed
 	my_data.scene_path = scene_file_path
 	my_data.transform = global_transform

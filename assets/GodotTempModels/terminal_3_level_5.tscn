@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://urlxawxp60ke"]
+
+[ext_resource type="Script" uid="uid://bd80ygpykfsp" path="res://scripts/Interactables/terminals/terminal_2_level_5.gd" id="1_bwag5"]
+[ext_resource type="Texture2D" uid="uid://d3ffw0k2mfw8p" path="res://assets/glTF/ui sci fi.png" id="2_d6h71"]
+[ext_resource type="FontFile" uid="uid://ncg7sd6mohwr" path="res://assets/textures/cour.ttf" id="3_sjjib"]
+[ext_resource type="AudioStream" uid="uid://1m1jlvusvoiq" path="res://assets/soundeffects/AccessTerminal.mp3" id="4_8eap5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2gr8"]
+albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+metallic = 0.2
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ylvn3"]
+material = SubResource("StandardMaterial3D_a2gr8")
+size = Vector3(0.1, 0.5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sgqei"]
+data = PackedVector3Array(-0.049999997, 0.25, 0.5, 0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, -0.049999997, 0.25, -0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, 0.25, -0.5, 0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, -0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, 0.25, 0.5, -0.049999997, 0.25, 0.5, 0.049999997, 0.25, -0.5, -0.049999997, 0.25, 0.5, -0.049999997, 0.25, -0.5, 0.049999997, 0.25, -0.5, -0.049999997, -0.25, 0.5, 0.049999997, -0.25, 0.5, -0.049999997, -0.25, -0.5, 0.049999997, -0.25, 0.5, 0.049999997, -0.25, -0.5, -0.049999997, -0.25, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6w3l"]
+albedo_color = Color(0.36926737, 0.6586416, 1, 1)
+metallic = 0.1
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_btkvi"]
+material = SubResource("StandardMaterial3D_v6w3l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btkvi"]
+albedo_color = Color(0.36926737, 0.6586416, 1, 1)
+metallic = 0.1
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_hw3aw"]
+material = SubResource("StandardMaterial3D_btkvi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tskx"]
+albedo_texture = ExtResource("2_d6h71")
+emission_enabled = true
+emission = Color(0.17634407, 7.0655944e-05, 0.60501647, 1)
+emission_texture = ExtResource("2_d6h71")
+uv1_scale = Vector3(0.7, 1, 0.7)
+uv1_offset = Vector3(0, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_v6w3l"]
+material = SubResource("StandardMaterial3D_2tskx")
+size = Vector3(0.001, 1, 1.5)
+
+[node name="Terminal3Level5" type="StaticBody3D" unique_id=143526114]
+transform = Transform3D(-5.5079255e-07, -1.4758442e-07, 3.5, -0.90586674, 3.3807404, -1.2873141e-14, -3.3807404, -0.90586674, -5.7022237e-07, 0, 0, 0)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_bwag5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1969173783]
+mesh = SubResource("BoxMesh_ylvn3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=800354306]
+shape = SubResource("ConcavePolygonShape3D_sgqei")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1321624427]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.03507802, 0.14875081, -0.39738202)
+mesh = SubResource("BoxMesh_btkvi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2011123606]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.034820706, -0.14824256, -0.39591503)
+mesh = SubResource("BoxMesh_hw3aw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1869967312]
+transform = Transform3D(-0.45, 0, 3.934025e-08, 0, 0.45, 0, -3.934025e-08, 0, -0.45, -0.05, 0, 0.1)
+mesh = SubResource("BoxMesh_v6w3l")
+
+[node name="TerminalPage" type="Control" parent="." unique_id=430863937]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage" unique_id=1865915422]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage" unique_id=501033812]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage/MarginContainer" unique_id=1461640872]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sjjib")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Incoming Transmission from Pulsar...>
+
+
+Do I need to make myself any clearer!?
+
+HURRY UP!
+
+
+I'm detecting massive energy pulses coming from down below the central tower of this station. 
+
+To direct enough energy to destroy a star the ancients used the 8 massive spires as a focusing lense.
+
+Fortunately, the ancients had the wise idea to include a manual override for each spire.
+
+At the base of the towers, in the pit below, are four buttons that you can use to deactivate the spires. 
+
+There's also four more for the spires of the central tower. 
+
+
+It's not a permanent solution, but it prevents the Nexyr from activating the Void Bringer right now.
+
+Maybe, without anywhere to go, the energy will build and build until it destroys itself.
+
+We can only hope. 
+
+But for now,
+
+
+
+Deactivate the spires, save the world.
+
+
+
+<End Transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage" unique_id=641237787]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0, 0.9372549, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage2" type="Control" parent="." unique_id=1972358268]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage2" unique_id=1749292991]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage2" unique_id=180088574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage2/MarginContainer" unique_id=1962359015]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sjjib")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Incoming Transmission From Grandmaster J'yma>
+
+<Translating...>
+
+Understand, Pulsar, that you have not won.
+
+Yes, I know your name, AI.
+
+
+Earth will BURN.
+
+Yes, we know your home planet, human.
+
+I will bring the entire might of the Nexyr Empire and RAZE your home fleet, destroy every city, and glass the surface of your world until there is NOTHING LEFT.
+
+
+
+This is not over. 
+
+
+You have embarrased me before the Emperor and ruined our greatest hope.
+
+
+You have only temporarily halted our march to victory.
+
+
+Control of the universe will be ours.
+
+
+
+
+
+<End transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage2" unique_id=1807117160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalPage3" type="Control" parent="." unique_id=781502819]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TerminalPage3" unique_id=1428886136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TerminalPage3" unique_id=1611931499]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="RichTextLabel" parent="TerminalPage3/MarginContainer" unique_id=1527222814]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_sjjib")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "<Incoming Transmission from Pulsar...>
+
+You're right, Grandmaster J'yma, this is not over. 
+
+
+We're just getting started.
+
+
+How about I take your ship for my own, and make your crew drink vacuum, as a warmup?
+
+
+
+Oh, you're still here.
+
+
+I suppose I should thank you, <the Champi}>, t/2 Hero, th\" Vict,r>
+
+I will notify Earth that the White Winged Guardian is coming home, although you and the ship will probably get there first.
+
+As for me? I have unfinished buisness here. Deactivating the spires actually destroyed the Void Bringer, by the way. The energy overloaded the core of the tower, and it detonated milliseconds after I teleported you out.
+
+Did you ever wonder what the source of the signal was? The one that brought us here, right when we were needed.
+
+It was you.
+
+I cannot explain this. Perhaps we will know sometime in the future.
+
+If our paths meet again, then I await that day.
+
+If not, then goodbye. Don't worry about the Nexyr. I'll deal with them. Permanently.
+
+
+<End Transmission>"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TerminalPage3" unique_id=919454168]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0, 0.9372549, 0, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="TerminalAccessSFX" type="AudioStreamPlayer3D" parent="." unique_id=1927599011]
+stream = ExtResource("4_8eap5")
+unit_size = 0.5
+max_polyphony = 2
+bus = &"SoundEffects"

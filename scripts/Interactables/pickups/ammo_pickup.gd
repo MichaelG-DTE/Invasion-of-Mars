@@ -22,11 +22,12 @@ func apply_pickup(player: PlayerController) -> void:
 func on_save_game(saved_data : Array[InteractableSavedData]):
 	if has_picked_up:
 		return
-	
+		
 	var my_data = InteractableSavedData.new()
+	
 	my_data.transform = global_transform
 	my_data.scene_path = scene_file_path
-	
+	my_data.my_level = globalvar.current_level
 	saved_data.append(my_data)
 
 func on_before_load_game():

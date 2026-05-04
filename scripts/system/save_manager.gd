@@ -85,7 +85,7 @@ func save_game():
 	ResourceSaver.save(saved_game, "user://savegame.tres")
 
 func load_game():
-	var saved_game : SavedGame = load("user://savegame.tres") as SavedGame
+	var saved_game : SavedGame = ResourceLoader.load("user://savegame.tres", "", ResourceLoader.CACHE_MODE_IGNORE) as SavedGame
 	var pistol = pistol_data
 	var assaultrifle = are_data
 	var shotgun = bmr_data
@@ -128,7 +128,7 @@ func load_game():
 		var scene = load(item.scene_path) as PackedScene
 		var restored_node = scene.instantiate()
 		nav_region.add_child(restored_node)
-		
+			
 		if restored_node.has_method("on_load_game"):
 			restored_node.on_load_game(item)
 	
@@ -138,7 +138,7 @@ func load_game():
 		var scene = load(item.scene_path) as PackedScene
 		var restored_node = scene.instantiate()
 		current_level.add_child(restored_node)
-		
+			
 		if restored_node.has_method("on_load_game"):
 			restored_node.on_load_game(item)
 			

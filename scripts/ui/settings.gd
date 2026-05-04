@@ -11,12 +11,12 @@ var SFXpath
 var Musicpath
 var Ambientpath
 
+
 func _ready() -> void:
 	masterpath = AudioServer.get_bus_index(MasterAudioBusName)
 	SFXpath = AudioServer.get_bus_index(SFXAudioBusName)
 	Musicpath = AudioServer.get_bus_index(MusicAudioBusName)
 	Ambientpath = AudioServer.get_bus_index(AmbientAudioBusName)
-	
 
 func _on_return_pressed() -> void:
 	return_button_sfx.play()
@@ -49,7 +49,6 @@ func _on_music_slider_value_changed(value: float) -> void:
 
 func _on_ambient_slider_value_changed(value: float) -> void:
 	var convertedvalue = linear_to_db(value)
-	
 	AudioServer.set_bus_volume_db(Ambientpath, convertedvalue)
 	if convertedvalue < -80:
 		AudioServer.set_bus_mute(Ambientpath, true)

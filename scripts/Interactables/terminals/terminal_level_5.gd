@@ -8,6 +8,7 @@ extends StaticBody3D
 
 func interact():
 	terminal_access_sfx.play()
+	globalvar.in_terminal = not globalvar.in_terminal
 	if !button_controller.all_buttons_pressed:
 		terminal_page.visible = not terminal_page.visible
 	else:

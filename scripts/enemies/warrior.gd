@@ -24,6 +24,7 @@ func on_save_game(saved_data : Array[SavedData]):
 		return
 	
 	var my_data = SavedData.new()
+	
 	my_data.transform = global_transform
 	my_data.scene_path = scene_file_path
 	my_data.health = health_component.current_health
@@ -45,9 +46,6 @@ func on_load_game(saved_data : SavedData):
 	following = saved_data.is_following
 	if is_shielded:
 		%ShieldSphere.visible = saved_data.shield_visible
-	if saved_data.my_level != globalvar.current_level:
-		print("you shouldn't be here")
-		queue_free()
 	
 func _ready() -> void:
 	super._ready()
@@ -62,15 +60,16 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if !dead:
-		# give the enemies gravity
-		if not is_on_floor():
-			velocity.y -= 20.0 * delta
-			
-		if following:
-			if can_attack:
-				if global_position.distance_to(target.global_position) < attack_range:
-					state_chart.send_event("ToAttack")
-			move_and_slide()
+		if !globalvar.in_terminal:
+			# give the enemies gravity
+			if not is_on_floor():
+				velocity.y -= 20.0 * delta
+				
+			if following:
+				if can_attack:
+					if global_position.distance_to(target.global_position) < attack_range:
+						state_chart.send_event("ToAttack")
+				move_and_slide()
 	
 func _process(delta: float) -> void:
 	# attack timer for enemies
@@ -103,31 +102,32 @@ func _on_velocity_computed(safe_velocity: Vector3) -> void:
 
 func _on_follow_state_state_physics_processing(delta: float) -> void:
 	if !dead:
-		if following:
-			if not target:
-				return
+		if !globalvar.in_terminal:
+			if following:
+				if not target:
+					return
+					
+				# set target position for navmesh
+				navigation_agent_3d.target_position = target.global_position
 				
-			# set target position for navmesh
-			navigation_agent_3d.target_position = target.global_position
-			
-			# check if navigation finished
-			if navigation_agent_3d.is_navigation_finished():
-				navigation_agent_3d.velocity = Vector3.ZERO
-				return
+				# check if navigation finished
+				if navigation_agent_3d.is_navigation_finished():
+					navigation_agent_3d.velocity = Vector3.ZERO
+					return
+					
+				# get next positon 
+				var next_pos = navigation_agent_3d.get_next_path_position()
+				var direction = (next_pos - self.global_position).normalized()
 				
-			# get next positon 
-			var next_pos = navigation_agent_3d.get_next_path_position()
-			var direction = (next_pos - self.global_position).normalized()
-			
-			# set velocity
-			navigation_agent_3d.velocity = direction * follow_speed
-			
-			# rotate enemy
-			if direction.length() > 0.01:
-				var target_rotation = atan2(direction.x, direction.z)
-				rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta)
-		else:
-			state_chart.send_event("Idle")
+				# set velocity
+				navigation_agent_3d.velocity = direction * follow_speed
+				
+				# rotate enemy
+				if direction.length() > 0.01:
+					var target_rotation = atan2(direction.x, direction.z)
+					rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta)
+			else:
+				state_chart.send_event("Idle")
 
 func _on_idle_state_state_physics_processing(_delta: float) -> void:
 	if !dead:
@@ -156,22 +156,23 @@ func apply_velocity():
 
 func _on_see_timer_timeout() -> void:
 	if !dead:
-		var overlaps = $DetectionArea.get_overlapping_bodies()
-		if overlaps.size() > 0:
-			for overlap in overlaps:
-				if overlap.is_in_group("player"):
-					var playerposition = overlap.global_position
-					see_cast.look_at(playerposition, Vector3.UP)
-					see_cast.force_raycast_update()
-					
-					if see_cast.is_colliding():
-						var collider = see_cast.get_collider()
-						if collider.is_in_group("player"):
-							# sends the enemies to the run state and follows the player
-							on_triggered()
-						else:
-							# stops the enemies from moving if they don't see the player
-							state_chart.send_event("OnIdle")
-							state_machine.travel("Idle")
-							velocity = Vector3.ZERO
-							navigation_agent_3d.velocity = Vector3.ZERO
+		if !globalvar.in_terminal:
+			var overlaps = $DetectionArea.get_overlapping_bodies()
+			if overlaps.size() > 0:
+				for overlap in overlaps:
+					if overlap.is_in_group("player"):
+						var playerposition = overlap.global_position
+						see_cast.look_at(playerposition, Vector3.UP)
+						see_cast.force_raycast_update()
+						
+						if see_cast.is_colliding():
+							var collider = see_cast.get_collider()
+							if collider.is_in_group("player"):
+								# sends the enemies to the run state and follows the player
+								on_triggered()
+							else:
+								# stops the enemies from moving if they don't see the player
+								state_chart.send_event("OnIdle")
+								state_machine.travel("Idle")
+								velocity = Vector3.ZERO
+								navigation_agent_3d.velocity = Vector3.ZERO

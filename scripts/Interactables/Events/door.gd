@@ -20,6 +20,7 @@ func interact():
 
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	var my_data = InteractableSavedData.new()
+
 	my_data.is_door_locked = locked
 	my_data.transform = global_transform
 	my_data.scene_path = scene_file_path
@@ -32,6 +33,8 @@ func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 		my_data.door_collision_height = 3.0
 	
 	my_data.my_level = globalvar.current_level
+	
+	print("door level : ", my_data.my_level)
 	interactable_saved_data.append(my_data)
 	
 func on_before_load_game():

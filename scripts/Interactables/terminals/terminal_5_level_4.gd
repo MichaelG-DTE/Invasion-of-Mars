@@ -4,5 +4,6 @@ extends StaticBody3D
 
 func interact():
 	terminal_access_sfx.play()
+	globalvar.in_terminal = not globalvar.in_terminal
 	terminal_page_5.visible = not terminal_page_5.visible
 	globalvar.can_teleport = true

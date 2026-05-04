@@ -8,7 +8,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var buttons = get_tree().get_nodes_in_group("levelbuttons")
 	for button in buttons:
-		print(button)
 		if !button.has_pressed:
 			return
 		find_the_stupid_door()

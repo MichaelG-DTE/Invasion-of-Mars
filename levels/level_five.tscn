@@ -1017,6 +1017,17 @@ sides = 64
 cone = true
 material = SubResource("StandardMaterial3D_nq8im")
 
+[node name="Epilogue" type="CSGCombiner3D" parent="Geometry" unique_id=817516044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -78.5, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Epilogue" unique_id=1979464745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49949646, 0)
+size = Vector3(1, 0.001, 1)
+
+[node name="NewPlayerPosition" type="Marker3D" parent="Geometry/Epilogue" unique_id=1905443758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=491799346]
 environment = SubResource("Environment_nefly")
 

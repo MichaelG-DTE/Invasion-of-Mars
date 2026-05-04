@@ -5,22 +5,29 @@ extends StaticBody3D
 @onready var terminal_page_4: Control = $TerminalPage4
 @onready var terminal_access_sfx: AudioStreamPlayer3D = $TerminalAccessSFX
 
+var animationplayer
 
 var page_number = 1
 var in_terminal = false
 
-
 func _ready() -> void:
 	SignalBus.terminal_change.connect(change_terminal_page)
+	get_animation_play()
+
+func get_animation_play():
+	animationplayer = get_tree().get_first_node_in_group("doorlight")
 
 func interact():
 	terminal_access_sfx.play()
+	globalvar.in_terminal = not globalvar.in_terminal
 	in_terminal = true
 	if page_number == 1:
 		terminal_page.visible = not terminal_page.visible
 	if page_number == 2:
 		terminal_page.visible = false
 		terminal_page_2.visible = not terminal_page_2.visible
+		get_animation_play()
+		animationplayer.play("doorlightchange")
 	if page_number == 3:
 		terminal_page_3.visible = not terminal_page_3.visible
 	if page_number == 4:

@@ -4,6 +4,7 @@ extends Node
 @onready var current_level: Node3D = $"../../CurrentLevel"
 @onready var pause_menu: Control = $"../../Pause Menu"
 @onready var user_interface: CanvasLayer = $"../../CurrentLevel/Player/UserInterface"
+@onready var loadingscreen: Control = $"../../Loadingscreen"
 
 const LEVEL_ONE = preload("uid://bupaqukakeo13")
 const LEVEL_TWO = preload("uid://cks5kigjjks6e")
@@ -29,18 +30,56 @@ func _ready() -> void:
 	
 func change_level():
 	if globalvar.current_level == 1:
+		delete_save_data()
+		user_interface.hide()
+		loadingscreen.visible = true
+		loadingscreen.play()
 		level_one.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		loadingscreen.stop()
+		loadingscreen.visible = false
+		user_interface.show()
 		Level_Two = LEVEL_TWO.instantiate()
 		current_level.add_child(Level_Two)
 	elif globalvar.current_level == 2:
+		delete_save_data()
+		user_interface.hide()
+		loadingscreen.visible = true
+		loadingscreen.play()
 		Level_Two.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		loadingscreen.stop()
+		loadingscreen.visible = false
+		user_interface.show()
 		Level_Three = LEVEL_THREE.instantiate()
 		current_level.add_child(Level_Three)
 	elif globalvar.current_level == 3:
+		delete_save_data()
+		user_interface.hide()
+		loadingscreen.visible = true
+		loadingscreen.play()
 		Level_Three.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		loadingscreen.stop()
+		loadingscreen.visible = false
+		user_interface.show()
 		Level_Four = LEVEL_FOUR.instantiate()
 		current_level.add_child(Level_Four)
 	elif globalvar.current_level == 4:
+		delete_save_data()
+		user_interface.hide()
+		loadingscreen.visible = true
+		loadingscreen.play()
 		Level_Four.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		loadingscreen.stop()
+		loadingscreen.visible = false
+		user_interface.show()
 		Level_Five = LEVEL_FIVE.instantiate()
 		current_level.add_child(Level_Five)
+
+
+func delete_save_data():
+	var save_path = "user://savegame.tres"
+	DirAccess.remove_absolute(save_path)
+	print("deleted save data")
