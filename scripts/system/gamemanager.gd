@@ -11,11 +11,13 @@ const LEVEL_TWO = preload("uid://cks5kigjjks6e")
 const LEVEL_THREE = preload("uid://vvqqydrltyrv")
 const LEVEL_FOUR = preload("uid://d2ff3ocau7igq")
 const LEVEL_FIVE = preload("uid://cwcy8djptf2xj")
+const EPILOGUE = preload("uid://bjuk23ulc7kjw")
 
 var Level_Two
 var Level_Three
 var Level_Four
 var Level_Five
+var Epilogue
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
@@ -27,6 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	SignalBus.level_change.connect(change_level)
+	SignalBus.end_game.connect(end_game)
 	
 func change_level():
 	if globalvar.current_level == 1:
@@ -77,9 +80,25 @@ func change_level():
 		user_interface.show()
 		Level_Five = LEVEL_FIVE.instantiate()
 		current_level.add_child(Level_Five)
-
+	elif globalvar.current_level == 5:
+		delete_save_data()
+		user_interface.hide()
+		loadingscreen.visible = true
+		loadingscreen.play()
+		Level_Five.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		loadingscreen.stop()
+		loadingscreen.visible = false
+		user_interface.show()
+		Epilogue = EPILOGUE.instantiate()
+		current_level.add_child(Epilogue)
 
 func delete_save_data():
 	var save_path = "user://savegame.tres"
 	DirAccess.remove_absolute(save_path)
 	print("deleted save data")
+
+func end_game():
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://scenes/ui/title_screen.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

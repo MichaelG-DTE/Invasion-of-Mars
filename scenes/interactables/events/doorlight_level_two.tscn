@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bsmjr8057vcel"]
+
+[ext_resource type="Script" uid="uid://5oc0hajct7p7" path="res://scripts/Interactables/Events/doorlight.gd" id="1_3dwe2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5i4ab"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mcdta"]
+data = PackedVector3Array(-1.275, -0.5, 0.275, -1.275, -0.5, -0.275, -1.275, 0.5, -0.275, 1.275, -0.5, -0.275, -1.275, -0.5, -0.275, -1.275, -0.5, 0.275, -1.275, 0.5, -0.275, -1.275, -0.5, -0.275, 1.275, -0.5, -0.275, -1.275, 0.5, -0.275, -1.275, 0.5, 0.275, -1.275, -0.5, 0.275, -1.275, -0.5, 0.275, -1.275, 0.5, 0.275, 1.275, 0.5, 0.275, 1.275, 0.5, 0.275, -1.275, 0.5, 0.275, -1.275, 0.5, -0.275, -1.275, -0.5, 0.275, 1.275, -0.5, 0.275, 1.275, -0.5, -0.275, 1.275, 0.5, 0.275, 1.275, -0.5, 0.275, -1.275, -0.5, 0.275, 1.275, -0.5, -0.275, 1.275, -0.5, 0.275, 1.275, 0.5, 0.275, 1.275, -0.5, -0.275, 1.275, 0.5, -0.275, -1.275, 0.5, -0.275, -1.275, 0.5, -0.275, 1.275, 0.5, -0.275, 1.275, 0.5, 0.275, 1.275, 0.5, 0.275, 1.275, 0.5, -0.275, 1.275, -0.5, -0.275)
+
+[sub_resource type="Animation" id="Animation_dsxnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:material:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sgg8e"]
+resource_name = "doorlightchange"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:material:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsxnk"]
+_data = {
+&"RESET": SubResource("Animation_dsxnk"),
+&"doorlightchange": SubResource("Animation_sgg8e")
+}
+
+[node name="Doorlight" type="StaticBody3D" unique_id=895650311 groups=["door_light", "interactable_events"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_3dwe2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=640409173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024999976, 0, -0.024999991)
+size = Vector3(2.55, 1, 0.55)
+material = SubResource("StandardMaterial3D_5i4ab")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="." unique_id=1770464178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024999976, 0, -0.024999991)
+shape = SubResource("ConcavePolygonShape3D_mcdta")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1520017091 groups=["doorlight"]]
+libraries/ = SubResource("AnimationLibrary_dsxnk")

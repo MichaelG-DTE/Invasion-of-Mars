@@ -1108,6 +1108,15 @@ offset_bottom = 68.0
 text = "Ammo: 0"
 label_settings = SubResource("LabelSettings_bbmj2")
 
+[node name="Mags" type="Label" parent="UserInterface/Control" unique_id=855598539]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 45.0
+offset_right = 239.0
+offset_bottom = 68.0
+text = "Mags: 0"
+label_settings = SubResource("LabelSettings_bbmj2")
+
 [node name="CurrentWeapon" type="Label" parent="UserInterface/Control" unique_id=1687273818]
 layout_mode = 0
 offset_left = 1.0

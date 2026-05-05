@@ -6,6 +6,7 @@ class_name WeaponController extends Node
 @export var weapon_state_chart : StateChart
 @export var player_controller : PlayerController
 @onready var ammo_label: Label = $"../../UserInterface/Control/Ammo"
+@onready var mags: Label = $"../../UserInterface/Control/Mags"
 @onready var current_weapon_label: Label = $"../../UserInterface/Control/CurrentWeapon"
 @onready var marker_3d: Marker3D = %Marker3D
 @onready var wmc: Node3D = $"../../CameraController/Camera3D/WeaponModelContainer"
@@ -41,7 +42,8 @@ func _process(delta: float) -> void:
 				
 		ammo_label.text = "Ammo: " + str(weapon_data.ammo)
 		current_weapon_label.text = "Current Weapon: " + get_weapon_name()
-
+		mags.text = "Mags: " + str(weapon_data.weapon.total_ammo / weapon_data.weapon.max_ammo)
+		
 func spawn_weapon_model():
 	if current_weapon_model:
 		current_weapon_model.queue_free() # removes a previous weapon to be replaced by the current weapon

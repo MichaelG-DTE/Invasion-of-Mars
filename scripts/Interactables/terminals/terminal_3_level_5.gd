@@ -7,3 +7,6 @@ func interact():
 	terminal_access_sfx.play()
 	globalvar.in_terminal = not globalvar.in_terminal
 	terminal_page_3.visible = not terminal_page_3.visible
+	if globalvar.in_terminal == false:
+		SignalBus.end_game.emit()
+	

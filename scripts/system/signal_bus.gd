@@ -9,3 +9,5 @@ signal level_change()
 signal save_level()
 
 signal load_level()
+
+signal end_game()

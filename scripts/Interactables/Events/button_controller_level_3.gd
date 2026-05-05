@@ -7,5 +7,5 @@ func _process(_delta: float) -> void:
 		if !button.has_pressed:
 			return
 			
-		var door = get_tree().get_first_node_in_group("door")
+		var door = get_tree().get_first_node_in_group("enddoor")
 		door.locked = false

@@ -1,20 +1,30 @@
 extends StaticBody3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var firstbutton_level_3: StaticBody3D = $"."
 @onready var mesh_instance_3d_2: MeshInstance3D = $MeshInstance3D2
 @onready var mesh_instance_3d_3: MeshInstance3D = $MeshInstance3D3
 @onready var button_press_sfx: AudioStreamPlayer = $ButtonPressSFX
 
 
 var has_pressed := false
+var animationplayer
+var doorlight
+
+func _ready() -> void:
+	find_animation_play()
+
+func find_animation_play():
+	animationplayer = get_tree().get_first_node_in_group("doorlight2")
+	doorlight = get_tree().get_first_node_in_group("door_light_2")
 
 func interact():
 	if not has_pressed:
 		button_press_sfx.play()
 		has_pressed = true
-		if self == firstbutton_level_3:
-			animation_player.play("pressed")
+		animation_player.play("pressed")
+		find_animation_play()
+		animationplayer.play("doorlightchange")
+		doorlight.change_var()
 
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	

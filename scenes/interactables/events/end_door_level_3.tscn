@@ -99,7 +99,7 @@ _data = {
 &"open": SubResource("Animation_ymtgt")
 }
 
-[node name="EndDoor" type="StaticBody3D" unique_id=1439958220 groups=["door", "interactable_events"]]
+[node name="EndDoor" type="StaticBody3D" unique_id=1439958220 groups=["interactable_events"]]
 transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 0, 0, 0)
 script = ExtResource("1_2u30x")
 locked = true

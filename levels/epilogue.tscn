@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bjuk23ulc7kjw"]
+
+[ext_resource type="PackedScene" uid="uid://bhsc6gekshwca" path="res://scenes/enviroment/spaceenviroment.tscn" id="1_f8t5i"]
+[ext_resource type="Script" uid="uid://cgyldjpb6drfa" path="res://scripts/levels/epilogue.gd" id="1_pu78i"]
+[ext_resource type="AudioStream" uid="uid://m7rt22pc1v6e" path="res://assets/soundeffects/Ambience.mp3" id="2_mb5jo"]
+[ext_resource type="Material" uid="uid://6ku28kosvoob" path="res://assets/textures/gridfloor.tres" id="3_hs7j6"]
+[ext_resource type="Material" uid="uid://c8aai7ipi5kw3" path="res://assets/textures/wallmaterial.tres" id="4_qhjl5"]
+[ext_resource type="Material" uid="uid://dlrykrnb275vd" path="res://assets/textures/roofmaterial.tres" id="5_pu78i"]
+[ext_resource type="PackedScene" uid="uid://bryvlgmmo5jlm" path="res://scenes/enviroment/light.tscn" id="6_jsxje"]
+[ext_resource type="PackedScene" uid="uid://b7rvchaw43xlw" path="res://scenes/interactables/terminalstandlevel5.tscn" id="7_qhjl5"]
+
+[node name="Epilogue" type="Node3D" unique_id=2031947355]
+script = ExtResource("1_pu78i")
+
+[node name="WorldEnvironment" parent="." unique_id=578584184 instance=ExtResource("1_f8t5i")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1516614095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.85, 0.1000008)
+stream = ExtResource("2_mb5jo")
+autoplay = true
+bus = &"Ambience"
+
+[node name="CryoBay" type="CSGCombiner3D" parent="." unique_id=1583865108]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CryoBay" unique_id=1836723584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0005, 0)
+size = Vector3(6, 0.001, 6)
+material = ExtResource("3_hs7j6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CryoBay" unique_id=1539374559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -2.9995)
+size = Vector3(6, 3.4, 0.001)
+material = ExtResource("4_qhjl5")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CryoBay" unique_id=2001961187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 3.0005)
+size = Vector3(6, 3.4, 0.001)
+material = ExtResource("4_qhjl5")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CryoBay" unique_id=2046455518]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 1.7, 0.0005000949)
+size = Vector3(6, 3.4, 0.001)
+material = ExtResource("4_qhjl5")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CryoBay" unique_id=1494006623]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 1.7, 0.0004998326)
+size = Vector3(6, 3.4, 0.001)
+material = ExtResource("4_qhjl5")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CryoBay" unique_id=1973373302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4005, 0)
+size = Vector3(6, 0.001, 6)
+material = ExtResource("5_pu78i")
+
+[node name="Light" parent="CryoBay" unique_id=1370842519 instance=ExtResource("6_jsxje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.35, 0, 3.3999999, -0.1)
+
+[node name="Terminalstand" parent="." unique_id=933587448 instance=ExtResource("7_qhjl5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.90000015, -8.6)
+
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=911599580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

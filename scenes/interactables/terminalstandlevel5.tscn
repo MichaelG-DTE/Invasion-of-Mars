@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://kixowon7yxpy" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Grid-002_Base-001.png" id="1_u4txq"]
 [ext_resource type="Texture2D" uid="uid://iqd67af5dgof" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Metal-Panel_Base-004.png" id="2_lqrv3"]
 [ext_resource type="Texture2D" uid="uid://dcv7tducocokr" path="res://assets/textures/Level Eleven Games Sci-Fi Texture Pack v1/Vent-001_Base-004.png" id="3_y7j1k"]
+[ext_resource type="PackedScene" uid="uid://urlxawxp60ke" path="res://assets/GodotTempModels/terminal_3_level_5.tscn" id="4_lqrv3"]
+[ext_resource type="Script" uid="uid://sv0gb4y73vj5" path="res://scripts/Interactables/terminals/terminal_3_level_5.gd" id="5_y7j1k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yp17f"]
 albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
@@ -58,3 +60,7 @@ material = SubResource("StandardMaterial3D_oamky")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6, -0.3, 0.12500003)
 size = Vector3(0.55, 0.4, 0.2)
 material = SubResource("StandardMaterial3D_oan87")
+
+[node name="Terminal3Level5" parent="." unique_id=143526114 instance=ExtResource("4_lqrv3")]
+transform = Transform3D(-1.2239835e-07, -3.279654e-08, 0.7777778, -0.20130372, 0.75127566, -2.860698e-15, -0.75127566, -0.20130372, -1.2671609e-07, -0.022222223, 0.24444444, 0.35555556)
+script = ExtResource("5_y7j1k")

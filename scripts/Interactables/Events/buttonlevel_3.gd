@@ -6,10 +6,24 @@ extends StaticBody3D
 @onready var button_press_sfx: AudioStreamPlayer = $ButtonPressSFX
 
 var has_pressed := false
+var animationplayer
+var doorlight
+
+func _ready() -> void:
+	get_animation_play()
+
+func get_animation_play():
+	animationplayer = get_tree().get_first_node_in_group("doorlight")
+	doorlight = get_tree().get_first_node_in_group("door_light")
+
 
 func interact():
 	if not has_pressed:
 		button_press_sfx.play()
+		get_animation_play()
+		animationplayer.play("doorlightchange")
+		if doorlight.has_method("change_var"):
+			doorlight.change_var()
 		animation_player.play("pressed")
 		var doors = get_tree().get_nodes_in_group("door")
 		for door in doors:
