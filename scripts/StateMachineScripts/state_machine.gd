@@ -10,6 +10,7 @@ class_name PlayerStateMachine extends Node
 @export var debug_looking : bool = true
 @export var debug_step : bool = true
 
+# debug values no longer needed 
 func _process(_delta: float) -> void:
 	if player_controller: # adds debug stats to the debug chart
 		if debug_velocity:

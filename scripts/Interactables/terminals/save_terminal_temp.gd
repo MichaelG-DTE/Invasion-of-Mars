@@ -7,6 +7,7 @@ extends StaticBody3D
 func _ready() -> void:
 	label.hide()
 
+# calls the signal to save the level when interacting with the save terminal
 func interact():
 	terminal_access_sfx.play()
 	label.show()

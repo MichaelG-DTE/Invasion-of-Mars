@@ -9,6 +9,7 @@ extends StaticBody3D
 var has_pressed := false
 var door 
 
+# finds the second door to advance through the alien ship to the end of the level
 func finddoor():
 	var doors = get_tree().get_nodes_in_group("aliendoor")
 	for neodoor in doors:
@@ -20,6 +21,7 @@ func finddoor():
 func _ready() -> void:
 	finddoor()
 
+# unlocks the door
 func interact():
 	if not has_pressed:
 		button_press_sfx.play()

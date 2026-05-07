@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+# saves door lights colour if changed and saved, or resets to red if changed and not saved
+
 var is_changed = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var csg_box_3d: CSGBox3D = $CSGBox3D

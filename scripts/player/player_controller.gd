@@ -106,7 +106,8 @@ func _physics_process(delta: float) -> void:
 			weapon_tilt(_input_dir.x, delta)
 			weapon_sway(delta)
 			weapon_bob()
-	
+
+# updates the torch every frame if activated or not
 func _process(delta: float) -> void:
 	if !dead:
 		if !globalvar.in_terminal:
@@ -154,6 +155,7 @@ func _process(delta: float) -> void:
 	health.value = health_component.current_health
 	shield.value = health_component.current_shield
 
+# changes fov if zoomed in using tween
 func change_fov(fov, duration):
 	if fovtween:
 		fovtween.kill()
@@ -172,26 +174,31 @@ func update_flashlight(delta):
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input) # updates rotation of player
 
+# modifies the speed of player if sprinting
 func sprint() -> void:
 	is_sprinting = true
 	sprint_modifier = sprint_speed
-	
+
+# removes sprint modifier
 func walk() -> void:
 	is_sprinting = false
 	sprint_modifier = 0.0
 
+# removes crouch speed modifier
 func stand() -> void:
 	is_crouching = false
 	crouch_modifier = 0.0
 	standing_collision.disabled = false
 	crouching_collision.disabled = true
-	
+
+# adds crouch speed modifier
 func crouch() -> void:
 	is_crouching = true
 	crouch_modifier = crouch_speed # changes modifier value to crouch speed
 	standing_collision.disabled = true
 	crouching_collision.disabled = false
-	
+
+# applies jump
 func jump() -> void:
 	if not crouch_check.is_colliding():
 		velocity.y += jump_velocity 
@@ -204,17 +211,20 @@ func check_fall_speed() -> bool:
 	else:
 		current_fall_velocity = 0.0
 		return false
-		
+
 func get_input_direction() -> Vector2:
 	return _input_dir
-	
+
+# emits signal when passing through the area 3d
 func trigger():
 	SignalBus.terminal_change.emit()
 
+# adds upward velocity when the rocket launcher hits the player
 func apply_velocity():
 	if !dead:
 		velocity.y += 8
 
+# if zoomed in then slows down 
 func aim() -> void:
 	zoomed_in = true
 	aim_modifier = aim_speed
@@ -223,12 +233,14 @@ func stop_aiming() -> void:
 	zoomed_in = false
 	aim_modifier = 0.0
 
+# tilts weapon container node left and right when strafing  
 func weapon_tilt(input_x, delta):
 	if !dead:
 		if wmc:
 			if is_on_floor():
 				wmc.rotation.z = lerp(wmc.rotation.z, -input_x * weapon_rotation_amount, 10 * delta) 
 
+# sways weapon when moving mouse around
 func weapon_sway(delta):
 	if !dead:
 		wmc.rotation.x = lerp(wmc.rotation.x, -mouse_capture.mouse_input.y / 2 * weapon_rotation_amount,  4 * delta) 
@@ -236,12 +248,14 @@ func weapon_sway(delta):
 		wmc.rotation.y = clamp(wmc.rotation.y, -0.6, 0.6)
 		wmc.rotation.x = clamp(wmc.rotation.x, -0.6, 0.6)
 
+# bobs weapon when moving 
 func weapon_bob():
 	if !dead:
 		if is_on_floor():
 			var time = float(Time.get_ticks_msec())
 			wmc.position.y = startY + sin(time * bob_speed) * bob_amount * (velocity.length() / speed)
 
+# checks when dead and reloads the level
 func on_dead():
 	dead = true
 	death.play("Death")

@@ -19,6 +19,8 @@ var following := false
 var can_attack := true
 var attack_timer := 3.0
 
+# same comments as the voidtrooper, see voidtrooper script for explanations
+
 func on_save_game(saved_data : Array[SavedData]):
 	if dead:
 		return

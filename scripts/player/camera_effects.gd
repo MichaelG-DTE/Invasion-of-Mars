@@ -40,10 +40,12 @@ var _weapon_kick_angles : Vector3 = Vector3.ZERO
 
 var _step_timer : float = 0.0
 
+
 func _process(delta: float) -> void:
 	if !player.dead:
 		calculate_view_offset(delta)
-	
+
+# all cameera effects are applied here
 func calculate_view_offset(delta):
 	if not player: # ensures player is being referenced 
 		return
@@ -53,6 +55,7 @@ func calculate_view_offset(delta):
 	
 	var velocity = player.velocity
 	
+	# head bob checks when on floor and sets the frenquency based on running or walking
 	var speed = Vector2(velocity.x, velocity.z).length()
 	if speed > 0.1 and player.is_on_floor():
 		_step_timer += delta * (speed / bob_frequency)
@@ -64,14 +67,14 @@ func calculate_view_offset(delta):
 	var angles = Vector3.ZERO
 	var offset = Vector3.ZERO
 	
-	# camera tilt calculations
+	# camera tilt calculations (tilts camera left and right when strafing, rolls camera forward and backwards when running forward or backwards)
 	if enable_tilt:
 		var forward = global_transform.basis.z
 		var right = global_transform.basis.x
 		
 		var forward_dot = velocity.dot(forward) # returns dot product of forward var
 		var forward_tilt = clampf(forward_dot * deg_to_rad(run_pitch), deg_to_rad(-max_pitch), deg_to_rad(max_pitch))
-		angles.x += forward_tilt # sets the forward angle to the calculated tilt
+		angles.x += forward_tilt # sets the forward angle to the calculated tilt 
 		
 		var right_dot = velocity.dot(right) # returns dot product of right var
 		var side_tilt = clampf(right_dot * deg_to_rad(run_roll), deg_to_rad(-max_roll), deg_to_rad(max_roll))
@@ -84,18 +87,19 @@ func calculate_view_offset(delta):
 		angles.x -= fall_kick_amount
 		offset.y -= fall_kick_amount
 		
-	# damage calculations
+	# damage calculations (Unused)
 	if enable_damage_kick:
 		var damage_ratio = max(0.0, _damage_timer / damage_time)
 		damage_ratio = ease(damage_ratio, -2)
 		angles.x += damage_ratio * _damage_pitch
 		angles.z += damage_ratio * _damage_roll
 		
-	# weapon kick calculations
+	# weapon kick calculations (Also unused)
 	if enable_weapon_kick:
 		_weapon_kick_angles.move_toward(Vector3.ZERO, weapon_decay * delta)
 		angles += _weapon_kick_angles
-		
+	
+	# head bob calculations
 	if enable_head_bob:
 		var pitch_delta = bob_sin * deg_to_rad(bob_pitch) * speed * delta
 		angles.x -= pitch_delta
@@ -109,10 +113,12 @@ func calculate_view_offset(delta):
 	position = offset # updates the cameras rotation based on the offset
 	rotation = angles # updates the cameras rotation based on the angles
 
+# fall kick is added when player hits floor (called in airborne state processing)
 func add_fall_kick(fall_strength: float):
 	_fall_value = deg_to_rad(fall_strength)
 	_fall_timer = fall_time
-	
+
+# can add damage kick when enemies hit player (unused, may look too disorienting)
 func add_damage_kick(pitch: float, roll: float, source: Vector3):
 	var forward = global_transform.basis.z
 	var right = global_transform.basis.x
@@ -123,6 +129,7 @@ func add_damage_kick(pitch: float, roll: float, source: Vector3):
 	_damage_roll = deg_to_rad(roll) * right_dot
 	_damage_timer = damage_time
 
+# Decided to use animation for weapon shooting, recoil again might be too disorienting)
 func add_weapon_kick(pitch: float, yaw: float, roll: float):
 	_weapon_kick_angles.x += deg_to_rad(pitch)
 	_weapon_kick_angles.y += deg_to_rad(randf_range(-yaw, yaw))

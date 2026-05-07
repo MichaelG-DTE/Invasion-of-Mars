@@ -17,6 +17,7 @@ func _ready() -> void:
 	find_nav_regions()
 	find_current_level()
 
+# finds the navigation region for the enemies in the current level
 func find_nav_regions():
 	var nav_in_levels = get_tree().get_nodes_in_group("NavigationGroup")
 	for nav_level in nav_in_levels:
@@ -25,6 +26,7 @@ func find_nav_regions():
 		else:
 			nav_region = nav_level
 
+# finds the current level for the interactables respawning
 func find_current_level():
 	var levels = get_tree().get_nodes_in_group("level")
 	for level in levels:
@@ -124,6 +126,7 @@ func load_game():
 	
 	get_tree().call_group("game_events", "on_before_load_game")
 	
+	# reloads all enemies
 	for item in saved_game.saved_data:
 		var scene = load(item.scene_path) as PackedScene
 		var restored_node = scene.instantiate()
@@ -134,6 +137,7 @@ func load_game():
 	
 	get_tree().call_group("interactable_events", "on_before_load_game")
 	
+	# reloads all interactables (buttons, doors, lights, etc)
 	for item in saved_game.interactables_saved_data:
 		var scene = load(item.scene_path) as PackedScene
 		var restored_node = scene.instantiate()

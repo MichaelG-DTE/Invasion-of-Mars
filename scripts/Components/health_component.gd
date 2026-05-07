@@ -27,8 +27,8 @@ func _ready() -> void:
 func take_damage(amount : float, source : Node3D = null) -> void:
 	if not is_alive:
 		return
-		#mr penis 
-	#mr balls
+
+	# if the owner has shields, then it removes shield health first, then health next 
 	var actual_damage = max(0.0, amount) # prevents taking negative damage
 	if current_shield <= 0:
 		current_health = max(0.0, current_health - actual_damage)
@@ -36,6 +36,7 @@ func take_damage(amount : float, source : Node3D = null) -> void:
 		current_shield = max(0,0, current_shield - actual_damage)
 		
 	damage_taken.emit(actual_damage, source)
+	
 	
 	if current_shield <= 0:
 		health_changed.emit(current_health, max_health)
@@ -45,13 +46,16 @@ func take_damage(amount : float, source : Node3D = null) -> void:
 	if current_health <= 0.0:
 		_handle_death()
 
+# heals shields and health
+
 func heal(amount: float) -> void:
 	if not is_alive:
 		return
 		
 	var actual_heal = max(0.0, amount) # prevents negative healing
 	
-	current_health = min(max_health, current_health + actual_heal)	
+	# sets the current health to minium of the current health + the healed amount
+	current_health = min(max_health, current_health + actual_heal)
 	health_changed.emit(current_health, max_health)
 
 func heal_shield(amount: float) -> void:
@@ -60,6 +64,7 @@ func heal_shield(amount: float) -> void:
 
 	var actual_heal = max(0.0, amount) # prevents negative healing
 	
+	# sets the current shield to minium of the current health + the healed amount
 	current_shield = min(max_shield, current_shield + actual_heal)
 	shield_changed.emit(current_shield, max_shield)
 
@@ -71,4 +76,3 @@ func _handle_death() -> void:
 	current_health = 0.0
 	died.emit()
 	
-	print(get_parent().name, " died!")

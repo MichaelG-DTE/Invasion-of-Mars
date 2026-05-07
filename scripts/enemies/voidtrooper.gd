@@ -26,6 +26,7 @@ var projectile_speed := 30.0
 var damage := 10.0
 var fire_rate := 4
 
+# if not dead then save variables
 func on_save_game(saved_data : Array[SavedData]):
 	if dead:
 		return
@@ -46,6 +47,7 @@ func on_save_game(saved_data : Array[SavedData]):
 func on_before_load_game():
 	queue_free()
 
+# loads the saved values
 func on_load_game(saved_data : SavedData):
 	global_transform = saved_data.transform
 	health_component.current_health = saved_data.health
@@ -59,7 +61,7 @@ func on_load_game(saved_data : SavedData):
 		queue_free()
 	
 func _ready() -> void:
-	super._ready()
+	super._ready() # calls ready from the genisys enemy
 	
 	# find target = target is player
 	target = get_tree().get_first_node_in_group("player")
@@ -95,11 +97,12 @@ func _process(delta: float) -> void:
 			$VoidtrooperShieldPlayer.play_backwards("shield activate and deactivate")
 	
 	
-
+# when the enemy is triggered, activates the follow state
 func on_triggered() -> void:
 	state_chart.send_event("OnFollow")
 	state_machine.travel("Run")
 
+# when the enemy dies it plays the animation, then the enemy sits on the floor for a few seconds before being completely removed
 func _on_died() -> void:
 	dead = true
 	state_machine.travel("Death")
@@ -107,6 +110,7 @@ func _on_died() -> void:
 	await get_tree().create_timer(3).timeout
 	queue_free()
 
+# finds the safe velocity for the nav agent
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	following = true
 	velocity.x = safe_velocity.x
@@ -141,6 +145,7 @@ func _on_follow_state_state_physics_processing(delta: float) -> void:
 			else:
 				state_chart.send_event("Idle")
 
+# plays idle animation when idling
 func _on_idle_state_state_physics_processing(_delta: float) -> void:
 	if !dead:
 		if !following:

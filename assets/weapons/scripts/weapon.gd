@@ -1,5 +1,7 @@
 class_name Weapon extends Resource
 
+# variables for weapon resource
+
 @export var weapon_name: String = "MD P-11"
 @export var damage : float = 25.0
 @export var max_ammo : int = 12

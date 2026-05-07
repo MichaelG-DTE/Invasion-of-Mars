@@ -8,6 +8,7 @@ var has_pressed := false
 var door
 
 
+# finds door to unlock with button to advance through the alien ship
 func finddoor():
 	var doors = get_tree().get_nodes_in_group("door")
 	for neodoor in doors:
@@ -19,6 +20,7 @@ func finddoor():
 func _ready() -> void:
 	finddoor()
 
+# deactivates the doors lock
 func interact():
 	if not has_pressed:
 		button_press_sfx.play()

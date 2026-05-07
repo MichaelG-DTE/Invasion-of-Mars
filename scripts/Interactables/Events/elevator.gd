@@ -1,6 +1,9 @@
 extends StaticBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+# first elevator on level 5
+# both have separate scripts because they go to different heights so need separate animation players (also to prevent both going up and down at once)
+# elevators automatically go up and down to prevent soft locks
 
 var lowered = false
 

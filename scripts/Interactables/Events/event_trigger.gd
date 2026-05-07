@@ -1,5 +1,6 @@
 extends Area3D
 
+# triggers event if the player steps into the area
 
 var player = Node3D
 

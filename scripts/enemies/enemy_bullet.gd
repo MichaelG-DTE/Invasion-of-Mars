@@ -3,11 +3,13 @@ class_name EnemyProjectile extends Area3D
 var velocity: Vector3
 var damage: float
 
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
-	
+	# deletes projectile after three seconds
 	get_tree().create_timer(3.0).timeout.connect(queue_free)
-	
+
+# finds where the bullet should land, calls the body entered function
 func _physics_process(delta: float) -> void:
 	var space_state = get_world_3d().direct_space_state
 	var start_pos = global_position
@@ -27,10 +29,10 @@ func _physics_process(delta: float) -> void:
 func setup(vel: Vector3, dmg: float) -> void:
 	velocity = vel
 	damage = dmg
-	
+
+# if the body has a health component then takes damage
 func _on_body_entered(body: Node3D) -> void:
 	print("Projectile hit: ", body.name, " at ", global_position)
-	_spawn_impact_marker(global_position)
 
 	var health_component = body.get_node_or_null("HealthComponent")
 	
@@ -38,19 +40,4 @@ func _on_body_entered(body: Node3D) -> void:
 		health_component.take_damage(damage, self)
 	queue_free()
 	
-@warning_ignore("shadowed_variable_base_class")
-func _spawn_impact_marker(position: Vector3) -> void:
-	var marker = MeshInstance3D.new()
-	var box = BoxMesh.new()
-	box.size = Vector3(0.1,0.1,0.1)
-	marker.mesh = box
-	
-	var material = StandardMaterial3D.new()
-	material.albedo_color = Color.RED
-	marker.set_surface_override_material(0, material)
-	
-	get_tree().current_scene.add_child(marker)
-	marker.global_position = position
-	
-	# remove after 2 seconds
-	get_tree().create_timer(2.0).timeout.connect(marker.queue_free)
+# there was a function here to spawn impact markers, but I have removed it because it is no longer needed 

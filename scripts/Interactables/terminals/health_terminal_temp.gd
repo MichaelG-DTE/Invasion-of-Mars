@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+# terminal that healths the players HEALTH only not shield
+
 @onready var terminal_access_sfx: AudioStreamPlayer3D = $TerminalAccessSFX
 
 var heal_amount : float
@@ -12,6 +14,7 @@ func _ready() -> void:
 func interact():
 	terminal_access_sfx.play()
 	var health = player.get_node_or_null("HealthComponent")
+	# only heals if not at max health already
 	if health.current_health < health.max_health:
 		heal_amount = health.max_health - health.current_health
 		_apply_health_to_player(player)

@@ -1,6 +1,10 @@
 extends StaticBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
+# elevator on level 3
+# this elevator does not go up and down automatically because that would soft lock level 3
+
 var lowered = false
 
 func interact():

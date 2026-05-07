@@ -102,17 +102,18 @@ func _perform_hitscan() -> void:
 	var space_state = camera.get_world_3d().direct_space_state # gets access to world physics
 	var from = camera.global_position # where the weapon is firing from
 	
-	# Calculate accuracy spread 
+	
 	var accuracy_spread = (100 - current_weapon.accuracy) / 1000.0
 	
 	for i in current_weapon.pellet_count:
 		var forward = -camera.global_transform.basis.z
 		
-		# Add accuracy randomness
+		# creates spread for all weapons (based on how accurate the weapon is)
 		var accuracy_x = randf_range(-accuracy_spread, accuracy_spread)
 		var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
 		var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * camera.global_transform.basis
 		
+		# creates randomness for shotgun spread
 		if current_weapon.pellet_count > 1:
 			var spread_x = randf_range(-current_weapon.spread_angle, current_weapon.spread_angle)
 			var spread_y = randf_range(-current_weapon.spread_angle, current_weapon.spread_angle)
@@ -130,6 +131,7 @@ func _perform_hitscan() -> void:
 			
 			_apply_damage_to_target(result.collider)
 
+# spawns a small cube when the 'bullet' hits
 func _spawn_impact_marker(position: Vector3) -> void:
 	var marker = MeshInstance3D.new()
 	var box = BoxMesh.new()
@@ -143,7 +145,6 @@ func _spawn_impact_marker(position: Vector3) -> void:
 	get_tree().current_scene.add_child(marker)
 	marker.global_position = position
 	
-	# remove after 2 seconds
 	get_tree().create_timer(2.0).timeout.connect(marker.queue_free)
 
 func _spawn_projectile() -> void:
@@ -231,6 +232,7 @@ func automatic_reload_weapon():
 		if current_weapon == MD_RICO_KBM:
 			weapon_reload.play("Reload")
 		await weapon_reload.animation_finished
+		await get_tree().create_timer(0.1).timeout
 		ammo_label.text = "Reloaded!"
 		
 		weapon_state_chart.send_event("OnIdle")
@@ -242,6 +244,7 @@ func _apply_damage_to_target(target: Node3D) -> void:
 	if health_component and health_component.has_method("take_damage"):
 		health_component.take_damage(current_weapon.damage, owner)
 
+# finds the name of the current weapon for displaying on the UI
 func get_weapon_name():
 	var weapon_data = managers.weapon_manager.weapons[managers.weapon_manager.current_slot]
 	return str(weapon_data.weapon.weapon_name)

@@ -1,8 +1,8 @@
 extends Label
 
 
+# allows for changing the keybind of the interact key without the text still saying 'e'
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	text = "Press " + "'" + get_key_name() + "'" + " to interact"
 

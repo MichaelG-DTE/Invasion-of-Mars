@@ -5,9 +5,10 @@ var explosion_damage := 50.0
 @export var explosionvfx : Node3D
 @onready var explosion_sfx: AudioStreamPlayer3D = $ExplosionSFX
 
-# Called when the node enters the scene tree for the first time.
+# applies damage and lifts the body into the air, before deleting itself
+
 func _ready() -> void:
-	explosionvfx.call_explosion()
+	explosionvfx.call_explosion() # spawns the explosion effect
 	explosion_sfx.play()
 	await get_tree().create_timer(0.5).timeout
 	queue_free()

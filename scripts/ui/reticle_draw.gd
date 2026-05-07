@@ -6,6 +6,7 @@ extends Control
 @export var gap_angle : float = 45.0 : set = set_crosshair_gap_angle
 @export var segments : int = 32 : set = set_crosshair_segments
 
+# draws new crosshair 
 
 func _draw() -> void:
 	draw_circle_crosshair()

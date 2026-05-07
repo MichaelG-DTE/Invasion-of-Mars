@@ -1,6 +1,8 @@
 class_name SavedGame
 extends Resource
 
+# save game varaibles for player and weapons
+
 @export_category("playervalues")
 @export var player_transform : Transform3D
 @export var player_health : float

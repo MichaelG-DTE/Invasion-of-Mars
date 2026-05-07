@@ -49,7 +49,7 @@ func _check_collision_surface(collision: KinematicCollision3D) -> bool:
 	query.collision_mask = player.collision_mask
 	query.exclude = [player.get_rid()] # prevents player from colliding with self
 	
-	#checks the result of the raycast against the threshold of what is considered a step and returns either true or false
+	#checks the result of the raycast against what is considered a step and returns either true or false
 	var result = space_state.intersect_ray(query)
 	if result and abs(result.normal.y) <= surface_threshold:
 		step_status = "Raycast: Vertical Collision Found" + str(result.normal)

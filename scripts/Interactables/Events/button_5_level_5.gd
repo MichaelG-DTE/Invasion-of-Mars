@@ -8,6 +8,7 @@ extends StaticBody3D
 
 var has_pressed = false
 
+# button 5 for level 5, all buttons have to be pressed before progression has to be made 
 func interact():
 	button_press_sfx.play()
 	if not has_pressed:

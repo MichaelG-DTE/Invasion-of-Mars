@@ -16,15 +16,18 @@ func can_pickup(player: PlayerController) -> bool:
 func apply_pickup(player: PlayerController) -> void:
 	has_picked_up = true
 	var weapon_data = $"../../../Managers".weapon_manager.weapons[weapon_slot]
+	# adds ammo if not already full
 	if weapon_data.weapon.total_ammo < weapon_data.weapon.starting_ammo:
 		weapon_data.weapon.total_ammo += ammo_amount
 
 func on_save_game(saved_data : Array[InteractableSavedData]):
+	# saves if not already picked up
 	if has_picked_up:
 		return
 		
 	var my_data = InteractableSavedData.new()
 	
+	# variables to save
 	my_data.transform = global_transform
 	my_data.scene_path = scene_file_path
 	my_data.my_level = globalvar.current_level

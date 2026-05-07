@@ -7,8 +7,11 @@ extends StaticBody3D
 @export var locked := false
 var active := false
 
+# script used for all doors to lift up and lower the doors down
+
 func interact():
 	if not locked:
+		
 		if !active:
 			audio_stream_player.play()
 			animation_player.play("open")
@@ -21,6 +24,7 @@ func interact():
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	var my_data = InteractableSavedData.new()
 
+	# saves the doors position and whether locked or not
 	my_data.is_door_locked = locked
 	my_data.transform = global_transform
 	my_data.scene_path = scene_file_path

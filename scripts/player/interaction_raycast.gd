@@ -5,6 +5,9 @@ extends RayCast3D
 
 var current_object
 
+# checks if the raycast is colliding and calls interact function 
+# if the object is a terminal then the UI is made invisible 
+
 func _process(_delta: float) -> void:
 	interact.hide()
 	if !player_controller.dead:

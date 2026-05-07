@@ -1,5 +1,6 @@
 class_name StandingState extends PlayerState
 
+# checks if the player is standing or crouching 
 func _on_standing_state_physics_processing(delta: float) -> void:
 	player_controller.camera.update_camera_height(delta, 1)
 	

@@ -1,5 +1,7 @@
 class_name PlayerState extends Node
 
+# base node for the player state machine
+
 var player_controller : PlayerController
 
 func _ready() -> void:

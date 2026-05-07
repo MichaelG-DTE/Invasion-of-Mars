@@ -1,5 +1,6 @@
 extends WeaponState
 
+# checks if the weapon is empty and reloads if has ammo
 
 func _on_empty_state_state_entered() -> void:
 	print("no bullet")

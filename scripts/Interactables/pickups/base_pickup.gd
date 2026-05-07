@@ -1,5 +1,7 @@
 class_name BasePickup extends Area3D
 
+# base pickup used for ammo and weapon pickups
+
 func _ready() -> void:
 	body_entered.connect(_on_pickup)
 	

@@ -13,10 +13,12 @@ var doorlight
 func _ready() -> void:
 	find_animation_play()
 
+# finds the door light and its animation player to activate visual feedback when door is unlocked
 func find_animation_play():
 	animationplayer = get_tree().get_first_node_in_group("doorlight2")
 	doorlight = get_tree().get_first_node_in_group("door_light_2")
 
+# when player interacts with the button, the button controller changes the door to be unlocked on level 3 underground
 func interact():
 	if not has_pressed:
 		button_press_sfx.play()
@@ -28,6 +30,7 @@ func interact():
 
 func on_save_game(interactable_saved_data : Array[InteractableSavedData]):
 	
+	# variables to save
 	var my_data = InteractableSavedData.new()
 	
 	my_data.is_button_pressed = has_pressed
@@ -40,6 +43,7 @@ func on_before_load_game():
 	queue_free()
 
 func on_load_game(interactable_saved_data : InteractableSavedData):
+	# loads saved variables and sets the buttons mesh (so that the button is either activated or unactivated)
 	global_transform = interactable_saved_data.transform
 	has_pressed = interactable_saved_data.is_button_pressed
 	if interactable_saved_data.is_button_pressed == true:

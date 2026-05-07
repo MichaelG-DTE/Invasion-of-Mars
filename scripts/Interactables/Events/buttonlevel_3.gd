@@ -16,7 +16,7 @@ func get_animation_play():
 	animationplayer = get_tree().get_first_node_in_group("doorlight")
 	doorlight = get_tree().get_first_node_in_group("door_light")
 
-
+# button for level three, opens doors on surface in tunnel
 func interact():
 	if not has_pressed:
 		button_press_sfx.play()

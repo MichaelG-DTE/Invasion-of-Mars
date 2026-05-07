@@ -1,5 +1,7 @@
 class_name Projectile extends Area3D
 
+# same as the enemy projectile except for the marker spawning and explosion instancing (look at comments on enemy projectile)
+
 var velocity: Vector3
 var damage: float
 var explosion : PackedScene = preload("res://scenes/enviroment/explosion.tscn")

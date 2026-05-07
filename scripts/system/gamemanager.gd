@@ -30,7 +30,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func _ready() -> void:
 	SignalBus.level_change.connect(change_level)
 	SignalBus.end_game.connect(end_game)
-	
+
+# changes the level based on the global var 'current level'
+# removes save data for each level, and queue frees the level
 func change_level():
 	if globalvar.current_level == 1:
 		delete_save_data()
@@ -93,11 +95,13 @@ func change_level():
 		Epilogue = EPILOGUE.instantiate()
 		current_level.add_child(Epilogue)
 
+# finds the path to the save game resource and deletes it
 func delete_save_data():
 	var save_path = "user://savegame.tres"
 	DirAccess.remove_absolute(save_path)
 	print("deleted save data")
 
+# goes back to the menu screen and makes the mouse visible
 func end_game():
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://scenes/ui/title_screen.tscn")
