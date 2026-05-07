@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://d0mhjhy1536qp"]
 
-[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_ms0ev"]
+[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://scripts/weapons/scripts/weapon.gd" id="1_ms0ev"]
 [ext_resource type="PackedScene" uid="uid://c36cgwdvixlwo" path="res://scenes/weapons/challenger.tscn" id="2_d4xsr"]
 
 [resource]

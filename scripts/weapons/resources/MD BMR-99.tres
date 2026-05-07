@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cwb7ejvgbfthi"]
 
-[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_3nkhv"]
+[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://scripts/weapons/scripts/weapon.gd" id="1_3nkhv"]
 [ext_resource type="PackedScene" uid="uid://c8jljye43w6vr" path="res://scenes/weapons/codreanu.tscn" id="2_4yieg"]
 
 [resource]

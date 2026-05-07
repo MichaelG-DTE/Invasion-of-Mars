@@ -8,6 +8,8 @@
 [ext_resource type="Material" uid="uid://dlrykrnb275vd" path="res://assets/textures/roofmaterial.tres" id="5_pu78i"]
 [ext_resource type="PackedScene" uid="uid://bryvlgmmo5jlm" path="res://scenes/enviroment/light.tscn" id="6_jsxje"]
 [ext_resource type="PackedScene" uid="uid://b7rvchaw43xlw" path="res://scenes/interactables/terminalstandlevel5.tscn" id="7_qhjl5"]
+[ext_resource type="PackedScene" uid="uid://dec6yt5t46enq" path="res://scenes/enviroment/Props/prop_barrel_12.tscn" id="9_xrv0r"]
+[ext_resource type="PackedScene" uid="uid://d1pn5cabipqxx" path="res://scenes/enviroment/Props/prop_crate_2.tscn" id="10_d2838"]
 
 [node name="Epilogue" type="Node3D" unique_id=2031947355]
 script = ExtResource("1_pu78i")
@@ -62,3 +64,15 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.90000015, -8.6)
 
 [node name="PlayerSpawn" type="Marker3D" parent="." unique_id=911599580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Prop_Barrel12" parent="." unique_id=224659554 instance=ExtResource("9_xrv0r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.6, -0.2, -7.6)
+
+[node name="Prop_Barrel13" parent="." unique_id=1365506859 instance=ExtResource("9_xrv0r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.6, -0.2, -7.6)
+
+[node name="Prop_Crate2" parent="." unique_id=1352558271 instance=ExtResource("10_d2838")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.6000004, 0, 7.6)
+
+[node name="Prop_Crate3" parent="." unique_id=1987767656 instance=ExtResource("10_d2838")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.6, 0, 7.6)

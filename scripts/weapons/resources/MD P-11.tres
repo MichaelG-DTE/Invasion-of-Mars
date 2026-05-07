@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://d2e3oxubj53dw"]
 
 [ext_resource type="PackedScene" uid="uid://dc6jjcajosmty" path="res://scenes/weapons/projectile.tscn" id="1_j44sx"]
-[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_jdnyo"]
+[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://scripts/weapons/scripts/weapon.gd" id="1_jdnyo"]
 [ext_resource type="PackedScene" uid="uid://cq1tehbkp3kag" path="res://scenes/weapons/MDP-11.tscn" id="2_744yx"]
 
 [resource]

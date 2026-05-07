@@ -32,7 +32,6 @@ func setup(vel: Vector3, dmg: float) -> void:
 
 # if the body has a health component then takes damage
 func _on_body_entered(body: Node3D) -> void:
-	print("Projectile hit: ", body.name, " at ", global_position)
 
 	var health_component = body.get_node_or_null("HealthComponent")
 	

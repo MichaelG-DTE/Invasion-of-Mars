@@ -1,6 +1,6 @@
 extends Node
 
-@onready var level_one: Node3D = $"../../CurrentLevel/Level One"
+
 @onready var current_level: Node3D = $"../../CurrentLevel"
 @onready var pause_menu: Control = $"../../Pause Menu"
 @onready var user_interface: CanvasLayer = $"../../CurrentLevel/Player/UserInterface"
@@ -13,6 +13,7 @@ const LEVEL_FOUR = preload("uid://d2ff3ocau7igq")
 const LEVEL_FIVE = preload("uid://cwcy8djptf2xj")
 const EPILOGUE = preload("uid://bjuk23ulc7kjw")
 
+var Level_One
 var Level_Two
 var Level_Three
 var Level_Four
@@ -30,6 +31,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _ready() -> void:
 	SignalBus.level_change.connect(change_level)
 	SignalBus.end_game.connect(end_game)
+	Level_One = LEVEL_ONE.instantiate()
+	current_level.add_child(Level_One)
 
 # changes the level based on the global var 'current level'
 # removes save data for each level, and queue frees the level
@@ -39,7 +42,7 @@ func change_level():
 		user_interface.hide()
 		loadingscreen.visible = true
 		loadingscreen.play()
-		level_one.queue_free()
+		Level_One.queue_free()
 		await get_tree().create_timer(3.0).timeout
 		loadingscreen.stop()
 		loadingscreen.visible = false

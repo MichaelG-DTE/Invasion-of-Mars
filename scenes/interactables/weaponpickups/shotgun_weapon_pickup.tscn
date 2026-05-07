@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gbv436xmkqlv"]
 
 [ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weaponpickups/weapon_pickup.tscn" id="1_f8xje"]
-[ext_resource type="Resource" uid="uid://cwb7ejvgbfthi" path="res://assets/weapons/resources/MD BMR-99.tres" id="2_wj2py"]
+[ext_resource type="Resource" uid="uid://cwb7ejvgbfthi" path="res://scripts/weapons/resources/MD BMR-99.tres" id="2_wj2py"]
 [ext_resource type="PackedScene" uid="uid://c8jljye43w6vr" path="res://scenes/weapons/codreanu.tscn" id="3_v74pp"]
 
 [node name="ShotgunWeaponPickup" unique_id=1825521633 instance=ExtResource("1_f8xje")]

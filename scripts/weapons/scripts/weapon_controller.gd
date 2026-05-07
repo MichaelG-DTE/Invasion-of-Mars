@@ -126,7 +126,6 @@ func _perform_hitscan() -> void:
 		var result = space_state.intersect_ray(query) # where the ray collides
 		
 		if result:
-			print("Hit: ", result.collider.name, "At", result.position)
 			_spawn_impact_marker(result.position)
 			
 			_apply_damage_to_target(result.collider)

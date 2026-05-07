@@ -3,15 +3,14 @@
 [ext_resource type="Script" uid="uid://c076hdkvkmp2v" path="res://scripts/system/gamemanager.gd" id="1_qoi2i"]
 [ext_resource type="Script" uid="uid://cmaae7pyhqp5j" path="res://scripts/system/managers.gd" id="1_u4ui1"]
 [ext_resource type="Script" uid="uid://dli6v4cw3ijmm" path="res://scripts/system/weapon_manager.gd" id="2_bvk2m"]
-[ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://assets/weapons/scripts/weapon_data.gd" id="3_rc0n7"]
-[ext_resource type="Resource" uid="uid://ddm18y0rrtd12" path="res://assets/weapons/resources/data/MD P-11 Data.tres" id="4_tpgha"]
-[ext_resource type="Resource" uid="uid://b8gp1n3q75esu" path="res://assets/weapons/resources/data/MD ARE-18 Data.tres" id="5_u4ui1"]
-[ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://assets/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
-[ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://assets/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
+[ext_resource type="Script" uid="uid://nm7o1ht1lsba" path="res://scripts/weapons/scripts/weapon_data.gd" id="3_rc0n7"]
+[ext_resource type="Resource" uid="uid://ddm18y0rrtd12" path="res://scripts/weapons/resources/data/MD P-11 Data.tres" id="4_tpgha"]
+[ext_resource type="Resource" uid="uid://b8gp1n3q75esu" path="res://scripts/weapons/resources/data/MD ARE-18 Data.tres" id="5_u4ui1"]
+[ext_resource type="Resource" uid="uid://bslcibcjbvyqp" path="res://scripts/weapons/resources/data/MD BMR-99 Data.tres" id="6_7r8fc"]
+[ext_resource type="Resource" uid="uid://mmy5lqqqrfb6" path="res://scripts/weapons/resources/data/MD RICO-KBM Data.tres" id="7_tpgha"]
 [ext_resource type="PackedScene" uid="uid://bak4wntf43ykh" path="res://scenes/player/player.tscn" id="8_ufluw"]
 [ext_resource type="Script" uid="uid://oxv41wjgwnj4" path="res://scripts/system/save_manager.gd" id="9_u4ui1"]
 [ext_resource type="PackedScene" uid="uid://dnhoutkqt2ud7" path="res://scenes/ui/pause_menu.tscn" id="10_7r8fc"]
-[ext_resource type="PackedScene" uid="uid://bupaqukakeo13" path="res://levels/level_one.tscn" id="11_u4ui1"]
 [ext_resource type="Script" uid="uid://cinddgsvsdjts" path="res://scripts/ui/loadingscreen.gd" id="13_eel2d"]
 [ext_resource type="FontFile" uid="uid://b7xa6kxumlwnr" path="res://assets/textures/Codex-yYVPV.ttf" id="13_ufluw"]
 
@@ -88,8 +87,6 @@ rico_kbm_data = ExtResource("7_tpgha")
 
 [node name="Player" parent="CurrentLevel" unique_id=96954163 instance=ExtResource("8_ufluw")]
 transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, -8.0345, 2, 10.536982)
-
-[node name="Level One" parent="CurrentLevel" unique_id=1303562626 instance=ExtResource("11_u4ui1")]
 
 [node name="Pause Menu" parent="." unique_id=201975217 instance=ExtResource("10_7r8fc")]
 visible = false

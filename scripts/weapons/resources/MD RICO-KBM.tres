@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bwnd6lufp0ey2"]
 
-[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://assets/weapons/scripts/weapon.gd" id="1_c0kgo"]
+[ext_resource type="Script" uid="uid://1o5b5fhg1r5b" path="res://scripts/weapons/scripts/weapon.gd" id="1_c0kgo"]
 [ext_resource type="PackedScene" uid="uid://dc6jjcajosmty" path="res://scenes/weapons/projectile.tscn" id="1_ou4nb"]
 [ext_resource type="PackedScene" uid="uid://dxj2et5neev31" path="res://scenes/weapons/rocket_launcher_temp.tscn" id="3_2ftrf"]
 

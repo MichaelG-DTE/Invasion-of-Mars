@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctbf4v2it14bo"]
 
 [ext_resource type="PackedScene" uid="uid://lo8qkasxt1kx" path="res://scenes/interactables/weaponpickups/weapon_pickup.tscn" id="1_eg774"]
-[ext_resource type="Resource" uid="uid://bwnd6lufp0ey2" path="res://assets/weapons/resources/MD RICO-KBM.tres" id="2_qq518"]
+[ext_resource type="Resource" uid="uid://bwnd6lufp0ey2" path="res://scripts/weapons/resources/MD RICO-KBM.tres" id="2_qq518"]
 [ext_resource type="PackedScene" uid="uid://dxj2et5neev31" path="res://scenes/weapons/rocket_launcher_temp.tscn" id="3_833js"]
 
 [node name="KBMWeaponPickup" unique_id=1825521633 instance=ExtResource("1_eg774")]

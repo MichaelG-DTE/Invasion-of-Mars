@@ -40,6 +40,8 @@ func _on_menu_confirm_quit_pressed() -> void:
 	quit_button_sfx2.play()
 	get_tree().paused = false
 	await get_tree().create_timer(0.5).timeout
+	delete_save_data()
+	globalvar.current_level = 0
 	get_tree().change_scene_to_file("res://scenes/ui/title_screen.tscn")
 
 func _on_menu_return_pressed() -> void:
@@ -55,3 +57,8 @@ func _on_desktop_return_pressed() -> void:
 	return_button_sfx2.play()
 	quit_to_desktop_confirm.visible = false
 	
+# finds the path to the save game resource and deletes it
+func delete_save_data():
+	var save_path = "user://savegame.tres"
+	DirAccess.remove_absolute(save_path)
+	print("deleted save data")
